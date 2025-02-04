@@ -2,7 +2,12 @@ import java.util.Scanner;
 
 class escalas {
     public static void main(String[] args) {
-        int tono = 0;
+        
+        Scanner sc = new Scanner(System.in);
+
+        System.out.print("Por favor, introduce un número entero: ");
+        int tono = sc.nextInt();
+
         String[] arrayNotas = {"Do", "Do#", "Re", "Re#", "Mi", "Fa", "Fa#", "Sol", "Sol#", "La", "La#", "Si", "Do"};
         escalaMayor(arrayNotas, tono);
     }
