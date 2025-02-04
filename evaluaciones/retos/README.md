@@ -7,6 +7,6 @@ Los retos se irán proponiendo, habitualmente luego de una disertación teórica
 - La entrega a estos retos se hará a la rama *entrega-001* del repositorio de la asignatura.
 - La fecha de recepción de los mismos será hasta el día xx de XX
 
-|Retos|
-|-|
-[Detalle del reto](/evaluaciones/retos/reto001.md)
+|Retos|Entrega
+|-|-|
+|[Escalas y acordes](/evaluaciones/retos/reto001.md)|Viernes 7 - 00:00h|
