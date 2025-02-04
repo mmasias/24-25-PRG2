@@ -33,7 +33,7 @@ public class EscalasAcordes {
         }
         System.out.println();
         
-        String[] acordeMayor = {acordes[imputUsuario - 1], acordes[(imputUsuario + 3) % 12], acordes[(imputUsuario + 6) % 12]};
+        String[] acordeMayor = {acordes[imputUsuario], acordes[(imputUsuario + 4) % 12], acordes[(imputUsuario + 7) % 12]};
         System.out.print("El acorde de " + notaElegida + " Mayor está conformado por: ");
         for (String nota : acordeMayor) {
             System.out.print("[" + nota + "] / ");
