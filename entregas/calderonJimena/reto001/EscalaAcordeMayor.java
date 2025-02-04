@@ -13,27 +13,23 @@ public class EscalaAcordeMayor {
         int nota = scanner.nextInt();
         scanner.close();
 
-        if (nota < 1 || nota > 12) {
-            System.out.println("Nota fuera de rango. Debe ser un número del 1 al 12.");
-            return;
-        }
-
         int notaIndex = nota - 1;
         String nombreNota = notas[notaIndex];
+        final int NOTAS_TOTALES = 12;
 
         System.out.print("La escala de " + nombreNota + " Mayor es: ");
         int actual = notaIndex;
         System.out.print("[" + notas[actual] + "]");
         for (int i = 0; i < intervalosMayor.length; i++) {
-            actual = (actual + intervalosMayor[i]) % 12;
+            actual = (actual + intervalosMayor[i]) % NOTAS_TOTALES;
             System.out.print(" / [" + notas[actual] + "]");
         }
         System.out.println();
 
         System.out.print("El acorde de " + nombreNota + " Mayor está conformado por: ");
-        System.out.print("[" + notas[(notaIndex + acordeMayor[0]) % 12] + "]");
+        System.out.print("[" + notas[(notaIndex + acordeMayor[0]) % NOTAS_TOTALES] + "]");
         for (int i = 1; i < acordeMayor.length; i++) {
-            System.out.print(" / [" + notas[(notaIndex + acordeMayor[i]) % 12] + "]");
+            System.out.print(" / [" + notas[(notaIndex + acordeMayor[i]) % NOTAS_TOTALES] + "]");
         }
         System.out.println();
     }
