@@ -1,35 +1,44 @@
 import java.util.Scanner;
 
 public class EscalasAcordes {
-    public static void main(String[] args) {
-        String[] notas = {"Do", "Do#", "Re", "Re#", "Mi", "Fa", "Fa#", "Sol", "Sol#", "La", "La#", "Si"};
-        int[] patron = {2, 2, 1, 2, 2, 2, 1};
+    private static final String[] NOTAS = { "Do", "Do#", "Re", "Re#", "Mi", "Fa", "Fa#", "Sol", "Sol#", "La", "La#","Si" };
+    private static final int[] PATRON = { 2, 2, 1, 2, 2, 2, 1 };
 
-        Scanner scanner = new Scanner(System.in);
-        System.out.print("Ingrese una nota (Ejemplo: Do, Re#, Fa#): ");
-        String notaBase = scanner.next();
+public static void main(String[] args) {
+    Scanner scanner = new Scanner(System.in);
+    System.out.print("Ingrese una nota (Ejemplo: Do, Re#, Fa#): ");
+    String notaBase = scanner.next().toUpperCase();
+    int indice = obtenerIndiceNota(notaBase);
 
-        int indice = -1;
-        for (int i = 0; i < notas.length; i++) {
-            if (notas[i].equalsIgnoreCase(notaBase)) {
-                indice = i;
-            }
-        }
+    if (indice == -1) {
+        System.out.println("Nota inválida. Intente nuevamente.");
+    } else {
+        mostrarEscalaMayor(notaBase, indice);
+         mostrarAcordeMayor(notaBase, indice);
+    }
+}
 
-        if (indice == -1) {
-            System.out.println("Nota inválida. Intente nuevamente.");
-        } else {
-            System.out.print("Escala mayor de " + notaBase + ": ");
-            System.out.print(notaBase + " ");
-            for (int i = 0; i < patron.length; i++) {
-                indice = (indice + patron[i]) % notas.length;
-                System.out.print(notas[indice] + " ");
-            }
-            System.out.println();
-
-            int indiceTercera = (indice + 2) % notas.length;
-            int indiceQuinta = (indice + 4) % notas.length;
-            System.out.println("Acorde mayor de " + notaBase + ": " + notaBase + " - " + notas[indiceTercera] + " - " + notas[indiceQuinta]);
+static int obtenerIndiceNota(String nota) {
+    for (int i = 0; i < NOTAS.length; i++) {
+        if (NOTAS[i].equalsIgnoreCase(nota)) {
+            return i;
         }
     }
+    return -1;
+}
+
+static void mostrarEscalaMayor(String notaBase, int indice) {
+       System.out.print("Escala mayor de " + notaBase + ": " + notaBase + " ");
+    for (int i = 0; i < PATRON.length; i++) {
+        indice = (indice + PATRON[i]) % NOTAS.length;
+        System.out.print(NOTAS[indice] + " ");
+    }
+    System.out.println();
+}
+
+static void mostrarAcordeMayor(String notaBase, int indice) {
+    int indiceTercera = (indice + 2) % NOTAS.length;
+    int indiceQuinta = (indice + 4) % NOTAS.length;
+    System.out.println("Acorde mayor de " + notaBase + ": " + notaBase + " - " + NOTAS[indiceTercera] + " - " + NOTAS[indiceQuinta]);
+}
 }
