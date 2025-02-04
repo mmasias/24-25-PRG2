@@ -17,9 +17,11 @@ public class Escalas {
         
         String nota_base = notas[0][indice_nota];
         List<String> escala_mayor = construir_escala_mayor(indice_nota);
+        List<String> acorde_mayor = construir_acorde_mayor(escala_mayor);
         
         System.out.println("Ha elegido la nota " + nota_base);
         System.out.println("La escala de " + nota_base + " Mayor es: " + String.join(" / ", escala_mayor));
+        System.out.println("El acorde de " + nota_base + " Mayor está conformado por: " + String.join(" / ", acorde_mayor));
     }
     
     private static List<String> construir_escala_mayor(int indice_base) {
@@ -35,4 +37,13 @@ public class Escalas {
         
         return escala;
     }
+    
+    private static List<String> construir_acorde_mayor(List<String> escala_mayor) {
+        List<String> acorde = new ArrayList<>();
+        for (int i = 0; i < 3; i++) {
+            acorde.add(escala_mayor.get(i * 2));
+        }
+        return acorde;
+    }
 }
+
