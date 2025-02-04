@@ -1,3 +1,4 @@
+
 import java.util.Scanner;
 
 class EscalasYAcordes {
@@ -35,7 +36,7 @@ class EscalasYAcordes {
             notaActual = (notaActual + PATRON_ESCALA_MAYOR[i]) % NOTAS.length;
         }
 
-        escala[7] = NOTAS[notaBase]; // agregar la nota base al final para completar la octava
+        escala[7] = NOTAS[notaBase];
         return escala;
     }
 
