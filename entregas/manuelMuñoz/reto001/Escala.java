@@ -1,4 +1,5 @@
 import java.util.Scanner;
+import java.util.Arrays;
 
 public class Escala{
     String[] notes = {"Do", "Do#", "Re", "Re#", "Mi", "Fa", "Fa#", "Sol", "Sol#", "La", "La#", "Si"};
@@ -10,22 +11,36 @@ public class Escala{
         System.out.print("Dime una nota y te dare su escala mayor: ");
         
         Scanner input = new Scanner(System.in);
+
+        Escala noteScale = new Escala();
+
         String startingNote = input.nextLine();
-
-
-
         
+        noteScale.getChord(startingNote);
+        
+        noteScale.upperScale();
+
         input.close();
+      
+    }
+
+    public Escala(){
+
     }
     
-    public String getChord(){
-        
+    public String getChord(String startingNote){
+        String note = "";
+
         for (int i = 0; i < notes.length; i++){
             if (notes[i].equals(startingNote)){
-                System.out.println(notes[i]);
-                String key = notes[i];
-                return key;
+                note = notes[i];
             }
         }
+        return note;  
+    }
+
+    public String upperScale(){
+
+        return "A";
     }
 }
