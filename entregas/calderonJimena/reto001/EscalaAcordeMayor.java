@@ -6,7 +6,7 @@ public class EscalaAcordeMayor {
     public static void main(String[] args) {
         String[] notas = {"Do", "Do#", "Re", "Re#", "Mi", "Fa", "Fa#", "Sol", "Sol#", "La", "La#", "Si"};
         int[] intervalosMayor = {2, 2, 1, 2, 2, 2, 1};
-        int[] acordeMayor = {0, 2, 4};
+        int[] acordeMayor = {0, 4, 7};
 
         Scanner scanner = new Scanner(System.in);
         System.out.println("Ingrese la nota a trabajar: 1: Do, 2: Do#, 3: Re, 4: Re#, 5: Mi, 6: Fa, 7: Fa#, 8: Sol, 9: Sol#, 10: La, 11: La#, 12: Si: ");
