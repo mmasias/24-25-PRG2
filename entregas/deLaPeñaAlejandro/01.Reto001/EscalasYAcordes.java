@@ -26,4 +26,27 @@ class EscalasYAcordes {
         imprimirNotas(acordeMayor);
     }
 
+    static String[] construirEscalaMayor(int notaBase) {
+        String[] escala = new String[8];
+        int notaActual = notaBase;
+
+        for (int i = 0; i < 7; i++) {
+            escala[i] = NOTAS[notaActual];
+            notaActual = (notaActual + PATRON_ESCALA_MAYOR[i]) % NOTAS.length;
+        }
+
+        escala[7] = NOTAS[notaBase]; // agregar la nota base al final para completar la octava
+        return escala;
+    }
+
+    static String[] construirAcordeMayor(String[] escalaMayor) {
+        return new String[]{escalaMayor[0], escalaMayor[2], escalaMayor[4]};
+    }
+
+    static void imprimirNotas(String[] notas) {
+        for (String nota : notas) {
+            System.out.print("[" + nota + "] ");
+        }
+        System.out.println();
+    }
 }
