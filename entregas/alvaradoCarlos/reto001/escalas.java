@@ -10,11 +10,22 @@ class escalas {
 
         String[] arrayNotas = {"Do", "Do#", "Re", "Re#", "Mi", "Fa", "Fa#", "Sol", "Sol#", "La", "La#", "Si"};
         escalaMayor(arrayNotas, tono);
+        acordeMayor(arrayNotas, tono);
     }
 
     public static void escalaMayor(String[] arrayNotas, int tono) {
         System.out.println("Escala mayor de " + arrayNotas[tono] + " mayor:");
         int[] intervalos = {0, 2, 4, 5, 7, 9, 11, 12};
+
+        for (int i = 0; i < intervalos.length; i++) {
+            System.out.print(arrayNotas[(tono + intervalos[i]) % arrayNotas.length] + " / ");
+        }
+        System.out.println();
+    }
+
+    public static void acordeMayor(String[] arrayNotas, int tono) {
+        System.out.println("Acorde mayor de " + arrayNotas[tono] + " mayor:");
+        int[] intervalos = {0, 4, 7};
 
         for (int i = 0; i < intervalos.length; i++) {
             System.out.print(arrayNotas[(tono + intervalos[i]) % arrayNotas.length] + " / ");
