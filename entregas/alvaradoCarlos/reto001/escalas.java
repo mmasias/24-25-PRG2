@@ -5,7 +5,8 @@ class escalas {
         
         Scanner sc = new Scanner(System.in);
 
-        System.out.print("Por favor, introduce un número entero: ");
+        System.out.print("Por favor, introduce el número entero de la nota correspondiente: \n(Do: 0, Do#: 1, Re: 2, Re#: 3, Mi: 4, Fa: 5, Fa#: 6, Sol: 7, Sol#: 8, La: 9, La#: 10, Si: 11)");
+        System.out.println();
         int tono = sc.nextInt();
 
         String[] arrayNotas = {"Do", "Do#", "Re", "Re#", "Mi", "Fa", "Fa#", "Sol", "Sol#", "La", "La#", "Si"};
