@@ -1,3 +1,4 @@
+import java.util.Scanner;
 import java.util.*;
 
 public class Escalas {
@@ -42,3 +43,5 @@ public class Escalas {
         return escala;
     }
 }
+
+    
