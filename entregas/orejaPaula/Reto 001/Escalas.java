@@ -1,47 +1,49 @@
 import java.util.Scanner;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.List;
 
 public class Escalas {
-    private static final String[][] notas = {
-        {"Do", "Do#", "Re", "Re#", "Mi", "Fa", "Fa#", "Sol", "Sol#", "La", "La#", "Si"}
-    };
-    private static final int[] patron_escala_mayor = {2, 2, 1, 2, 2, 2, 1};
+    private static final String[] NOTAS = 
+        {"Do", "Do#", "Re", "Re#", "Mi", "Fa", "Fa#", "Sol", "Sol#", "La", "La#", "Si"};
+    
+    private static final int[] PATRON_ESCALA_MAYOR = {2, 2, 1, 2, 2, 2, 1};
 
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        int indice_nota;
-        
+        int indiceNota;
+
         do {
             System.out.println("Ingrese el número de la nota base (1: Do, 2: Do#, ..., 12: Si):");
-            indice_nota = scanner.nextInt() - 1;
-        } while (indice_nota < 0 || indice_nota >= notas[0].length);
-        
-        String nota_base = notas[0][indice_nota];
-        List<String> escala_mayor = construir_escala_mayor(indice_nota);
-        List<String> acorde_mayor = new ArrayList<>();
-        
+            indiceNota = scanner.nextInt() - 1;
+        } while (indiceNota < 0 || indiceNota >= NOTAS.length);
+
+        String notaBase = NOTAS[indiceNota];
+        List<String> escalaMayor = construirEscalaMayor(indiceNota);
+        List<String> acordeMayor = new ArrayList<>();
+
         for (int i = 0; i < 3; i++) {
-            acorde_mayor.add(escala_mayor.get(i * 2));
+            acordeMayor.add(escalaMayor.get(i * 2));
         }
-        
-        System.out.println("Ha elegido la nota " + nota_base);
-        System.out.println("La escala de " + nota_base + " Mayor es: " + String.join(" / ", escala_mayor));
-        System.out.println("El acorde de " + nota_base + " Mayor está conformado por: " + String.join(" / ", acorde_mayor));
+
+        System.out.println("Ha elegido la nota " + notaBase);
+        System.out.println("La escala de " + notaBase + " Mayor es: " + String.join(" / ", escalaMayor));
+        System.out.println("El acorde de " + notaBase + " Mayor está conformado por: " + String.join(" / ", acordeMayor));
+
+        scanner.close();
     }
-    
-    private static List<String> construir_escala_mayor(int indice_base) {
+
+    private static List<String> construirEscalaMayor(int indiceBase) {
         List<String> escala = new ArrayList<>();
-        int indice_actual = indice_base;
-        int i = 0;
-        
-        while (i < patron_escala_mayor.length) {
-            escala.add(notas[0][indice_actual % notas[0].length]);
-            indice_actual += patron_escala_mayor[i];
-            i++;
+        int indiceActual = indiceBase;
+
+        for (int paso : PATRON_ESCALA_MAYOR) {
+            escala.add(NOTAS[indiceActual % NOTAS.length]);
+            indiceActual += paso;
         }
-        
+        escala.add(NOTAS[indiceBase]);
         return escala;
     }
 }
+
 
     
