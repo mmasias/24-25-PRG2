@@ -14,7 +14,34 @@ public class EscalasAcordes {
         System.out.print("Ingresa la nota base (Ejemplo: Do, Re, Mi, Fa, Sol, La, Si, Do): ");
         String notaBase = scanner.nextLine().trim();
 
+        String[] escalaMayor = construirEscalaMayor(notaBase);
+
+        System.out.println("\nEscala mayor de " + notaBase + ":");
+        for (String nota : escalaMayor) {
+            System.out.print(nota + " ");
+        }
+
         System.out.println();
         scanner.close();
+    }
+
+    private static String[] construirEscalaMayor(String notaBase) {
+        String[] escala = new String[7];
+        int indice = obtenerIndiceNota(notaBase);
+
+        for (int i = 0; i < PATRON_ESCALA_MAYOR.length; i++) {
+            escala[i] = NOTAS[indice];
+            indice = (indice + PATRON_ESCALA_MAYOR[i]) % NOTAS.length;
+        }
+        return escala;
+    }
+
+    private static int obtenerIndiceNota(String nota) {
+        for (int i = 0; i < NOTAS.length; i++) {
+            if (NOTAS[i].equalsIgnoreCase(nota)) {
+                return i;
+            }
+        }
+        return 0;
     }
 }
