@@ -14,7 +14,7 @@ public static void main(String[] args) {
         System.out.println("Nota inválida. Intente nuevamente.");
     } else {
         mostrarEscalaMayor(notaBase, indice);
-         mostrarAcordeMayor(notaBase, indice);
+        mostrarAcordeMayor(notaBase, indice);
     }
 }
 
