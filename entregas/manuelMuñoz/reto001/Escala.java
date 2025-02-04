@@ -18,7 +18,7 @@ public class Escala{
         
         noteScale.getChord(startingNote);
         
-        noteScale.upperScale();
+        noteScale.upperScale(startingNote);
 
         input.close();
       
@@ -39,8 +39,15 @@ public class Escala{
         return note;  
     }
 
-    public String upperScale(){
+    public void upperScale(String note){
+        String[] upperScale = new String[12];
+        upperScale[0] = note;
+        while(note != upperScale[upperScale.length - 1]){
+            for(int i = 0; i < upperScale.length; i++){
+                int tempo = sequence[i];
+                // do{}while()
 
-        return "A";
+            }
+        }
     }
 }
