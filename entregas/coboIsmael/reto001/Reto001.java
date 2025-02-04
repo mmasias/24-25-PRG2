@@ -12,5 +12,9 @@ public class Reto001 {
 
         System.out.println("Ingrese la nota a trabajar: 1: Do, 2: Do#, 3: Re, 4: Re#, 5: Mi, ...");
         int notaBase = entradaUsuario.nextInt() - 1;
+
+        if (notaBase < 0 || notaBase >= notas.length) {
+            System.out.println("Nota no válida.");
+        }   return;
     }
 }
