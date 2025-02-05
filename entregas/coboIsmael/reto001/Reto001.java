@@ -16,5 +16,7 @@ public class Reto001 {
         if (notaBase < 0 || notaBase >= notas.length) {
             System.out.println("Nota no válida.");
         }   return;
+
+        System.out.println("Ha elegido la nota " + notas[notaBase]);
     }
 }
