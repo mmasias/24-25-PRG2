@@ -18,7 +18,7 @@ class EscalaAcordes {
 
                 System.out.print("[" + escala[i] + "]");
 
-                if (i < escala.length - 1) System.out.print(" / ");
+                if (i < escala.length - 1) divisorInline();
             }
             System.out.println();
 
@@ -32,10 +32,14 @@ class EscalaAcordes {
             for (int i = 0; i < acorde.length; i++) {
                 System.out.print("[" + acorde[i] + "]");
 
-                if (i < acorde.length - 1) System.out.print(" / ");
+                if (i < acorde.length - 1) divisorInline();
             }
             System.out.println();
 
+    }
+
+    private static void divisorInline() {
+        System.out.print(" / ");
     }
 
     static String[] crearEscala(int notaATrabajar) {
