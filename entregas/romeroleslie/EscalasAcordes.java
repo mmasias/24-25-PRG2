@@ -7,6 +7,7 @@ public class EscalasAcordes {
         "Sol", "Sol#", "La", "La#", "Si"
     };
 
+ private static final int[] PATRON_ESCALA_MAYOR = {2, 2, 1, 2, 2, 2, 1};
 
 }
 
