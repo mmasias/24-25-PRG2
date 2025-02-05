@@ -30,6 +30,17 @@ public class EscalasAcordes {
         }
     }
  
+    private static int leerOpcion(Scanner scanner) {
+        int opcion = 0;
+        while (opcion < 1 || opcion > NOTAS.length) {
+            System.out.print("\nElija el número de la nota (1-" + NOTAS.length + "): ");
+            if (scanner.hasNextInt()) {
+                opcion = scanner.nextInt();
+            }
+            scanner.nextLine();
+        }
+        return opcion;
+    }
 
 }
 
