@@ -15,9 +15,15 @@ public class EscalasAcordes {
         String notaBase = scanner.nextLine().trim();
 
         String[] escalaMayor = construirEscalaMayor(notaBase);
+        String[] acordeMayor = construirAcordeMayor(escalaMayor);
 
         System.out.println("\nEscala mayor de " + notaBase + ":");
         for (String nota : escalaMayor) {
+            System.out.print(nota + " ");
+        }
+
+        System.out.println("\n\nAcorde mayor de " + notaBase + ":");
+        for (String nota : acordeMayor) {
             System.out.print(nota + " ");
         }
 
@@ -34,6 +40,10 @@ public class EscalasAcordes {
             indice = (indice + PATRON_ESCALA_MAYOR[i]) % NOTAS.length;
         }
         return escala;
+    }
+
+    private static String[] construirAcordeMayor(String[] escalaMayor) {
+        return new String[]{escalaMayor[0], escalaMayor[2], escalaMayor[4]};
     }
 
     private static int obtenerIndiceNota(String nota) {
