@@ -27,5 +27,22 @@ public class Reto001 {
 
     public static String[] construirEscalaMayor(int notaBase, String[] notas) {
         int[] patron = {2, 2, 1, 2, 2, 2, 1};
+
+        String[] escalaMayor = new String[8];
+        escalaMayor[0] = notas[notaBase];
+        int indiceActual = notaBase;
+
+        for (int posicionEscala = 1; posicionEscala < 8; posicionEscala++) {
+            indiceActual = (indiceActual + patron[posicionEscala - 1]) % notas.length;
+            escalaMayor[posicionEscala] = notas[indiceActual];
+        }
+
+        System.out.print("La escala de " + notas[notaBase] + " Mayor es: ");
+        for (int posicionEscala = 0; posicionEscala < escalaMayor.length; posicionEscala++) {
+            System.out.print("[" + escalaMayor[posicionEscala] + "] / ");
+        }
+        System.out.println();
+
+        return escalaMayor;
     }
 }
