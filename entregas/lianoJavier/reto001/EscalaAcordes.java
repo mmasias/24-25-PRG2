@@ -79,6 +79,7 @@ class EscalaAcordes {
 
         Scanner sc = new Scanner(System.in);
         int notaATrabajar = sc.nextInt() - 1;
+        sc.close();
 
         String[] notas = getNotas();
         System.out.println("Ha elegido la nota " + notas[notaATrabajar]);
