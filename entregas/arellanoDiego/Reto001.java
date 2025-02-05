@@ -16,7 +16,13 @@ public class Reto001 {
         int opcion = entrada.nextInt();
         String notaBase = notas[opcion - 1];
         System.out.println("Ha elegido la nota " + notaBase);
-        
+
+        int indiceBase = 0;
+        while (indiceBase < notas.length && !notas[indiceBase].equals(notaBase)) {
+            indiceBase++;
+        }
+
         entrada.close();
     }
+    
 }
