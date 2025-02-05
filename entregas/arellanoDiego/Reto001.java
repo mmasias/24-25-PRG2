@@ -22,6 +22,22 @@ public class Reto001 {
             indiceBase++;
         }
 
+        String[] escala = new String[8];
+        escala[0] = notas[indiceBase];
+        int indiceActual = indiceBase;
+
+        for (int i = 1; i < 7; i++) {
+            indiceActual = (indiceActual + (patron[i - 1].equals("T") ? 2 : 1)) % 12;
+            escala[i] = notas[indiceActual];
+        }
+        escala[7] = notas[indiceBase]; 
+
+        System.out.print("La escala de " + notaBase + " Mayor es: ");
+        for (String nota : escala) {
+            System.out.print("[" + nota + "] ");
+        }
+        System.out.println();
+
         entrada.close();
     }
     
