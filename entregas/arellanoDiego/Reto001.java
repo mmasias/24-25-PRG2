@@ -38,6 +38,13 @@ public class Reto001 {
         }
         System.out.println();
 
+        String[] acorde = {escala[0], escala[2], escala[4]}; 
+        System.out.print("El acorde de " + notaBase + " Mayor está conformado por: ");
+        for (String nota : acorde) {
+            System.out.print("[" + nota + "] ");
+        }
+        System.out.println();
+
         entrada.close();
     }
     
