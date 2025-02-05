@@ -59,8 +59,7 @@ class EscalaAcordes {
     }
 
     static String[] getNotas() {
-        String[] notas = { "Do", "Do#", "Re", "Re#", "Mi", "Fa", "Fa#", "Sol", "Sol#", "La", "La#", "Si" };
-        return notas;
+        return new String[] { "Do", "Do#", "Re", "Re#", "Mi", "Fa", "Fa#", "Sol", "Sol#", "La", "La#", "Si" };
     }
 
     static String[] crearAcorde(String[] escala) {
