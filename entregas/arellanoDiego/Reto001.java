@@ -4,12 +4,12 @@ import java.util.Scanner;
 
 public class Reto001 {
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
+        Scanner entrada = new Scanner(System.in);
 
         String[] notas = {"Do", "Do#", "Re", "Re#", "Mi", "Fa", "Fa#", "Sol", "Sol#", "La", "La#", "Si"};
         String[] patron = {"T", "T", "S", "T", "T", "T", "S"};
 
-        String notaBase = obtenerNotaBase(scanner, notas);
+        String notaBase = obtenerNotaBase(entrada, notas);
         System.out.println("Ha elegido la nota " + notaBase);
 
         int indiceBase = 0;
@@ -41,7 +41,7 @@ public class Reto001 {
         }
         System.out.println();
 
-        scanner.close();
+        entrada.close();
     }
 
     public static String obtenerNotaBase(Scanner scanner, String[] notas) {
