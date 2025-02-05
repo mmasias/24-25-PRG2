@@ -8,12 +8,15 @@ public class EscalasAcordes {
     };
 
  private static final int[] PATRON_ESCALA_MAYOR = {2, 2, 1, 2, 2, 2, 1};
- 
+
  public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
         mostrarOpciones();
         int indiceNota = leerOpcion(scanner) - 1;
+
+String[] escalaMayor = elaborarEscalaMayor(indiceNota);
+String[] acordeMayor = elaborarAcordeMayor(escalaMayor);
 
 }
 
