@@ -18,5 +18,11 @@ public class Reto001 {
         }   return;
 
         System.out.println("Ha elegido la nota " + notas[notaBase]);
+    
+        String[] escalaMayor = construirEscalaMayor(notaBase, notas);
+
+        construirAcordeMayor(escalaMayor, notas[notaBase]);
+
     }
+
 }
