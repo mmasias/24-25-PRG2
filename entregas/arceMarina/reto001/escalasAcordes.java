@@ -16,63 +16,57 @@ public class EscalasAcordes {
             System.out.println("La nota seleccionada es: " + notaSeleccionada);
             String[] escalaMayor = obtenerEscalaMayor(notaSeleccionada, tonos);
             imprimirEscalaMayor(escalaMayor, notaSeleccionada);
-            obtenerAndImprimirAcordeMayor(notaSeleccionada, escalaMayor);
+            imprimirAcordeMayor(notaSeleccionada, escalaMayor);
         } else {
             System.out.println("Número de nota no válido. Ingresa un valor entre 1 y 12.");
         }
 
+        scanner.close();
     }
 
     public static String[] obtenerEscalaMayor(String notaBase, String[] tonos) {
         int[] intervalosEscalaMayor = { 2, 2, 1, 2, 2, 2, 1 };
-        int posicionNotaBase = -1;
-        int posicionActual = 0;
-        int contadorNotas = 1;
-
+        int posicionNotaBase = encontrarPosicion(notaBase, tonos);
         String[] escalaMayor = new String[8];
         escalaMayor[0] = notaBase;
 
-        while (posicionActual < tonos.length) {
-            if (tonos[posicionActual] == notaBase) {
-                posicionNotaBase = posicionActual;
-            }
-            posicionActual++;
-        }
-
-        while (contadorNotas < escalaMayor.length) {
-            posicionNotaBase = (posicionNotaBase + intervalosEscalaMayor[contadorNotas - 1]) % tonos.length;
-            escalaMayor[contadorNotas] = tonos[posicionNotaBase];
-            contadorNotas++;
+        for (int indiceNota = 1; indiceNota < escalaMayor.length; indiceNota++) {
+            posicionNotaBase = (posicionNotaBase + intervalosEscalaMayor[indiceNota - 1]) % tonos.length;
+            escalaMayor[indiceNota] = tonos[posicionNotaBase];
         }
 
         return escalaMayor;
 
     }
 
+    public static int encontrarPosicion(String notaBase, String[] tonos) {
+        int posicion = 0;
+        while (posicion < tonos.length) {
+            if (tonos[posicion].equals(notaBase)) {
+                return posicion;
+            }
+            posicion++;
+        }
+        return -1;
+    }
+
     public static void imprimirEscalaMayor(String[] escalaMayor, String notaBase) {
-        int variableImprimir = 0;
-        System.out.print("Escala mayor de " + notaBase + " es :");
-        while (variableImprimir < escalaMayor.length) {
-            System.out.print(" [" + escalaMayor[variableImprimir] + "] / ");
-            variableImprimir++;
+        System.out.print("Escala mayor de " + notaBase + " es: ");
+        for (int indiceNota = 0; indiceNota < escalaMayor.length; indiceNota++) {
+            System.out.print("[" + escalaMayor[indiceNota] + "]");
+            if (indiceNota < escalaMayor.length - 1) {
+                System.out.print(" / ");
+            }
         }
         System.out.println();
     }
 
-    public static String[] obtenerAndImprimirAcordeMayor(String notaBase, String[] escalaMayor) {
-        String[] acordeMayor = new String[3];
-        int variableImprimir = 0;
-
-        acordeMayor[0] = escalaMayor[0];
-        acordeMayor[1] = escalaMayor[2];
-        acordeMayor[2] = escalaMayor[4];
-
-        System.out.print("Acorde mayor de " + notaBase + " esta conformado por:");
-        for (variableImprimir = 0; variableImprimir < acordeMayor.length; variableImprimir++) {
-            System.out.print(" [" + acordeMayor[variableImprimir] + "] / ");
+    public static void imprimirAcordeMayor(String notaBase, String[] escalaMayor) {
+        String[] acordeMayor = { escalaMayor[0], escalaMayor[2], escalaMayor[4] };
+        System.out.print("Acorde mayor de " + notaBase + " está conformado por:");
+        for (String nota : acordeMayor) {
+            System.out.print(" [" + nota + "]");
         }
         System.out.println();
-
-        return acordeMayor;
     }
 }
