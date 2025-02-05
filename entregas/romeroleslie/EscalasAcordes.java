@@ -18,5 +18,11 @@ public class EscalasAcordes {
 String[] escalaMayor = elaborarEscalaMayor(indiceNota);
 String[] acordeMayor = elaborarAcordeMayor(escalaMayor);
 
+mostrarResultados(NOTAS[indiceNota], escalaMayor, acordeMayor);
+
+        scanner.close();
+    }
+
+
 }
 
