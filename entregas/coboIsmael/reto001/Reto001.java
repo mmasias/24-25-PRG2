@@ -1,4 +1,4 @@
-public package entregas.coboIsmael.reto001;
+package entregas.coboIsmael.reto001;
 
 import java.util.Scanner;
 
@@ -44,5 +44,16 @@ public class Reto001 {
         System.out.println();
 
         return escalaMayor;
+    }
+
+    public static void construirAcordeMayor(String[] escalaMayor, String notaBase) {
+
+        String[] acordeMayor = {escalaMayor[0], escalaMayor[2], escalaMayor[4]};
+
+        System.out.print("El acorde de " + notaBase + " Mayor está conformado por: ");
+        for (int posicionAcorde = 0; posicionAcorde < acordeMayor.length; posicionAcorde++) {
+            System.out.print("[" + acordeMayor[posicionAcorde] + "] / ");
+        }
+        System.out.println();
     }
 }
