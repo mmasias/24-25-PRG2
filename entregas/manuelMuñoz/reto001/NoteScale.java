@@ -1,47 +1,42 @@
 import java.util.Scanner;
 
-public class noteScale{
-    String[] notes = {"Do", "Do#", "Re", "Re#", "Mi", "Fa", "Fa#", "Sol", "Sol#", "La", "La#", "Si"};
-    
-    int[] sequence = {2,2,1,2,2,2,1};
-
+public class NoteScale{
     public static void main(String[] args){
         String[] upperScaleMap = new String[12];
 
         System.out.println("Notas: Do, Do#, Re, Re#, Mi, Fa, Fa#, Sol, Sol#, La, La#, Si");
         System.out.print("Dime una nota y te dare su escala mayor y acorde mayor: ");
         
-        noteScale noteScale = new noteScale();
-        
         Scanner input = new Scanner(System.in);
         String keyNote = input.nextLine();
         
-        noteScale.twelveNoteMap(keyNote, upperScaleMap);
-        noteScale.twelveToneScale(upperScaleMap);
-        noteScale.majorCord(upperScaleMap);
+        TwelveNoteMap(keyNote, upperScaleMap);
+        TwelveToneScale(upperScaleMap);
+        MajorCord(upperScaleMap);
 
         input.close();
     }
-
-    public noteScale(){}
     
-    public void twelveNoteMap(String keyNote, String[] upperScaleMap){
+    public static void TwelveNoteMap(String keyNote, String[] upperScaleMap){
+        String[] notes = {"Do", "Do#", "Re", "Re#", "Mi", "Fa", "Fa#", "Sol", "Sol#", "La", "La#", "Si"};
+
         for(int i = 0; i < notes.length; i++){
             if (notes[i].equals(keyNote)){
                 System.arraycopy(notes, i, upperScaleMap, 0, notes.length-i);
             }
         }
 
-        for(int k = 0; k < notes.length; k++){
-            if (upperScaleMap[k] == null){
-                System.arraycopy(notes, 0, upperScaleMap, k, notes.length-k);
+        for(int i = 0; i < notes.length; i++){
+            if (upperScaleMap[i] == null){
+                System.arraycopy(notes, 0, upperScaleMap, i, notes.length-i);
             }
         }
     }
 
-    public void twelveToneScale(String[] upperScaleMap){
+    public static void TwelveToneScale(String[] upperScaleMap){
         int j = 0;
         int i = 0;
+        int[] sequence = {2,2,1,2,2,2,1};
 
         do{
             System.out.println(upperScaleMap[i] + " ");
@@ -51,7 +46,7 @@ public class noteScale{
         System.out.println("Esta es la escala dodecafonica\n");
     }
 
-    public void majorCord(String[] upperScaleMap){
+    public static void MajorCord(String[] upperScaleMap){
         for(int i = 0; i < 5; i += 2){
             System.out.println(upperScaleMap[i]);
         }
