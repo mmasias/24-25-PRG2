@@ -5,7 +5,6 @@ import java.util.Scanner;
 public class Reto001 {
     public static void main(String[] args) {
 
-
         String[] notas = {"Do", "Do#", "Re", "Re#", "Mi", "Fa", "Fa#", "Sol", "Sol#", "La", "La#", "Si"};
         
         Scanner entradaUsuario = new Scanner(System.in);
@@ -15,7 +14,8 @@ public class Reto001 {
 
         if (notaBase < 0 || notaBase >= notas.length) {
             System.out.println("Nota no válida.");
-        }   return;
+            return;
+        }
 
         System.out.println("Ha elegido la nota " + notas[notaBase]);
     
@@ -23,6 +23,7 @@ public class Reto001 {
 
         construirAcordeMayor(escalaMayor, notas[notaBase]);
 
+        entradaUsuario.close();
     }
 
     public static String[] construirEscalaMayor(int notaBase, String[] notas) {
@@ -47,7 +48,6 @@ public class Reto001 {
     }
 
     public static void construirAcordeMayor(String[] escalaMayor, String notaBase) {
-
         String[] acordeMayor = {escalaMayor[0], escalaMayor[2], escalaMayor[4]};
 
         System.out.print("El acorde de " + notaBase + " Mayor está conformado por: ");
@@ -56,7 +56,4 @@ public class Reto001 {
         }
         System.out.println();
     }
-
-    entradaUsuario.close();
-
 }
