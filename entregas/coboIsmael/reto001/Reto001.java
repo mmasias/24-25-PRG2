@@ -25,4 +25,7 @@ public class Reto001 {
 
     }
 
+    public static String[] construirEscalaMayor(int notaBase, String[] notas) {
+        int[] patron = {2, 2, 1, 2, 2, 2, 1};
+    }
 }
