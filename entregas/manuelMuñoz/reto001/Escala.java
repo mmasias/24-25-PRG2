@@ -6,9 +6,8 @@ public class Escala{
     
     int[] sequence = {2,2,1,2,2,2,1};
 
-    
     public static void main(String[] args){
-        String[] upperScale = new String[12];
+        String[] upperScaleMap = new String[12];
 
         System.out.print("Dime una nota y te dare su escala mayor: ");
         
@@ -18,9 +17,9 @@ public class Escala{
 
         String keyNote = input.nextLine();
         
-        noteScale.upperScaleMap(keyNote, upperScale);
+        noteScale.upperScaleMap(keyNote, upperScaleMap);
         
-        // noteScale.upperScale(startingNote);
+        noteScale.upperScale(upperScaleMap);
 
         input.close();
       
@@ -29,39 +28,31 @@ public class Escala{
     public Escala(){
     }
     
-    public void upperScaleMap(String keyNote, String[] upperScale){
+    public void upperScaleMap(String keyNote, String[] upperScaleMap){
         
         for(int i = 0; i < notes.length; i++){
             if (notes[i].equals(keyNote)){
-                System.arraycopy(notes, i, upperScale, 0, notes.length-i);
-                System.out.println(Arrays.toString(upperScale));
+                System.arraycopy(notes, i, upperScaleMap, 0, notes.length-i);
             }
         }
 
         for(int k = 0; k < notes.length; k++){
-            if (upperScale[k] == null){
-                System.arraycopy(notes, 0, upperScale, k, notes.length-k);
+            if (upperScaleMap[k] == null){
+                System.arraycopy(notes, 0, upperScaleMap, k, notes.length-k);
             }
         }
-        System.out.println(Arrays.toString(upperScale));
+        System.out.println(Arrays.toString(upperScaleMap));
     }
 
-    public void upperScale(String note){
-        String[] upperScale = new String[12];
-        upperScale[0] = note;
-        while(note != upperScale[upperScale.length - 1]){
-            for(int i = 0; i < upperScale.length; i++){
-                int tempo = sequence[i];
-                try {
-                    // do{
+    public void upperScale(String[] upperScaleMap){
+        int j = 0;
+        int i = 0;
 
-                    // }while()
-                    
-                } catch (Exception e) {
-                    // TODO: handle exception
-                }
-
-            }
-        }
+        do{
+            System.out.print(upperScaleMap[i] + " ");
+            i += sequence[j];
+            j++;
+        }while(i < upperScaleMap.length);
+    // return upperScaleMap;
     }
 }
