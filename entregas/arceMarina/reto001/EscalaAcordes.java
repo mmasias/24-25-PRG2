@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class EscalasAcordes {
+public class EscalaAcordes {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         String[] tonos = {
