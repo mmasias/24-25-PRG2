@@ -9,14 +9,14 @@ public class Reto001 {
         String[] notas = {"Do", "Do#", "Re", "Re#", "Mi", "Fa", "Fa#", "Sol", "Sol#", "La", "La#", "Si"};
         String[] patron = {"T", "T", "S", "T", "T", "T", "S"};
 
+        // Obtener la nota base
         String notaBase = obtenerNotaBase(entrada, notas);
         System.out.println("Ha elegido la nota " + notaBase);
 
-        int indiceBase = 0;
-        while (indiceBase < notas.length && !notas[indiceBase].equals(notaBase)) {
-            indiceBase++;
-        }
+        // Obtener el índice de la nota base
+        int indiceBase = obtenerIndiceNota(notaBase, notas);
 
+        // Generar la escala mayor
         String[] escala = new String[8];
         escala[0] = notas[indiceBase]; 
         int indiceActual = indiceBase;
@@ -27,14 +27,17 @@ public class Reto001 {
         }
         escala[7] = notas[indiceBase];
 
+        // Mostrar la escala mayor
         System.out.print("La escala de " + notaBase + " Mayor es: ");
         for (String nota : escala) {
             System.out.print("[" + nota + "] ");
         }
         System.out.println();
 
+        // Generar el acorde mayor (1ra, 3ra y 5ta nota de la escala)
         String[] acorde = {escala[0], escala[2], escala[4]};
 
+        // Mostrar el acorde mayor
         System.out.print("El acorde de " + notaBase + " Mayor está conformado por: ");
         for (String nota : acorde) {
             System.out.print("[" + nota + "] ");
@@ -50,5 +53,13 @@ public class Reto001 {
 
         int opcion = scanner.nextInt();
         return notas[opcion - 1];
+    }
+
+    public static int obtenerIndiceNota(String notaBase, String[] notas) {
+        int indice = 0;
+        while (indice < notas.length && !notas[indice].equals(notaBase)) {
+            indice++;
+        }
+        return indice;
     }
 }
