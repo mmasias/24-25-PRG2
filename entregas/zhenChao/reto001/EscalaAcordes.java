@@ -55,7 +55,8 @@ public class EscalaAcordes {
         System.out.println("Escala mayor:");
 
         for (int i = 0; i < escala.length; i++) {
-            System.out.print(escala[i]); 
+            System.out.print(escala[i] + "----" );
+           
         }
         System.out.println();
     }
