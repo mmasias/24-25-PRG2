@@ -37,7 +37,7 @@ public class EscalasAcordes {
             if (scanner.hasNextInt()) {
                 opcion = scanner.nextInt();
             }
-            scanner.nextLine();
+            scanner.nextLine(); 
         }
         return opcion;
     }
@@ -48,7 +48,7 @@ public class EscalasAcordes {
             escala[i] = NOTAS[indiceNota];
             indiceNota = (indiceNota + PATRON_ESCALA_MAYOR[i]) % NOTAS.length;
         }
-        escala[7] = NOTAS[indiceNota];
+        escala[7] = NOTAS[indiceNota];  
         return escala;
     }
 
@@ -72,5 +72,5 @@ public class EscalasAcordes {
             }
         }
         System.out.println();
-    }
+    }
 }
