@@ -29,7 +29,7 @@ public class EscalasAcordes {
             System.out.println((i + 1) + ": " + NOTAS[i]);
         }
     }
- 
+
     private static int leerOpcion(Scanner scanner) {
         int opcion = 0;
         while (opcion < 1 || opcion > NOTAS.length) {
@@ -42,7 +42,7 @@ public class EscalasAcordes {
         return opcion;
     }
 
-     private static String[] elaborarEscalaMayor(int indiceNota) {
+    private static String[] elaborarEscalaMayor(int indiceNota) {
         String[] escala = new String[8];
         for (int i = 0; i < PATRON_ESCALA_MAYOR.length; i++) {
             escala[i] = NOTAS[indiceNota];
@@ -52,7 +52,7 @@ public class EscalasAcordes {
         return escala;
     }
 
-      private static String[] elaborarAcordeMayor(String[] escalaMayor) {
+    private static String[] elaborarAcordeMayor(String[] escalaMayor) {
         return new String[]{escalaMayor[0], escalaMayor[2], escalaMayor[4]};
     }
 
@@ -62,6 +62,15 @@ public class EscalasAcordes {
         mostrarNotas(escalaMayor);
         System.out.print("El acorde de " + notaBase + " Mayor está conformado por: ");
         mostrarNotas(acordeMayor);
+    }
 
+    private static void mostrarNotas(String[] notas) {
+        for (int i = 0; i < notas.length; i++) {
+            System.out.print("[" + notas[i] + "]");
+            if (i < notas.length - 1) {
+                System.out.print(" / ");
+            }
+        }
+        System.out.println();
+    }
 }
-
