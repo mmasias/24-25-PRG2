@@ -6,6 +6,9 @@ public class EscalaAcordes {
         int numeroNota = pedirNota();
         String[] escalaMayor = construirEscalaMayor(numeroNota -1);
         String[] acordeMayor = construirAcordeMayor(escalaMayor);
+        System.out.println("Acorde mayor: " + acordeMayor[0] + " - " + acordeMayor[1] + " - " + acordeMayor[2]);
+        mostrarEscala(escalaMayor);
+
 
 
         
@@ -36,10 +39,10 @@ public class EscalaAcordes {
         escala[0] = notasMusicales[indice];
 
         
-        for (int i = 1; i < escala.length; i++) {
+        for (int i = 0; i < pasos.length; i++) {
             
             indice = (indice + pasos[i]) % NUMERO_DE_NOTAS_MUSICALES; 
-            escala[i] = notasMusicales[indice];
+            escala[i+1] = notasMusicales[indice];
         }
 
         return escala;
@@ -47,6 +50,14 @@ public class EscalaAcordes {
 
     public static String[] construirAcordeMayor(String[] escala) {
         return new String[]{escala[0], escala[2], escala[4]};
+    }
+    public static void mostrarEscala(String[] escala) {
+        System.out.println("Escala mayor:");
+
+        for (int i = 0; i < escala.length; i++) {
+            System.out.print(escala[i]); 
+        }
+        System.out.println();
     }
 
     
