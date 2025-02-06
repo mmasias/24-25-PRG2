@@ -38,7 +38,7 @@ public class NoteScale{
         int[] sequence = {2,2,1,2,2,2,1};
 
         do{
-            System.out.println(upperScaleMap[i] + " ");
+            System.out.println(upperScaleMap[i]);
             i += sequence[j];
             j++;
         }while(i < upperScaleMap.length);
@@ -46,9 +46,9 @@ public class NoteScale{
     }
 
     public static void MajorCord(String[] upperScaleMap){
-        for(int i = 0; i < 5; i += 2){
-            System.out.println(upperScaleMap[i]);
-        }
+        System.out.println(upperScaleMap[0]);
+        System.out.println(upperScaleMap[4]);
+        System.out.println(upperScaleMap[7]);
         System.out.println("Este es el acorde mayor");
     }
 }
