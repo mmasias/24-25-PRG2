@@ -10,10 +10,10 @@ public class Reto001 {
 
     public static void obtenerRespuesta() {
         System.out.println(
-                "Por favor introduce el número correspondiente a la nota (0-Do, 1-Do#, 2-Re, 3-Re#, 4-Mi, 5-Fa, 6-Fa#, 7-Sol, 8-Sol#, 9-La, 10-La#, 11-Si):");
+                "Por favor introduce el número correspondiente a la nota (1-Do, 2-Do#, 3-Re, 4-Re#, 5-Mi, 6-Fa, 7-Fa#, 8-Sol, 9-Sol#, 10-La, 11-La#, 12-Si):");
 
         Scanner scanner = new Scanner(System.in);
-        int indiceNota = scanner.nextInt();
+        int indiceNota = scanner.nextInt() - 1;
 
         if (indiceNota < 0 || indiceNota > 11) {
             System.out.println("Número no válido.");
@@ -28,6 +28,7 @@ public class Reto001 {
         for (int intervalo : escalaMayor) {
             System.out.print(notas[(indiceNota + intervalo) % 12] + " ");
         }
+        System.out.println();
 
         obtenerAcordeMayor(indiceNota, notas);
     }
