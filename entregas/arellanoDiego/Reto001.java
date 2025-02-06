@@ -16,19 +16,11 @@ public class Reto001 {
 
         String[] escala = generarEscala(indiceBase, notas, patron);
 
-        System.out.print("La escala de " + notaBase + " Mayor es: ");
-        for (String nota : escala) {
-            System.out.print("[" + nota + "] ");
-        }
-        System.out.println();
+        imprimirEscala(notaBase, escala);
 
         String[] acorde = generarAcorde(escala);
 
-        System.out.print("El acorde de " + notaBase + " Mayor está conformado por: ");
-        for (String nota : acorde) {
-            System.out.print("[" + nota + "] ");
-        }
-        System.out.println();
+        imprimirAcorde(notaBase, acorde);
 
         entrada.close();
     }
@@ -65,5 +57,21 @@ public class Reto001 {
 
     public static String[] generarAcorde(String[] escala) {
         return new String[]{escala[0], escala[2], escala[4]};
+    }
+
+    public static void imprimirEscala(String notaBase, String[] escala) {
+        System.out.print("La escala de " + notaBase + " Mayor es: ");
+        for (String nota : escala) {
+            System.out.print("[" + nota + "] ");
+        }
+        System.out.println();
+    }
+
+    public static void imprimirAcorde(String notaBase, String[] acorde) {
+        System.out.print("El acorde de " + notaBase + " Mayor está conformado por: ");
+        for (String nota : acorde) {
+            System.out.print("[" + nota + "] ");
+        }
+        System.out.println();
     }
 }
