@@ -2,36 +2,63 @@ public class Main {
     public static void main(String[] args) {
         String[] arrayNotes = {"C", "C#", "D", "D#", "E", "F", "F#", "G", "G#", "A", "A#", "B"};
         int[] arrayIntervaleMajor = {0, 2, 4, 5, 7, 9, 11};
-        String note = "C"; 
-        String[] scale = getScale(arrayNotes, arrayIntervaleMajor, note);
+        int[] arrayAcordMajor = {0, 2, 4}; 
+        String inputNote = "E";
 
-        if (scale != null) {
-            for (String s : scale) {
-                System.out.println(s);
+        String[] arrayScale = getScale(arrayNotes, arrayIntervaleMajor, inputNote);
+        if (arrayScale != null) {
+            System.out.println("Major Scale for " + inputNote + ":");
+            for (String note : arrayScale) {
+                System.out.print(note + " ");
             }
+            System.out.println("\n");
+        }
+
+
+        String[] arrayChord = getAcord(arrayScale, arrayAcordMajor);
+        if (arrayChord != null) {
+            System.out.println("Major Chord for " + inputNote + ":");
+            for (String note : arrayChord) {
+                System.out.print(note + " ");
+            }
+            System.out.println();
         }
     }
 
-    public static String[] getScale(String[] arrayNotes, int[] arrayIntervaleMajor, String note) {
-        String[] arrayScale = new String[arrayIntervaleMajor.length];
-        int startIndex = -1;
-        
+
+    public static int getStartIndex(String[] arrayNotes, String inputNote) {
         for (int i = 0; i < arrayNotes.length; i++) {
-            if (arrayNotes[i].equals(note)) {
-                startIndex = i;
+            if (arrayNotes[i].equals(inputNote)) {
+                return i;
             }
         }
+        System.err.println("Note not found.");
+        return -1; 
+    }
 
+    public static String[] getScale(String[] arrayNotes, int[] arrayIntervaleMajor, String inputNote) {
+        int startIndex = getStartIndex(arrayNotes, inputNote);
         if (startIndex == -1) {
-            System.err.println("Note not found in arrayNotes.");
-            return null;
+            return null; 
         }
 
+        String[] arrayScale = new String[arrayIntervaleMajor.length];
         for (int i = 0; i < arrayIntervaleMajor.length; i++) {
             int noteIndex = (startIndex + arrayIntervaleMajor[i]) % arrayNotes.length;
             arrayScale[i] = arrayNotes[noteIndex];
         }
-
         return arrayScale;
+    }
+
+    public static String[] getAcord(String[] arrayScale, int[] arrayAcordMajor) {
+        if (arrayScale == null) {
+            return null;
+        }
+
+        String[] arrayChord = new String[arrayAcordMajor.length];
+        for (int i = 0; i < arrayAcordMajor.length; i++) {
+            arrayChord[i] = arrayScale[arrayAcordMajor[i]];
+        }
+        return arrayChord;
     }
 }
