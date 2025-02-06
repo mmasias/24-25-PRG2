@@ -14,7 +14,7 @@ public class CalculoEscalaYAcordeMayor {
         numeroUsuario = scanner.nextInt();
         notaInicial = numeroUsuario - 1;
 
-        if ((notaInicial < POSICION_MINIMA_ESCALA) || (notaInicial > POSICION_MAXIMA_ESCALA)) {
+        if ((numeroUsuario < POSICION_MINIMA_ESCALA) || (numeroUsuario > POSICION_MAXIMA_ESCALA)) {
             System.out.println("Elección no válida. Inténtelo de nuevo.");
         } else {
             System.out.println("Ha elegido la nota " + NOTAS_ESCALA_COMPLETA[notaInicial]);
@@ -36,15 +36,15 @@ public class CalculoEscalaYAcordeMayor {
     static String[] calcularEscalaMayor(int notaInicial) {
         final int PATRON_ESCALA_MAYOR[] = {2, 2, 1, 2, 2, 2, 1};
         final String NOTAS_ESCALA_COMPLETA[] = {"Do", "Do#", "Re", "Re#", "Mi", "Fa", "Fa#", "Sol", "Sol#", "La", "La#", "Si"};
-        String[] escala = new String[8];
-        int posicion = notaInicial;
+        String[] escalaMayor = new String[8];
+        int posicionNotaActual = notaInicial;
         for (int i = 0; i < 7; i++) {
-            escala[i] = NOTAS_ESCALA_COMPLETA[posicion];
-            posicion = (posicion + PATRON_ESCALA_MAYOR[i]) % NOTAS_ESCALA_COMPLETA.length;
+            escalaMayor[i] = NOTAS_ESCALA_COMPLETA[posicionNotaActual];
+            posicionNotaActual = (posicionNotaActual + PATRON_ESCALA_MAYOR[i]) % NOTAS_ESCALA_COMPLETA.length;
         }
 
-        escala[7] = escala[0];
+        escalaMayor[7] = escalaMayor[0];
 
-        return escala;
+        return escalaMayor;
     }
 }
