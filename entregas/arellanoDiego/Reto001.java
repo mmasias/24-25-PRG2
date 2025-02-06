@@ -22,7 +22,7 @@ public class Reto001 {
         }
         System.out.println();
 
-        String[] acorde = {escala[0], escala[2], escala[4]};
+        String[] acorde = generarAcorde(escala);
 
         System.out.print("El acorde de " + notaBase + " Mayor está conformado por: ");
         for (String nota : acorde) {
@@ -61,5 +61,9 @@ public class Reto001 {
         escala[7] = notas[indiceBase]; 
 
         return escala;
+    }
+
+    public static String[] generarAcorde(String[] escala) {
+        return new String[]{escala[0], escala[2], escala[4]};
     }
 }
