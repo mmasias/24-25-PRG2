@@ -35,4 +35,6 @@ public class EscalaAcordeMayor {
             System.out.println("Entrada inválida. Debe ingresar un número entero entre " + NOTA_MIN + " y " + NOTA_MAX + ".");
         }
         
-
+        scanner.close();
+    }
+}
