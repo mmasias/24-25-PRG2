@@ -9,3 +9,10 @@ public class reto001 {
         String notaBase = obtenerNotaBase(entrada, notas);
         if (notaBase == null) return;
         System.out.println("Ha elegido la nota " + notaBase);
+
+        int indiceBase = -1;
+        for (int i = 0; i < notas.length; i++) {
+            if (notas[i].equals(notaBase)) {
+                indiceBase = i;
+            }
+        }
