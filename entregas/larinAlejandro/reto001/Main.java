@@ -1,9 +1,9 @@
 public class Main {
     public static void main(String[] args) {
         String[] arrayNotes = {"C", "C#", "D", "D#", "E", "F", "F#", "G", "G#", "A", "A#", "B"};
-        int[] arrayIntervale = {0, 2, 4, 5, 7, 9, 11};
+        int[] arrayIntervaleMajor = {0, 2, 4, 5, 7, 9, 11};
         String note = "C"; 
-        String[] scale = getScale(arrayNotes, arrayIntervale, note);
+        String[] scale = getScale(arrayNotes, arrayIntervaleMajor, note);
 
         if (scale != null) {
             for (String s : scale) {
@@ -12,8 +12,8 @@ public class Main {
         }
     }
 
-    public static String[] getScale(String[] arrayNotes, int[] arrayIntervale, String note) {
-        String[] arrayScale = new String[arrayIntervale.length];
+    public static String[] getScale(String[] arrayNotes, int[] arrayIntervaleMajor, String note) {
+        String[] arrayScale = new String[arrayIntervaleMajor.length];
         int startIndex = -1;
         
         for (int i = 0; i < arrayNotes.length; i++) {
@@ -27,8 +27,8 @@ public class Main {
             return null;
         }
 
-        for (int i = 0; i < arrayIntervale.length; i++) {
-            int noteIndex = (startIndex + arrayIntervale[i]) % arrayNotes.length;
+        for (int i = 0; i < arrayIntervaleMajor.length; i++) {
+            int noteIndex = (startIndex + arrayIntervaleMajor[i]) % arrayNotes.length;
             arrayScale[i] = arrayNotes[noteIndex];
         }
 
