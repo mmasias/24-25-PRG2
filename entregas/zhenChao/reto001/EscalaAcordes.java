@@ -4,7 +4,9 @@ import java.util.Scanner;
 public class EscalaAcordes {
     public static void main(String[] args) {
         int numeroNota = pedirNota();
-        String[] escala = construirEscalaMayor(numeroNota);
+        String[] escalaMayor = construirEscalaMayor(numeroNota -1);
+        String[] acordeMayor = construirAcordeMayor(escalaMayor);
+
 
         
     }
@@ -37,12 +39,14 @@ public class EscalaAcordes {
         for (int i = 1; i < escala.length; i++) {
             
             indice = (indice + pasos[i]) % NUMERO_DE_NOTAS_MUSICALES; 
-            
-            
             escala[i] = notasMusicales[indice];
         }
 
         return escala;
+    }
+
+    public static String[] construirAcordeMayor(String[] escala) {
+        return new String[]{escala[0], escala[2], escala[4]};
     }
 
     
