@@ -34,8 +34,7 @@ public class NoteScale{
     }
 
     public static void TwelveToneScale(String[] upperScaleMap){
-        int j = 0;
-        int i = 0;
+        int j = 0, i = 0;
         int[] sequence = {2,2,1,2,2,2,1};
 
         do{
