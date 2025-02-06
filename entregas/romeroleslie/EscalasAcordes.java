@@ -42,5 +42,26 @@ public class EscalasAcordes {
         return opcion;
     }
 
+     private static String[] elaborarEscalaMayor(int indiceNota) {
+        String[] escala = new String[8];
+        for (int i = 0; i < PATRON_ESCALA_MAYOR.length; i++) {
+            escala[i] = NOTAS[indiceNota];
+            indiceNota = (indiceNota + PATRON_ESCALA_MAYOR[i]) % NOTAS.length;
+        }
+        escala[7] = NOTAS[indiceNota];
+        return escala;
+    }
+
+      private static String[] elaborarAcordeMayor(String[] escalaMayor) {
+        return new String[]{escalaMayor[0], escalaMayor[2], escalaMayor[4]};
+    }
+
+    private static void mostrarResultados(String notaBase, String[] escalaMayor, String[] acordeMayor) {
+        System.out.println("Eligió la nota " + notaBase);
+        System.out.print("La escala de " + notaBase + " Mayor es: ");
+        mostrarNotas(escalaMayor);
+        System.out.print("El acorde de " + notaBase + " Mayor está conformado por: ");
+        mostrarNotas(acordeMayor);
+
 }
 
