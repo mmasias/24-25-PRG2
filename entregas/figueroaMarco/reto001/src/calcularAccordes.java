@@ -3,7 +3,7 @@ import java.util.Scanner;
 class CalcularAcordes{
     public static void main(String[] args) { 
         final String[] notasEscala = {"Do", "Do#", "Re", "Re#", "Mi", "Fa", "Fa#", "Sol", "Sol#", "La", "La#", "Si"};
-        String[] escalaAGenerar = new String[6];
+        String[] escalaAGenerar = new String[7];
         generarEscalaMayor(notasEscala, escalaAGenerar, pedirNotaUsuario(notasEscala));
     } 
     public static int pedirNotaUsuario(String[] arrayNotas){
@@ -22,7 +22,7 @@ class CalcularAcordes{
         int variableOperadora = numeroNota;
         final int SUMA_POSICION_TONO = 2;
         final int SUMA_POSICION_SEMITONO = 1;
-        for(int i = 0; i < esTono.length; i++){
+        for(int i = 0; i < esTono.length - 1; i++){
            if(esTono[i]){
             variableOperadora += SUMA_POSICION_TONO;
            }else{
@@ -37,7 +37,7 @@ class CalcularAcordes{
     }
 
     public static void imprimirEscala(String[] escalaAGenerar, String notaPrincipal){
-        System.out.print("La escala del acorde mayor de " + notaPrincipal + " es: s");
+        System.out.print("La escala del acorde mayor de " + notaPrincipal + " es:");
         for(int i = 0; i < escalaAGenerar.length; i++){
             System.out.println(escalaAGenerar[i]);
         }
