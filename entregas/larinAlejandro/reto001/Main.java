@@ -1,9 +1,15 @@
+import java.util.Scanner;
+
 public class Main {
     public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
         String[] arrayNotes = {"C", "C#", "D", "D#", "E", "F", "F#", "G", "G#", "A", "A#", "B"};
         int[] arrayIntervaleMajor = {0, 2, 4, 5, 7, 9, 11};
-        int[] arrayAcordMajor = {0, 2, 4}; 
-        String inputNote = "E";
+        int[] arrayAcordMajor = {0, 2, 4};
+
+        System.out.print("Enter a note: ");
+        String inputNote = scanner.nextLine().toUpperCase();
 
         String[] arrayScale = getScale(arrayNotes, arrayIntervaleMajor, inputNote);
         if (arrayScale != null) {
@@ -14,7 +20,6 @@ public class Main {
             System.out.println("\n");
         }
 
-
         String[] arrayChord = getAcord(arrayScale, arrayAcordMajor);
         if (arrayChord != null) {
             System.out.println("Major Chord for " + inputNote + ":");
@@ -23,8 +28,9 @@ public class Main {
             }
             System.out.println();
         }
-    }
 
+        scanner.close();
+    }
 
     public static int getStartIndex(String[] arrayNotes, String inputNote) {
         for (int i = 0; i < arrayNotes.length; i++) {
@@ -33,13 +39,13 @@ public class Main {
             }
         }
         System.err.println("Note not found.");
-        return -1; 
+        return -1;
     }
 
     public static String[] getScale(String[] arrayNotes, int[] arrayIntervaleMajor, String inputNote) {
         int startIndex = getStartIndex(arrayNotes, inputNote);
         if (startIndex == -1) {
-            return null; 
+            return null;
         }
 
         String[] arrayScale = new String[arrayIntervaleMajor.length];
