@@ -6,8 +6,9 @@ class ChordScales{
             System.out.println((i+1)+" - "+NOTES[i]);
             i=i+1;
         }
+        final int TONE=2,SEMITONE=1;
         String Scale="mayor";
-        int mayor[]={2,2,1,2,2,2,1};
+        final int mayor[]={TONE,TONE,SEMITONE,TONE,TONE,TONE,SEMITONE};
         Scanner input = new Scanner(System.in);
         System.out.println("Mayor scale of what note?:");
         int userNote=(input.nextInt())-1;
