@@ -22,7 +22,7 @@ public class EscalasAcordes {
             System.out.print(nota + " ");
         }
 
-        System.out.println("nAcorde mayor de " + notaBase + ":");
+        System.out.println("Acorde mayor de " + notaBase + ":");
         for (String nota : acordeMayor) {
             System.out.print(nota + " ");
         }
