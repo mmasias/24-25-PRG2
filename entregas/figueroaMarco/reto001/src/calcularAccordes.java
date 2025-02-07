@@ -22,14 +22,14 @@ class CalcularAcordes{
         int variableOperadora = numeroNota;
         final int SUMA_POSICION_TONO = 2;
         final int SUMA_POSICION_SEMITONO = 1;
-        for(int i = 0; i < esTono.length - 1; i++){
+        for(int i = 0; i <= esTono.length - 1; i++){
            if(esTono[i]){
             variableOperadora += SUMA_POSICION_TONO;
            }else{
             variableOperadora += SUMA_POSICION_SEMITONO;
            }
               if(variableOperadora >= arrayNotas.length){
-                variableOperadora -= arrayNotas.length;
+                variableOperadora = variableOperadora%arrayNotas.length;
               }
               escalaAGenerar[i] = arrayNotas[variableOperadora];
         }
