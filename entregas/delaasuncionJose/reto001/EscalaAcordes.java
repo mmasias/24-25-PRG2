@@ -38,21 +38,21 @@ class EscalaAcordes {
     }
 
     static void calcularEscalaMayor(String[] notasEscalaMayor,int nota) {
-        final String[] tonos = { "DO", "DO#", "RE", "RE#", "MI", "FA", "FA#", "SOL", "SOL#", "LA", "LA#", "SI" };
-        final int[] patron = {2,2,1,2,2,2,1};
+        final String[] TONOS = { "DO", "DO#", "RE", "RE#", "MI", "FA", "FA#", "SOL", "SOL#", "LA", "LA#", "SI" };
+        final int[] PATRON = {2,2,1,2,2,2,1};
 
-        for (int i = 0; i < patron.length; i++) {
-            notasEscalaMayor[i] = tonos[nota];
-            nota = (nota + patron[i]) % 12;
+        for (int i = 0; i < PATRON.length; i++) {
+            notasEscalaMayor[i] = TONOS[nota];
+            nota = (nota + PATRON[i]) % 12;
         }
-        notasEscalaMayor[patron.length] = tonos[nota];
+        notasEscalaMayor[PATRON.length] = TONOS[nota];
     }
 
     static void calcularAcordeMayor(String[] notasAcordeMayor, String[] notasEscalaMayor) {
-        final int[] grados = {0, 2, 4};
+        final int[] GRADOS = {0, 2, 4};
 
-        for (int i = 0; i < grados.length; i++) {
-            notasAcordeMayor[i] = notasEscalaMayor[grados[i]];
+        for (int i = 0; i < GRADOS.length; i++) {
+            notasAcordeMayor[i] = notasEscalaMayor[GRADOS[i]];
         }
     }
     
