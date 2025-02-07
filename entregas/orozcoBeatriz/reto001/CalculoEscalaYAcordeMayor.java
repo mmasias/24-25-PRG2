@@ -34,7 +34,8 @@ public class CalculoEscalaYAcordeMayor {
     }
 
     static String[] calcularEscalaMayor(int notaInicial) {
-        final int PATRON_ESCALA_MAYOR[] = {2, 2, 1, 2, 2, 2, 1};
+        final int TONO = 2, SEMITONO = 1;
+        final int PATRON_ESCALA_MAYOR[] = {TONO, TONO, SEMITONO, TONO, TONO, TONO, SEMITONO};
         final String NOTAS_ESCALA_COMPLETA[] = {"Do", "Do#", "Re", "Re#", "Mi", "Fa", "Fa#", "Sol", "Sol#", "La", "La#", "Si"};
         String[] escalaMayor = new String[8];
         int posicionNotaActual = notaInicial;
