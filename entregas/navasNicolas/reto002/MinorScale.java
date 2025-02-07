@@ -1,7 +1,12 @@
 import java.util.Scanner;
 
 class MinorScale {
-
+    public static void main(String[] args) {
+        int noteValue = askNote();
+        String[] scale = buildScale(noteValue);
+        printScale(scale);
+    }
+    
     public static int askNote() {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Selecciona una nota para construir su escala Menor: 1. Do, 2. Reb, 3. Re, 4. Mib, 5. Mi, 6. Fa, 7. Solb, 8. Sol, 9. Lab, 10. La, 11. Sib, 12. Si");    
@@ -19,8 +24,8 @@ class MinorScale {
         }
     
         int index = noteIndex - 1;
-        
-        int[] skips = {2, 1, 2, 2, 1, 2, 2}; 
+        final int TONE = 2, HALFTONE = 1;
+        int[] skips = {TONE, HALFTONE, TONE, TONE, HALFTONE, TONE, TONE}; 
         String[] scale = new String[8];
         
         scale[0] = noteBank[index];
@@ -38,11 +43,5 @@ class MinorScale {
                 System.out.print(nota + " ");}
             System.out.println();
         }
-    }
-
-    public static void main(String[] args) {
-        int noteValue = askNote();
-        String[] scale = buildScale(noteValue);
-        printScale(scale);
     }
 }
