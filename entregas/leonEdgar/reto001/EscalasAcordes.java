@@ -17,12 +17,12 @@ public class EscalasAcordes {
         String[] escalaMayor = construirEscalaMayor(notaBase);
         String[] acordeMayor = construirAcordeMayor(escalaMayor);
 
-        System.out.println("\nEscala mayor de " + notaBase + ":");
+        System.out.println("Escala mayor de " + notaBase + ":");
         for (String nota : escalaMayor) {
             System.out.print(nota + " ");
         }
 
-        System.out.println("\n\nAcorde mayor de " + notaBase + ":");
+        System.out.println("nAcorde mayor de " + notaBase + ":");
         for (String nota : acordeMayor) {
             System.out.print(nota + " ");
         }
