@@ -17,11 +17,11 @@ class ChordScales{
         System.out.println(Scale+" of "+NOTES[j]);
         
         for(int i=0;i<=(mayor.length);){
-            System.out.print(NOTES[j]+" ");
+            System.out.print(NOTES[(j%NOTES.length)]+" ");
+            // if(j>NOTES.length){
+                // j=j%NOTES.length;
+            // }
             j=(j+mayor[i]);
-            if(j>NOTES.length){
-                j=j%NOTES.length;
-            }
             i=i+1;
         }
     }
