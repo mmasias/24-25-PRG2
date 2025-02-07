@@ -51,8 +51,9 @@ class EscalaAcorde {
     }
 
     static String preguntarNota() {
+        final String[] NOTAS = { "DO", "DO#", "RE", "RE#", "MI", "FA", "FA#", "SOL", "SOL#", "LA", "LA#", "SI" };
         System.out.println("Elige 1:do, 2:do#, 3:re...");
         int nota = new Scanner(System.in).nextInt();
-        return new String[] { "DO", "DO#", "RE", "RE#", "MI", "FA", "FA#", "SOL", "SOL#", "LA", "LA#", "SI" }[nota - 1];
+        return new NOTAS[nota - 1];
     }
 }
