@@ -58,21 +58,19 @@ class EscalaAcordes {
     
     static void contarHistoria(String[] notasAcordeMayor, String[] notasEscalaMayor) {
         System.out.print("La escala de " + notasEscalaMayor[0] + " Mayor es: ");
-        for (int i = 0; i < notasEscalaMayor.length; i++) {
-            System.out.print("[" + notasEscalaMayor[i] + "]");
-            if (i < notasEscalaMayor.length - 1) {
-                System.out.print(" / ");
-            }
-        }
+        mostrarSecuencia(notasEscalaMayor);
         System.out.println();
 
         System.out.print("El acorde de " + notasAcordeMayor[0] + " Mayor está conformado por: ");
-        for (int i = 0; i < notasAcordeMayor.length; i++) {
-            System.out.print("[" + notasAcordeMayor[i] + "]");
-            if (i < notasAcordeMayor.length - 1) {
+        mostrarSecuencia(notasAcordeMayor);
+    }
+
+    static void mostrarSecuencia(String[] secuencia) {
+        for (int i = 0; i < secuencia.length; i++) {
+            System.out.print("[" + secuencia[i] + "]");
+            if (i < secuencia.length - 1) {
                 System.out.print(" / ");
             }
         }
-        System.out.println();
     }
 }
