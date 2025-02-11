@@ -42,6 +42,5 @@ class CalcularAcordes{
             System.out.println(escalaAGenerar[i]);
         }
     }
-
 }
 
