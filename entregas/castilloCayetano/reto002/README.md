@@ -4,4 +4,4 @@
 
 ## Diagrama
 
-![](/entregas/cayetanoCastillo/reto002/images/diagramaEscalasAcordes.svg)
+![](entregas/castilloCayetano/reto002/images/diagramaEscalasAcordes.svg)
