@@ -3,10 +3,12 @@ import java.util.Scanner;
 public class Main {
     static final  String[] NOTES = {"C", "C#", "D", "D#", "E", "F", "F#", "G", "G#", "A", "A#", "B"};
     static final  int[] INTERVALE_SCALE_MAJOR = {0, 2, 4, 5, 7, 9, 11};
-    static final  int[] INTERVALE_ACORD_MAJOR = {0, 2, 4};
+    static final  int[] INTERVALE_ACORD = {0, 2, 4};
+    
     static final  String NOTE = getNote();
 
     public static void main(String[] args) {
+
         String[] scaleMajor= getScale();
         String[] acord= getAcord(scaleMajor);
 
@@ -43,10 +45,10 @@ public class Main {
     }
 
     static  String[] getAcord(String[] scale) {
-        String[] acord = new String[INTERVALE_ACORD_MAJOR.length];
+        String[] acord = new String[INTERVALE_ACORD.length];
 
-        for (int i = 0; i < INTERVALE_ACORD_MAJOR.length; i++) {
-            acord[i] = scale[INTERVALE_ACORD_MAJOR[i]];
+        for (int i = 0; i < INTERVALE_ACORD.length; i++) {
+            acord[i] = scale[INTERVALE_ACORD[i]];
         }
 
         return acord;
