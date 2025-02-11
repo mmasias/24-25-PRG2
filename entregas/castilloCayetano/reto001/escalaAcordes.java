@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class escalaAcordes {
+public class EscalaAcordes {
     public static void main(String[] args) {
         String[] notes = {"Do","Do#", "Re", "Re#", "Mi", "Fa", "Fa#", "Sol", "Sol#", "La", "La#", "Si"};
 
