@@ -1,15 +1,16 @@
 import java.util.Scanner;
 
 class EscalaAcordes {
+
+    static final String[] NOTAS = new String[] { "Do", "Do#", "Re", "Re#", "Mi", "Fa", "Fa#", "Sol", "Sol#", "La", "La#", "Si" };
     public static void main(String[] args) {
         int notaATrabajar = pedirNota();
         String[] escala = crearEscala(notaATrabajar);
         String[] acorde = crearAcorde(escala);
 
-        String[] notas = getNotas();
-        System.out.print("El acorde de " + notas[notaATrabajar] + " Mayor es: ");
+        System.out.print("El acorde de " + NOTAS[notaATrabajar] + " Mayor es: ");
         imprimirArray(notaATrabajar, escala);
-        System.out.print("La escala de " + notas[notaATrabajar] + " Mayor es: ");
+        System.out.print("La escala de " + NOTAS[notaATrabajar] + " Mayor es: ");
         imprimirArray(notaATrabajar, acorde);
     }
 
@@ -23,21 +24,16 @@ class EscalaAcordes {
     static String[] crearEscala(int notaATrabajar) {
         String[] escala = new String[8];
 
-        String[] notas = getNotas();
 
         int[] posiciones = { 0, 2, 4, 5, 7, 9, 11, 12 };
 
         int anchoEscala = escala.length;
-        int anchoNotas = notas.length;
+        int anchoNotas = NOTAS.length;
         for (int i = 0; i < anchoEscala; i++) {
-            escala[i] = notas[(notaATrabajar + posiciones[i]) % anchoNotas];
+            escala[i] = NOTAS[(notaATrabajar + posiciones[i]) % anchoNotas];
         }
 
         return escala;
-    }
-
-    static String[] getNotas() {
-        return new String[] { "Do", "Do#", "Re", "Re#", "Mi", "Fa", "Fa#", "Sol", "Sol#", "La", "La#", "Si" };
     }
 
     static String[] crearAcorde(String[] escala) {
@@ -62,8 +58,7 @@ class EscalaAcordes {
         int notaATrabajar = sc.nextInt() - 1;
         sc.close();
 
-        String[] notas = getNotas();
-        System.out.println("Ha elegido la nota " + notas[notaATrabajar]);
+        System.out.println("Ha elegido la nota " + NOTAS[notaATrabajar]);
 
         return notaATrabajar;
     }
