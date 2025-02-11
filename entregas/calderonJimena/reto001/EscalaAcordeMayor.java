@@ -4,9 +4,10 @@ import java.util.Scanner;
 
 class EscalaAcordeMayor {
 
-    public static void main(String[] args) {
-        String[] NOTAS = { "Do", "Do#", "Re", "Re#", "Mi", "Fa", "Fa#", "Sol", "Sol#", "La", "La#", "Si" };
+    static final String[] NOTAS = { "Do", "Do#", "Re", "Re#", "Mi", "Fa", "Fa#", "Sol", "Sol#", "La", "La#", "Si" };
 
+    public static void main(String[] args) {
+        
         int notaIndex = obtenerNotaUsuario();
         String notaBase = NOTAS[notaIndex];
 
@@ -19,9 +20,7 @@ class EscalaAcordeMayor {
 
     static int obtenerNotaUsuario() {
         Scanner scanner = new Scanner(System.in);
-        System.out.println("Ingrese la nota a trabajar: ");
-        System.out.println(
-                "1: Do, 2: Do#, 3: Re, 4: Re#, 5: Mi, 6: Fa, 7: Fa#, 8: Sol, 9: Sol#, 10: La, 11: La#, 12: Si");
+        System.out.println("Ingrese la nota a trabajar: 1: Do, 2: Do#, 3: Re, 4: Re#, 5: Mi, 6: Fa, 7: Fa#, 8: Sol, 9: Sol#, 10: La, 11: La#, 12: Si");
         int nota = scanner.nextInt();
         scanner.close();
         return nota - 1;
