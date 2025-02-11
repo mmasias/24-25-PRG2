@@ -2,39 +2,32 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
+        String[] notes = {"C", "C#", "D", "D#", "E", "F", "F#", "G", "G#", "A", "A#", "B"};
+        int[] intervaleScaleMajor = {0, 2, 4, 5, 7, 9, 11};
+        int[] intervaleAcordMajor = {0, 2, 4};
+        
 
-        String[] arrayNotes = {"C", "C#", "D", "D#", "E", "F", "F#", "G", "G#", "A", "A#", "B"};
-        int[] arrayIntervaleMajor = {0, 2, 4, 5, 7, 9, 11};
-        int[] arrayAcordMajor = {0, 2, 4};
+        String note= getNote(notes);
 
-        System.out.print("Enter a note: ");
-        String inputNote = scanner.nextLine().toUpperCase();
+        String[] scale= getScale(notes, intervaleScaleMajor, note);
+        String[] acord= getAcord(scale, intervaleAcordMajor);
 
-        String[] arrayScale = getScale(arrayNotes, arrayIntervaleMajor, inputNote);
-        if (arrayScale != null) {
-            System.out.println("Major Scale for " + inputNote + ":");
-            for (String note : arrayScale) {
-                System.out.print(note + " ");
-            }
-            System.out.println("\n");
-        }
+        
+        showArray(scale);
+        showArray(acord);
 
-        String[] arrayChord = getAcord(arrayScale, arrayAcordMajor);
-        if (arrayChord != null) {
-            System.out.println("Major Chord for " + inputNote + ":");
-            for (String note : arrayChord) {
-                System.out.print(note + " ");
-            }
-            System.out.println();
-        }
-
-        scanner.close();
     }
 
-    public static int getStartIndex(String[] arrayNotes, String inputNote) {
-        for (int i = 0; i < arrayNotes.length; i++) {
-            if (arrayNotes[i].equals(inputNote)) {
+    static String getNote(String[] notes) {
+        showArray(notes);
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Enter a note: ");
+        return scanner.nextLine();
+    }
+
+    static  int getStartNote(String[] notes, String inputNote) {
+        for (int i = 0; i < notes.length; i++) {
+            if (notes[i].equals(inputNote)) {
                 return i;
             }
         }
@@ -42,29 +35,46 @@ public class Main {
         return -1;
     }
 
-    public static String[] getScale(String[] arrayNotes, int[] arrayIntervaleMajor, String inputNote) {
-        int startIndex = getStartIndex(arrayNotes, inputNote);
-        if (startIndex == -1) {
-            return null;
-        }
+    static  String[] getScale(String[] notes, int[] intervaleScaleMajor, String inputNote) {
+        int startNote = getStartNote(notes, inputNote);
+        String[] scale = new String[intervaleScaleMajor.length];
 
-        String[] arrayScale = new String[arrayIntervaleMajor.length];
-        for (int i = 0; i < arrayIntervaleMajor.length; i++) {
-            int noteIndex = (startIndex + arrayIntervaleMajor[i]) % arrayNotes.length;
-            arrayScale[i] = arrayNotes[noteIndex];
+        for (int i = 0; i < intervaleScaleMajor.length; i++) {
+            int noteIndex = (startNote + intervaleScaleMajor[i]) % notes.length;
+            scale[i] = notes[noteIndex];
         }
-        return arrayScale;
+        return scale;
     }
 
-    public static String[] getAcord(String[] arrayScale, int[] arrayAcordMajor) {
-        if (arrayScale == null) {
-            return null;
+    static  String[] getAcord(String[] scale, int[] intervaleAcordMajor) {
+        String[] acord = new String[intervaleAcordMajor.length];
+
+        for (int i = 0; i < intervaleAcordMajor.length; i++) {
+            acord[i] = scale[intervaleAcordMajor[i]];
         }
 
-        String[] arrayChord = new String[arrayAcordMajor.length];
-        for (int i = 0; i < arrayAcordMajor.length; i++) {
-            arrayChord[i] = arrayScale[arrayAcordMajor[i]];
+        return acord;
+    }
+
+    static void showArray(String[] array) {
+        if (array.length == 3) {
+            System.out.print("Acord: ");
+            for (String note : array) {
+                System.out.print(note + " ");
+            }
         }
-        return arrayChord;
+        if (array.length == 7) {
+            System.out.print("Scale: ");
+            for (String note : array) {
+                System.out.print(note + " ");
+            }
+        }
+        if (array.length == 12) {
+            System.out.print("Selentect one note: ");
+            for (String note : array) {
+                System.out.print(note + " ");
+            }
+        }
+        System.out.println();
     }
 }
