@@ -3,6 +3,8 @@ import java.util.Scanner;
 
 public class CalculoEscalaYAcordeMayor {
     static final String NOTAS_ESCALA_COMPLETA[] = {"Do", "Do#", "Re", "Re#", "Mi", "Fa", "Fa#", "Sol", "Sol#", "La", "La#", "Si"};
+    static final int TONO = 2, SEMITONO = 1;
+    static final int PATRON_ESCALA_MAYOR[] = {TONO, TONO, SEMITONO, TONO, TONO, TONO, SEMITONO};
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         int notaInicial;
@@ -37,8 +39,6 @@ public class CalculoEscalaYAcordeMayor {
     }
 
     static String[] calcularEscalaMayor(int notaInicial) {
-        final int TONO = 2, SEMITONO = 1;
-        final int PATRON_ESCALA_MAYOR[] = {TONO, TONO, SEMITONO, TONO, TONO, TONO, SEMITONO};
         String[] escalaMayor = new String[8];
         int posicionNotaActual = notaInicial;
         for (int i = 0; i < 7; i++) {
