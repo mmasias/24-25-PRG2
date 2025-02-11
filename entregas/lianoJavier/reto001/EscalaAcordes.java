@@ -6,40 +6,18 @@ class EscalaAcordes {
         String[] escala = crearEscala(notaATrabajar);
         String[] acorde = crearAcorde(escala);
 
-        imprimirEscala(notaATrabajar, escala);
-        imprimirAcorde(notaATrabajar, acorde);
+        String[] notas = getNotas();
+        System.out.print("El acorde de " + notas[notaATrabajar] + " Mayor es: ");
+        imprimirArray(notaATrabajar, escala);
+        System.out.print("La escala de " + notas[notaATrabajar] + " Mayor es: ");
+        imprimirArray(notaATrabajar, acorde);
     }
 
-    static void imprimirEscala(int notaATrabajar, String[] escala) {
-            String[] notas = getNotas();
-            System.out.print("El acorde de " + notas[notaATrabajar] + " Mayor es: ");
-
-            for (int i = 0; i < escala.length; i++) {
-
-                System.out.print("[" + escala[i] + "]");
-
-                if (i < escala.length - 1) divisorInline();
+    static void imprimirArray(int notaATrabajar, String[] escala) {
+            for (String nota : escala) {
+                System.out.print("[" + nota + "] ");
             }
             System.out.println();
-
-    }
-
-    static void imprimirAcorde(int notaATrabajar, String[] acorde) {
-
-            String[] notas = getNotas();
-            System.out.print("La escala de " + notas[notaATrabajar] + " Mayor es: ");
-
-            for (int i = 0; i < acorde.length; i++) {
-                System.out.print("[" + acorde[i] + "]");
-
-                if (i < acorde.length - 1) divisorInline();
-            }
-            System.out.println();
-
-    }
-
-    private static void divisorInline() {
-        System.out.print(" / ");
     }
 
     static String[] crearEscala(int notaATrabajar) {
