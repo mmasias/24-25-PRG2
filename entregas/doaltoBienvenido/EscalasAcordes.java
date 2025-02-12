@@ -42,13 +42,19 @@ class EscalasAcordes {
     }
 
     static String[] construirAcorde(String[] escala) {
+        if (escala.length < 3) {
+            return new String[] { escala[0] }; 
+        }
+        if (escala.length < 5) {
+            return new String[] { escala[0], escala[2] }; 
+        }
         return new String[] { escala[0], escala[2], escala[4] };
     }
 
     static String[] construirEscala(String nota, int[] intervalos) {
         
         int posicionEnNotas = obtenerIndiceNota(nota);
-        String[] escala = new String[intervalos.length];
+        String[] escala = new String[intervalos.length + 1];
 
         for (int i = 0; i < escala.length; i++) {
             escala[i] = NOTAS[posicionEnNotas];
@@ -69,7 +75,7 @@ class EscalasAcordes {
     }
 
     static String preguntarNota() {
-        System.out.println("Elige Nota -> 1:do, 2:do#, 3:re...");
+        System.out.println("Elige Nota -> 1: Do, 2: Do#, 3: Re ...");
         int nota = new Scanner(System.in).nextInt();
         return NOTAS[nota - 1];
         
