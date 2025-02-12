@@ -64,3 +64,16 @@ public class EscalasMusicales {
      private static void imprimirAcordeMenor(String notaBase, int[] intervalos) {
         imprimirAcorde(notaBase, intervalos, "Menor", 0, 2, 4);
     }
+
+    private static void imprimirAcorde(String notaBase, int[] intervalos, String tipo, int... grados) {
+        int indice = obtenerIndiceNota(notaBase);
+        String[] escala = new String[7];
+
+        for (int i = 0; i < 7; i++) {
+            escala[i] = NOTAS[indice % NOTAS.length];
+            indice += intervalos[i];
+        }
+
+        System.out.println("El acorde de " + notaBase + " " + tipo + " está conformado por: [" +
+                escala[grados[0]] + ", " + escala[grados[1]] + ", " + escala[grados[2]] + "]");
+    }
