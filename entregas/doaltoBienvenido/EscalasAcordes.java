@@ -20,47 +20,43 @@ class EscalasAcordes {
         { SEMITONO, TONO, TONO, SEMITONO, TONO, TONO, TONO },
         { TONO, TONO, TONO, TONO, TONO, TONO }
     };
-    static final String[] NOMBRE_ESCALAS = {
-        "Mayor", "Menor natural", "Menor armónica", "Menor melódica",
-        "Pentatónica mayor", "Pentatónica menor", "Dórica", "Frigia",
-        "Lidia", "Mixolidia", "Locria", "Por tonos"
-    };
-
 
     public static void main(String[] args) {
 
         String nota = preguntarNota();
-        int[] escala = preguntarEscala();
-        String[] escalaMayor = construirEscalaMayor(nota);
-        String[] acorde = construirAcorde(escalaMayor);
-        mostrarSecuencia(escalaMayor);
+        int[] escalaElegida = preguntarEscala();
+        String[] escalaGenerada = construirEscala(nota, escalaElegida);
+        String[] acorde = construirAcorde(escalaGenerada);
+        
+        System.out.println("Escala en " + nota + ":");
+        mostrarSecuencia(escalaGenerada);
+        System.out.println("Acorde:");
         mostrarSecuencia(acorde);
     }
 
     static void mostrarSecuencia(String[] secuenciaNotas) {
-        for (int i = 0; i < secuenciaNotas.length; i++) {
-            System.out.print("[" + secuenciaNotas[i] + "] ");
+        for (String nota : secuenciaNotas) {
+            System.out.print("[" + nota + "] ");
         }
         System.out.println();
     }
 
-    static String[] construirAcorde(String[] escalaMayor) {
-        return new String[] { escalaMayor[0], escalaMayor[TONO], escalaMayor[4] };
+    static String[] construirAcorde(String[] escala) {
+        return new String[] { escala[0], escala[2], escala[4] };
     }
 
-    static String[] construirEscalaMayor(String nota) {
-        final int[] intervalos = { TONO, TONO, SEMITONO, TONO, TONO, TONO, SEMITONO };
+    static String[] construirEscala(String nota, int[] intervalos) {
+        
         int posicionEnNotas = obtenerIndiceNota(nota);
-        int posicionEscala = 0;
-        final int NOTAS_ESCALA = 7;
-        String[] escalaMayor = new String[NOTAS_ESCALA];
+        String[] escala = new String[intervalos.length];
 
-        do {
-            escalaMayor[posicionEscala] = NOTAS[posicionEnNotas];
-            posicionEnNotas = (posicionEnNotas + intervalos[posicionEscala]) % NOTAS.length;
-            posicionEscala++;
-        } while (posicionEscala < NOTAS_ESCALA);
-        return escalaMayor;
+        for (int i = 0; i < escala.length; i++) {
+            escala[i] = NOTAS[posicionEnNotas];
+            if (i < intervalos.length) {
+                posicionEnNotas = (posicionEnNotas + intervalos[i]) % NOTAS.length;
+            }
+        }
+        return escala;
     }
 
     static int obtenerIndiceNota(String nota) {
