@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class EscalasMusicales {
+public class MejoraEscalas {
     final String[] NOTAS = {"Do", "Do#", "Re", "Re#", "Mi", "Fa", "Fa#", "Sol", "Sol#", "La", "La#", "Si"};
     final int[] ESCALA_MAYOR = {2, 2, 1, 2, 2, 2, 1}; 
     final int[] ESCALA_MENOR = {2, 1, 2, 2, 1, 2, 2}; 
