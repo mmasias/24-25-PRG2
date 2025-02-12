@@ -56,3 +56,7 @@ public class EscalasMusicales {
 
         System.out.println("La escala de " + notaBase + " es: " + String.join(" ", escala));
     }
+
+     private static void imprimirAcordeMayor(String notaBase, int[] intervalos) {
+        imprimirAcorde(notaBase, intervalos, "Mayor", 0, 2, 4);
+    }
