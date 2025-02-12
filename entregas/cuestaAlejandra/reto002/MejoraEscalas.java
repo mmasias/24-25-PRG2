@@ -60,3 +60,7 @@ public class EscalasMusicales {
      private static void imprimirAcordeMayor(String notaBase, int[] intervalos) {
         imprimirAcorde(notaBase, intervalos, "Mayor", 0, 2, 4);
     }
+
+     private static void imprimirAcordeMenor(String notaBase, int[] intervalos) {
+        imprimirAcorde(notaBase, intervalos, "Menor", 0, 2, 4);
+    }
