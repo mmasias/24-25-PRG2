@@ -2,7 +2,9 @@ import java.util.Scanner;
 
 class EscalaAcordes {
     static final String[] NOTAS = { "Do", "Do#", "Re", "Re#", "Mi", "Fa", "Fa#", "Sol", "Sol#", "La", "La#", "Si" };
+
     static final int TONO = 2, SEMITONO = 1;
+
     static final int[] SALTOS_MAYOR = { 0, TONO, TONO, SEMITONO, TONO, TONO, TONO, SEMITONO };
     static final int[] SALTOS_MENOR = { 0, TONO, SEMITONO, TONO, TONO, SEMITONO, TONO, TONO };
 
