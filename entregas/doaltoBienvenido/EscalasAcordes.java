@@ -29,12 +29,12 @@ class EscalasAcordes {
         String[] acorde = construirAcorde(escalaGenerada);
         
         System.out.println("Escala en " + nota + ":");
-        mostrarSecuencia(escalaGenerada);
+        mostrarSecuenciaNotas(escalaGenerada);
         System.out.println("Acorde:");
-        mostrarSecuencia(acorde);
+        mostrarSecuenciaNotas(acorde);
     }
 
-    static void mostrarSecuencia(String[] secuenciaNotas) {
+    static void mostrarSecuenciaNotas(String[] secuenciaNotas) {
         for (String nota : secuenciaNotas) {
             System.out.print("[" + nota + "] ");
         }
