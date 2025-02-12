@@ -27,3 +27,20 @@ public class EscalasMusicales {
 
         scanner.close();
     }
+
+    private static int elegirNota(Scanner scanner) {
+        System.out.println("Ingrese una nota:");
+        
+        for (int i = 0; i < NOTAS.length; i++) {
+            System.out.println((i + 1) + ": " + NOTAS[i]);
+        }
+        System.out.print("> ");
+
+        if (scanner.hasNextInt()) {
+            int opcion = scanner.nextInt();
+            if (opcion >= 1 && opcion <= NOTAS.length) {
+                return opcion;
+            }
+        }
+        return -1; 
+    }
