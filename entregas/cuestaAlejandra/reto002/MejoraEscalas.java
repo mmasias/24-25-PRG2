@@ -13,3 +13,17 @@ public class EscalasMusicales {
             System.out.println("Entrada no válida. Saliendo...");
             return;
         }
+
+        String notaBase = NOTAS[opcionNota - 1];
+        System.out.println("Ha elegido la nota: " + notaBase);
+
+        System.out.println("\nEscala Mayor:");
+        imprimirEscala(notaBase, ESCALA_MAYOR);
+        imprimirAcordeMayor(notaBase, ESCALA_MAYOR);
+
+        System.out.println("\nEscala Menor:");
+        imprimirEscala(notaBase, ESCALA_MENOR);
+        imprimirAcordeMenor(notaBase, ESCALA_MENOR);
+
+        scanner.close();
+    }
