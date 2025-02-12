@@ -30,7 +30,7 @@ public class EscalasMusicales {
 
     private static int elegirNota(Scanner scanner) {
         System.out.println("Ingrese una nota:");
-        
+
         for (int i = 0; i < NOTAS.length; i++) {
             System.out.println((i + 1) + ": " + NOTAS[i]);
         }
@@ -43,4 +43,16 @@ public class EscalasMusicales {
             }
         }
         return -1; 
+    }
+
+     private static void imprimirEscala(String notaBase, int[] intervalos) {
+        int indice = obtenerIndiceNota(notaBase);
+        String[] escala = new String[7];
+
+        for (int i = 0; i < 7; i++) {
+            escala[i] = NOTAS[indice % NOTAS.length];
+            indice += intervalos[i];
+        }
+
+        System.out.println("La escala de " + notaBase + " es: " + String.join(" ", escala));
     }
