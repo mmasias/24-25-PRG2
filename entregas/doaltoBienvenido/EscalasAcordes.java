@@ -55,6 +55,7 @@ class EscalasAcordes {
         
         int posicionEnNotas = obtenerIndiceNota(nota);
         String[] escala = new String[intervalos.length + 1];
+        escala[0] = NOTAS[posicionEnNotas];
 
         for (int i = 0; i < escala.length; i++) {
             escala[i] = NOTAS[posicionEnNotas];
