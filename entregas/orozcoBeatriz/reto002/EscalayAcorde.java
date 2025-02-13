@@ -2,17 +2,29 @@ import java.util.Scanner;
 
 public class EscalaYAcorde {
     static final String NOTAS_ESCALA_COMPLETA[] = {"Do", "Do#", "Re", "Re#", "Mi", "Fa", "Fa#", "Sol", "Sol#", "La", "La#", "Si"};
-    static final int TONO = 2, SEMITONO = 1;
+    static final int SEMITONO = 1, TONO = 2, TONO_Y_MEDIO = 3;
     static final int PATRON_ESCALA_MAYOR[] = {TONO, TONO, SEMITONO, TONO, TONO, TONO, SEMITONO};
-    static final int PATRON_ESCALA_MENOR[] = {TONO, SEMITONO, TONO, TONO, SEMITONO, TONO, TONO};
-    static final int 
+    static final int PATRON_ESCALA_MENOR_NATURAL[] = {TONO, SEMITONO, TONO, TONO, SEMITONO, TONO, TONO};
+    static final int PATRON_ESCALA_MENOR_ARMONICA[] = {TONO, SEMITONO, TONO, TONO, SEMITONO, TONO_Y_MEDIO, SEMITONO};
+    static final int PATRON_ESCALA_MENOR_MELODICA[] = {TONO, SEMITONO, TONO, TONO, TONO, TONO, SEMITONO};
+    static final int PATRON_PENTATONICA_MAYOR[] = {TONO, TONO, TONO_Y_MEDIO, TONO, TONO_Y_MEDIO};
+    static final int PATRON_PENTATONICA_MENOR[] = {TONO_Y_MEDIO, TONO, TONO, TONO_Y_MEDIO,TONO};
+    static final int PATRON_DORICA[] = {TONO, SEMITONO, TONO, TONO, TONO, SEMITONO, TONO};
+    static final int PATRON_FRIGIA[] = {SEMITONO, TONO, TONO, TONO, SEMITONO, TONO, TONO};
+    static final int PATRON_LIDIA[] = {TONO, TONO, TONO, SEMITONO, TONO, TONO, SEMITONO};
+    static final int PATRON_MIXOLIDIA[] = {TONO, TONO, SEMITONO, TONO, TONO, SEMITONO, TONO};
+    static final int PATRON_LOCRIA[] = {SEMITONO, TONO, TONO, SEMITONO, TONO, TONO, TONO};
+    static final int PATRON_POR_TONOS[] = {TONO, TONO, TONO, TONO, TONO, TONO};
+
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         int notaInicial;
         String[] escalaMayor;
 
-        imprimoPeticionUsuario();
+        imprimoPeticionNotaUsuario();
         notaInicial = respuestaUsuario(scanner);
+
+        imprimoPeticionEscalaUsuario();
 
         if (notaInicial == -1) {
             System.out.println("Elección no válida. Inténtelo de nuevo.");
@@ -23,8 +35,12 @@ public class EscalaYAcorde {
         scanner.close();
     }
 
-    static void imprimoPeticionUsuario() {
+    static void imprimoPeticionNotaUsuario() {
         System.out.println("Ingrese la nota a trabajar: 1: Do, 2: Do#, 3: Re, 4: Re#, 5: Mi, 6: Fa, 7: Fa#, 8: Sol, 9: Sol#, 10: La, 11: La#, 12: Si");
+    }
+
+    static void imprimoPeticionEscalaUsuario() {
+        System.out.println("");
     }
 
     static int respuestaUsuario(Scanner scanner) {
