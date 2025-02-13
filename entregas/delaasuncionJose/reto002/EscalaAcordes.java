@@ -48,12 +48,14 @@ class EscalaAcordes {
         notasEscalaMayor[PATRON.length] = TONOS[nota];
     }
 
-    static void calcularAcordeMayor(String[] notasAcordeMayor, String[] notasEscalaMayor) {
+    static String[] calcularAcorde(String[] notasEscala) {
         final int[] GRADOS = {0, 2, 4};
+        String[] acorde = new String[GRADOS.length];
 
         for (int i = 0; i < GRADOS.length; i++) {
-            notasAcordeMayor[i] = notasEscalaMayor[GRADOS[i]];
+            acorde[i] = notasEscala[GRADOS[i]];
         }
+        return acorde;
     }
     
     static void contarHistoria(String[] notasAcordeMayor, String[] notasEscalaMayor) {
