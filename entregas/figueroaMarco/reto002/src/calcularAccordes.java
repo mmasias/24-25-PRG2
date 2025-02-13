@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-class CalcularAcordes{
+class CalcularAcordesPlus{
     public static void main(String[] args) { 
         final String[] notasEscala = {"Do", "Do#", "Re", "Re#", "Mi", "Fa", "Fa#", "Sol", "Sol#", "La", "La#", "Si"};
         String[] escalaAGenerar = new String[7];
