@@ -124,17 +124,17 @@ public class EscalasAcordes {
             case 6:
                 return "6: Escala Pentatónica Menor";
             case 7:
-                return "8: Escala Dórico";
+                return "7: Escala Dórico";
             case 8:
-                return "9: Escala Frigia";
+                return "8: Escala Frigia";
             case 9:
-                return "10: Escala Lidia";
+                return "9: Escala Lidia";
             case 10:
-                return "11: Escala Mixolidia";
+                return "10: Escala Mixolidia";
             case 11:
-                return "12: Escala Locria";
+                return "11: Escala Locria";
             case 12:
-                return "13: Escala por Tonos";
+                return "12: Escala por Tonos";
             default:
                 return "";
         }
