@@ -19,4 +19,10 @@ public class EscalasAcordes {
 
         return INDICE;
     }
+
+    static void construirEscala(int indice, String[] arrayNotas, int[] intervalo) {
+        for (int i = 0; i < intervalo.length; i++) {
+            System.out.println(arrayNotas[(indice + intervalo[i]) % arrayNotas.length]);
+        }
+    }
 }
