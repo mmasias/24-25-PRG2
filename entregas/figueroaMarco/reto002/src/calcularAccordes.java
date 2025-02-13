@@ -1,21 +1,47 @@
 import java.util.Scanner;
 
 class CalcularAcordesPlus{
+    static final String[] NOTAS_ESCALA = {"Do", "Do#", "Re", "Re#", "Mi", "Fa", "Fa#", "Sol", "Sol#", "La", "La#", "Si"};
+    static final int INDICE_ELECCION_NOTA = 1;
+    static final int INDICE_ELECCION_ESCALA = 0;
     public static void main(String[] args) { 
-        final String[] notasEscala = {"Do", "Do#", "Re", "Re#", "Mi", "Fa", "Fa#", "Sol", "Sol#", "La", "La#", "Si"};
         String[] escalaAGenerar = new String[7];
-        generarEscalaMayor(notasEscala, escalaAGenerar, pedirNotaUsuario(notasEscala));
+        String [][] patronesEscala = {};
+        int [] elecciones = {};
+        almacenarPatronesEscala(patronesEscala);
+        generarEscalaMayor(NOTAS_ESCALA, escalaAGenerar, pedirInput(NOTAS_ESCALA, patronesEscala));
+        
     } 
-    public static int pedirNotaUsuario(String[] arrayNotas){
+    public static void pedirInput(String[] arrayNotas, String[][] escalas, int[] elecciones){
         Scanner input = new Scanner(System.in);
         final int INDICE_ARRAYS = 1;
         for(int i = 0; i < arrayNotas.length; i++){
-            System.out.println("Nota # " + (i + INDICE_ARRAYS) + " " + arrayNotas[i]);
+            System.out.println("Nota+ # " + (i + INDICE_ARRAYS) + " " + arrayNotas[i]);
         }
-        System.out.println("Introduce el numero de la nota nota que quieras saber la escala mayor");
+        System.out.println("Introduce el numero de la nota nota que quieras trabaajar");
         int numeroNota = input.nextInt() - INDICE_ARRAYS;
+        System.out.println("Escoge la escala que quieras generar:");
+        for(int i = 0; i < escalas.length; i++){
+            
+
+        }
         input.close();
-        return numeroNota;
+    }
+    
+    public static void almacenarPatronesEscala(String[][] patronesEscalas){
+            patronesEscalas = new String[][]{
+            {"Mayor","T", "T", "S", "T", "T", "T", "S"},
+            {"Menor", "T", "S", "T", "T", "S", "T", "T"},
+            {"Menor Armonica", "T", "S", "T", "T", "S", "T.5", "T"},
+            {"Menor Melodica", "T", "S", "T", "T", "T", "T", "S"},
+            {"Pentatonica Mayor", "T", "T", "T.5", "T", "T.5"},
+            {"Pentatonica Menor", "T.5", "T", "T", "T.5", "T"},
+            {"Dorica", "T", "S", "T", "T", "T", "S", "T"},
+            {"Frigia", "S", "T", "T", "T", "S", "T", "T"},
+            {"Mixolidia", "T", "T", "S", "T", "T", "S", "T"},
+            {"Locria", "S", "T", "T", "S", "T", "T", "T"},
+            {"Por Tonos", "T", "T", "T", "T", "T", "T", "T"}
+        };
     }
     public static void generarEscalaMayor(String[] arrayNotas, String[] escalaAGenerar, int numeroNota){
         boolean[] esTono = {true, true, false, true, true, true, false};
