@@ -37,15 +37,17 @@ class EscalaAcordes {
         return numeroUsuario;
     }
 
-    static void calcularEscalaMayor(String[] notasEscalaMayor,int nota) {
+    static void calcularEscala(int nota, int escala) {
         final String[] TONOS = { "DO", "DO#", "RE", "RE#", "MI", "FA", "FA#", "SOL", "SOL#", "LA", "LA#", "SI" };
-        final int[] PATRON = {2,2,1,2,2,2,1};
-
-        for (int i = 0; i < PATRON.length; i++) {
-            notasEscalaMayor[i] = TONOS[nota];
-            nota = (nota + PATRON[i]) % 12;
+        final int[][] PATRON = {{2,2,1,2,2,2,1},
+                                {2,2,1,2,2,2,1},
+                                {2,2,1,2,2,2,1}};
+        String[] notasEscala = new String[PATRON[escala].length];
+        for (int i = 0; i < PATRON[escala].length; i++) {
+            notasEscala[i] = TONOS[nota];
+            nota = (nota + PATRON[escala][i]) % 12;
         }
-        notasEscalaMayor[PATRON.length] = TONOS[nota];
+        return notasEscala;
     }
 
     static String[] calcularAcorde(String[] notasEscala) {
