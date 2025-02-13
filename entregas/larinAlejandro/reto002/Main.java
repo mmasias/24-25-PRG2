@@ -39,9 +39,8 @@ public class Main {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
-        showMenu();
-        int scaleChoice = getIntInput("Select a scale (1-13): ", scanner, 1, SCALE_NAMES.length);
-        String inputNote = getInput("Enter a starting note: ", scanner);
+        int scaleChoice = getInputScaleChoice("Select a scale (1-13): ", scanner, 1, SCALE_NAMES.length);
+        String inputNote = getInputNote("Enter a starting note: ", scanner);
 
         int[] selectedScale = ALL_SCALES[scaleChoice - 1];
         String[] scale = getScale(inputNote, selectedScale);
@@ -53,21 +52,18 @@ public class Main {
         scanner.close();
     }
 
-    static void showMenu() {
-        System.out.println("Available Scales:");
-        for (int i = 0; i < SCALE_NAMES.length; i++) {
-            System.out.println((i + 1) + ". " + SCALE_NAMES[i]);
-        }
-    }
-
-    static String getInput(String message, Scanner scanner) {
+    static String getInputNote(String message, Scanner scanner) {
         showArray("Notes", NOTES);
         System.out.print(message);
         return scanner.nextLine();
     }
 
-    static int getIntInput(String message, Scanner scanner, int min, int max) {
+    static int getInputScaleChoice(String message, Scanner scanner, int min, int max) {
         int value;
+        System.out.println("Available Scales:");
+        for (int i = 0; i < SCALE_NAMES.length; i++) {
+            System.out.println((i + 1) + ". " + SCALE_NAMES[i]);
+        }
         do {
             System.out.print(message);
             while (!scanner.hasNextInt()) {
