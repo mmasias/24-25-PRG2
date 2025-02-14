@@ -29,10 +29,10 @@ class EscalaAcordes {
     static final int[] SALTOS_ACORDE = { I, III, V };
 
     public static void main(String[] args) {
-        int nota = pedirNota();
+        int notaActiva = pedirNota();
         int escalaActiva = pedirEscala();
 
-        int[] escala = construirEscala(nota, SALTOS[escalaActiva]);
+        int[] escala = construirEscala(notaActiva, SALTOS[escalaActiva]);
 
         int[] acorde = new int[SALTOS_ACORDE.length];
         construirAcorde(acorde, escala);
