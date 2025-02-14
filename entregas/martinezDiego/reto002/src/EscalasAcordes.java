@@ -52,9 +52,9 @@ public class EscalasAcordes {
     }
 
     static int[] seleccionarEscala(int eleccionEscala) {
-        int tono = 2;
         int semitono = 1;
-        int tonoMedio = 3;
+        int tono = semitono + semitono;
+        int tonoMedio = tono + semitono;
 
         switch (eleccionEscala) {
             case 1:
