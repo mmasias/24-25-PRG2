@@ -1,4 +1,4 @@
-package entregas.reto001;
+package entregas.alonsoDiego.reto001;
 import java.util.Scanner;
 public class escalasAcordes {
     public static void main(String[] args) {
