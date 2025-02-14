@@ -1,91 +1,119 @@
 import java.util.Scanner;
 
-public class MejoraEscalas {
-    final String[] NOTAS = {"Do", "Do#", "Re", "Re#", "Mi", "Fa", "Fa#", "Sol", "Sol#", "La", "La#", "Si"};
-    final int[] ESCALA_MAYOR = {2, 2, 1, 2, 2, 2, 1}; 
-    final int[] ESCALA_MENOR = {2, 1, 2, 2, 1, 2, 2}; 
+public class EscalasAcordes {
+    static final String[] NOTAS = {
+            "Do", "Do#", "Re", "Re#", "Mi", "Fa",
+            "Fa#", "Sol", "Sol#", "La", "La#", "Si"
+    };
+
+    static final int[][] PATRONES = {
+            { 2, 2, 1, 2, 2, 2, 1 },
+            { 2, 1, 2, 2, 1, 2, 2 },
+            { 2, 1, 2, 2, 1, 3, 1 },
+            { 2, 1, 2, 2, 2, 2, 1 },
+            { 2, 2, 3, 2, 3 },
+            { 3, 2, 2, 3, 2 },
+            { 2, 1, 2, 2, 2, 1, 2 },
+            { 1, 2, 2, 2, 1, 2, 2 },
+            { 2, 2, 2, 1, 2, 2, 1 },
+            { 2, 2, 1, 2, 2, 1, 2 },
+            { 1, 2, 2, 1, 2, 2, 2 },
+            { 2, 2, 2, 2, 2, 2 }
+    };
+
+    static final String[] NOMBRES_ESCALAS = {
+            "Mayor", "Menor natural", "Menor armónica", "Menor melódica",
+            "Pentatónica mayor", "Pentatónica menor", "Dórica", "Frigia",
+            "Lidia", "Mixolidia", "Locria", "Por tonos"
+    };
 
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
+        Scanner entrada = new Scanner(System.in);
+        mostrarMenuNotas();
 
-        int opcionNota = elegirNota(scanner);
-        if (opcionNota == -1) {
-            System.out.println("Entrada no válida. Saliendo...");
+        int seleccionNota = obtenerSeleccionValida(entrada, 1, 12);
+        if (seleccionNota == -1) {
+            entrada.close();
             return;
         }
 
-        String notaBase = NOTAS[opcionNota - 1];
-        System.out.println("Ha elegido la nota: " + notaBase);
+        mostrarMenuEscalas();
+        int seleccionEscala = obtenerSeleccionValida(entrada, 1, PATRONES.length);
+        if (seleccionEscala == -1) {
+            entrada.close();
+            return;
+        }
 
-        System.out.println("\nEscala Mayor:");
-        imprimirEscala(notaBase, ESCALA_MAYOR);
-        imprimirAcordeMayor(notaBase, ESCALA_MAYOR);
-
-        System.out.println("\nEscala Menor:");
-        imprimirEscala(notaBase, ESCALA_MENOR);
-        imprimirAcordeMenor(notaBase, ESCALA_MENOR);
-
-        scanner.close();
+        procesarSeleccion(seleccionNota - 1, seleccionEscala - 1);
+        entrada.close();
     }
 
-    private static int elegirNota(Scanner scanner) {
-        System.out.println("Ingrese una nota:");
-
+    static void mostrarMenuNotas() {
+        System.out.println("Ingrese la nota a trabajar:");
         for (int i = 0; i < NOTAS.length; i++) {
-            System.out.println((i + 1) + ": " + NOTAS[i]);
+            System.out.print((i + 1) + ": " + NOTAS[i]);
+            if (i < NOTAS.length - 1)
+                System.out.print(", ");
         }
-        System.out.print("> ");
+        System.out.println();
+    }
 
-        if (scanner.hasNextInt()) {
-            int opcion = scanner.nextInt();
-            if (opcion >= 1 && opcion <= NOTAS.length) {
-                return opcion;
-            }
+    static void mostrarMenuEscalas() {
+        System.out.println();
+        System.out.println("Seleccione el tipo de escala:");
+        for (int i = 0; i < NOMBRES_ESCALAS.length; i++) {
+            System.out.println((i + 1) + ": " + NOMBRES_ESCALAS[i]);
         }
-        return -1; 
     }
 
-    private static void imprimirEscala(String notaBase, int[] intervalos) {
-        int indice = obtenerIndiceNota(notaBase);
-        String[] escala = new String[7];
+    static int obtenerSeleccionValida(Scanner entrada, int min, int max) {
+        int seleccion = entrada.nextInt();
+        if (seleccion < min || seleccion > max) {
+            System.out.println("Selección inválida");
+            return -1;
+        }
+        return seleccion;
+    }
 
-        for (int i = 0; i < 7; i++) {
-            escala[i] = NOTAS[indice % NOTAS.length];
-            indice += intervalos[i];
+    static void procesarSeleccion(int indiceNota, int indiceEscala) {
+        String notaBase = NOTAS[indiceNota];
+        String nombreEscala = NOMBRES_ESCALAS[indiceEscala];
+
+        System.out.println();
+        System.out.println("Ha elegido la nota " + notaBase);
+
+        String[] escala = construirEscala(indiceNota, PATRONES[indiceEscala]);
+        System.out.print("La escala de " + notaBase + " " + nombreEscala + " es: ");
+        mostrarNotas(escala);
+
+        String[] acorde = construirAcorde(escala);
+        System.out.print("El acorde de " + notaBase + " " + nombreEscala + " está conformado por: ");
+        mostrarNotas(acorde);
+    }
+
+    static String[] construirEscala(int indiceInicial, int[] patron) {
+        String[] escala = new String[patron.length + 1];
+        int indiceActual = indiceInicial;
+        escala[0] = NOTAS[indiceActual];
+
+        for (int i = 0; i < patron.length; i++) {
+            indiceActual = (indiceActual + patron[i]) % 12;
+            escala[i + 1] = NOTAS[indiceActual];
         }
 
-        System.out.println("La escala de " + notaBase + " es: " + String.join(" ", escala));
+        return escala;
     }
 
-     private static void imprimirAcordeMayor(String notaBase, int[] intervalos) {
-        imprimirAcorde(notaBase, intervalos, "Mayor", 0, 2, 4);
+    static String[] construirAcorde(String[] escala) {
+        return new String[] { escala[0], escala[2], escala[4] };
     }
 
-     private static void imprimirAcordeMenor(String notaBase, int[] intervalos) {
-        imprimirAcorde(notaBase, intervalos, "Menor", 0, 2, 4);
-    }
-
-    private static void imprimirAcorde(String notaBase, int[] intervalos, String tipo, int... grados) {
-        int indice = obtenerIndiceNota(notaBase);
-        String[] escala = new String[7];
-
-        for (int i = 0; i < 7; i++) {
-            escala[i] = NOTAS[indice % NOTAS.length];
-            indice += intervalos[i];
+    static void mostrarNotas(String[] notas) {
+        for (int i = 0; i < notas.length; i++) {
+            System.out.print("[" + notas[i] + "]");
+            if (i < notas.length - 1)
+                System.out.print(" / ");
         }
-
-        System.out.println("El acorde de " + notaBase + " " + tipo + " está conformado por: [" +
-                escala[grados[0]] + ", " + escala[grados[1]] + ", " + escala[grados[2]] + "]");
-    }
-
-    
-    private static int obtenerIndiceNota(String nota) {
-
-     nota = nota.intern(); 
-     int i = 0;
-      while (i < NOTAS.length && NOTAS[i] != nota) {
-        i++;
-      }
-     return (i < NOTAS.length) ? i : -1;
+        System.out.println();
     }
 }
