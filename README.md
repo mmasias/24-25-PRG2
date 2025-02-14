@@ -6,8 +6,7 @@ Repositorio de materiales y proyectos de la asignatura **Programación II** del 
 
 - [Temario](/PRG2-2025-02-04-12-06.pdf)
   - [A día de hoy, deberíamos saber...](temario/aDiaDeHoy.md)
-  - [Casos de uso](temario/casosDeUso/README.md)
-  - [Ejercicios](temario/ejercicios/README.md)
+  - [Casos de uso](temario/casosDeUso/README.md) & [ejercicios](temario/ejercicios/README.md)
 - Evaluaciones
   - Evaluación continua: [Retos!](evaluaciones/retos/README.md)
   - Exámenes
