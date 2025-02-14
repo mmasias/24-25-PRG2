@@ -3,49 +3,74 @@ import java.util.Scanner;
 class EscalaAcordes {
     static final String[] NOTAS = { "Do", "Do#", "Re", "Re#", "Mi", "Fa", "Fa#", "Sol", "Sol#", "La", "La#", "Si" };
 
-    static final int TONO = 2, SEMITONO = 1;
+    static final int SEMITONO = 1,
+            TONO = 2 * SEMITONO, TONO_Y_MEDIO = TONO + SEMITONO;
 
-    static final int[] MAYOR = { 0, TONO, TONO, SEMITONO, TONO, TONO, TONO, SEMITONO };
-    static final int[] MENOR = { 0, TONO, SEMITONO, TONO, TONO, SEMITONO, TONO, TONO };
-    static final int[] MENOR_NATURAL = { 0, TONO, SEMITONO, TONO, TONO, SEMITONO, TONO, TONO };
-    static final int[] MENOR_ARMONICA = { 0, TONO, SEMITONO, TONO, TONO, SEMITONO, TONO + TONO / 2, SEMITONO };
-    static final int[] MENOR_MELODICA = { 0, TONO, SEMITONO, TONO, TONO, TONO, TONO, SEMITONO };
-    static final int[] PENTATONICA_MAYOR = { 0, TONO, TONO, TONO + SEMITONO, TONO, TONO + TONO / 2 };
-    static final int[] PENTATONICA_MENOR = { 0, TONO + TONO / 2, TONO, TONO, TONO + TONO / 2, TONO };
-    static final int[] DORICA = { 0, TONO, SEMITONO, TONO, TONO, TONO, SEMITONO, TONO };
-    static final int[] FRIGIA = { 0, SEMITONO, TONO, TONO, TONO, SEMITONO, TONO, TONO };
-    static final int[] LIDIA = { 0, TONO, TONO, TONO, SEMITONO, TONO, TONO, SEMITONO };
-    static final int[] MIXOLIDIA = { 0, TONO, TONO, SEMITONO, TONO, TONO, SEMITONO, TONO };
-    static final int[] LOCRIA = { 0, SEMITONO, TONO, TONO, SEMITONO, TONO, TONO, TONO };
-    static final int[] POR_TONO = { 0, TONO, TONO, TONO, TONO, TONO, TONO };
+    static final int[] MAYOR = { 0, TONO, TONO, SEMITONO, TONO, TONO, TONO, SEMITONO },
+            MENOR = { 0, TONO, SEMITONO, TONO, TONO, SEMITONO, TONO, TONO },
+            MENOR_NATURAL = { 0, TONO, SEMITONO, TONO, TONO, SEMITONO, TONO, TONO },
+            MENOR_ARMONICA = { 0, TONO, SEMITONO, TONO, TONO, SEMITONO, TONO_Y_MEDIO, SEMITONO },
+            MENOR_MELODICA = { 0, TONO, SEMITONO, TONO, TONO, TONO, TONO, SEMITONO },
+            PENTATONICA_MAYOR = { 0, TONO, TONO, TONO_Y_MEDIO, TONO, TONO_Y_MEDIO },
+            PENTATONICA_MENOR = { 0, TONO_Y_MEDIO, TONO, TONO, TONO_Y_MEDIO, TONO },
+            DORICA = { 0, TONO, SEMITONO, TONO, TONO, TONO, SEMITONO, TONO },
+            FRIGIA = { 0, SEMITONO, TONO, TONO, TONO, SEMITONO, TONO, TONO },
+            LIDIA = { 0, TONO, TONO, TONO, SEMITONO, TONO, TONO, SEMITONO },
+            MIXOLIDIA = { 0, TONO, TONO, SEMITONO, TONO, TONO, SEMITONO, TONO },
+            LOCRIA = { 0, SEMITONO, TONO, TONO, SEMITONO, TONO, TONO, TONO },
+            POR_TONO = { 0, TONO, TONO, TONO, TONO, TONO, TONO };
 
+    static final String[] NOMBRE_ESCALAS = { "Mayor", "Menor", "Menor natural", "Menor armónica", "Menor melódica",
+            "Pentatónica mayor", "Pentatónica menor", "Dórica", "Frigia", "Lídia", "Mixolidia", "Locria", "Por tono" };
     static final int[][] SALTOS = { MAYOR, MENOR, MENOR_NATURAL, MENOR_ARMONICA, MENOR_MELODICA,
-            PENTATONICA_MAYOR,
-            PENTATONICA_MENOR, DORICA, FRIGIA, LIDIA, MIXOLIDIA, LOCRIA, POR_TONO };
+            PENTATONICA_MAYOR, PENTATONICA_MENOR, DORICA, FRIGIA, LIDIA, MIXOLIDIA, LOCRIA, POR_TONO };
+
+    static final int I = 0, III = 2, V = 4;
+    static final int[] SALTOS_ACORDE = { I, III, V };
 
     public static void main(String[] args) {
         int nota = pedirNota();
+        int escalaActiva = pedirEscala();
 
-        int[][] escalas = calcularEscalas(nota, SALTOS);
+        int[] escala = construirEscala(nota, SALTOS[escalaActiva]);
 
-        int[] acorde = construirAcorde(escalas[0]);
+        int[] acorde = new int[SALTOS_ACORDE.length];
+        construirAcorde(acorde, escala);
 
-        imprimirEscalas(escalas);
+        imprimirSecuencia(escala);
         imprimirSecuencia(acorde);
     }
 
-    static void imprimirEscalas(int[][] escalas) {
-        for (int i = 0; i < escalas.length; i++) {
-            imprimirSecuencia(escalas[i]);
-        }
+    static int pedirEscala() {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Ingrese la nota inicial (1-" + NOMBRE_ESCALAS.length + "): ");
+        imprimirSecuencia(NOMBRE_ESCALAS);
+        int escala = scanner.nextInt() - 1;
+        scanner.close();
+        return escala;
     }
 
-    static int[][] calcularEscalas(int nota, int[][] saltos) {
-        int[][] escala = new int[SALTOS.length][];
-        for (int i = 0; i < escala.length; i++) {
-            escala[i] = construirEscala(nota, saltos[i]);
+    static int pedirNota() {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Ingrese la nota inicial (1-12): ");
+        int nota = scanner.nextInt() - 1;
+        scanner.close();
+        return nota;
+    }
+
+    static int[] construirEscala(int nota, int[] saltos) {
+        int[] escala = new int[saltos.length];
+        escala[0] = nota;
+        for (int i = 1; i < saltos.length; i++) {
+            escala[i] = (escala[i - 1] + saltos[i]) % NOTAS.length;
         }
         return escala;
+    }
+
+    static void construirAcorde(int[] acorde, int[] escala) {
+        for (int i = 0; i < escala.length; i++) {
+            acorde[i] = escala[SALTOS_ACORDE[i]];
+        }
     }
 
     static void imprimirSecuencia(int[] secuencia) {
@@ -55,31 +80,11 @@ class EscalaAcordes {
         System.out.println();
     }
 
-    static int pedirNota() {
-        Scanner scanner = new Scanner(System.in);
-        System.out.print("Ingrese la nota inicial (1-12): ");
-        int nota = scanner.nextInt()-1;
-        scanner.close();
-        return nota;
-    }
-
-    static int[] construirEscala(int nota, int[] saltos) {
-        int[] escala = new int[saltos.length];
-        escala[0] = nota;
-        for (int i = 1; i < saltos.length; i++) {
-            escala[i] = (escala[i-1] + saltos[i]) % NOTAS.length;
+    static void imprimirSecuencia(String[] secuencia) {
+        for (String i : secuencia) {
+            System.out.print(i + " ");
         }
-        return escala;
+        System.out.println();
     }
 
-    static int[] construirAcorde(int[] escala) {
-        final int[] SALTOS_ACORDE = { 0, 2, 4 };
-        int[] acorde = new int[SALTOS_ACORDE.length];
-
-        acorde[0] = escala[SALTOS_ACORDE[0]];
-        acorde[1] = escala[SALTOS_ACORDE[1]];
-        acorde[2] = escala[SALTOS_ACORDE[2]];
-        
-        return acorde;
-    }
 }
