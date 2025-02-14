@@ -9,7 +9,6 @@ public class EscalasAcordes {
         final String[] NOTAS = {"Do", "Do#", "Re", "Re#", "Mi", "Fa", "Fa#", "Sol", "Sol#", "La", "La#", "Si"};
         int indiceNota = obtenerIndiceNota(NOTAS);
         construirEscala(indiceNota, NOTAS, INTERVALO_MAYOR);
-        System.out.println();
     }
 
     static int obtenerIndiceNota(String[] arrayNotas) {
