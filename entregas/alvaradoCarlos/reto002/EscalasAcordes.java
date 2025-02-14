@@ -3,12 +3,12 @@ import java.util.Scanner;
 
 public class EscalasAcordes {
     static final int TONO = 2, SEMITONO = 1, TONO_Y_SEMITONO = 3;
-    static final int[] INTERVALO_MAYOR = {TONO, TONO, SEMITONO, TONO, TONO, TONO, SEMITONO};
+    static final int[] INTERVALO = {TONO, TONO, SEMITONO, TONO, TONO, TONO, SEMITONO};
 
     public static void main(String[] args) {
         final String[] NOTAS = {"Do", "Do#", "Re", "Re#", "Mi", "Fa", "Fa#", "Sol", "Sol#", "La", "La#", "Si"};
         int indiceNota = obtenerIndiceNota(NOTAS);
-        String[] escala = construirEscala(indiceNota, NOTAS, INTERVALO_MAYOR);
+        String[] escala = construirEscala(indiceNota, NOTAS, INTERVALO);
         construirAcorde(escala);
     }
 
