@@ -1,3 +1,4 @@
+package entregas.delarivaAlejandro;
 import java.util.Scanner;
 
 class EscalasyAcordes {
