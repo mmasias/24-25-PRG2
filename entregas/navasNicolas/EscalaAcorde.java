@@ -2,7 +2,9 @@ import java.util.Scanner;
 
 class EscalaAcorde {
     static final String[] NOTAS = { "DO", "DO#", "RE", "RE#", "MI", "FA", "FA#", "SOL", "SOL#", "LA", "LA#", "SI" };
-    static final int TONO = 2, SEMITONO = 1, TONO_Y_MEDIO = TONO + SEMITONO;
+
+    static final int SEMITONO = 1, TONO = SEMITONO + SEMITONO, TONO_Y_MEDIO = TONO + SEMITONO;
+    
     static final int[] INTERVALO_MAYOR = { TONO, TONO, SEMITONO, TONO, TONO, TONO, SEMITONO };
     static final int[] INTERVALO_MENOR = { TONO, SEMITONO, TONO, TONO, SEMITONO, TONO, TONO };
     static final int[] INTERVALO_MENOR_ARMONICA = { TONO, SEMITONO, TONO, TONO, SEMITONO, TONO_Y_MEDIO, SEMITONO };
@@ -24,7 +26,6 @@ class EscalaAcorde {
         mostrarSecuencia(escalaMayor);
         mostrarSecuencia(acordeMayor);
 
-
     }
 
     static void mostrarSecuencia(String[] secuenciaNotas) {
@@ -38,7 +39,7 @@ class EscalaAcorde {
         return new String[] { escalaMayor[0], escalaMayor[2], escalaMayor[4] };
     }
 
-    static String[] construirEscala(String nota, int[] INTERVALO) {
+    static String[] construirEscala(String nota, int[] ) {
         int posicionEnNotas = obtenerIndiceNota(nota);
         int posicionEscala = 0;
         final int NOTAS_ESCALA = 7;
