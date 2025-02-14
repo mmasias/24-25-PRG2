@@ -3,7 +3,7 @@ import java.util.Scanner;
 
 class EscalasAcordes {
     static final String[] NOTAS = { "DO", "DO#", "RE", "RE#", "MI", "FA", "FA#", "SOL", "SOL#", "LA", "LA#", "SI" };
-    static final int TONO = 2, SEMITONO = 1, TONOYMEDIO = 3;
+    static final int SEMITONO = 1,  TONO =  SEMITONO + SEMITONO, TONOYMEDIO = TONO + SEMITONO;
     static final int[][] ESCALAS = 
     {
         { TONO, TONO, SEMITONO, TONO, TONO, TONO, SEMITONO },
