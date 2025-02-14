@@ -2,7 +2,8 @@ package entregas.alvaradoCarlos.reto002;
 import java.util.Scanner;
 
 public class EscalasAcordes {
-    static final int[] INTERVALO_MAYOR = {2, 2, 1, 2, 2, 2, 1};
+    static final int TONO = 2, SEMITONO = 1, TONO_Y_SEMITONO = 3;
+    static final int[] INTERVALO_MAYOR = {TONO, TONO, SEMITONO, TONO, TONO, TONO, SEMITONO};
 
     public static void main(String[] args) {
         final String[] NOTAS = {"Do", "Do#", "Re", "Re#", "Mi", "Fa", "Fa#", "Sol", "Sol#", "La", "La#", "Si"};
