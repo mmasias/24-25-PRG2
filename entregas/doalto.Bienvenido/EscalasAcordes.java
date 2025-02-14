@@ -41,12 +41,6 @@ class EscalasAcordes {
 
     static String[] construirAcorde(String[] escala) 
     {
-        if (escala.length < 3) {
-            return new String[] { escala[0] }; 
-        }
-        if (escala.length < 5) {
-            return new String[] { escala[0], escala[2] }; 
-        }
         return new String[] { escala[0], escala[2], escala[4] }; 
     }
 
