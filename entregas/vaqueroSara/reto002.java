@@ -1,4 +1,3 @@
-
 import java.util.Scanner;
 
 public class reto002 {
@@ -6,11 +5,9 @@ public class reto002 {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
-        String[] notas = {"Do", "Do#", "Re", "Re#", "Mi", "Fa", "Fa#", "Sol", "Sol#", "La", "La#", "Si"};
+        String[] notas = { "Do", "Do#", "Re", "Re#", "Mi", "Fa", "Fa#", "Sol", "Sol#", "La", "La#", "Si" };
 
-        int[] patronEscalaMayor = {2, 2, 1, 2, 2, 2, 1};
-
-        String notaEscalaMayor;
+        int[] patronEscalaMayor = { 2, 2, 1, 2, 2, 2, 1 };
 
         System.out.print("Ingrese una nota (Do, Re, Mi, etc.): ");
 
@@ -27,10 +24,8 @@ public class reto002 {
 
         if (notaValida) {
 
-            for (int i = 0; i < patronEscalaMayor.length; i++) {
-
-                notaEscalaMayor = CalcularEscalaMayor(i, notas, patronEscalaMayor, indice);
-            }
+            String notaEscalaMayor = CalcularEscalaMayor(notas, patronEscalaMayor, indice);
+            System.out.println(notaEscalaMayor);
 
         }
 
@@ -38,10 +33,15 @@ public class reto002 {
 
     }
 
-    static String CalcularEscalaMayor(int i, String[] notas, int[] patron, int indice) {
-        indice += patron[i];
-        indice = indice % 12;
-        return (notas[indice]);
+    static String CalcularEscalaMayor(String[] notas, int[] patron, int indice) {
+        
+        for (int i = 0; i < patron.length; i++) {
+            indice += patron[i];
+            indice = indice % 12;
+            return (notas[indice]);
+        }
+        
+        return null;
 
     }
 
