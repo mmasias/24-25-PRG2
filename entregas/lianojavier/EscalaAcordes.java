@@ -28,6 +28,8 @@ class EscalaAcordes {
     static final int I = 0, III = 2, V = 4;
     static final int[] SALTOS_ACORDE = { I, III, V };
 
+    static Scanner scanner = new Scanner(System.in);
+
     public static void main(String[] args) {
         int notaActiva = pedirNota();
         int escalaActiva = pedirEscala();
@@ -39,22 +41,22 @@ class EscalaAcordes {
 
         imprimirSecuencia(escala);
         imprimirSecuencia(acorde);
+
+        scanner.close();
     }
 
     static int pedirEscala() {
-        Scanner scanner = new Scanner(System.in);
-        System.out.print("Ingrese la nota inicial (1-" + NOMBRE_ESCALAS.length + "): ");
         imprimirSecuencia(NOMBRE_ESCALAS);
+        System.out.print("Ingrese la nota inicial (1-" + NOMBRE_ESCALAS.length + "): ");
         int escala = scanner.nextInt() - 1;
-        scanner.close();
+        System.out.println();
         return escala;
     }
 
     static int pedirNota() {
-        Scanner scanner = new Scanner(System.in);
         System.out.print("Ingrese la nota inicial (1-12): ");
         int nota = scanner.nextInt() - 1;
-        scanner.close();
+        System.out.println();
         return nota;
     }
 
@@ -68,7 +70,7 @@ class EscalaAcordes {
     }
 
     static void construirAcorde(int[] acorde, int[] escala) {
-        for (int i = 0; i < escala.length; i++) {
+        for (int i = 0; i < acorde.length; i++) {
             acorde[i] = escala[SALTOS_ACORDE[i]];
         }
     }
@@ -81,8 +83,9 @@ class EscalaAcordes {
     }
 
     static void imprimirSecuencia(String[] secuencia) {
-        for (String i : secuencia) {
-            System.out.print(i + " ");
+        final String SPACE = " ";
+        for (int i = 0; i < secuencia.length; i++) {
+            System.out.print(NOMBRE_ESCALAS[i] + SPACE);
         }
         System.out.println();
     }
