@@ -49,7 +49,7 @@ Es importante destacar que los arreglos utilizan diferentes tipos de datos: las 
 - Una vez que se construyen la **escala** y el **acorde**, el programa imprime las notas correspondientes en formato de texto.
 - Se usa un bucle para recorrer los índices de las notas en la escala y acorde y se imprimen los nombres de las notas obtenidas en el arreglo **`notas[]`**.
 
-## 7. **Funciones Auxiliares**
+## 7. **Métodos Auxiliares**
 
 - **`seleccionarEscala()`**: Recibe el número de la escala seleccionada y devuelve el patrón de intervalos correspondiente a esa escala.
 - **`convertirNumero()`**: Convierte el número de la escala en su nombre completo (por ejemplo, "1" a "Escala Mayor").
