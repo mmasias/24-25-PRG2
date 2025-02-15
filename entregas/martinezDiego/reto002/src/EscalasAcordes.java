@@ -11,6 +11,7 @@ public class EscalasAcordes {
         Scanner scanner = new Scanner(System.in);
 
         System.out.println("Selecciona una nota y una escala:");
+        System.out.println();
         imprimirNotas(notas);
         System.out.println();
         imprimirEscalas(escalas);
@@ -19,13 +20,19 @@ public class EscalasAcordes {
         int eleccionEscala = scanner.nextInt();
 
         int[] escala = construirEscala(notas, eleccionNota, eleccionEscala);
+        int[] acorde = construirAcorde(escala);
 
         if (escala.length > 0) {
             System.out.print("Escala: ");
-            for (int i : escala) {
-                System.out.print(notas[i] + " ");
+            for (int i = 0; i < escala.length; i++) {
+                System.out.print(notas[escala[i]] + " ");
             }
             System.out.println();
+
+            System.out.print("Acorde: ");
+            for (int i = 0; i < acorde.length; i++) {
+                System.out.print(notas[acorde[i]] + " ");
+            }
         }
 
         scanner.close();
@@ -49,6 +56,16 @@ public class EscalasAcordes {
         }
 
         return escalaConstruida;
+    }
+
+    static int[] construirAcorde(int[] escalaConstruida) {
+        int[] acordeConstruido = new int[3];
+
+        acordeConstruido[0] = escalaConstruida[0];
+        acordeConstruido[1] = escalaConstruida[2];
+        acordeConstruido[2] = escalaConstruida[4];
+
+        return acordeConstruido;
     }
 
     static int[] seleccionarEscala(int eleccionEscala) {
