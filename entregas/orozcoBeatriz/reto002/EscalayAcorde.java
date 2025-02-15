@@ -28,15 +28,15 @@ public class EscalaYAcorde {
     };
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        int notaInicial;
+        int notaInicial, escalaElegida;
         String[] escalaMayor;
 
         imprimirPeticionNotaUsuario();
         notaInicial = respuestaNotaUsuario(scanner);
 
         imprimirPeticionEscalaUsuario();
+        escalaElegida = respuestaEscalaUsuario(scanner);
 
-        
         escalaMayor =  calcularEscala(notaInicial, PATRON_ESCALA_MAYOR);
         respuestaFinal(notaInicial, escalaMayor);
         scanner.close();
@@ -51,14 +51,15 @@ public class EscalaYAcorde {
     }
 
     static int respuestaNotaUsuario(Scanner scanner) {
-        final int notaInicial;
-        int numeroUsuario = scanner.nextInt();
+        int notaInicial, numeroUsuario = scanner.nextInt();
         notaInicial = numeroUsuario - 1;
         return notaInicial;
     }
 
     static int respuestaEscalaUsuario(Scanner scanner) {
-        
+        int escalaUsuario;
+        escalaUsuario = scanner.nextInt();
+        return escalaUsuario;
     }
 
     static String[] calcularEscala(int notaInicial, int[] patron) {
