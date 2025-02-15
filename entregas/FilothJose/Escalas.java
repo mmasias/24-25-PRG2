@@ -1,28 +1,28 @@
 import java.util.Scanner;
 
-public class EscalaMayor {
+public class Escalas {
 
     private static final String[] NOTAS = {
             "Do", "Do#", "Re", "Re#", "Mi", "Fa", "Fa#", "Sol", "Sol#", "La", "La#", "Si"
     };
 
     private static final int SEMITONO = 1;
-    private static final int TONO = 2;
-    private static final int TONO_Y_MEDIO = 3;
+    private static final int TONO = 2 * SEMITONO;
+    private static final int TONO_Y_MEDIO = TONO + SEMITONO;
 
     private static final int[][] PATRONES_ESCALAS = {
-            {TONO, TONO, SEMITONO, TONO, TONO, TONO, SEMITONO},
-            {TONO, SEMITONO, TONO, TONO, SEMITONO, TONO, TONO},
-            {TONO, SEMITONO, TONO, TONO, SEMITONO, TONO_Y_MEDIO, SEMITONO},
-            {TONO, SEMITONO, TONO, TONO, TONO, TONO, SEMITONO},
-            {TONO, TONO, TONO_Y_MEDIO, TONO, TONO_Y_MEDIO},
-            {TONO_Y_MEDIO, TONO, TONO, TONO_Y_MEDIO, TONO},
-            {TONO, SEMITONO, TONO, TONO, TONO, SEMITONO, TONO},
-            {SEMITONO, TONO, TONO, TONO, SEMITONO, TONO, TONO},
-            {TONO, TONO, SEMITONO, TONO, SEMITONO, TONO, TONO},
-            {TONO, TONO, SEMITONO, TONO, TONO, SEMITONO, TONO},
-            {SEMITONO, TONO, TONO, SEMITONO, TONO, TONO, TONO},
-            {TONO, TONO, TONO, TONO, TONO, TONO}
+             {TONO, TONO, SEMITONO, TONO, TONO, TONO, SEMITONO}, 
+            {TONO, SEMITONO, TONO, TONO, SEMITONO, TONO, TONO}, 
+            {TONO, SEMITONO, TONO, TONO, SEMITONO, TONO_Y_MEDIO, SEMITONO}, 
+            {TONO, SEMITONO, TONO, TONO, TONO, TONO, SEMITONO}, 
+            {TONO, TONO, TONO_Y_MEDIO, TONO, TONO_Y_MEDIO}, 
+            {TONO_Y_MEDIO, TONO, TONO, TONO_Y_MEDIO, TONO}, 
+            {TONO, SEMITONO, TONO, TONO, TONO, SEMITONO, TONO}, 
+            {SEMITONO, TONO, TONO, TONO, SEMITONO, TONO, TONO}, 
+            {TONO, TONO, SEMITONO, TONO, SEMITONO, TONO, TONO}, 
+            {TONO, TONO, SEMITONO, TONO, TONO, SEMITONO, TONO}, 
+            {SEMITONO, TONO, TONO, SEMITONO, TONO, TONO, TONO}, 
+            {TONO, TONO, TONO, TONO, TONO, TONO} 
     };
 
     private static final String[] NOMBRES_ESCALAS = {
@@ -70,14 +70,37 @@ public class EscalaMayor {
 
     private static void construirEscala(String notaBase, int[] patron, String[] escala) {
         int indice = -1;
+        boolean notaEncontrada = false;
         for (int i = 0; i < NOTAS.length; i++) {
             if (NOTAS[i].equals(notaBase)) {
                 indice = i;
+                notaEncontrada = true;
             }
+        }
+
+        if (!notaEncontrada) {
+            System.out.println("Nota base no válida.");
+            return;
         }
 
         escala[0] = notaBase;
 
         for (int i = 0; i < patron.length; i++) {
             indice = (indice + patron[i]) % NOTAS.length;
-            escala[i
+            escala[i + 1] = NOTAS[indice]; 
+        }
+    }
+
+    private static void construirAcorde(String[] escala, String[] acorde) {
+        acorde[0] = escala[0];
+        acorde[1] = escala[2];
+        acorde[2] = escala[4];
+    }
+
+    private static void imprimirArray(String[] array) {
+        for (String nota : array) {
+            System.out.print("[" + nota + "] / ");
+        }
+        System.out.println();
+    }
+}
