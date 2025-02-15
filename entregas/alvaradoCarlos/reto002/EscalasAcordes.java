@@ -57,7 +57,7 @@ public class EscalasAcordes {
     }
 
     static String[] construirEscala(int indice, int[] intervalo) {
-        String[] escala = new String[8];
+        String[] escala = new String[intervalo.length + 1];
         escala[0] = NOTAS[indice];
         for (int i = 0; i < intervalo.length; i++) {
             indice = (indice + intervalo[i]) % NOTAS.length;
