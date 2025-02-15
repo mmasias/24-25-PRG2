@@ -2,7 +2,8 @@ import java.util.Scanner;
 
 public class EscalaYAcorde {
     static final String NOTAS_ESCALA_COMPLETA[] = {"Do", "Do#", "Re", "Re#", "Mi", "Fa", "Fa#", "Sol", "Sol#", "La", "La#", "Si"};
-    static final int SEMITONO = 1, TONO = 2, TONO_Y_MEDIO = 3;
+    static final int SEMITONO = 1, TONO = SEMITONO * 2, TONO_Y_MEDIO = SEMITONO + TONO;
+
     static final int PATRON_ESCALA_MAYOR[] = {TONO, TONO, SEMITONO, TONO, TONO, TONO, SEMITONO};
     static final int PATRON_ESCALA_MENOR_NATURAL[] = {TONO, SEMITONO, TONO, TONO, SEMITONO, TONO, TONO};
     static final int PATRON_ESCALA_MENOR_ARMONICA[] = {TONO, SEMITONO, TONO, TONO, SEMITONO, TONO_Y_MEDIO, SEMITONO};
@@ -15,14 +16,23 @@ public class EscalaYAcorde {
     static final int PATRON_MIXOLIDIA[] = {TONO, TONO, SEMITONO, TONO, TONO, SEMITONO, TONO};
     static final int PATRON_LOCRIA[] = {SEMITONO, TONO, TONO, SEMITONO, TONO, TONO, TONO};
     static final int PATRON_POR_TONOS[] = {TONO, TONO, TONO, TONO, TONO, TONO};
+    
+    static final String[] ESCALAS = {
+        "Mayor", "Menor natural", "Menor armónica", "Menor melódica", "Pentatónica mayor", "Pentatónica menor", "Dórica", "Frigia",
+        "Lidia", "Mixolidia", "Locria", "Por tonos"
+    };
 
+    static final int[][] PATRONES = {
+        PATRON_ESCALA_MAYOR, PATRON_ESCALA_MENOR_NATURAL, PATRON_ESCALA_MENOR_ARMONICA, PATRON_ESCALA_MENOR_MELODICA, PATRON_PENTATONICA_MAYOR,
+        PATRON_PENTATONICA_MENOR, PATRON_DORICA, PATRON_FRIGIA, PATRON_LIDIA, PATRON_MIXOLIDIA, PATRON_LOCRIA, PATRON_POR_TONOS
+    };
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         int notaInicial;
         String[] escalaMayor;
 
         imprimoPeticionNotaUsuario();
-        notaInicial = respuestaUsuario(scanner);
+        notaInicial = notaUsuario(scanner);
 
         imprimoPeticionEscalaUsuario();
 
@@ -43,7 +53,7 @@ public class EscalaYAcorde {
         System.out.println("");
     }
 
-    static int respuestaUsuario(Scanner scanner) {
+    static int notaUsuario(Scanner scanner) {
         final int POSICION_MINIMA_ESCALA = 1, POSICION_MAXIMA_ESCALA = 12;
         final int notaInicial;
         int numeroUsuario = scanner.nextInt();
@@ -53,6 +63,10 @@ public class EscalaYAcorde {
             notaInicial = numeroUsuario - 1;
             return notaInicial;
         }
+    }
+
+    static int escalaUsuario(Scanner scanner) {
+        
     }
 
     static String[] calcularEscala(int notaInicial, int[] patron) {
