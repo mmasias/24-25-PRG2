@@ -3,6 +3,7 @@ import java.util.Scanner;
 public class EscalasYAcordes {
 
     public static void main(String[] args) {
+        
         Scanner scanner = new Scanner(System.in);
 
         String[] notas = {"Do", "Do#", "Re", "Re#", "Mi", "Fa", "Fa#", "Sol", "Sol#", "La", "La#", "Si"};
