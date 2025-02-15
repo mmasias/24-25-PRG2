@@ -62,7 +62,7 @@ Cada número de escala corresponde a un tipo de escala musical:
 - **Escala Mayor**: Es la típica escala mayor con la estructura de tonos y semitonos estándar.
 - **Escala Menor Natural, Armónica y Melódica**: Variantes de la escala menor, cada una con diferencias en los intervalos entre sus notas.
 - **Escala Pentatónica**: Escalas con cinco notas, tanto mayores como menores.
-- **Escalas Dórico, Frigia, Lidia, Mixolidia, Locria**: Son diferentes modos musicales que se derivan de las escalas mayores y menores.
+- **Escalas Dórica, Frigia, Lidia, Mixolidia, Locria**: Son diferentes modos musicales que se derivan de las escalas mayores y menores.
 - **Escala por Tonos**: Una escala construida completamente de tonos enteros.
 
 
