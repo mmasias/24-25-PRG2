@@ -7,6 +7,16 @@ public class EscalasAcordes {
     static final int[][] ESCALA = {
         {TONO, TONO, SEMITONO, TONO, TONO, TONO, SEMITONO},
         {TONO, SEMITONO, TONO, TONO, TONO, SEMITONO, TONO},
+        {TONO, SEMITONO, TONO, TONO, SEMITONO, TONO + SEMITONO, SEMITONO},
+        {TONO, SEMITONO, TONO, TONO, TONO, TONO, SEMITONO},
+        {TONO, TONO, TONO_Y_SEMITONO, TONO, TONO_Y_SEMITONO},
+        {TONO_Y_SEMITONO, TONO, TONO, TONO_Y_SEMITONO, TONO},
+        {TONO, SEMITONO, TONO, TONO, TONO, SEMITONO, TONO},
+        {SEMITONO, TONO, TONO, TONO, SEMITONO, TONO, TONO},
+        {TONO, TONO, TONO, SEMITONO, TONO, TONO, SEMITONO},
+        {TONO, TONO, SEMITONO, TONO, TONO, SEMITONO, TONO},
+        {SEMITONO, TONO, TONO, SEMITONO, TONO, TONO, TONO},
+        {TONO, TONO, TONO, TONO, TONO, TONO}
     };
 
     public static void main(String[] args) {
@@ -28,10 +38,22 @@ public class EscalasAcordes {
     }
 
     static int[] obtenerIndiceEscala() {
-        System.out.println("Ingrese el tipo de escala a trabajar: 0: Mayor 1: Menor");
+        System.out.println("Ingrese el tipo de escala a trabajar: ");
+        System.out.println("1: Mayor");
+        System.out.println("2: Menor");
+        System.out.println("3: Menor Armónica");
+        System.out.println("4: Menor melódica");
+        System.out.println("5: Pentatónica mayor");
+        System.out.println("6: Penatónica menor");
+        System.out.println("7: Dórica");
+        System.out.println("8: Frigia");
+        System.out.println("9: Lidia");
+        System.out.println("10: Mixolidia");
+        System.out.println("11: Locria");
+        System.out.println("12: Por tonos");
         Scanner sc = new Scanner(System.in);
         int indice = sc.nextInt();
-        return ESCALA[indice];
+        return ESCALA[indice - 1];
     }
 
     static String[] construirEscala(int indice, int[] intervalo) {
