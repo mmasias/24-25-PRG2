@@ -31,41 +31,33 @@ public class EscalaYAcorde {
         int notaInicial;
         String[] escalaMayor;
 
-        imprimoPeticionNotaUsuario();
-        notaInicial = notaUsuario(scanner);
+        imprimirPeticionNotaUsuario();
+        notaInicial = respuestaNotaUsuario(scanner);
 
-        imprimoPeticionEscalaUsuario();
+        imprimirPeticionEscalaUsuario();
 
-        if (notaInicial == -1) {
-            System.out.println("Elección no válida. Inténtelo de nuevo.");
-        } else {
-            escalaMayor =  calcularEscala(notaInicial, PATRON_ESCALA_MAYOR);
-            respuestaFinal(notaInicial, escalaMayor);
-        }
+        
+        escalaMayor =  calcularEscala(notaInicial, PATRON_ESCALA_MAYOR);
+        respuestaFinal(notaInicial, escalaMayor);
         scanner.close();
     }
 
-    static void imprimoPeticionNotaUsuario() {
+    static void imprimirPeticionNotaUsuario() {
         System.out.println("Ingrese la nota a trabajar: 1: Do, 2: Do#, 3: Re, 4: Re#, 5: Mi, 6: Fa, 7: Fa#, 8: Sol, 9: Sol#, 10: La, 11: La#, 12: Si");
     }
 
-    static void imprimoPeticionEscalaUsuario() {
-        System.out.println("");
+    static void imprimirPeticionEscalaUsuario() {
+        System.out.println("Ingrese la escala que desee obtener: 1: Mayor, 2: Menor natural, 3: Menor armónica, 4: Menor melódica, 5: Pentatónica mayor, 6: Pentatónica menor, 7: Dórica, 8: Frigia, 9: Lidia, 10: Mixolidia, 11: Locria, 12: Por tonos ");
     }
 
-    static int notaUsuario(Scanner scanner) {
-        final int POSICION_MINIMA_ESCALA = 1, POSICION_MAXIMA_ESCALA = 12;
+    static int respuestaNotaUsuario(Scanner scanner) {
         final int notaInicial;
         int numeroUsuario = scanner.nextInt();
-        if ((numeroUsuario < POSICION_MINIMA_ESCALA) || (numeroUsuario > POSICION_MAXIMA_ESCALA)) {
-            return -1;
-        } else {
-            notaInicial = numeroUsuario - 1;
-            return notaInicial;
-        }
+        notaInicial = numeroUsuario - 1;
+        return notaInicial;
     }
 
-    static int escalaUsuario(Scanner scanner) {
+    static int respuestaEscalaUsuario(Scanner scanner) {
         
     }
 
