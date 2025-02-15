@@ -10,6 +10,8 @@ El programa comienza con la definición de dos arreglos:
   
 - **`escalas[]`**: un conjunto de números que representan diferentes tipos de escalas musicales.
 
+Es importante destacar que los arreglos utilizan diferentes tipos de datos: las notas están representadas por cadenas de texto (como "do", "re", etc.), lo que facilita que el usuario las ingrese de manera intuitiva. En cambio, las escalas se representan con números, ya que son más fáciles de manejar y procesar de esta forma. Luego, al momento de imprimir las escalas, estos números se convierten a cadenas de texto para que el usuario las pueda leer correctamente.
+
 ## 2. **Entrada del usuario**
 
 - El programa muestra las notas disponibles y las escalas disponibles.
@@ -63,8 +65,4 @@ Cada número de escala corresponde a un tipo de escala musical:
 - **Escalas Dórico, Frigia, Lidia, Mixolidia, Locria**: Son diferentes modos musicales que se derivan de las escalas mayores y menores.
 - **Escala por Tonos**: Una escala construida completamente de tonos enteros.
 
-## 9. **Consideraciones finales**
 
-Este programa permite al usuario explorar cómo las notas y las escalas musicales interactúan entre sí. Los acordes generados son simples, basados en las notas de la escala, y utilizan una estructura básica para los acordes mayores. 
-
-La implementación se puede ampliar para incluir más tipos de acordes, escalas complejas, y ofrecer una mayor interacción con el usuario.
