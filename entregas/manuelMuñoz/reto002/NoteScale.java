@@ -21,11 +21,11 @@ public class NoteScale {
         for (String scale : MUSIC_SCALES) {
             System.out.println(scale);
         }
-        
+
         System.out.print("Dime un numero y hare una escala: ");
         Scanner input = new Scanner(System.in);
         int option = input.nextInt();
-        buildScale(twelveNoteMap, TEMPOS[option - 1]);
+        scaleAndAcord(twelveNoteMap, TEMPOS[option - 1]);
 
         input.close();
     }
@@ -53,14 +53,21 @@ public class NoteScale {
         return twelveNoteMap;
     }
 
-    static void buildScale(String[] upperScaleMap, int[] tempo) {
+    static void scaleAndAcord(String[] upperScaleMap, int[] tempo) {
         int i = 0, j = 0;
-
+        String[] acord = new String[7];
+        
         do {
             System.out.print(upperScaleMap[i] + " ");
+            acord[j] = upperScaleMap[i];
             i += tempo[j];
             j++;
         } while (i < upperScaleMap.length);
         System.out.println("\nEsta es la escala");
+
+        for(int k = 0; k < 3; k++){
+            System.out.print(acord[k] + " ");
+        }
+        System.out.println("\nEsta es el acorde");
     }
 }
