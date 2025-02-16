@@ -7,7 +7,21 @@ public class EscalasAcordes {
         "Sol", "Sol#", "La", "La#", "Si"
     };
 
-    private static final int[] PATRON_ESCALA_MAYOR = {2, 2, 1, 2, 2, 2, 1};
+    private static final int[][] PATRONES = {
+        {2, 2, 1, 2, 2, 2, 1}, 
+        {2, 1, 2, 2, 1, 2, 2}, 
+        {2, 1, 2, 2, 1, 3, 1}, 
+        {2, 1, 2, 2, 2, 2, 1}, 
+        {2, 3, 2, 3},         
+        {3, 2, 2, 3},         
+        {2, 1, 2, 2, 2, 1, 2}, 
+        {1, 2, 2, 2, 1, 2, 2}, 
+        {2, 2, 2, 1, 2, 2, 1}, 
+        {2, 2, 1, 2, 2, 2, 1}, 
+        {1, 2, 2, 2, 2, 1, 2}, 
+        {2, 2, 2, 2, 2, 2}   
+    };
+
 
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
