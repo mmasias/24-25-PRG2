@@ -49,13 +49,16 @@ public class EscalasAcordes {
         return leerEntrada(scanner, opciones.length) - 1;
     }
 
-
-    private static int seleccionarOpcion(Scanner scanner, String tipo, String[] opciones) {
-        System.out.println("Seleccione una " + tipo + ":");
-        for (int i = 0; i < opciones.length; i++) {
-            System.out.println((i + 1) + ": " + opciones[i]);
+    private static int leerEntrada(Scanner scanner, int limite) {
+        int opcion = 0;
+        while (opcion < 1 || opcion > limite) {
+            System.out.print("Ingrese un número (1-" + limite + "): ");
+            if (scanner.hasNextInt()) {
+                opcion = scanner.nextInt();
+            }
+            scanner.nextLine(); 
         }
-        return leerEntrada(scanner, opciones.length) - 1;
+        return opcion;
     }
 
 
