@@ -47,7 +47,7 @@ public class EscalaYAcorde {
     }
 
     static void imprimirPeticionEscalaUsuario() {
-        
+        System.out.println("Ingrese la escala que desee obtener: 1: Mayor, 2: Menor natural, 3: Menor armónica, 4: Menor melódica, 5: Pentatónica mayor, 6: Pentatónica menor, 7: Dórica, 8: Frigia, 9: Lidia, 10: Mixolidia, 11: Locria, 12: Por tonos ");
     }
 
     static int respuestaNotaUsuario(Scanner scanner) {
