@@ -1,5 +1,7 @@
 package entregas.coboIsmael.reto002;
 
+import java.util.Scanner;
+
 public class EscalasYAcordes {
     public static void main(String[] args) {
 
@@ -41,5 +43,11 @@ public class EscalasYAcordes {
             System.out.println("Escala no válida.");
             return;
         }
+
+        System.out.println("Ha elegido la nota " + NOTAS[notaBase] + " y la escala " + NOMBRES_ESCALAS[escalaSeleccionada]);
+        String[] escala = construirEscala(notaBase, NOTAS, PATRONES[escalaSeleccionada]);
+        construirAcorde(escala, NOTAS[notaBase]);
+
+        entradaUsuario.close();
     }
 }
