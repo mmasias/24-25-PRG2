@@ -71,4 +71,16 @@ public class EscalasYAcordes {
         return escala;
     }
     
+    public static void construirAcorde(String[] escala, String notaBase) {
+        if (escala.length < 5) {
+            System.out.println("No se puede construir el acorde.");
+            return;
+        }
+        String[] acorde = {escala[0], escala[2], escala[4]};
+        System.out.print("El acorde de " + notaBase + " está conformado por: ");
+        for (String nota : acorde) {
+            System.out.print("[" + nota + "] / ");
+        }
+        System.out.println();
+    }
 }
