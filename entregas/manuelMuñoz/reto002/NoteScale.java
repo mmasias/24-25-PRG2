@@ -1,22 +1,28 @@
 import java.util.Scanner;
 
 public class NoteScale {
+    final static int TONE = 2, SEMI_TONE = 1;
+    final static int[][] TEMPOS = { { TONE, TONE, SEMI_TONE, TONE, TONE, TONE, SEMI_TONE },
+            { TONE, SEMI_TONE, TONE, TONE, SEMI_TONE, TONE, TONE },
+            { TONE, SEMI_TONE, TONE, TONE, SEMI_TONE, (3 * SEMI_TONE), SEMI_TONE },
+            { TONE, SEMI_TONE, TONE, TONE, TONE, TONE, SEMI_TONE },
+            { TONE, TONE, (3 * SEMI_TONE), TONE, (3 * SEMI_TONE) },
+            { (3 * SEMI_TONE), TONE, TONE, (3 * SEMI_TONE), TONE },
+            { TONE, SEMI_TONE, TONE, TONE, TONE, SEMI_TONE, TONE },
+            { SEMI_TONE, TONE, TONE, TONE, SEMI_TONE, TONE, TONE },
+            { TONE, TONE, TONE, SEMI_TONE, TONE, TONE, SEMI_TONE },
+            { TONE, TONE, SEMI_TONE, TONE, TONE, SEMI_TONE, TONE },
+            { SEMI_TONE, TONE, TONE, SEMI_TONE, TONE, TONE, TONE }, { TONE, TONE, TONE, TONE, TONE, TONE } };
+
     public static void main(String[] args) {
-        scaleMenu();
-    }
-    
-    static void scaleMenu() {
-        final int TONE = 2, SEMI_TONE = 1;
-        final String[] MUSIC_SCALES = { "1. Mayor", "2. Menor natural", "3. Menor armónica", "4. Menor melódica", "5. Pentatónica mayor", "6. Pentatónica menor",
-        "7. Dórica", "8. Frigia", "9. Lidia", "10. Mixolidia", "11. Locria", "12. Por tonos" };
-        final int[][] TEMPOS = {{TONE, TONE, SEMI_TONE, TONE, TONE, TONE, SEMI_TONE }, { TONE, SEMI_TONE, TONE, TONE, SEMI_TONE, TONE, TONE },
-                { TONE, SEMI_TONE, TONE, TONE, SEMI_TONE, (3 * SEMI_TONE), SEMI_TONE }, { TONE, SEMI_TONE, TONE, TONE, TONE, TONE, SEMI_TONE },
-                { TONE, TONE, (3 * SEMI_TONE), TONE, (3 * SEMI_TONE) }, { (3 * SEMI_TONE), TONE, TONE, (3 * SEMI_TONE), TONE },
-                { TONE, SEMI_TONE, TONE, TONE, TONE, SEMI_TONE, TONE }, { SEMI_TONE, TONE, TONE, TONE, SEMI_TONE, TONE, TONE },
-                { TONE, TONE, TONE, SEMI_TONE, TONE, TONE, SEMI_TONE }, { TONE, TONE, SEMI_TONE, TONE, TONE, SEMI_TONE, TONE },
-                { SEMI_TONE, TONE, TONE, SEMI_TONE, TONE, TONE, TONE }, { TONE, TONE, TONE, TONE, TONE, TONE }};
-       
         String[] twelveNoteMap = twelveNoteMap();
+        int menuSelect = scaleMenu(twelveNoteMap);
+        scaleAndAcord(twelveNoteMap, TEMPOS[menuSelect - 1]);
+    }
+
+    static int scaleMenu(String[] twelveNoteMap) {
+        final String[] MUSIC_SCALES = { "1. Mayor", "2. Menor natural", "3. Menor armónica", "4. Menor melódica", "5. Pentatónica mayor", "6. Pentatónica menor",
+                "7. Dórica", "8. Frigia", "9. Lidia", "10. Mixolidia", "11. Locria", "12. Por tonos" };
 
         for (String scale : MUSIC_SCALES) {
             System.out.println(scale);
@@ -24,10 +30,10 @@ public class NoteScale {
 
         System.out.print("Dime un numero y hare una escala: ");
         Scanner input = new Scanner(System.in);
-        int option = input.nextInt();
-        scaleAndAcord(twelveNoteMap, TEMPOS[option - 1]);
-
+        int menuSelect = input.nextInt();
         input.close();
+        return menuSelect;
+
     }
 
     static String[] twelveNoteMap() {
@@ -56,7 +62,7 @@ public class NoteScale {
     static void scaleAndAcord(String[] upperScaleMap, int[] tempo) {
         int i = 0, j = 0;
         String[] acord = new String[7];
-        
+
         do {
             System.out.print(upperScaleMap[i] + " ");
             acord[j] = upperScaleMap[i];
@@ -65,7 +71,7 @@ public class NoteScale {
         } while (i < upperScaleMap.length);
         System.out.println("\nEsta es la escala");
 
-        for(int k = 0; k < 3; k++){
+        for (int k = 0; k < 3; k++) {
             System.out.print(acord[k] + " ");
         }
         System.out.println("\nEsta es el acorde");
