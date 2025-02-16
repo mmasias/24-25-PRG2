@@ -37,6 +37,18 @@ class Masescalasacordes {
         private static String[] generarAcorde(String[] escala) {
             return new String[]{escala[0], escala[2], escala[4]};
         }
+        private static String[] generarEscala(String nota, int[] intervalos) {
+            int indiceNota = obtenerIndiceNota(nota);
+            String[] escala = new String[intervalos.length + 1];
+            
+            for (int i = 0; i < escala.length; i++) {
+                escala[i] = NOTAS[indiceNota];
+                if (i < intervalos.length) {
+                    indiceNota = (indiceNota + intervalos[i]) % NOTAS.length;
+                }
+            }
+            return escala;
+        }
     
 
     }
