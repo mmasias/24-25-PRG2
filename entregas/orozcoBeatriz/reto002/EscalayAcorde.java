@@ -74,29 +74,26 @@ public class EscalaYAcorde {
     }
 
     static int[] calcularPatronEscala(int escalaElegida) {
-        switch (escalaElegida) {
-            case 1: return PATRON_ESCALA_MAYOR;
-            case 2: return PATRON_ESCALA_MENOR_NATURAL;
-            case 3: return PATRON_ESCALA_MENOR_ARMONICA;
-            case 4: return PATRON_ESCALA_MENOR_MELODICA;
-            case 5: return PATRON_PENTATONICA_MAYOR;
-            case 6: return PATRON_PENTATONICA_MENOR;
-            case 7: return PATRON_DORICA;
-            case 8: return PATRON_FRIGIA;
-            case 9: return PATRON_LIDIA;
-            case 10: return PATRON_MIXOLIDIA;
-            case 11: return PATRON_LOCRIA;
-            case 12: return PATRON_POR_TONOS;
-            default:
-                System.out.println("Número de escala fuera de rango.");
-                return null;
+        return switch (escalaElegida) {
+            case 1 -> PATRON_ESCALA_MAYOR;
+            case 2 -> PATRON_ESCALA_MENOR_NATURAL;
+            case 3 -> PATRON_ESCALA_MENOR_ARMONICA;
+            case 4 -> PATRON_ESCALA_MENOR_MELODICA;
+            case 5 -> PATRON_PENTATONICA_MAYOR;
+            case 6 -> PATRON_PENTATONICA_MENOR;
+            case 7 -> PATRON_DORICA;
+            case 8 -> PATRON_FRIGIA;
+            case 9 -> PATRON_LIDIA;
+            case 10 -> PATRON_MIXOLIDIA;
+            case 11 -> PATRON_LOCRIA;
+            case 12 -> PATRON_POR_TONOS;
+            default -> new int[0];
         }
     }    
 
     static void respuestaFinal(int notaInicial, String[] escala, int[] patron, int escalaElegida) {
         System.out.println("Ha elegido la nota " + NOTAS_ESCALA_COMPLETA[notaInicial]);
-        escala = calcularEscala(notaInicial, patron);
-        System.out.print("La escala" + ESCALAS[escalaElegida - 1] + " de " + NOTAS_ESCALA_COMPLETA[notaInicial] + " es: ");
+        System.out.print("La escala " + ESCALAS[escalaElegida - 1] + " de " + NOTAS_ESCALA_COMPLETA[notaInicial] + " es: ");
         for (int i = 0; i < escala.length; i++) {
             System.out.print("[" + escala[i] + "] ");
         }
