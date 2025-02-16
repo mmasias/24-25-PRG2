@@ -49,6 +49,14 @@ class Masescalasacordes {
             }
             return escala;
         }
+        private static int obtenerIndiceNota(String nota) {
+            for (int i = 0; i < NOTAS.length; i++) {
+                if (nota.equals(NOTAS[i])) {
+                    return i;
+                }
+            }
+            return -1;
+        }
     
 
     }
