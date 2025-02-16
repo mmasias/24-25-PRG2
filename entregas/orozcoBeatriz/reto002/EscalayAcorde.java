@@ -3,7 +3,7 @@ import java.util.Scanner;
 
 public class EscalaYAcorde {
 
-    static final String NOTAS_ESCALA_COMPLETA[] = {"Do", "Do#", "Re", "Re#", "Mi", "Fa", "Fa#", "Sol", "Sol#", "La", "La#", "Si"};
+    static final String NOTAS_ESCALA_COMPLETA[] = {"Do", "Reb", "Re", "Mib", "Mi", "Fa", "Solb", "Sol", "Lab", "La", "Sib", "Si"};
     static final int SEMITONO = 1, TONO = SEMITONO * 2, TONO_Y_MEDIO = SEMITONO + TONO;
 
     static final int PATRON_ESCALA_MAYOR[] = {TONO, TONO, SEMITONO, TONO, TONO, TONO, SEMITONO};
@@ -88,7 +88,7 @@ public class EscalaYAcorde {
             case 11 -> PATRON_LOCRIA;
             case 12 -> PATRON_POR_TONOS;
             default -> new int[0];
-        }
+        };
     }    
 
     static void respuestaFinal(int notaInicial, String[] escala, int[] patron, int escalaElegida) {
