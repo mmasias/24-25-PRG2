@@ -5,52 +5,63 @@ class EscalaAcorde {
 
     static final int SEMITONO = 1, TONO = SEMITONO + SEMITONO, TONO_Y_MEDIO = TONO + SEMITONO;
     
-    static final int[] INTERVALO_MAYOR = { TONO, TONO, SEMITONO, TONO, TONO, TONO, SEMITONO };
-    static final int[] INTERVALO_MENOR = { TONO, SEMITONO, TONO, TONO, SEMITONO, TONO, TONO };
-    static final int[] INTERVALO_MENOR_ARMONICA = { TONO, SEMITONO, TONO, TONO, SEMITONO, TONO_Y_MEDIO, SEMITONO };
-    static final int[] INTERVALO_MENOR_MELODICO = { TONO, SEMITONO, TONO, TONO, TONO, TONO, SEMITONO };
-    static final int[] INTERVALO_PENTATONICA_MAYOR = { TONO, TONO, TONO_Y_MEDIO, TONO, TONO_Y_MEDIO };
-    static final int[] INTERVALO_PENTATONICA_MENOR = { TONO_Y_MEDIO, TONO, TONO, TONO_Y_MEDIO, TONO };
-    static final int[] INTERVALO_DORICA = { TONO, SEMITONO, TONO, TONO, TONO, SEMITONO, TONO };
-    static final int[] INTERVALO_FRIGIA = { SEMITONO, TONO, TONO, TONO, SEMITONO, TONO, TONO };
-    static final int[] INTERVALO_LIDIA = { TONO, TONO, TONO, SEMITONO, TONO, TONO, SEMITONO };
-    static final int[] INTERVALO_MIXOLIDIA = { TONO, TONO, SEMITONO, TONO, TONO, SEMITONO, TONO };
-    static final int[] INTERVALO_LOCRIA = { SEMITONO, TONO, TONO, SEMITONO, TONO, TONO, TONO };
-    static final int[] INTERVALO_POR_TONOS = { TONO, TONO, TONO, TONO, TONO, TONO };
+    static final int[][] INTERVALOS = {
+        { TONO, TONO, SEMITONO, TONO, TONO, TONO, SEMITONO }, 
+        { TONO, SEMITONO, TONO, TONO, SEMITONO, TONO, TONO }, 
+        { TONO, SEMITONO, TONO, TONO, SEMITONO, TONO_Y_MEDIO, SEMITONO }, 
+        { TONO, SEMITONO, TONO, TONO, TONO, TONO, SEMITONO }, 
+        { TONO, TONO, TONO_Y_MEDIO, TONO, TONO_Y_MEDIO }, 
+        { TONO_Y_MEDIO, TONO, TONO, TONO_Y_MEDIO, TONO }, 
+        { TONO, SEMITONO, TONO, TONO, TONO, SEMITONO, TONO }, 
+        { SEMITONO, TONO, TONO, TONO, SEMITONO, TONO, TONO }, 
+        { TONO, TONO, TONO, SEMITONO, TONO, TONO, SEMITONO }, 
+        { TONO, TONO, SEMITONO, TONO, TONO, SEMITONO, TONO }, 
+        { SEMITONO, TONO, TONO, SEMITONO, TONO, TONO, TONO }, 
+        { TONO, TONO, TONO, TONO, TONO, TONO } 
+    };
+
+    static final String[] NOMBRES_INTERVALOS = {
+        "Mayor", "Menor", "Menor Armónica", "Menor Melódica", "Pentatónica Mayor", "Pentatónica Menor",
+        "Dórica", "Frigia", "Lidia", "Mixolidia", "Locria", "Por Tonos"
+    };
 
     public static void main(String[] args) {
-
-        String nota = preguntarNota();
-        String[] escalaMayor = construirEscala(nota, INTERVALO_MAYOR);
-        String[] acordeMayor = construirAcorde(escalaMayor);
-        mostrarSecuencia(escalaMayor);
-        mostrarSecuencia(acordeMayor);
-
+        Scanner scanner = new Scanner(System.in);
+        
+        String nota = preguntarNota(scanner);
+        int opcionIntervalo = preguntarIntervalo(scanner);
+        
+        String[] escala = construirEscala(nota, INTERVALOS[opcionIntervalo]);
+        String[] acorde = construirAcorde(escala);
+        
+        System.out.println("Escala " + NOMBRES_INTERVALOS[opcionIntervalo] + ":");
+        mostrarSecuencia(escala);
+        System.out.println("Acorde:");
+        mostrarSecuencia(acorde);
     }
 
     static void mostrarSecuencia(String[] secuenciaNotas) {
-        for (int i = 0; i < secuenciaNotas.length; i++) {
-            System.out.print("[" + secuenciaNotas[i] + "] ");
+        for (String nota : secuenciaNotas) {
+            System.out.print("[" + nota + "] ");
         }
         System.out.println();
     }
 
-    static String[] construirAcorde(String[] escalaMayor) {
-        return new String[] { escalaMayor[0], escalaMayor[2], escalaMayor[4] };
+    static String[] construirAcorde(String[] escala) {
+        return new String[] { escala[0], escala[2], escala[4] };
     }
 
-    static String[] construirEscala(String nota, int[] ) {
+    static String[] construirEscala(String nota, int[] intervalos) {
         int posicionEnNotas = obtenerIndiceNota(nota);
-        int posicionEscala = 0;
-        final int NOTAS_ESCALA = 7;
-        String[] escalaMayor = new String[NOTAS_ESCALA];
-
-        do {
-            escalaMayor[posicionEscala] = NOTAS[posicionEnNotas];
-            posicionEnNotas = (posicionEnNotas + intervalos[posicionEscala]) % NOTAS.length;
-            posicionEscala++;
-        } while (posicionEscala < NOTAS_ESCALA);
-        return escalaMayor;
+        String[] escala = new String[intervalos.length + 1];
+        
+        for (int i = 0; i < escala.length; i++) {
+            escala[i] = NOTAS[posicionEnNotas];
+            if (i < intervalos.length) {
+                posicionEnNotas = (posicionEnNotas + intervalos[i]) % NOTAS.length;
+            }
+        }
+        return escala;
     }
 
     static int obtenerIndiceNota(String nota) {
@@ -62,9 +73,20 @@ class EscalaAcorde {
         return -1;
     }
 
-    static String preguntarNota() {
-        System.out.println("Elige 1:do, 2:do#, 3:re...");
-        int nota = new Scanner(System.in).nextInt();
+    static String preguntarNota(Scanner scanner) {
+        System.out.println("Elige una nota:");
+        for (int i = 0; i < NOTAS.length; i++) {
+            System.out.println((i + 1) + ": " + NOTAS[i]);
+        }
+        int nota = scanner.nextInt();
         return NOTAS[nota - 1];
+    }
+
+    static int preguntarIntervalo(Scanner scanner) {
+        System.out.println("Elige un intervalo:");
+        for (int i = 0; i < NOMBRES_INTERVALOS.length; i++) {
+            System.out.println((i + 1) + ": " + NOMBRES_INTERVALOS[i]);
+        }
+        return scanner.nextInt() - 1;
     }
 }
