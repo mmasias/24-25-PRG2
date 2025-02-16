@@ -2,7 +2,7 @@ import java.util.Scanner;
 
 public class EscalasAcordes {
     static final String[] NOTAS = {"Do", "Do#", "Re", "Re#", "Mi", "Fa", "Fa#", "Sol", "Sol#", "La", "La#", "Si"};
-    static final int T = 2, S = 1, T12 = 3;
+    static final int SEMITONO = 1, TONO = SEMITONO + SEMITONO, TONO_Y_MEDIO = TONO + SEMITONO;
 
     static final String[][] ESCALAS = {
         {"Mayor", "2212221"},
