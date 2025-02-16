@@ -1,10 +1,11 @@
+package reto002;
+
 import java.util.Scanner;
 
 class Masescalasacordes {
-
     private static final String[] NOTAS = {"Do", "Do#", "Re", "Re#", "Mi", "Fa", "Fa#", "Sol", "Sol#", "La", "La#", "Si"};
     private static final int SEMITONO = 1, TONO = SEMITONO * 2, TONO_Y_MEDIO = SEMITONO + TONO;
-    
+
     private static final int[][] ESCALAS = {
         {TONO, TONO, SEMITONO, TONO, TONO, TONO, SEMITONO},
         {TONO, SEMITONO, TONO, TONO, SEMITONO, TONO, TONO},
@@ -46,11 +47,10 @@ class Masescalasacordes {
         int indiceNota = obtenerIndiceNota(nota);
         String[] escala = new String[intervalos.length + 1];
         
-        for (int i = 0; i < escala.length; i++) {
+        escala[0] = NOTAS[indiceNota];  // La primera nota de la escala es la base
+        for (int i = 1; i < escala.length; i++) {
+            indiceNota = (indiceNota + intervalos[i - 1]) % NOTAS.length;
             escala[i] = NOTAS[indiceNota];
-            if (i < intervalos.length) {
-                indiceNota = (indiceNota + intervalos[i]) % NOTAS.length;
-            }
         }
         return escala;
     }
@@ -61,16 +61,22 @@ class Masescalasacordes {
                 return i;
             }
         }
-        return -1;
+        return -1; // Si no se encuentra la nota
     }
 
     private static String solicitarNota() {
+        Scanner scanner = new Scanner(System.in);
         System.out.println("Seleccione la nota base -> 1: Do, 2: Do#, 3: Re ...");
-        int nota = new Scanner(System.in).nextInt();
+        int nota = scanner.nextInt();
+        if (nota < 1 || nota > NOTAS.length) {
+            System.out.println("Opción inválida. Seleccionando Do por defecto.");
+            return "Do";  // Retorna "Do" si la opción es inválida
+        }
         return NOTAS[nota - 1];
     }
 
     private static int[] solicitarEscala() {
+        Scanner scanner = new Scanner(System.in);
         System.out.println("Seleccione el tipo de escala:");
         System.out.println("1: Mayor");
         System.out.println("2: Menor natural");
@@ -84,7 +90,11 @@ class Masescalasacordes {
         System.out.println("10: Mixolidia");
         System.out.println("11: Locria");
         System.out.println("12: Por tonos");
-        int escala = new Scanner(System.in).nextInt();
+        int escala = scanner.nextInt();
+        if (escala < 1 || escala > ESCALAS.length) {
+            System.out.println("Opción inválida. Seleccionando Mayor por defecto.");
+            return ESCALAS[0];  // Selecciona la escala mayor si la opción es inválida
+        }
         return ESCALAS[escala - 1];
     }
 }
