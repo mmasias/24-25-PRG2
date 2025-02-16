@@ -24,11 +24,6 @@ public class EscalaYAcorde {
         "Lidia", "Mixolidia", "Locria", "Por tonos"
     };
 
-    static final int[][] PATRONES = {
-        PATRON_ESCALA_MAYOR, PATRON_ESCALA_MENOR_NATURAL, PATRON_ESCALA_MENOR_ARMONICA, PATRON_ESCALA_MENOR_MELODICA, PATRON_PENTATONICA_MAYOR,
-        PATRON_PENTATONICA_MENOR, PATRON_DORICA, PATRON_FRIGIA, PATRON_LIDIA, PATRON_MIXOLIDIA, PATRON_LOCRIA, PATRON_POR_TONOS
-    };
-
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         int notaInicial, escalaElegida;
@@ -43,20 +38,16 @@ public class EscalaYAcorde {
 
         patronEscala = calcularPatronEscala(escalaElegida);
         escala = calcularEscala(notaInicial, patronEscala);
-        respuestaFinal(notaInicial, escala, escalaElegida);
+        respuestaFinal(notaInicial, escala, patronEscala, escalaElegida);
         scanner.close();
     }
 
     static void imprimirPeticionNotaUsuario() {
-        System.out.println("Ingrese la nota a trabajar:");
-        System.out.println("1: Do, 2: Do#, 3: Re, 4: Re#, 5: Mi, 6: Fa, 7: Fa#, 8: Sol, 9: Sol#, 10: La, 11: La#, 12: Si");
+        System.out.println("Ingrese la nota a trabajar: 1: Do, 2: Do#, 3: Re, 4: Re#, 5: Mi, 6: Fa, 7: Fa#, 8: Sol, 9: Sol#, 10: La, 11: La#, 12: Si");
     }
 
     static void imprimirPeticionEscalaUsuario() {
-        System.out.println("Ingrese la escala que desee obtener:");
-        System.out.println("1: Mayor, 2: Menor natural, 3: Menor armónica, 4: Menor melódica,");
-        System.out.println("5: Pentatónica mayor, 6: Pentatónica menor, 7: Dórica, 8: Frigia,");
-        System.out.println("9: Lidia, 10: Mixolidia, 11: Locria, 12: Por tonos");
+        
     }
 
     static int respuestaNotaUsuario(Scanner scanner) {
@@ -102,14 +93,15 @@ public class EscalaYAcorde {
         }
     }    
 
-    static void respuestaFinal(int notaInicial, String[] escala, int escalaElegida, int[] patron) {
+    static void respuestaFinal(int notaInicial, String[] escala, int[] patron, int escalaElegida) {
         System.out.println("Ha elegido la nota " + NOTAS_ESCALA_COMPLETA[notaInicial]);
         escala = calcularEscala(notaInicial, patron);
-        System.out.print("La " + escala + " de " + NOTAS_ESCALA_COMPLETA[notaInicial] + " Mayor es: ");
+        System.out.print("La escala" + ESCALAS[escalaElegida - 1] + " de " + NOTAS_ESCALA_COMPLETA[notaInicial] + " es: ");
         for (int i = 0; i < escala.length; i++) {
             System.out.print("[" + escala[i] + "] ");
         }
         System.out.println();
-        System.out.println("El acorde de " + NOTAS_ESCALA_COMPLETA[notaInicial] + " Mayor está conformado por: [" + escala[0] + "] / [" + escala[2] + "] / [" + escala[4] + "]");
+        System.out.println("El acorde de " + NOTAS_ESCALA_COMPLETA[notaInicial] + ESCALAS[escalaElegida - 1]  + " está conformado por: [" + 
+                            escala[0] + "] / [" + escala[2] + "] / [" + escala[4] + "]");
     }
 }
