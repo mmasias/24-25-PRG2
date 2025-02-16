@@ -27,12 +27,13 @@ public class EscalasAcordes {
         "Pentatónica mayor", "Pentatónica menor", "Dórica", "Frigia", 
         "Lidia", "Mixolidia", "Locria", "Por tonos"
     };
-    
+
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
-        mostrarOpciones();
-        int indiceNota = leerOpcion(scanner) - 1;
+        int indiceNota = seleccionarOpcion(scanner, "nota", NOTAS);
+        int tipoEscala = seleccionarOpcion(scanner, "escala", TIPOS_ESCALAS);
+
 
         String[] escalaMayor = elaborarEscalaMayor(indiceNota);
         String[] acordeMayor = elaborarAcordeMayor(escalaMayor);
