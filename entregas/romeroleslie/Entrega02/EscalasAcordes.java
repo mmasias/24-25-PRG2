@@ -22,7 +22,12 @@ public class EscalasAcordes {
         {2, 2, 2, 2, 2, 2}   
     };
 
-
+    private static final String[] TIPOS_ESCALAS = {
+        "Mayor", "Menor natural", "Menor armónica", "Menor melódica", 
+        "Pentatónica mayor", "Pentatónica menor", "Dórica", "Frigia", 
+        "Lidia", "Mixolidia", "Locria", "Por tonos"
+    };
+    
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
