@@ -27,12 +27,16 @@ class Masescalasacordes {
         mostrarNotas(escala);
         System.out.println("Acorde:");
         mostrarNotas(acorde);
-        
+
         private static void mostrarNotas(String[] notas) {
             for (String nota : notas) {
                 System.out.print("[" + nota + "] ");
             }
             System.out.println();
         }
+        private static String[] generarAcorde(String[] escala) {
+            return new String[]{escala[0], escala[2], escala[4]};
+        }
+    
 
     }
