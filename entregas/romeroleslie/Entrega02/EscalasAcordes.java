@@ -33,7 +33,13 @@ public class EscalasAcordes {
 
         int indiceNota = seleccionarOpcion(scanner, "nota", NOTAS);
         int tipoEscala = seleccionarOpcion(scanner, "escala", TIPOS_ESCALAS);
-
+            
+        String[] escala = elaborarEscala(indiceNota, PATRONES[tipoEscala]);
+        String[] acorde = new String[]{escala[0], escala[2], escala[4]};
+        
+        mostrarResultados(NOTAS[indiceNota], TIPOS_ESCALAS[tipoEscala], escala, acorde);
+        scanner.close();
+    }
 
         String[] escalaMayor = elaborarEscalaMayor(indiceNota);
         String[] acordeMayor = elaborarAcordeMayor(escalaMayor);
