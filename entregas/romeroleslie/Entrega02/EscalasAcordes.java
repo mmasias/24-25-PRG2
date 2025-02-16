@@ -61,6 +61,16 @@ public class EscalasAcordes {
         return opcion;
     }
 
+    private static String[] elaborarEscala(int indiceNota, int[] patron) {
+        String[] escala = new String[patron.length + 1];
+        for (int i = 0; i < patron.length; i++) {
+            escala[i] = NOTAS[indiceNota];
+            indiceNota = (indiceNota + patron[i]) % NOTAS.length;
+        }
+        escala[patron.length] = NOTAS[indiceNota];
+        return escala;
+    }
+
 
     private static void mostrarOpciones() {
         System.out.println("Ingrese el número de la nota a evaluar:");
