@@ -5,10 +5,12 @@ import java.util.Scanner;
 public class EscalasYAcordes {
     public static void main(String[] args) {
 
-        static final String[] NOTAS = {"Do", "Do#", "Re", "Re#", "Mi", "Fa", "Fa#", "Sol", "Sol#", "La", "La#", "Si"};
-        static final String[] NOMBRES_ESCALAS = {"Mayor", "Menor natural", "Menor armónica", "Menor melódica", "Pentatónica mayor", "Pentatónica menor", "Dórica", "Frigia", "Lidia", "Mixolidia", "Locria", "Por tonos"};
-        static final int SEMITONO = 1, TONO = SEMITONO + SEMITONO, TONOYMEDIO = TONO + SEMITONO;
-        static final int[][] PATRONES = {
+        final String[] NOTAS = {"Do", "Do#", "Re", "Re#", "Mi", "Fa", "Fa#", "Sol", "Sol#", "La", "La#", "Si"};
+        final String[] NOMBRES_ESCALAS = {"Mayor", "Menor natural", "Menor armónica", "Menor melódica", "Pentatónica mayor", "Pentatónica menor", "Dórica", "Frigia", "Lidia", "Mixolidia", "Locria", "Por tonos"};
+        final int SEMITONO = 1;
+        final int TONO = SEMITONO + SEMITONO;
+        final int TONOYMEDIO = TONO + SEMITONO;
+        final int[][] PATRONES = {
             {TONO, TONO, SEMITONO, TONO, TONO, TONO, SEMITONO},
             {TONO, SEMITONO, TONO, TONO, SEMITONO, TONO, TONO},
             {TONO, SEMITONO, TONO, TONO, SEMITONO, TONOYMEDIO, SEMITONO},
@@ -50,4 +52,23 @@ public class EscalasYAcordes {
 
         entradaUsuario.close();
     }
+
+    public static String[] construirEscala(int notaBase, String[] NOTAS, int[] PATRONES) {
+        String[] escala = new String[PATRONES.length + 1];
+        escala[0] = NOTAS[notaBase];
+        int indiceActual = notaBase;
+
+        for (int i = 1; i < escala.length; i++) {
+            indiceActual = (indiceActual + PATRONES[i - 1]) % NOTAS.length;
+            escala[i] = NOTAS[indiceActual];
+        }
+
+        System.out.print("La escala es: ");
+        for (String nota : escala) {
+            System.out.print("[" + nota + "] / ");
+        }
+        System.out.println();
+        return escala;
+    }
+    
 }
