@@ -2,8 +2,7 @@
 import java.util.Scanner;
 
 public class EscalaYAcorde {
-
-    static final String NOTAS_ESCALA_COMPLETA[] = {"Do", "Reb", "Re", "Mib", "Mi", "Fa", "Solb", "Sol", "Lab", "La", "Sib", "Si"};
+    static final String NOTAS_ESCALA_COMPLETA[] = {"Do", "Do#", "Re", "Re#", "Mi", "Fa", "Fa#", "Sol", "Sol#", "La", "La#", "Si"};
     static final int SEMITONO = 1, TONO = SEMITONO * 2, TONO_Y_MEDIO = SEMITONO + TONO;
 
     static final int PATRON_ESCALA_MAYOR[] = {TONO, TONO, SEMITONO, TONO, TONO, TONO, SEMITONO};
@@ -63,13 +62,13 @@ public class EscalaYAcorde {
     }
 
     static String[] calcularEscala(int notaInicial, int[] patron) {
-        String[] escala = new String[8];
+        String[] escala = new String[patron.length + 1];
         int posicionNotaActual = notaInicial;
-        for (int i = 0; i < 7; i++) {
+        for (int i = 0; i < patron.length; i++) {
             escala[i] = NOTAS_ESCALA_COMPLETA[posicionNotaActual];
             posicionNotaActual = (posicionNotaActual + patron[i]) % NOTAS_ESCALA_COMPLETA.length;
         }
-        escala[7] = escala[0];
+        escala[patron.length] = escala[0];
         return escala;
     }
 
@@ -98,7 +97,7 @@ public class EscalaYAcorde {
             System.out.print("[" + escala[i] + "] ");
         }
         System.out.println();
-        System.out.println("El acorde de " + NOTAS_ESCALA_COMPLETA[notaInicial] + ESCALAS[escalaElegida - 1]  + " está conformado por: [" + 
+        System.out.println("El acorde de " + NOTAS_ESCALA_COMPLETA[notaInicial] + " " + ESCALAS[escalaElegida - 1]  + " está conformado por: [" + 
                             escala[0] + "] / [" + escala[2] + "] / [" + escala[4] + "]");
     }
 }
