@@ -10,7 +10,7 @@ public class EscalasYAcordes {
     static final int TONE_AND_A_HALF = TONE + SEMITONE;
     static final int[] SCALES = { TONE, TONE, SEMITONE, TONE, TONE, TONE, SEMITONE };
     static Scanner scanner = new Scanner(System.in);
-    static final int[][] EXTRA_SCALES = {
+    static final int[][] NEW_SCALES = {
             { TONE, TONE, SEMITONE, TONE, TONE, TONE, SEMITONE },
             { TONE, SEMITONE, TONE, TONE, SEMITONE, TONE, TONE },
             { TONE, SEMITONE, TONE, TONE, SEMITONE, TONE_AND_A_HALF, SEMITONE },
@@ -33,7 +33,7 @@ public class EscalasYAcordes {
 
         int baseScale = showMenu();
         generateScale(baseScale);
-        selectionScale(EXTRA_SCALES, NAMES);
+        selectionScale(NEW_SCALES, NAMES);
 
         scanner.close();
     }
