@@ -41,13 +41,23 @@ public class EscalasAcordes {
         scanner.close();
     }
 
-        String[] escalaMayor = elaborarEscalaMayor(indiceNota);
-        String[] acordeMayor = elaborarAcordeMayor(escalaMayor);
-
-        mostrarResultados(NOTAS[indiceNota], escalaMayor, acordeMayor);
-
-        scanner.close();
+    private static int seleccionarOpcion(Scanner scanner, String tipo, String[] opciones) {
+        System.out.println("Seleccione una " + tipo + ":");
+        for (int i = 0; i < opciones.length; i++) {
+            System.out.println((i + 1) + ": " + opciones[i]);
+        }
+        return leerEntrada(scanner, opciones.length) - 1;
     }
+
+
+    private static int seleccionarOpcion(Scanner scanner, String tipo, String[] opciones) {
+        System.out.println("Seleccione una " + tipo + ":");
+        for (int i = 0; i < opciones.length; i++) {
+            System.out.println((i + 1) + ": " + opciones[i]);
+        }
+        return leerEntrada(scanner, opciones.length) - 1;
+    }
+
 
     private static void mostrarOpciones() {
         System.out.println("Ingrese el número de la nota a evaluar:");
