@@ -3,21 +3,26 @@ import java.util.Scanner;
 public class EscalasYAcordesExtendido {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
+
+        final int TONO = 2;
+        final int SEMITONO = 1;
+        final int TONOYMEDIO = 3;
+
         String[] notas = {"Do", "Do#", "Re", "Re#", "Mi", "Fa", "Fa#", "Sol", "Sol#", "La", "La#", "Si"};
         
         int[][] patrones = {
-            {2, 2, 1, 2, 2, 2, 1}, // Mayor
-            {2, 1, 2, 2, 1, 2, 2}, // Menor natural
-            {2, 1, 2, 2, 1, 3, 1}, // Menor armónica
-            {2, 1, 2, 2, 2, 2, 1}, // Menor melódica
-            {2, 2, 3, 2, 3},       // Pentatónica mayor
-            {3, 2, 2, 3, 2},       // Pentatónica menor
-            {2, 1, 2, 2, 2, 1, 2}, // Dórica
-            {1, 2, 2, 2, 1, 2, 2}, // Frigia
-            {2, 2, 2, 1, 2, 2, 1}, // Lidia
-            {2, 2, 1, 2, 2, 1, 2}, // Mixolidia
-            {1, 2, 2, 1, 2, 2, 2}, // Locria
-            {2, 2, 2, 2, 2, 2}     // Por tonos
+            {TONO, TONO, SEMITONO, TONO, TONO, TONO, SEMITONO}, 
+            {TONO, SEMITONO, TONO, TONO, SEMITONO, TONO, TONO}, 
+            {TONO, SEMITONO, TONO, TONO, SEMITONO, TONOYMEDIO, SEMITONO}, 
+            {TONO, SEMITONO, TONO, TONO, TONO, TONO, SEMITONO}, 
+            {TONO, TONO, TONOYMEDIO, TONO, TONOYMEDIO},
+            {TONOYMEDIO, TONO, TONO, TONOYMEDIO, TONO},
+            {TONO, SEMITONO, TONO, TONO, TONO, SEMITONO, TONO}, 
+            {SEMITONO, TONO, TONO, TONO, SEMITONO, TONO, TONO}, 
+            {TONO, TONO, TONO, SEMITONO, TONO, TONO, SEMITONO}, 
+            {TONO, TONO, SEMITONO, TONO, TONO, SEMITONO, TONO}, 
+            {SEMITONO, TONO, TONO, SEMITONO, TONO, TONO, TONO}, 
+            {TONO, TONO, TONO, TONO, TONO, TONO}
         };
         
         String[] nombresEscalas = {
@@ -35,6 +40,7 @@ public class EscalasYAcordesExtendido {
         
         for (int i = 0; i < patrones.length; i++) {
             imprimirEscala(notaBase, indice, notas, patrones[i], nombresEscalas[i]);
+            imprimirAcordes(notaBase, indice, notas, patrones[i], nombresEscalas[i]);
         }
         
         scanner.close();
@@ -58,5 +64,30 @@ public class EscalasYAcordesExtendido {
             System.out.print(notas[indice] + ", ");
         }
         System.out.println("");
+    }
+
+    static void imprimirAcordes(String notaBase, int indice, String[] notas, int[] patron, String nombreEscala) {
+        System.out.println("Acordes de la escala " + nombreEscala + " de " + notaBase + ":");
+        int[] grados = {0, 2, 4}; // Tónica, tercera y quinta
+        
+        for (int i = 0; i < patron.length; i++) {
+            String acorde = "";
+            int indiceNota = indice;
+            for (int grado : grados) {
+                indiceNota = (indice + sumaPasos(patron, grado)) % 12;
+                acorde += notas[indiceNota] + " ";
+            }
+            System.out.println(notas[indice] + " -> " + acorde.trim());
+            indice = (indice + patron[i]) % 12;
+        }
+        System.out.println("");
+    }
+
+    static int sumaPasos(int[] patron, int hasta) {
+        int suma = 0;
+        for (int i = 0; i < hasta; i++) {
+            suma += patron[i % patron.length];
+        }
+        return suma;
     }
 }
