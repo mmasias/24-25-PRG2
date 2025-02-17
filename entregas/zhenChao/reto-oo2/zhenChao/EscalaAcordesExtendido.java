@@ -25,24 +25,21 @@ public class EscalaAcordesExtendido {
         String[] escalaMayor = construirEscalaMayor(numeroNota -1);
         String[] acordeMayor = construirAcordeMayor(escalaMayor);
         System.out.println("Acorde mayor: " + acordeMayor[0] + " - " + acordeMayor[1] + " - " + acordeMayor[2]);
-        mostrarEscala(escalaMayor);
-
-
-
-        
+        mostrarEscala(escalaMayor);  
     }
     public static int pedirNota() {
         Scanner entrada = new Scanner(System.in);
         int numeroNota;
         do {
-            System.out.println("Seleccione una nota para construir su escala mayor y su acorde mayor:");
-            System.out.println("(1. Do), (2. Do#), (3. Re), (4. Re#), (5. Mi), (6. Fa), (7. Fa#), (8. Sol), (9. Sol#), (10. La), (11. La#), (12. Si)");
-            System.out.print("Introduce un número entre 1 y 12: ");
-            
+            System.out.println("Elige una nota:");
+            for (int i = 0; i < NOTAS.length; i++) {
+                System.out.println((i + 1) + ": " + NOTAS[i]);
+            }
+            System.out.print("Introduce un número (1-12): ");
             numeroNota = entrada.nextInt();
         } while (numeroNota < 1 || numeroNota > 12);
 
-        entrada.close();
+        entrada.close(); 
         return numeroNota;
     }
 
