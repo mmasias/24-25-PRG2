@@ -20,7 +20,7 @@ public class EsacalasAcordes2 {
             LOCRIA = { 0, SEMITONO, TONO, TONO, SEMITONO, TONO, TONO, TONO },
             POR_TONO = { 0, TONO, TONO, TONO, TONO, TONO, TONO };
 
-    static final String[] NOMBRE_ESCALAS = { "Mayor", "Menor", "Menor natural", "Menor armónica", "Menor melódica",
+    static final String[] TIPO_ESCALAS = { "Mayor", "Menor", "Menor natural", "Menor armónica", "Menor melódica",
             "Pentatónica mayor", "Pentatónica menor", "Dórica", "Frigia", "Lídia", "Mixolidia", "Locria", "Por tono" };
     static final int[][] SALTOS = { MAYOR, MENOR, MENOR_NATURAL, MENOR_ARMONICA, MENOR_MELODICA,
             PENTATONICA_MAYOR, PENTATONICA_MENOR, DORICA, FRIGIA, LIDIA, MIXOLIDIA, LOCRIA, POR_TONO };
@@ -29,5 +29,39 @@ public class EsacalasAcordes2 {
     static final int[] SALTOS_ACORDE = { I, III, V };
 
     static Scanner scanner = new Scanner(System.in);
+
+    public static void main(String[] args) {
+        int notaActiva = pedirNota();
+        int escalaActiva = pedirEscala();
+    }
+
+    static int pedirEscala() {
+        imprimirSecuencia(TIPO_ESCALAS);
+        System.out.print("Ingrese la nota inicial (1-" + TIPO_ESCALAS.length + "): ");
+        int escala = scanner.nextInt() - 1;
+        System.out.println();
+        return escala;
+    }
+
+    static int pedirNota() {
+        System.out.print("Ingrese la nota inicial (1-12): ");
+        int nota = scanner.nextInt() - 1;
+        System.out.println();
+        return nota;
+    }
+
+    static void imprimirSecuencia(int[] secuencia) {
+        for (int i : secuencia) {
+            System.out.print(NOTAS[i] + " ");
+        }
+        System.out.println();
+    }
+
+    static void imprimirSecuencia(String[] secuencia) {
+        for (int i = 0; i < secuencia.length; i++) {
+            System.out.print(TIPO_ESCALAS[i] + " ");
+        }
+        System.out.println();
+    }
 
 }
