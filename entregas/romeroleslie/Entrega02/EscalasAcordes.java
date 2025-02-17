@@ -72,7 +72,7 @@ public class EscalasAcordes {
     }
 
     private static void mostrarResultados(String nota, String escala, String[] notasEscala, String[] acorde) {
-        System.out.println("Eligió la nota " + nota + " en la escala " + escala);
+        System.out.println("Eligió la nota musical " + nota + " en la escala " + escala);
         System.out.print("Escala: ");
         mostrarNotas(notasEscala);
         System.out.print("Acorde: ");
