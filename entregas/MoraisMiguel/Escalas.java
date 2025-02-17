@@ -8,13 +8,18 @@ class Escalas{
 
         int escalaUsuario = pedirEscala();
 
-        String[] escala = crearEscalaMayor(notaUsuario);
+        if(escalaUsuario == 1){
 
-        String[] acorde = crearAcordeMayor(escala);
+            String[] escala = crearEscalaMayor(notaUsuario);
 
-        printEscalaMayor(notaUsuario, escala);
+            String[] acorde = crearAcordeMayor(escala);
 
-        printAcordeMayor(notaUsuario, acorde);
+            printEscalaMayor(notaUsuario, escala);
+
+            printAcordeMayor(notaUsuario, acorde);
+
+        }
+      
     }
 
     static void printEscalaMayor(int notaUsuario, String[] escala) {
@@ -106,8 +111,6 @@ class Escalas{
         
         System.out.println("Has elegido " + notas[notaUsuario]);
 
-        
-
         return notaUsuario;
     }
 
@@ -115,13 +118,13 @@ class Escalas{
 
         System.out.println("Escoge la escala que desees: 1: Mayor, 2: Menor natural, 3: Menor armonica, 4: Menor melodica, 5: Pentatonica mayor, 6: Pentatonica menor, 7: Dorica, 8: Frigia, 9: Lidia, 10: Mixolidia, 11: Locria, 12: Por tonos");
 
-        Scanner input = new Scanner(System.in);
+        Scanner input2 = new Scanner(System.in);
 
-        int escalaUsuario = input.nextInt() - 1;
+        int escalaUsuario = input2.nextInt() - 1;
 
         if(escalaUsuario > 12) {System.out.println("Error: escala no valida.");}
         
-        input.close();
+        input2.close();
 
         String[] escalas = { "Mayor", "Menor natural", "Menor armonica", "Menor melodica", "Pentatonica mayor", "Pentatonica menor", "Dorica", "Frigia", "Lidia", "Mixolidia", "Locria", "Por tonos"};
         
