@@ -5,7 +5,7 @@ public class EscalaAcordesExtendido {
     private static final String[] NOTAS = {"Do", "Do#", "Re", "Re#", "Mi", "Fa", "Fa#", "Sol", "Sol#", "La", "La#", "Si"};
     static final int SEMITONO = 1, TONO = SEMITONO + SEMITONO, TONO_Y_MEDIO = TONO + SEMITONO;
     
-    static final int[][] INTERVALOS = {
+    static final int[][] INTERVALOS_DE_LAS_ESCALAS = {
         { TONO, TONO, SEMITONO, TONO, TONO, TONO, SEMITONO }, 
         { TONO, SEMITONO, TONO, TONO, SEMITONO, TONO, TONO }, 
         { TONO, SEMITONO, TONO, TONO, SEMITONO, TONO_Y_MEDIO, SEMITONO }, 
@@ -19,7 +19,7 @@ public class EscalaAcordesExtendido {
         { SEMITONO, TONO, TONO, SEMITONO, TONO, TONO, TONO }, 
         { TONO, TONO, TONO, TONO, TONO, TONO } 
     };
-     static final String[] NOMBRES_DE_LOS_INTERVALOS = {"Mayor", "Menor", "Menor Armónica", "Menor Melódica", "Pentatónica Mayor", "Pentatónica Menor"};
+     static final String[] NOMBRE_INTERVALOS_DE_LAS_ESCALAS = {"Mayor", "Menor", "Menor Armónica", "Menor Melódica", "Pentatónica Mayor", "Pentatónica Menor"};
     public static void main(String[] args) {
         int numeroNota = pedirNota();
         String[] escalaMayor = construirEscalaMayor(numeroNota -1);
@@ -33,13 +33,16 @@ public class EscalaAcordesExtendido {
     }
     public static int pedirNota() {
         Scanner entrada = new Scanner(System.in);
-        
-        System.out.println("Seleccione una nota para construir su escala mayor y su acorde mayor ");
-        System.out.println("(1. Do), (2. Do#), (3. Re),(4. Re#), (5. Mi), (6. Fa),(7. Fa#), (8. Sol),(9. Sol#),(10. La),(11. La#), (12. Si)");
-       
-        System.out.print("Introduce un número entre 1 y 12: ");
-        int numeroNota = entrada.nextInt();
-        
+        int numeroNota;
+        do {
+            System.out.println("Seleccione una nota para construir su escala mayor y su acorde mayor:");
+            System.out.println("(1. Do), (2. Do#), (3. Re), (4. Re#), (5. Mi), (6. Fa), (7. Fa#), (8. Sol), (9. Sol#), (10. La), (11. La#), (12. Si)");
+            System.out.print("Introduce un número entre 1 y 12: ");
+            
+            numeroNota = entrada.nextInt();
+        } while (numeroNota < 1 || numeroNota > 12);
+
+        entrada.close();
         return numeroNota;
     }
 
