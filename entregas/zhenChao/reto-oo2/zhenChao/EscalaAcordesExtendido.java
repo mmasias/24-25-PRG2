@@ -24,7 +24,7 @@ public class EscalaAcordesExtendido {
         Scanner entrada = new Scanner(System.in);
         int numeroNota = pedirNota();
         String[] escalaMayor = construirEscala(nota, INTERVALOS_DE_LAS_ESCALAS[tipoEscala]);
-        String[] acordeMayor = construirAcordeMayor(escalaMayor);
+        String[] acordeMayor = construirAcorde(escalaMayor);
         int opcionEscala = pedirTipoEscala(entrada);
         System.out.println("Acorde mayor: " + acordeMayor[0] + " - " + acordeMayor[1] + " - " + acordeMayor[2]);
         mostrarEscala(escalaMayor);  
@@ -81,7 +81,10 @@ public class EscalaAcordesExtendido {
         return -1;
     }
 
-    public static String[] construirAcordeMayor(String[] escala) {
+    static String[] cosntruirAcorde(String[] escala) {
+        if (escala.length < 5) {
+            return new String[]{escala[0], escala[1], escala[2]};
+        }
         return new String[]{escala[0], escala[2], escala[4]};
     }
     public static void mostrarEscala(String[] escala) {
