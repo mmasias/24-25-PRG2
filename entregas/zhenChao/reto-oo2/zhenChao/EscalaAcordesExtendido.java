@@ -23,9 +23,9 @@ public class EscalaAcordesExtendido {
     public static void main(String[] args) {
         Scanner entrada = new Scanner(System.in);
         int numeroNota = pedirNota();
-        String[] escalaMayor = construirEscala(numeroNota -1);
+        String[] escalaMayor = construirEscala(nota, INTERVALOS_DE_LAS_ESCALAS[escala]);
         String[] acordeMayor = construirAcordeMayor(escalaMayor);
-        int opcionEscala = pedirTipoEscala();
+        int opcionEscala = pedirTipoEscala(entrada);
         System.out.println("Acorde mayor: " + acordeMayor[0] + " - " + acordeMayor[1] + " - " + acordeMayor[2]);
         mostrarEscala(escalaMayor);  
     }
@@ -53,32 +53,22 @@ public class EscalaAcordesExtendido {
         int opcion;
         do {
             System.out.print("Introduce un número válido: ");
-            opcion = scanner.nextInt();
+            opcion = entrada.nextInt();
         } while (opcion < 1 || opcion > NOMBRE_INTERVALOS_DE_LAS_ESCALAS.length);
         
         return opcion - 1;
     }
 
-    public static String[] construirEscala(int indiceNota) {
-        final int NUMERO_DE_NOTAS_MUSICALES = 12;
-        String[] notasMusicales = {"Do", "Do#", "Re", "Re#", "Mi", "Fa", "Fa#", "Sol", "Sol#", "La", "La#", "Si"};
+    static String[] construirEscala(String nota, int[] intervalos) {
+        int posicionNota = obtenerIndiceNota(nota);
+        String[] escala = new String[intervalos.length + 1];
         
-        int indice = indiceNota;
-        
-        
-        int[] pasos = {2, 2, 1, 2, 2, 2, 1}; 
-        String[] escala = new String[8];
-        
-        
-        escala[0] = notasMusicales[indice];
-
-        
-        for (int i = 0; i < pasos.length; i++) {
-            
-            indice = (indice + pasos[i]) % NUMERO_DE_NOTAS_MUSICALES; 
-            escala[i+1] = notasMusicales[indice];
+        for (int i = 0; i < escala.length; i++) {
+            escala[i] = NOTAS[posicionNota];
+            if (i < intervalos.length) {
+                posicionNota = (posicionNota + intervalos[i]) % NOTAS.length;
+            }
         }
-
         return escala;
     }
 
