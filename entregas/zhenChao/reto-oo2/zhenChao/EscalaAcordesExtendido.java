@@ -87,12 +87,9 @@ public class EscalaAcordesExtendido {
         }
         return new String[]{escala[0], escala[2], escala[4]};
     }
-    public static void mostrarEscala(String[] escala) {
-        System.out.println("Escala mayor:");
-
-        for (int i = 0; i < escala.length; i++) {
-            System.out.print(escala[i] + "----" );
-           
+    static void imprimirSecuencia(String[] secuencia) {
+        for (String nota : secuencia) {
+            System.out.print("[" + nota + "] ");
         }
         System.out.println();
     }
