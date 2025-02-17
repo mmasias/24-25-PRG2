@@ -1,4 +1,5 @@
 {
     "explorer.fileNesting.enabled": false,
-    "explorer.fileNesting.expand": true
+    "explorer.fileNesting.expand": true,
+    "java.debug.settings.onBuildFailureProceed": true
 }

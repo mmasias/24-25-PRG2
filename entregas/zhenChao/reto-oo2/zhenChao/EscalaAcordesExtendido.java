@@ -1,3 +1,4 @@
+
 import java.util.Scanner;
 
 public class EscalaAcordesExtendido {
@@ -94,3 +95,4 @@ public class EscalaAcordesExtendido {
         System.out.println();
     }
 }
+
