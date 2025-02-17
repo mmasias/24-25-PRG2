@@ -23,7 +23,7 @@ public class EscalaAcordesExtendido {
     public static void main(String[] args) {
         Scanner entrada = new Scanner(System.in);
         int numeroNota = pedirNota();
-        String[] escalaMayor = construirEscala(nota, INTERVALOS_DE_LAS_ESCALAS[escala]);
+        String[] escalaMayor = construirEscala(nota, INTERVALOS_DE_LAS_ESCALAS[tipoEscala]);
         String[] acordeMayor = construirAcordeMayor(escalaMayor);
         int opcionEscala = pedirTipoEscala(entrada);
         System.out.println("Acorde mayor: " + acordeMayor[0] + " - " + acordeMayor[1] + " - " + acordeMayor[2]);
@@ -70,6 +70,15 @@ public class EscalaAcordesExtendido {
             }
         }
         return escala;
+    }
+
+    static int obtenerIndiceNota(String nota) {
+        for (int i = 0; i < NOTAS.length; i++) {
+            if (nota.equals(NOTAS[i])) {
+                return i;
+            }
+        }
+        return -1;
     }
 
     public static String[] construirAcordeMayor(String[] escala) {
