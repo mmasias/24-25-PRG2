@@ -71,9 +71,10 @@ public class NoteScale {
         } while (i < upperScaleMap.length);
         System.out.println("\nEsta es la escala");
 
-        for (int k = 0; k < 3; k++) {
-            System.out.print(acord[k] + " ");
-        }
+        System.out.print(acord[0] + " ");
+        System.out.print(acord[2] + " ");
+        System.out.print(acord[4] + " ");
+        
         System.out.println("\nEsta es el acorde");
     }
 }
