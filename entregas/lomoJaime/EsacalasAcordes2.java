@@ -26,13 +26,21 @@ public class EsacalasAcordes2 {
             PENTATONICA_MAYOR, PENTATONICA_MENOR, DORICA, FRIGIA, LIDIA, MIXOLIDIA, LOCRIA, POR_TONO };
 
     static final int I = 0, III = 2, V = 4;
-    static final int[] SALTOS_ACORDE = { I, III, V };
+    static final int[] TIPOS_SALTOS = { I, III, V };
 
     static Scanner scanner = new Scanner(System.in);
 
     public static void main(String[] args) {
         int notaActiva = pedirNota();
         int escalaActiva = pedirEscala();
+        int[] escala = construirEscala(notaActiva, SALTOS[escalaActiva]);
+
+        int[] acorde = new int[TIPOS_SALTOS.length];
+        construirAcorde(acorde, escala);
+
+        imprimirSecuencia(escala);
+        imprimirSecuencia(acorde);
+
     }
 
     static int pedirEscala() {
@@ -62,6 +70,20 @@ public class EsacalasAcordes2 {
             System.out.print(TIPO_ESCALAS[i] + " ");
         }
         System.out.println();
+    }
+    static int[] construirEscala(int nota, int[] saltos) {
+        int[] escala = new int[saltos.length];
+        escala[0] = nota;
+        for (int i = 1; i < saltos.length; i++) {
+            escala[i] = (escala[i - 1] + saltos[i]) % NOTAS.length;
+        }
+        return escala;
+    }
+
+    static void construirAcorde(int[] acorde, int[] escala) {
+        for (int i = 0; i < acorde.length; i++) {
+            acorde[i] = escala[TIPOS_SALTOS[i]];
+        }
     }
 
 }
