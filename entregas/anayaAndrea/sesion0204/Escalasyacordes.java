@@ -2,56 +2,42 @@ import java.util.Scanner;
 
 public class Escalasyacordes {
 
-    private static final int[] patron = {2, 2, 1, 2, 2, 2, 1};
-
-    private static final String[] notas = {"Do", "Do#", "Re", "Re#", "Mi", "Fa", "Fa#", "Sol", "Sol#", "La", "La#", "Si"};
-
     public static void main(String[] args) {
+
+        String[] acordes = {"Do", "Do#", "Re", "Re#", "Mi", "Fa", "Fa#", "Sol", "Sol#", "La", "La#", "Si"};
+        int[] intervalos = {2, 2, 1, 2, 2, 2, 1}; 
+
         Scanner scanner = new Scanner(System.in);
-
-        while (true) {
-            System.out.print("Introduce la nota base (por ejemplo, Do, Re#, Mi): ");
-            String notaBase = scanner.nextLine(); 
-
-            int indiceNotaBase = -1;
-            for (int i = 0; i < notas.length; i++) {
-                if (notas[i].equals(notaBase)) {
-                    indiceNotaBase = i;
-                }
-            }
-
-            if (indiceNotaBase == -1) {
-                System.out.println("Nota inválida. Por favor, intenta de nuevo.");
-                continue; 
-            }
-
-            String[] escalaMayor = construirEscalaMayor(indiceNotaBase);
-
-            System.out.print("Escala mayor de " + notas[indiceNotaBase] + ": ");
-            for (String nota : escalaMayor) {
-                System.out.print(nota + " ");
-            }
-            System.out.println();
-
-            System.out.println("Acorde mayor de " + notas[indiceNotaBase] + ": " + escalaMayor[0] + " " + escalaMayor[2] + " " + escalaMayor[4]);
-
-            System.out.print("¿Quieres introducir otra nota? (S/N): ");
-            String respuesta = scanner.nextLine();
-            if (respuesta.equals("N") || respuesta.equals("n")) {
-                return; 
+        
+        System.out.print("Ingrese una nota (Do, Do#, Re, Re#, Mi, ...): ");
+        int notaUsuario = scanner.nextInt();
+        
+        if (notaUsuario < 0 || notaUsuario >= acordes.length) {
+            System.out.println("Nota inválida.");
+            return;
         }
-    }
-    }
 
-    private static String[] construirEscalaMayor(int indiceNotaBase) {
-        String[] escala = new String[7];
-        int indiceActual = indiceNotaBase;
+        String notaElegida = acordes[notaUsuario];
+        System.out.println("Ha elegido la nota " + notaElegida);
 
+        String[] escalaMayor = new String[7];
+        int indice = notaUsuario;
         for (int i = 0; i < 7; i++) {
-            escala[i] = notas[indiceActual];
-            indiceActual = (indiceActual + patron[i]) % notas.length;
+            escalaMayor[i] = acordes[indice];
+            indice = (indice + intervalos[i]) % acordes.length;
         }
 
-        return escala;
+        System.out.print("La escala de " + notaElegida + " Mayor es: ");
+        for (String nota : escalaMayor) {
+            System.out.print(nota + " ");
+        }
+        System.out.println();
+
+        String[] acordeMayor = {acordes[notaUsuario], acordes[(notaUsuario + 4) % acordes.length], acordes[(notaUsuario + 7) % acordes.length]};
+        System.out.print("El acorde mayor de " + notaElegida + " está conformado por: ");
+        for (String nota : acordeMayor) {
+            System.out.print(nota + " ");
+        }
+        System.out.println();
     }
 }
