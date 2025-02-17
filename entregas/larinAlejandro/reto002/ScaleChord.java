@@ -30,7 +30,7 @@ public class ScaleChord {
         INTERVALE_LOCRIA, INTERVALE_BY_TONE
     };
 
-        static final String[] SCALE_NAMES = {
+    static final String[] SCALE_NAMES = {
         "Major", "Elder", "Natural Minor", "Harmonic Minor", "Melodic Minor",
         "Major Pentatonic", "Pentatonic Minor", "Doric", "Phrygia", "Bullfight",
         "Mixolydia", "Locria", "By Tone"
