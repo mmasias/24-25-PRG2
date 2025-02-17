@@ -47,7 +47,7 @@ public class EscalaAcordeMayor {
     }
 
     private static void imprimirAcordeMayor(int notaUsuario, String notaBase) {
-        System.out.print("El acorde de " + notaBase + " Mayor está conformado por: ");
+        System.out.print("El acorde de " + notaBase + " Mayor esta conformado por: ");
         for (int intervalo : PATRON_ACORDE_MAYOR) {
             System.out.print("[" + NOTAS[(notaUsuario - 1 + intervalo) % 12] + "] ");
         }
