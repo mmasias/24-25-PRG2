@@ -7,15 +7,13 @@ class CalcularAcordesPlus{
     static final int INDICE_ARRAYS = 1;
     public static void main(String[] args) { 
         String [] escalaAGenerar = {};
-        int [] elecciones = {};
+        int [] elecciones = new int[2];
         String[][] patronesEscala = almacenarPatronesEscala();
         pedirInput(patronesEscala, elecciones);
         generarEscala(patronesEscala, escalaAGenerar, elecciones);
-        
     } 
     public static void pedirInput(String[][] escalas, int[] elecciones){
         Scanner input = new Scanner(System.in); 
-        elecciones = new int[2];
         for(int i = 0; i < NOTAS_ESCALA.length; i++){
             System.out.println("Nota # " + (i + INDICE_ARRAYS) + " " + NOTAS_ESCALA[i]);
         }
@@ -51,28 +49,29 @@ class CalcularAcordesPlus{
         int numeroNota = elecciones[INDICE_ELECCION_NOTA];
         int numeroEscala = elecciones[INDICE_ELECCION_ESCALA];
         int variableOperadora = numeroNota;
-        escalaAGenerar = new String[arrayPatronesEscala[numeroEscala].length];
+        escalaAGenerar = new String[arrayPatronesEscala[numeroEscala].length - INDICE_ARRAYS];
         final int SUMA_POSICION_TONO = 2;
         final int SUMA_POSICION_SEMITONO = 1;
 
-        for(int i = INDICE_ARRAYS; i <= arrayPatronesEscala[numeroEscala].length - 1; i++){
-           if(arrayPatronesEscala[numeroEscala].equals("T")){
+        for(int i = 1; i < arrayPatronesEscala[numeroEscala].length; i++){
+           if(arrayPatronesEscala[numeroEscala][i].equals("T")){
             variableOperadora += SUMA_POSICION_TONO;
-           }else if(escalaAGenerar[numeroEscala].equals("T.5")){
+           }else if(arrayPatronesEscala[numeroEscala][i].equals("T.5")){
             variableOperadora += (SUMA_POSICION_TONO + SUMA_POSICION_SEMITONO);
            } else {
             variableOperadora += SUMA_POSICION_SEMITONO;
-              if(variableOperadora >= NOTAS_ESCALA.length){
+        }
+            if(variableOperadora >= NOTAS_ESCALA.length){
                 variableOperadora = variableOperadora%NOTAS_ESCALA.length;
               }
-            }
-              escalaAGenerar[i] = NOTAS_ESCALA[variableOperadora];
+              escalaAGenerar[i - INDICE_ARRAYS] = NOTAS_ESCALA[variableOperadora];
         }
-        imprimirEscala(escalaAGenerar, NOTAS_ESCALA[numeroNota]);
+        imprimirEscala(escalaAGenerar, arrayPatronesEscala[numeroEscala][INDICE_ELECCION_ESCALA], NOTAS_ESCALA[numeroNota]);
     }
 
-    public static void imprimirEscala(String[] escalaAGenerar, String notaPrincipal){
-        System.out.print("La escala del acorde mayor de " + notaPrincipal + " es:");
+    public static void imprimirEscala(String[] escalaAGenerar, String escala, String notaPrincipal){
+        System.out.print("La escala " + escala + " de " + notaPrincipal + " es:");
+        System.out.println();
         for(int i=0; i < escalaAGenerar.length; i++){
             System.out.println(escalaAGenerar[i]);
         }
