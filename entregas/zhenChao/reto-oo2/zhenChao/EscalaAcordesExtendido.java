@@ -1,4 +1,3 @@
-
 import java.util.Scanner;
 
 public class EscalaAcordesExtendido {
@@ -11,38 +10,38 @@ public class EscalaAcordesExtendido {
         { TONO, SEMITONO, TONO, TONO, SEMITONO, TONO_Y_MEDIO, SEMITONO }, 
         { TONO, SEMITONO, TONO, TONO, TONO, TONO, SEMITONO }, 
         { TONO, TONO, TONO_Y_MEDIO, TONO, TONO_Y_MEDIO }, 
-        { TONO_Y_MEDIO, TONO, TONO, TONO_Y_MEDIO, TONO }, 
-        { TONO, SEMITONO, TONO, TONO, TONO, SEMITONO, TONO }, 
-        { SEMITONO, TONO, TONO, TONO, SEMITONO, TONO, TONO }, 
-        { TONO, TONO, TONO, SEMITONO, TONO, TONO, SEMITONO }, 
-        { TONO, TONO, SEMITONO, TONO, TONO, SEMITONO, TONO }, 
-        { SEMITONO, TONO, TONO, SEMITONO, TONO, TONO, TONO }, 
-        { TONO, TONO, TONO, TONO, TONO, TONO } 
+        { TONO_Y_MEDIO, TONO, TONO, TONO_Y_MEDIO, TONO }
     };
-     static final String[] NOMBRE_INTERVALOS_DE_LAS_ESCALAS = {"Mayor", "Menor", "Menor Armónica", "Menor Melódica", "Pentatónica Mayor", "Pentatónica Menor"};
+
+    static final String[] NOMBRE_INTERVALOS_DE_LAS_ESCALAS = {"Mayor", "Menor", "Menor Armónica", "Menor Melódica", "Pentatónica Mayor", "Pentatónica Menor"};
+
     public static void main(String[] args) {
         Scanner entrada = new Scanner(System.in);
-        int numeroNota = pedirNota();
-        String[] escalaMayor = construirEscala(nota, INTERVALOS_DE_LAS_ESCALAS[tipoEscala]);
-        String[] acordeMayor = construirAcorde(escalaMayor);
-        int opcionEscala = pedirTipoEscala(entrada);
-        System.out.println("Acorde mayor: " + acordeMayor[0] + " - " + acordeMayor[1] + " - " + acordeMayor[2]);
-        mostrarEscala(escalaMayor);  
+        
+        String notaBase = pedirNota(entrada);
+        int tipoEscala = pedirTipoEscala(entrada);
+        
+        String[] escala = construirEscala(notaBase, INTERVALOS_DE_LAS_ESCALAS[tipoEscala]);
+        String[] acorde = construirAcorde(escala);
+        
+        System.out.println("Escala " + NOMBRE_INTERVALOS_DE_LAS_ESCALAS[tipoEscala] + ":");
+        imprimirSecuencia(escala);
+        System.out.println("Acorde:");
+        imprimirSecuencia(acorde);
     }
-    public static int pedirNota() {
-        Scanner entrada = new Scanner(System.in);
-        int numeroNota;
-        do {
-            System.out.println("Elige una nota:");
-            for (int i = 0; i < NOTAS.length; i++) {
-                System.out.println((i + 1) + ": " + NOTAS[i]);
-            }
-            System.out.print("Introduce un número (1-12): ");
-            numeroNota = entrada.nextInt();
-        } while (numeroNota < 1 || numeroNota > 12);
 
-        entrada.close(); 
-        return numeroNota;
+    static String pedirNota(Scanner entrada) {
+        System.out.println("Elige una nota:");
+        for (int i = 0; i < NOTAS.length; i++) {
+            System.out.println((i + 1) + ": " + NOTAS[i]);
+        }
+        int opcionNota;
+        do {
+            System.out.print("Introduce un número (1-12): ");
+            opcionNota = entrada.nextInt();
+        } while (opcionNota < 1 || opcionNota > 12);
+
+        return NOTAS[opcionNota - 1];
     }
 
     static int pedirTipoEscala(Scanner entrada) {
@@ -81,18 +80,17 @@ public class EscalaAcordesExtendido {
         return -1;
     }
 
-    static String[] cosntruirAcorde(String[] escala) {
+    static String[] construirAcorde(String[] escala) {
         if (escala.length < 5) {
             return new String[]{escala[0], escala[1], escala[2]};
         }
         return new String[]{escala[0], escala[2], escala[4]};
     }
+
     static void imprimirSecuencia(String[] secuencia) {
         for (String nota : secuencia) {
             System.out.print("[" + nota + "] ");
         }
         System.out.println();
     }
-
-    
 }
