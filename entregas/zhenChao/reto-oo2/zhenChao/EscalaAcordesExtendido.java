@@ -22,8 +22,9 @@ public class EscalaAcordesExtendido {
      static final String[] NOMBRE_INTERVALOS_DE_LAS_ESCALAS = {"Mayor", "Menor", "Menor Armónica", "Menor Melódica", "Pentatónica Mayor", "Pentatónica Menor"};
     public static void main(String[] args) {
         int numeroNota = pedirNota();
-        String[] escalaMayor = construirEscalaMayor(numeroNota -1);
+        String[] escalaMayor = construirEscala(numeroNota -1);
         String[] acordeMayor = construirAcordeMayor(escalaMayor);
+        int opcionEscala = pedirTipoEscala();
         System.out.println("Acorde mayor: " + acordeMayor[0] + " - " + acordeMayor[1] + " - " + acordeMayor[2]);
         mostrarEscala(escalaMayor);  
     }
@@ -43,7 +44,21 @@ public class EscalaAcordesExtendido {
         return numeroNota;
     }
 
-    public static String[] construirEscalaMayor(int indiceNota) {
+    static int pedirTipoEscala(Scanner scanner) {
+        System.out.println("Elige un tipo de escala:");
+        for (int i = 0; i < NOMBRE_INTERVALOS_DE_LAS_ESCALAS.length; i++) {
+            System.out.println((i + 1) + ": " + NOMBRE_INTERVALOS_DE_LAS_ESCALAS[i]);
+        }
+        int opcion;
+        do {
+            System.out.print("Introduce un número válido: ");
+            opcion = scanner.nextInt();
+        } while (opcion < 1 || opcion > NOMBRE_INTERVALOS_DE_LAS_ESCALAS.length);
+        
+        return opcion - 1;
+    }
+
+    public static String[] construirEscala(int indiceNota) {
         final int NUMERO_DE_NOTAS_MUSICALES = 12;
         String[] notasMusicales = {"Do", "Do#", "Re", "Re#", "Mi", "Fa", "Fa#", "Sol", "Sol#", "La", "La#", "Si"};
         
