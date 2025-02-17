@@ -73,7 +73,7 @@ class CalcularAcordesPlus{
 
     public static void imprimirEscala(String[] escalaAGenerar, String notaPrincipal){
         System.out.print("La escala del acorde mayor de " + notaPrincipal + " es:");
-        for(i=0; i < escalaAGenerar.length; i++){
+        for(int i=0; i < escalaAGenerar.length; i++){
             System.out.println(escalaAGenerar[i]);
         }
     }
