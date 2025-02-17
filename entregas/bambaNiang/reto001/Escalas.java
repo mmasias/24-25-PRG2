@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-class Escalas{
+class escalas{
     public static void main(String[] args) {
         
         int[] notas = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12 };
@@ -46,8 +46,7 @@ class Escalas{
          int not5 = not4+2;
          int not6 = not5+2;
          int not7 = not6+1;
-         System.out.println("la escla de" + parse(notas[0]) + "Mayor es: " +parse(notas[not1])+"/"+parse(notas[not2])+"/"+parse(notas[not3])+
-         "/"+parse(notas[not4])+"/"+parse(notas[not5])+"/"+parse(notas[not6])+"/"+parse(notas[not7]) );
+         System.out.println("la escla de" + parse(notas[0]) + "Mayor es: " +parse(notas[not1])+"/"+parse(notas[not2])+"/"+parse(notas[not3])+ "/"+parse(notas[not4])+"/"+parse(notas[not5])+"/"+parse(notas[not6])+"/"+parse(notas[not7]) );
 
          System.out.println("El acorde esta conformado por:"+parse(notas[not1])+"/"+parse(notas[not3])+"/"+parse(notas[not5]) );
 
