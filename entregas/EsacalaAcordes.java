@@ -5,8 +5,8 @@ public class EscalasAcordes {
     static final int TONO = 2, SEMITONO = 1;
     
     static final int[][] ESCALAS = {
-        {TONO, TONO, SEMITONO, TONO, TONO, TONO, SEMITONO},  // Mayor
-        {TONO, SEMITONO, TONO, TONO, SEMITONO, TONO, TONO}   // Menor natural
+        {TONO, TONO, SEMITONO, TONO, TONO, TONO, SEMITONO},  
+        {TONO, SEMITONO, TONO, TONO, SEMITONO, TONO, TONO}   
     };
     
     static final String[] NOMBRES_ESCALAS = {"Mayor", "Menor natural"};
