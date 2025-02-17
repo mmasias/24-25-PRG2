@@ -21,7 +21,8 @@ public class NoteScale {
     }
 
     static int scaleMenu(String[] twelveNoteMap) {
-        final String[] MUSIC_SCALES = { "1. Mayor", "2. Menor natural", "3. Menor armónica", "4. Menor melódica", "5. Pentatónica mayor", "6. Pentatónica menor",
+        final String[] MUSIC_SCALES = { "1. Mayor", "2. Menor natural", "3. Menor armónica", "4. Menor melódica",
+                "5. Pentatónica mayor", "6. Pentatónica menor",
                 "7. Dórica", "8. Frigia", "9. Lidia", "10. Mixolidia", "11. Locria", "12. Por tonos" };
 
         for (String scale : MUSIC_SCALES) {
@@ -61,20 +62,19 @@ public class NoteScale {
 
     static void scaleAndAcord(String[] upperScaleMap, int[] tempo) {
         int i = 0, j = 0;
-        String[] acord = new String[7];
+        String[] acordMap = new String[7];
 
         do {
             System.out.print(upperScaleMap[i] + " ");
-            acord[j] = upperScaleMap[i];
+            acordMap[j] = upperScaleMap[i];
             i += tempo[j];
             j++;
         } while (i < upperScaleMap.length);
         System.out.println("\nEsta es la escala");
 
-        for(int k=0; k<5; k +=2){
-            System.out.print(acord[k] + " ");
+        for (int k = 0; k < 5; k += 2) {
+            System.out.print(acordMap[k] + " ");
         }
-        
         System.out.println("\nEsta es el acorde");
     }
 }
