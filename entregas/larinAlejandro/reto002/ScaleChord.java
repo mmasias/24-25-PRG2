@@ -23,21 +23,21 @@ public class ScaleChord {
     static final int[] INTERVALE_LOCRIA = {SEMI_TONE, TONE, TONE, SEMI_TONE, TONE, TONE, TONE};
     static final int[] INTERVALE_BY_TONE = {TONE, TONE, TONE, TONE, TONE, TONE};
 
-    static final int I = 0, III = 2, V = 4;
-    static final int[] INTERVALE_CHORD = {I, III, V};
-
-    static final String[] SCALE_NAMES = {
-        "Major", "Elder", "Natural Minor", "Harmonic Minor", "Melodic Minor",
-        "Major Pentatonic", "Pentatonic Minor", "Doric", "Phrygia", "Bullfight",
-        "Mixolydia", "Locria", "By Tone"
-    };
-
     static final int[][] ALL_SCALES = {
         INTERVALE_SCALE_MAJOR, INTERVALE_ELDER, INTERVALE_NATURAL_MINOR, INTERVALE_HARMONIC_MINOR,
         INTERVALE_MELODIC_MINOR, INTERVALE_MAJOR_PENTATONIC, INTERVALE_PENTATONIC_MINOR,
         INTERVALE_DORIC, INTERVALE_PHRYGIA, INTERVALE_BULLFIGHT, INTERVALE_MIXOLYDIA,
         INTERVALE_LOCRIA, INTERVALE_BY_TONE
     };
+
+        static final String[] SCALE_NAMES = {
+        "Major", "Elder", "Natural Minor", "Harmonic Minor", "Melodic Minor",
+        "Major Pentatonic", "Pentatonic Minor", "Doric", "Phrygia", "Bullfight",
+        "Mixolydia", "Locria", "By Tone"
+    };
+
+    static final int I = 0, III = 2, V = 4;
+    static final int[] INTERVALE_CHORD = {I, III, V};
 
     public static void main(String[] args) {
         int choicedScale = askScale();
@@ -108,15 +108,15 @@ public class ScaleChord {
         return chord;
     }
 
-    static void showIntervals(String label, String[] array) {
-        if (array.length == SCALE_NAMES.length) {
+    static void showIntervals(String label, String[] intervals) {
+        if (intervals.length == SCALE_NAMES.length) {
             for (int i = 0; i < SCALE_NAMES.length; i++) {
                 System.out.println((i + 1) + ". " + SCALE_NAMES[i]);
             }
         } else {
             System.out.print(label + ": ");
 
-            for (String item : array) {
+            for (String item : intervals) {
                 System.out.print(item + " ");
             }
 
