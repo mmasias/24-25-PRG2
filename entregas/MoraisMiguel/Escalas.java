@@ -6,16 +6,18 @@ class Escalas{
 
         int notaUsuario = pedirNota();
 
-        String[] escala = crearEscala(notaUsuario);
+        int escalaUsuario = pedirEscala();
 
-        String[] acorde = crearAcorde(escala);
+        String[] escala = crearEscalaMayor(notaUsuario);
 
-        printEscala(notaUsuario, escala);
+        String[] acorde = crearAcordeMayor(escala);
 
-        printAcorde(notaUsuario, acorde);
+        printEscalaMayor(notaUsuario, escala);
+
+        printAcordeMayor(notaUsuario, acorde);
     }
 
-    static void printEscala(int notaUsuario, String[] escala) {
+    static void printEscalaMayor(int notaUsuario, String[] escala) {
 
             String[] notas = { "Do", "Do#", "Re", "Re#", "Mi", "Fa", "Fa#", "Sol", "Sol#", "La", "La#", "Si" };
 
@@ -32,7 +34,7 @@ class Escalas{
 
     }
 
-    static void printAcorde(int notaUsuario, String[] acorde) {
+    static void printAcordeMayor(int notaUsuario, String[] acorde) {
 
             String[] notas = { "Do", "Do#", "Re", "Re#", "Mi", "Fa", "Fa#", "Sol", "Sol#", "La", "La#", "Si" };
 
@@ -50,7 +52,7 @@ class Escalas{
 
     }
 
-    static String[] crearEscala(int notaUsuario) {
+    static String[] crearEscalaMayor(int notaUsuario) {
 
         String[] escala = new String[8];
 
@@ -71,7 +73,7 @@ class Escalas{
         return escala;
     }
 
-    static String[] crearAcorde(String[] escala) {
+    static String[] crearAcordeMayor(String[] escala) {
 
             String[] acorde = new String[3];
 
@@ -107,5 +109,24 @@ class Escalas{
         
 
         return notaUsuario;
+    }
+
+    static int pedirEscala() {
+
+        System.out.println("Escoge la escala que desees: 1: Mayor, 2: Menor natural, 3: Menor armonica, 4: Menor melodica, 5: Pentatonica mayor, 6: Pentatonica menor, 7: Dorica, 8: Frigia, 9: Lidia, 10: Mixolidia, 11: Locria, 12: Por tonos");
+
+        Scanner input = new Scanner(System.in);
+
+        int escalaUsuario = input.nextInt() - 1;
+
+        if(escalaUsuario > 12) {System.out.println("Error: escala no valida.");}
+        
+        input.close();
+
+        String[] escalas = { "Mayor", "Menor natural", "Menor armonica", "Menor melodica", "Pentatonica mayor", "Pentatonica menor", "Dorica", "Frigia", "Lidia", "Mixolidia", "Locria", "Por tonos"};
+        
+        System.out.println("Has elegido " + escalas[escalaUsuario]);
+
+        return escalaUsuario;
     }
 }
