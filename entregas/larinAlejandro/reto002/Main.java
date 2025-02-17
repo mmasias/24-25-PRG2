@@ -4,9 +4,9 @@ public class Main {
 
     static final String[] NOTES = {"C", "C#", "D", "D#", "E", "F", "F#", "G", "G#", "A", "A#", "B"};
 
-    static final int TONE = 2;
     static final int SEMI_TONE = 1;
-    static final int TONE_AND_HALF = 3;
+    static final int TONE = TONE*2;
+    static final int TONE_AND_HALF = TONE + SEMI_TONE;
 
     static final int[] INTERVALE_SCALE_MAJOR = {TONE, TONE, SEMI_TONE, TONE, TONE, TONE, SEMI_TONE};
     static final int[] INTERVALE_ELDER = {TONE, SEMI_TONE, TONE, SEMI_TONE, TONE, TONE, SEMI_TONE};
@@ -21,7 +21,9 @@ public class Main {
     static final int[] INTERVALE_MIXOLYDIA = {TONE, TONE, SEMI_TONE, TONE, TONE, SEMI_TONE, TONE};
     static final int[] INTERVALE_LOCRIA = {SEMI_TONE, TONE, TONE, SEMI_TONE, TONE, TONE, TONE};
     static final int[] INTERVALE_BY_TONE = {TONE, TONE, TONE, TONE, TONE, TONE};
-    static final int[] INTERVALE_ACORD = {0, 2, 4};
+    
+    static final int I=0,III=2,V=4
+    static final int[] INTERVALE_ACORD = {I, III, V};
 
     static final String[] SCALE_NAMES = {
         "Major", "Elder", "Natural Minor", "Harmonic Minor", "Melodic Minor", 
@@ -37,35 +39,45 @@ public class Main {
     };
 
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
 
-        int scaleChoice = getInputScaleChoice("Select a scale (1-13): ", scanner, 1, SCALE_NAMES.length);
-        String inputNote = getInputNote("Enter a starting note: ", scanner);
+        String selectNote = askNote();
+
+        int choicedScale = askScale(1, SCALE_NAMES.length);
+
 
         int[] selectedScale = ALL_SCALES[scaleChoice - 1];
+
         String[] scale = getScale(inputNote, selectedScale);
         String[] acord = getAcord(scale);
 
         showArray("Scale", scale);
         showArray("Acord", acord);
 
-        scanner.close();
     }
 
-    static String getInputNote(String message, Scanner scanner) {
+    static String askNote() {
+        Scanner scanner = new Scanner(System.in);
+
         showArray("Notes", NOTES);
-        System.out.print(message);
+        System.out.print("Enter a starting note: ");
+
+        scanner.close();
         return scanner.nextLine();
     }
 
-    static int getInputScaleChoice(String message, Scanner scanner, int min, int max) {
-        int value;
+
+    static void showAvalibleScales(){
         System.out.println("Available Scales:");
         for (int i = 0; i < SCALE_NAMES.length; i++) {
             System.out.println((i + 1) + ". " + SCALE_NAMES[i]);
         }
+    }
+    static int askScale(int min, int max) {
+        int value;
+
+        showAvalibleScales()
         do {
-            System.out.print(message);
+            System.out.print("Select a scale (1-13): ");
             while (!scanner.hasNextInt()) {
                 System.out.println("Invalid input. Please enter a number.");
                 scanner.next();
@@ -113,4 +125,6 @@ public class Main {
         }
         System.out.println();
     }
+
+ 
 }
