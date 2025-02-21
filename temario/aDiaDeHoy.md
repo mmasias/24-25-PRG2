@@ -16,3 +16,13 @@
 - Proceso de gestión de nuestras entregas.
 - [***mermaid***](https://mermaid.js.org/) como otra herramienta además del [***plantuml***](https://plantuml.com/es/) para crear diagramas a partir de código. (*Yo prefiero plantuml, pero he de reconocer que mermaid viene integrado en github, lo que le da ligeras ventajas*).
 
+## 18 Feb
+
+- Capacidades: cuantitativas y cualitativas.
+- Sistemas, sistemas complejos: características de los sistemas complejos.
+- Mecanismos de los que podemos servirnos para (intentar) entender dichos sistemas complejos:
+  - Abstracción.
+  - Encapsulación.
+  - Modularización.
+  - Jerarquízación.
+- Evolución de los lenguajes de programación y como fueron incorporando dichos mecanismos.
