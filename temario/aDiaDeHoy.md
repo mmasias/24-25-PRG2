@@ -26,3 +26,8 @@
   - Modularización.
   - Jerarquízación.
 - Evolución de los lenguajes de programación y como fueron incorporando dichos mecanismos.
+
+## 18 Feb
+
+- Clases y objetos: vistas publicas y privadas
+  - Vista pública de una clase: cabeceras de métodos, sobrecarga de métodos.
