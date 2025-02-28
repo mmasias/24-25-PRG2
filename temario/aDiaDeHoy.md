@@ -37,5 +37,5 @@
 - Vista pública de clase: el destructor y el constructor.
 - Vista pública de un objeto:
   - Creación de un objeto.
-  - Asignación a una variable objeto.
+  - Qué almacena una variable.
  
