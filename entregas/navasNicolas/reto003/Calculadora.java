@@ -158,25 +158,25 @@ public class Calculadora {
     }
 
     public void calcularMaximo() {
-        double max = numeros[0];
+        double Maximo = numeros[0];
         for (int i = 1; i < posicionActual; i++) {
-            if (numeros[i] > max) {
-                max = numeros[i];
+            if (numeros[i] > Maximo) {
+                Maximo = numeros[i];
             }
         }
         limpiar();
-        ingresarNumero(max);
+        ingresarNumero(Maximo);
     }
 
     public void calcularMinimo() {
-        double min = numeros[0];
+        double Minimo = numeros[0];
         for (int i = 1; i < posicionActual; i++) {
-            if (numeros[i] < min) {
-                min = numeros[i];
+            if (numeros[i] < Minimo) {
+                Minimo = numeros[i];
             }
         }
         limpiar();
-        ingresarNumero(min);
+        ingresarNumero(Minimo);
     }
 
     public void sumar(double valor) {
