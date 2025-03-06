@@ -1,5 +1,4 @@
 package entregas.navasNicolas.reto003;
-
 public class Calculadora {
 
     private double[] numeros;
@@ -17,6 +16,18 @@ public class Calculadora {
 
     public Calculadora() {
         this(CAPACIDAD_POR_DEFECTO);
+    }
+
+    public Calculadora(double valorInicial) {
+        this(CAPACIDAD_POR_DEFECTO);
+        ingresarNumero(valorInicial);
+    }
+
+    public Calculadora(double[] valoresIniciales) {
+        this(CAPACIDAD_POR_DEFECTO);
+        for (double valor : valoresIniciales) {
+            ingresarNumero(valor);
+        }
     }
 
     public void ingresarNumero(double valor) {
@@ -44,7 +55,9 @@ public class Calculadora {
         for (int i = 0; i < posicionActual; i = i + 1) {
             resultado = resultado + "[" + i + "] " + numeros[i] + "\n";
         }
-        resultado = resultado + "-".repeat(10);
+        for (int i = 0; i < 10; i++) {
+            resultado = resultado + "-";
+        }
         return error ? mensajeError : resultado;
     }
 
@@ -126,41 +139,103 @@ public class Calculadora {
         }
     }
 
-    public void calcularPorcentaje(){
+    public void calcularPorcentaje() {
         if (verificarOperandos(2)) {
             double[] operandos = extraerOperandos(2);
             ingresarNumero((operandos[1] / operandos[0])*100);
         }
     }
 
-    public void calcularFactorial () {
+    public void calcularFactorial() {
         if (verificarOperandos(1)) {
             double[] operandos = extraerOperandos(1);
-            for (int i = 1; i <= operandos[0] ; i++) {
-                operandos[0] *= i;
+            double factorial = 1;
+            for (int i = 2; i < operandos[0]; i++) {
+                factorial = factorial *= i;
             }
+            ingresarNumero(factorial);
         }
     }
 
-    public void calcularMaximo(){
-        double valorMaximo = numeros[0];
-        for (int i = 1; i > posicionActual; i++){
-            if(numeros[1] > valorMaximo){
-                valorMaximo = numeros[1];
+    public void calcularMaximo() {
+        double max = numeros[0];
+        for (int i = 1; i < posicionActual; i++) {
+            if (numeros[i] > max) {
+                max = numeros[i];
             }
         }
         limpiar();
-        ingresarNumero(valorMaximo);
+        ingresarNumero(max);
     }
 
-    public void calcularMinimo(){
-        double valorMinimo = numeros[0];
-        for (int i = 1; i < posicionActual; i++){
-            if(numeros[1] < valorMinimo){
-                valorMinimo = numeros[1];
+    public void calcularMinimo() {
+        double min = numeros[0];
+        for (int i = 1; i < posicionActual; i++) {
+            if (numeros[i] < min) {
+                min = numeros[i];
             }
         }
         limpiar();
-        ingresarNumero(valorMinimo);
+        ingresarNumero(min);
+    }
+
+    public void sumar(double valor) {
+        ingresarNumero(valor);
+        sumar();
+    }
+
+    public void restar(double valor) {
+        ingresarNumero(valor);
+        restar();
+    }
+
+    public void multiplicar(double valor) {
+        ingresarNumero(valor);
+        multiplicar();
+    }
+
+    public void dividir(double valor) {
+        ingresarNumero(valor);
+        dividir();
+    }
+
+    public void calcularPorcentaje(double valor) {
+        ingresarNumero(valor);
+        calcularPorcentaje();
+    }
+
+    public void intercambiar() {
+        if (verificarOperandos(2)) {
+            double[] operandos = extraerOperandos(2);
+            ingresarNumero(operandos[1]);
+            ingresarNumero(operandos[0]);
+        }
+    }
+
+    public void duplicarNumero() {
+        if (verificarOperandos(1)) {
+            double[] operandos = extraerOperandos(1);
+            ingresarNumero(operandos[0]);
+            ingresarNumero(operandos[0]);
+        }
+    }
+
+    public void calcularRaizCuadrada() {
+        if (verificarOperandos(1)) {
+            double[] operandos = extraerOperandos(1);
+            ingresarNumero(Math.sqrt(operandos[0]));
+        }
+    }
+
+    public void calcularPotencia() {
+        if (verificarOperandos(2)) {
+            double[] operandos = extraerOperandos(2);
+            ingresarNumero(Math.pow(operandos[1], operandos[0]));
+        }
+    }
+
+    public void calcularPotencia(double valor) {
+        ingresarNumero(valor);
+        calcularPotencia();
     }
 }
