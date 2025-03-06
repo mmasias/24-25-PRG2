@@ -49,7 +49,6 @@ public class Calculadora {
     }
 
     public void limpiar() {
-        numeros = new double[numeros.length];
         posicionActual = 0;
         error = false;
         mensajeError = "";
@@ -65,12 +64,12 @@ public class Calculadora {
     private double[] extraerOperandos(int numeroOperandos) {
         double[] operandos = new double[numeroOperandos];
         for (int i = 0; i < numeroOperandos; i++) {
-            operandos[i] = extraeOperando();
+            operandos[i] = extraerOperando();
         }
         return operandos;
     }
 
-    private double extraeOperando(){
+    private double extraerOperando(){
         posicionActual--;
         return numeros[posicionActual];        
     }
@@ -88,15 +87,15 @@ public class Calculadora {
     public void invertir() {
         if (verificarOperandos(1)) {
             double[] operadores = extraerOperandos(1);
-            ingresarNumero(operadores[0]);
-            ingresarNumero(-1);
-            multiplicar();
+            ingresarNumero(-operadores[0]);
         }
     }
 
     public void restar() {
-        invertir();
-        sumar();
+        if (verificarOperandos(2)) {
+            double[] operandos = extraerOperandos(2);
+            ingresarNumero(operandos[1] - operandos[0]);
+        }
     }
 
     public void dividir() {
