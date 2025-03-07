@@ -44,8 +44,10 @@ public class Calculadora {
         // System.out.println("Resta: " + calculadora.mostrar());
         // calculadora.multiplicar(7);
         // System.out.println("Multiplicacion: " + calculadora.mostrar());
-        calculadora.dividir(14);
-        System.out.println("Division: " + calculadora.mostrar());
+        // calculadora.dividir(14);
+        // System.out.println("Division: " + calculadora.mostrar());
+        calculadora.calcularPorcentaje(14);
+        System.out.println("Porcentaje: " + calculadora.mostrar());
     }
 
     public Calculadora(int capacidad) {
@@ -59,6 +61,18 @@ public class Calculadora {
         this(CAPACIDAD_POR_DEFECTO);
     }
 
+    public Calculadora(double valor) {
+        this();
+        ingresarNumero(valor);
+    }
+
+    public Calculadora(double[] valoresIniciales) {
+        this();
+        for (double valor : valoresIniciales) {
+            ingresarNumero(valor);
+        }
+    }
+    
     public void ingresarNumero(double valor) {
         if (posicionActual < numeros.length) {
             numeros[posicionActual] = valor;
@@ -246,6 +260,21 @@ public class Calculadora {
         if (verificarOperandos(1)) {
             double[] operandos = extraerOperandos(1);
             ingresarNumero(operandos[0] / valor);
+        }
+    }
+
+    public void calcularPorcentaje(double valor) {
+        if (verificarOperandos(1)) {
+            double[] operandos = extraerOperandos(1);
+            ingresarNumero((valor / operandos[0]) * 100);
+        }
+    }
+
+    public void intercambiar() {
+        if (verificarOperandos(2)) {
+            double temp = numeros[posicionActual - 1];
+            numeros[posicionActual - 1] = numeros[posicionActual - 2];
+            numeros[posicionActual - 2] = temp;
         }
     }
 }
