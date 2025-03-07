@@ -206,4 +206,23 @@ public class Calculadora {
         limpiar();
         ingresarNumero(minimo);
     }
+
+    public void multiplicar(double valor) {
+        if (verificarOperandos(1)) {
+            double ultimoNumero = extraerOperando();
+            ingresarNumero(ultimoNumero * valor);
+        }
+    }
+
+    public void dividir(double valor) {
+        if (verificarOperandos(1)) {
+            if (valor != 0) {
+                double ultimoNumero = extraerOperando();
+                ingresarNumero(ultimoNumero / valor);
+            } else {
+                error = true;
+                mensajeError = "No se puede dividir por cero!";
+            }
+        }
+    }
 }
