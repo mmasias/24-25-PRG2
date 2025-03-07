@@ -125,4 +125,23 @@ public class Calculadora {
             sumar();
         }
     }
+
+    public void calcularPorcentaje(){
+    if (verificarOperandos(2)) {
+            double[] operandos = extraerOperandos(2);
+            ingresarNumero((operandos[1] / operandos[0])*100);
+        }    
+    }
+
+    public void calcularFactorial(){
+        if (verificarOperandos(1)) {
+            double[] operandos = extraerOperandos(1);
+            ingresarNumero(operandos);
+                for(int j; int i=0; i<operandos[1];i++){
+                }
+
+
+               }
+           }        
+    }
 }
