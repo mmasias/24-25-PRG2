@@ -129,6 +129,36 @@ public class Calculadora {
         }
     }
 
+    public void calcularMaximo() {
+        if (posicionActual == 0) {
+            error = true;
+            mensajeError = "No hay números en la memoria.";
+        } else {
+            double maximo = numeros[0];
+            for (int i = 1; i < posicionActual; i++) {
+                if (numeros[i] > maximo) {
+                    maximo = numeros[i];  
+                }
+            }
+            ingresarNumero(maximo);  
+        }
+    }
+ 
+    public void calcularMinimo() {
+        if (posicionActual == 0) {
+            error = true;
+            mensajeError = "No hay números en la memoria.";
+        } else {
+            double minimo = numeros[0];  // Inicializa el mínimo con el primer número almacenado
+            for (int i = 1; i < posicionActual; i++) {
+                if (numeros[i] < minimo) {
+                    minimo = numeros[i];  // Si encontramos un número menor, lo actualizamos
+                }
+            }
+            ingresarNumero(minimo);  // Ingresa el valor mínimo en la memoria
+        }
+    }
+
     public void calcularPorcentaje() {
         if (verificarOperandos(2)) {  
             double[] operandos = extraerOperandos(2);
@@ -136,6 +166,26 @@ public class Calculadora {
             double porcentaje = operandos[0];  
             double resultado = (valor * porcentaje) / 100;
             ingresarNumero(resultado);  
+        }
+    }
+
+    public void calcularFactorial() {
+        if (verificarOperandos(1)) { 
+            double[] operandos = extraerOperandos(1);
+            int numero = (int) operandos[0]; 
+    
+            if (numero < 0) {
+                error = true;
+                mensajeError = "No se puede calcular el factorial de un número negativo.";
+                return;
+            }
+    
+            long resultado = 1;
+            for (int i = 1; i <= numero; i++) {
+                resultado *= i;
+            }
+    
+            ingresarNumero(resultado);
         }
     }
 
