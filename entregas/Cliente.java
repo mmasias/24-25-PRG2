@@ -76,5 +76,9 @@ public class Cliente {
 
         Calculadora calculadora3 = new Calculadora(5.0);
         System.out.println("Constructor con valor inicial: " + calculadora3.mostrarTodo());
+
+        double[] valoresIniciales = {1.0, 2.0, 3.0, 4.0, 5.0};
+        Calculadora calculadora4 = new Calculadora(valoresIniciales);
+        System.out.println("Constructor con valores iniciales: " + calculadora4.mostrarTodo());
     }
 }

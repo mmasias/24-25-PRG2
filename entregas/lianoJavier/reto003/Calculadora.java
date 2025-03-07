@@ -20,6 +20,13 @@ public class Calculadora {
         ingresarNumero(valorInicial);
     }
 
+    public Calculadora(double[] valoresIniciales) {
+        this(valoresIniciales.length > CAPACIDAD_POR_DEFECTO ? valoresIniciales.length : CAPACIDAD_POR_DEFECTO);
+        for (int valor = 0; valor < valoresIniciales.length; valor++) {
+            ingresarNumero(valoresIniciales[valor]);
+        }
+    }
+
     public Calculadora() {
         this(CAPACIDAD_POR_DEFECTO);
     }
