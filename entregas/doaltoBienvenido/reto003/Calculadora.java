@@ -148,37 +148,54 @@ class Calculadora {
     public void calcularFactorial() {
         if (verficarOperandos(1)) {
             double[] operando = extraerOperadores(1);
-                int factorial = 1;
-                for (int i = 1; i <= operando[0]; i++) {
-                    factorial *= i;
-                }
-                ingresarNumero(factorial);
+            int factorial = 1;
+            for (int i = 1; i <= operando[0]; i++) {
+                factorial *= i;
             }
+            ingresarNumero(factorial);
         }
     }
 
     public void calcularMaximo() {
-
+        double valorMaximo = numeros[0];
+        for (int i = 1; i < posicionActual; i++) {
+            if (numeros[i] > valorMaximo) {
+                valorMaximo = numeros[i]
+            }
+        }
+        limpiar();
+        ingresarNumero(valorMaximo);
     }
 
     public void calcularMinimo() {
-
+        double valorMinimo = numeros[0];
+        for (int i = 1; i < posicionActual; i++) {
+            if (numeros[i] < valorMinimo) {
+                valorMinimo = numeros[i]
+            }
+        }
+        limpiar();
+        ingresarNumero(valorMinimo);
     }
 
     public void sumar(double valor) {
-
+        ingresarNumero(valor);
+        sumar();
     }
 
     public void restar(double valor) {
-
+        ingresarNumero(valor);
+        restar();
     }
 
     public void multiplicar(double valor) {
-
+        ingresarNumero(valor);
+        multiplicar();
     }
 
     public void dividir(double valor) {
-
+        ingresarNumero(valor);
+        dividir();
     }
 
     public void calcularPorcentaje(double valor) {
