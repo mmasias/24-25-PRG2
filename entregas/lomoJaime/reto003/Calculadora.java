@@ -136,19 +136,21 @@ public class Calculadora {
         }
     }
     public void calcularPorcentaje() {
+        final int PORCENTAJE = 100;
         if (verificarOperandos(2)) {
-            double[] operandos = extraerOperandos(2);
-            double penultimo = operandos[1];
-            double ultimo = operandos[0];
-    
-            if (ultimo == 0) {
-                error = true;
-                mensajeError = "No se puede dividir por 0!";
-                return;
-            }
-    
-            double resultado = (penultimo * 100) / ultimo;
-            ingresarNumero(resultado);
+            double[] operando = extraerOperandos(2);
+           ingresarNumero((operando[1]/PORCENTAJE)* operando[0]);
         }
+    }
+    public void calcularFactorial(){
+        if(verificarOperandos(numeroOperandos:1)) {
+            double[] operando = extraerOperandos(numeroOperandos:1);
+            int factorial = 1;
+            for(int i = 1; i<= operando[0];i++){
+                factorial *= i;
+            }
+            ingresarNumero(factorial);
+        }
+
     }
 }
