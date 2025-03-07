@@ -73,6 +73,13 @@ public class Calculadora {
         }
     }
 
+    public void sumar(double valor) {
+        if (verificarOperandos(1)) {
+            double[] operandos = extraerOperandos(1);
+            ingresarNumero(operandos[0] + valor);
+        }
+    }
+
     private double[] extraerOperandos(int numeroOperandos) {
         double[] operandos = new double[numeroOperandos];
         for (int i = 0; i < numeroOperandos; i++) {
@@ -110,6 +117,13 @@ public class Calculadora {
         }
     }
 
+    public void restar(double valor) {
+        if (verificarOperandos(1)) {
+            double[] operandos = extraerOperandos(1);
+            ingresarNumero(operandos[0] - valor);
+        }
+    }
+
     public void dividir() {
         if (verificarOperandos(2)) {
             double[] operandos = extraerOperandos(2);
@@ -117,10 +131,24 @@ public class Calculadora {
         }
     }
 
+    public void dividir(double valor) {
+        if (verificarOperandos(1)) {
+            double[] operandos = extraerOperandos(1);
+            ingresarNumero(operandos[0] / valor);
+        }
+    }
+
     public void multiplicar() {
         if (verificarOperandos(2)) {
             double[] operandos = extraerOperandos(2);
             ingresarNumero(operandos[1] * operandos[0]);
+        }
+    }
+
+    public void multiplicar(double valor) {
+        if (verificarOperandos(1)) {
+            double[] operandos = extraerOperandos(1);
+            ingresarNumero(operandos[0] * valor);
         }
     }
 
