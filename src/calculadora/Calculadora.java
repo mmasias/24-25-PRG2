@@ -125,4 +125,8 @@ public class Calculadora {
             sumar();
         }
     }
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> 5a296627d8df5fced592c45ab9d1706b5f736d16
