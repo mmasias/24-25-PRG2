@@ -83,7 +83,12 @@ class Calculadora {
     public void dividir() {
         if (verficarOperandos(2)) {
             double[] operandos = extraerOperadores(2);
-            ingresarNumero(operandos[1] / operandos[0]);
+            if (operandos[0] != 0) {
+                ingresarNumero(operandos[1] / operandos[0]);
+            }else{
+                error = true;
+                mensajeError = "No se puede dividir por 0";
+            }
         }
     }
 
@@ -160,7 +165,7 @@ class Calculadora {
         double valorMaximo = numeros[0];
         for (int i = 1; i < posicionActual; i++) {
             if (numeros[i] > valorMaximo) {
-                valorMaximo = numeros[i]
+                valorMaximo = numeros[i];
             }
         }
         limpiar();
@@ -171,7 +176,7 @@ class Calculadora {
         double valorMinimo = numeros[0];
         for (int i = 1; i < posicionActual; i++) {
             if (numeros[i] < valorMinimo) {
-                valorMinimo = numeros[i]
+                valorMinimo = numeros[i];
             }
         }
         limpiar();
@@ -212,11 +217,23 @@ class Calculadora {
     }
 
     public void duplicarNumero() {
-        
+        if (verficarOperandos(1)) {
+            double[] operandos = extraerOperadores(1);
+            ingresarNumero(operandos[0]);
+            ingresarNumero(operandos[0]);
+        }
     }
 
     public void calcularRaizCuadrada() {
-
+        if (verficarOperandos(1)) {
+            double[] operandos = extraerOperadores(1);
+            if (operandos[0] >= 0) {
+                ingresarNumero(Math.sqrt(operandos[0]));
+            }else{
+                error = true;
+                mensajeError = "No se puede hacer raiz cuadrade de numeros negativos";
+            }
+        }
     }
 
     public void calcularPotencia() {
@@ -227,6 +244,7 @@ class Calculadora {
     }
 
     public void calcularPotencia(double exponente) {
-        
+        ingresarNumero(exponente);
+        calcularPotencia();
     }
 }
