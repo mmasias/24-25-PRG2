@@ -69,7 +69,7 @@ class Calculadora {
     }
 
     public void sumar() {
-        if (verficarOperandos(2)) {
+        if (verificarOperandos(2)) {
             double[] operandos = extraerOperadores(2);
             ingresarNumero(operandos[0] + operandos[1]);
         }
@@ -81,7 +81,7 @@ class Calculadora {
     }
 
     public void dividir() {
-        if (verficarOperandos(2)) {
+        if (verificarOperandos(2)) {
             double[] operandos = extraerOperadores(2);
             if (operandos[0] != 0) {
                 ingresarNumero(operandos[1] / operandos[0]);
@@ -93,7 +93,7 @@ class Calculadora {
     }
 
     public void multiplicar() {
-        if (verficarOperandos(2)) {
+        if (verificarOperandos(2)) {
             double[] operandos = extraerOperadores(2);
             for (int i = 0; i < operandos[0] - 1; i++) {
                 ingresarNumero(operandos[i]);
@@ -118,7 +118,7 @@ class Calculadora {
         return operandos;
     }
 
-    private boolean verficarOperandos(int numeroOperandos) {
+    private boolean verificarOperandos(int numeroOperandos) {
         if (posicionActual >= numeroOperandos) {
             return true;
         } else {
@@ -129,7 +129,7 @@ class Calculadora {
     }
 
     public void invertir() {
-        if (verficarOperandos(1)) {
+        if (verificarOperandos(1)) {
             double[] operando = extraerOperadores(1);
             ingresarNumero((operando[0] - (operando[0] + operando[0])));
         }
@@ -144,14 +144,14 @@ class Calculadora {
 
     public void calcularPorcentaje() {
         final int PORCENTAJE = 100;
-        if (verficarOperandos(2)) {
+        if (verificarOperandos(2)) {
             double[] operandos = extraerOperadores(2);
             ingresarNumero((operandos[1] / PORCENTAJE) * operandos[0]);
         }
     }
 
     public void calcularFactorial() {
-        if (verficarOperandos(1)) {
+        if (verificarOperandos(1)) {
             double[] operando = extraerOperadores(1);
             int factorial = 1;
             for (int i = 1; i <= operando[0]; i++) {
@@ -209,7 +209,7 @@ class Calculadora {
     }
 
     public void intercambiar() {
-        if (verficarOperandos(2)) {
+        if (verificarOperandos(2)) {
             double[] operandos = extraerOperadores(2);
             ingresarNumero(operandos[1]);
             ingresarNumero(operandos[0]);
@@ -217,7 +217,7 @@ class Calculadora {
     }
 
     public void duplicarNumero() {
-        if (verficarOperandos(1)) {
+        if (verificarOperandos(1)) {
             double[] operandos = extraerOperadores(1);
             ingresarNumero(operandos[0]);
             ingresarNumero(operandos[0]);
@@ -225,7 +225,7 @@ class Calculadora {
     }
 
     public void calcularRaizCuadrada() {
-        if (verficarOperandos(1)) {
+        if (verificarOperandos(1)) {
             double[] operandos = extraerOperadores(1);
             if (operandos[0] >= 0) {
                 ingresarNumero(Math.sqrt(operandos[0]));
@@ -237,7 +237,7 @@ class Calculadora {
     }
 
     public void calcularPotencia() {
-        if (verficarOperandos(2)) {
+        if (verificarOperandos(2)) {
             double[] operandos = extraerOperadores(2);
             ingresarNumero(Math.pow(operandos[0], operandos[1]));
         }
