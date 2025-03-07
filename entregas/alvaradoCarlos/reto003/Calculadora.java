@@ -7,7 +7,7 @@ public class Calculadora {
     private boolean error;
     private String mensajeError;
     static final private int CAPACIDAD_POR_DEFECTO = 10;
-
+    
     public Calculadora(int capacidad) {
         numeros = new double[capacidad];
         posicionActual = 0;
@@ -206,13 +206,13 @@ public class Calculadora {
     }
 
     public void intercambiar() {
-        double[] operandos = extraerOperandos(2);
-        double ultimoValor = extraerOperando();
-        double swap = ultimoValor;
-        operandos[0] = operandos[1];
-        operandos[1] = swap;
-        ingresarNumero(operandos[0]);
-        ingresarNumero(operandos[1]);
+        if (verificarOperandos(2)) {
+            double[] operandos = extraerOperandos(2);
+            double swap = operandos[0];
+            ingresarNumero(swap);
+            swap = operandos[1];
+            ingresarNumero(swap);
+        }
     }
 
     public void duplicarNumero() {
