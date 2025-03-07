@@ -137,7 +137,7 @@ public class Calculadora {
         if (verificarOperandos(1)) {
             double[] operandos = extraerOperandos(1);
             double j=1;
-            for (int i=operandos;i>1; i--) {
+            for (double i=operandos;i>1; i--) {
                 j = j*i;
                }
                ingresarNumero(j);
@@ -213,5 +213,32 @@ public class Calculadora {
         }
     }
 
-    
+    public void duplicarNumero(){
+        if (verificarOperandos(1)) {
+            double[] operandos = extraerOperandos(1);
+            ingresarNumero(operandos[0]);
+            ingresarNumero(operandos[0]);
+        }
+    }
+
+    public void calcularRaizCuadrada(){
+        if (verificarOperandos(1)) {
+            double[] operandos = extraerOperandos(1);
+            ingresarNumero(Math.sqrt(operandos[0]));
+        }
+    }
+
+    public void calcularPotencia()	{
+        if (verificarOperandos(2)) {
+            double[] operandos = extraerOperandos(2);
+            i=(operandos[1]*operandos[1]).repeat(operandos[0])
+            ingresarNumero(i);
+        }
+    }
+
+    public void calcularPotencia(double exponente) {
+        double[] operandos = extraerOperandos(1);
+        i=(operandos*operandos).repeat(exponente)
+        ingresarNumero(i);
+    }
 }
