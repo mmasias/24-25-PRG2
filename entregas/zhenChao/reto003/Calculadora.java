@@ -164,5 +164,15 @@ public class Calculadora {
         }
     }
 
-
+    public void calcularFactorial() {
+        if (verificarOperandos(1)) {
+            double[] operandos = extraerOperandos(1);
+            int numero = (int) operandos[0];
+            long resultado = 1;
+            for (int i = 1; i <= numero; i++) {
+                resultado *= i;  
+            }
+            ingresarNumero(resultado);
+        }    
+    }
 }
