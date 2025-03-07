@@ -18,8 +18,16 @@ public class Calculadora {
         mensajeError = "";
     }
 
-    public Calculadora() {
-        this(CAPACIDAD_POR_DEFECTO);
+    public Calculadora(double valorInicial) {
+            this(CAPACIDAD_POR_DEFECTO);
+            ingresarNumero(valorInicial);
+    }
+
+    public Calculadora(double[] valoresIniciales) {
+        this(valoresIniciales.length > 0 ? valoresIniciales.length : CAPACIDAD_POR_DEFECTO);
+        for (double valor : valoresIniciales) {
+            ingresarNumero(valor);
+        }
     }
 
     public void ingresarNumero(double valor) {
@@ -255,4 +263,3 @@ public class Calculadora {
 }
 
 
-}
