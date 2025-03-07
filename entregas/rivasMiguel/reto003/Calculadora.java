@@ -30,8 +30,10 @@ public class Calculadora {
         // System.out.println("Resultado de la media: " + calculadora.mostrar());
         // calculadora.limpiar();
         // System.out.println("Calculadora limpiada. Estado actual: " + calculadora.mostrar());
-        calculadora.calcularPorcentaje();
-        System.out.println("Porcentaje: " + calculadora.mostrar() + "%");
+        // calculadora.calcularPorcentaje();
+        // System.out.println("Porcentaje: " + calculadora.mostrar() + "%");
+        calculadora.calcularFactorial();
+        System.out.println("Factorial: " + calculadora.mostrar());
     }
 
     public Calculadora(int capacidad) {
@@ -159,4 +161,28 @@ public class Calculadora {
         }
     }
 
+    private boolean esNegativo(double numero) {
+        return numero < 0;
+    }
+
+    private boolean esEntero(double numero) {
+        return numero == (int) numero;
+    }
+
+    public void calcularFactorial() {
+        if (verificarOperandos(1)) {
+            double operando = extraerOperando();
+
+            if (esNegativo(operando) || !esEntero(operando)) {
+                error = true;
+                mensajeError = "¡No se puede calcular el factorial de un número negativo o decimal!";
+            } else {
+                int resultado = 1;
+                for (int i = 2; i <= operando; i++) {
+                    resultado *= i;
+                }
+                ingresarNumero(resultado);
+            }
+        }
+    }
 }
