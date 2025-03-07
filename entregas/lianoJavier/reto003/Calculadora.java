@@ -145,4 +145,33 @@ public class Calculadora {
         }
     }
     
+    private double calcularFactorial(double numero) {
+        double factorial = 1;
+        for (int i = (int) numero; i > 0; i--) {
+            factorial = factorial * i;
+        }
+        return factorial;
+    }
+
+    public void calcularFactorial() {
+        if (verificarOperandos(1)) {
+            double[] operandos = extraerOperandos(1);
+            double numero = operandos[0];
+            
+            if (numero < 0) {
+                error = true;
+                mensajeError = "El factorial no está definido para números negativos";
+                return;
+            }
+            
+            if (numero != Math.floor(numero)) {
+                error = true;
+                mensajeError = "El factorial solo está definido para números enteros";
+                return;
+            }
+            
+            ingresarNumero(calcularFactorial(numero));
+        }
+    }
+    
 }

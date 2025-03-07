@@ -36,6 +36,14 @@ public class Cliente {
         calculadora.ingresarNumero(20);
         calculadora.calcularPorcentaje();
         System.out.println("Porcentaje: " + calculadora.mostrar());
+
+        calculadora.ingresarNumero(5);
+        calculadora.calcularFactorial();
+        System.out.println("Factorial: " + calculadora.mostrar());
+        
+        calculadora.ingresarNumero(5.5);
+        calculadora.calcularFactorial();
+        System.out.println("Factorial: " + calculadora.mostrar());
     }
 
     private static void probarOperacionesBasicas(Calculadora calculadora) {
