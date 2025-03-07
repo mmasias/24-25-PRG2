@@ -8,17 +8,6 @@ public class Calculadora {
     private String mensajeError;
     static final private int CAPACIDAD_POR_DEFECTO = 10;
 
-    public static void main(String[] args) {
-        Calculadora calculadora = new Calculadora();
-        calculadora.ingresarNumero(50);
-        calculadora.ingresarNumero(5);
-        calculadora.ingresarNumero(25);
-        calculadora.ingresarNumero(30);
-        System.out.println(calculadora.mostrarTodo());
-        calculadora.calcularMaximo();
-        System.out.println(calculadora.mostrar());
-    }
-
     public Calculadora(int capacidad) {
         numeros = new double[capacidad];
         posicionActual = 0;
@@ -165,15 +154,54 @@ public class Calculadora {
         }
     }
 
-    // public void calcularMaximo() {
-    //     int numeroDeOperandos = posicionActual;
-    //     if (verificarOperandos(numeroDeOperandos)) {
-    //         double[] operandos = extraerOperandos(numeroDeOperandos);
-    //         for (int i = 0; i < numeroDeOperandos - 1; i++) {
-    //             if (operandos[i] > operandos[i + 1]) {
-    //                 operandos[i + 1] = operandos[i];
-    //             }
-    //         }
-    //     }
-    // }
+    public void calcularMaximo() {
+        int numeroDeOperandos = posicionActual;
+        double[] operandos = extraerOperandos(numeroDeOperandos);
+        double maximo = operandos[0];
+        for (int i = 1; i < numeroDeOperandos; i++) {
+            if (operandos[i] > maximo) {
+                maximo = operandos[i];
+            }
+        }
+        limpiar();
+        ingresarNumero(maximo);
+    }
+
+    public void calcularMinimo() {
+        int numeroDeOperandos = posicionActual;
+        double[] operandos = extraerOperandos(numeroDeOperandos);
+        double minimo = operandos[0];
+        for (int i = 1; i < numeroDeOperandos; i++) {
+            if (operandos[i] < minimo) {
+                minimo = operandos[i];
+            }
+        }
+        limpiar();
+        ingresarNumero(minimo);
+    }
+
+    public void sumar(double valor) {
+        ingresarNumero(valor);
+        sumar();
+    }
+
+    public void restar(double valor) {
+        ingresarNumero(valor);
+        restar();
+    }
+
+    public void multiplicar(double valor) {
+        ingresarNumero(valor);
+        multiplicar();
+    }
+
+    public void dividir(double valor) {
+        ingresarNumero(valor);
+        dividir();
+    }
+
+    public void calcularPorcentaje(double valor) {
+        ingresarNumero(valor);
+        calcularPorcentaje();
+    }
 }
