@@ -171,6 +171,7 @@ public class Calculadora {
             ingresarNumero(factorial);
         }
     }
+    
     public void calcularMaximo() {
         if (posicionActual == 0) {
             error = true;
@@ -274,6 +275,14 @@ public class Calculadora {
             double base = operandos[1];
             double exponente = operandos[0];
             double resultado = Math.pow(base, exponente);
+            ingresarNumero(resultado);
+        }
+    }
+
+    public void calcularPotencia(double exponente) {
+        if (verificarOperandos(1)) {
+            double ultimoNumero = extraerOperando();
+            double resultado = Math.pow(ultimoNumero, exponente);
             ingresarNumero(resultado);
         }
     }
