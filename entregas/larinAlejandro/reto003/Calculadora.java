@@ -1,4 +1,3 @@
-package entregas.larinAlejandro.reto003;
 
 public class Calculadora {
 
@@ -124,5 +123,61 @@ public class Calculadora {
         for (int i = 0; i < numeroDeOperandos - 1; i++) {
             sumar();
         }
+    }
+
+    public void calcularFactorial(){
+        if (verificarOperandos(1)) {
+            double[] operandos = extraerOperandos(1);
+            double resultado = 1;
+            for (int i = 1; i <= operandos[0]; i++) {
+                resultado = resultado * i;
+            }
+            ingresarNumero(resultado);
+        }
+    }
+    public void calcularPorcentaje(double valor){
+        if (verificarOperandos(1)) {
+            double[] operandos = extraerOperandos(1);
+            ingresarNumero(operandos[0] * valor / 100);
+        }
+
+    }
+    public void intercambiarNumero(){
+        if (verificarOperandos(2)) {
+            double[] operandos = extraerOperandos(2);
+            ingresarNumero(operandos[0]);
+            ingresarNumero(operandos[1]);
+        }
+
+    }
+    public void duplicarNumero(){
+        if (verificarOperandos(1)) {
+            double[] operandos = extraerOperandos(1);
+            ingresarNumero(operandos[0]);
+            ingresarNumero(operandos[0]);
+        }
+
+    }
+    public void calcularRaizCuadrada(){
+        if (verificarOperandos(1)) {
+            double[] operandos = extraerOperandos(1);
+            ingresarNumero(Math.sqrt(operandos[0]));
+        }
+        
+
+    }
+    public void calcularPotencia()	{
+        if (verificarOperandos(2)) {
+            double[] operandos = extraerOperandos(2);
+            ingresarNumero(Math.pow(operandos[1], operandos[0]));
+        }
+
+    }
+    public void calcularPotencia(double exponente){
+        if (verificarOperandos(1)) {
+            double[] operandos = extraerOperandos(1);
+            ingresarNumero(Math.pow(operandos[0], exponente));
+        }
+
     }
 }
