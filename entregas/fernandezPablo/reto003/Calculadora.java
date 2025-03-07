@@ -122,15 +122,15 @@ public class Calculadora {
         }
     }
 
-    public void calcularPorcentaje(double valor) {
-        if (posicionActual > 0) {
-            double ultimoValor = numeros[posicionActual - 1];
-            double resultado = (ultimoValor * valor) / 100;
-            numeros[posicionActual - 1] = resultado;
-        } else {
+    public void intercambiar() {
+        if (posicionActual < 2) {
             error = true;
-            mensajeError = "No hay valores almacenados para calcular el porcentaje.";
+            mensajeError = "No hay suficientes valores para intercambiar.";
+            return;
         }
+        double temp = numeros[posicionActual - 1];
+        numeros[posicionActual - 1] = numeros[posicionActual - 2];
+        numeros[posicionActual - 2] = temp;
     }
 
     private double[] extraerOperandos(int numeroOperandos) {
