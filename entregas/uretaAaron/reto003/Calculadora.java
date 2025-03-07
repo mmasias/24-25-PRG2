@@ -52,12 +52,14 @@ public class Calculadora {
     }
 
     public String mostrarTodo() {
-        String resultado = "";
+        StringBuilder resultado = new StringBuilder();
         for (int i = 0; i < posicionActual; i++) {
-            resultado += "[" + i + "] " + numeros[i] + "\n";
+            resultado.append("[").append(i).append("] ").append(numeros[i]).append("\n");
         }
-        resultado += "-".repeat(10);
-        return error ? mensajeError : resultado;
+        for (int i = 0; i < 10; i++) {
+            resultado.append("-");
+        }
+        return error ? mensajeError : resultado.toString();
     }
 
     public void limpiar() {
@@ -134,7 +136,13 @@ public class Calculadora {
 
     public void calcularFactorial() {
         if (verificarOperandos(1)) {
-            int valor = (int) extraerOperando();
+            double num = extraerOperando();
+            if (num != (int) num) {
+                error = true;
+                mensajeError = "Error: Factorial solo para enteros!";
+                return;
+            }
+            int valor = (int) num;
             if (valor < 0) {
                 error = true;
                 mensajeError = "Error: Factorial de número negativo!";
@@ -156,6 +164,8 @@ public class Calculadora {
                     max = numeros[i];
                 }
             }
+           
+            limpiar(); 
             ingresarNumero(max);
         }
     }
@@ -168,6 +178,8 @@ public class Calculadora {
                     min = numeros[i];
                 }
             }
+           
+            limpiar(); 
             ingresarNumero(min);
         }
     }
@@ -228,12 +240,7 @@ public class Calculadora {
                 error = true;
                 mensajeError = "Error: Raíz cuadrada de número negativo!";
             } else {
-                double raiz = 1;
-                double incremento = 0.1; 
-                while (raiz * raiz < operando) {
-                    raiz += incremento;
-                }
-                ingresarNumero(raiz);
+                ingresarNumero(Math.sqrt(operando)); 
             }
         }
     }
