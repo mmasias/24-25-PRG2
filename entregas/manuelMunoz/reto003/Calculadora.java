@@ -124,4 +124,57 @@ public class Calculadora {
             sumar();
         }
     }
+
+    public void calcularPorcentage(){
+        dividir();
+    }
+
+    public void calcularFactorial(){
+        int resultadoFactorial = 1;
+        int factorial = (int)extraerOperando();
+        for (int i = factorial; i > 0; i--){
+            resultadoFactorial *= factorial;
+            factorial--;
+        }
+        ingresarNumero(resultadoFactorial);
+    }
+
+    public void calcularMaximo(){
+        double valorMaximo = 0;
+        for(int i = 0; i < posicionActual; i++){
+            if (valorMaximo < numeros[i]){
+                valorMaximo = numeros[i];
+            }
+        }
+        limpiar();
+        ingresarNumero(valorMaximo);
+    }
+
+    public void calcularMinimo(){
+        double valorMinimo = numeros[0];
+        for(int i = 1; i < posicionActual; i++){
+            if (valorMinimo > numeros[i]){
+                valorMinimo = numeros[i];
+            }
+        }
+        limpiar();
+        ingresarNumero(valorMinimo);
+    }
+
+    public void intercambiar(){
+        double numeroParaCambiar = numeros[posicionActual];
+        numeros[posicionActual] = numeros[posicionActual - 1];
+        numeros[posicionActual - 1] = numeroParaCambiar;
+    }
+
+    public void calcularPotencia(){
+        double potencia = Math.pow(numeros[posicionActual], numeros[posicionActual - 1]);
+        ingresarNumero(potencia);
+    }
+
+    public void calcularPotencia(double exponente){
+        double potencia = Math.pow(numeros[posicionActual], exponente);
+        ingresarNumero(potencia);
+    }
+ 
 }
