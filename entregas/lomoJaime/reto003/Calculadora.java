@@ -153,13 +153,23 @@ public class Calculadora {
         }
     }
     public void calcularMaximo(){
-        double valorMaximo = numeros [0];
-        for(int i=1; i<posicionActual;i++) {
-            if(numeros[i] > valorMaximo){
+        int i = 0;
+        extraerOperandos(i++); 
+        double valorMaximo = numeros[0];
+        do {
+            extraerOperandos(i);
+            if (numeros[i] > valorMaximo) {
                 valorMaximo = numeros[i];
             }
-        }
+            i++;
+        } while (i < posicionActual);
+
+        numeros[0] = valorMaximo;
+        posicionActual = 1;
+        ingresarNumero(valorMaximo);
+
     }
+
     public void cacularMinimo(){
         double valorMinimo= numeros[0];
         for(int i=1; i<posicionActual;i++) {
@@ -167,8 +177,10 @@ public class Calculadora {
                 valorMinimo = numeros[i];
             }
         }
-
+        limpiar();
+        ingresarNumero(valorMinimo);
     }
+
     public void sumar(double valor){
         ingresarNumero(valor);
         sumar();
