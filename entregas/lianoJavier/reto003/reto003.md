@@ -81,7 +81,7 @@ La clase `Calculadora` debe implementar los métodos especificados en la vista p
 |✅|`public void invertir()`|Cambia el signo del último valor ingresado|
 |✅|`public void calcularMedia()`|Calcula la media de todos los valores almacenados|
 |✅|`public void calcularSumatoria()`|Calcula la suma de todos los valores almacenados|
-|🔲|`public void calcularPorcentaje()`|Calcula el porcentaje del penúltimo valor según el último|
+|✅|`public void calcularPorcentaje()`|Calcula el porcentaje del penúltimo valor según el último|
 |🔲|`public void calcularFactorial()`|Calcula el factorial del último valor|
 |🔲|`public void calcularMaximo()`|Devuelve el valor máximo entre los almacenados|
 |🔲|`public void calcularMinimo()`|Devuelve el valor mínimo entre los almacenados|

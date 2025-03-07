@@ -31,6 +31,11 @@ public class Cliente {
 
         calculadora.calcularSumatoria();
         System.out.println("Sumatoria: " + calculadora.mostrar());
+
+        calculadora.ingresarNumero(80);
+        calculadora.ingresarNumero(20);
+        calculadora.calcularPorcentaje();
+        System.out.println("Porcentaje: " + calculadora.mostrar());
     }
 
     private static void probarOperacionesBasicas(Calculadora calculadora) {
