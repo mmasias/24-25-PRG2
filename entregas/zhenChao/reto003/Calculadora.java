@@ -149,4 +149,20 @@ public class Calculadora {
         }
     }
 
+    public void calcularMinimo() {
+        
+        if (ENTERO) {
+            double minimo = numeros[0];
+            for (int i = 1; i < posicionActual; i++) {
+                if (numeros[i] < minimo) {
+                    minimo = numeros[i];
+                }
+            }
+        } else {
+            error = true;
+            mensajeError = "ERROR AL CALCULAR EL MINIMO!";
+        }
+    }
+
+
 }
