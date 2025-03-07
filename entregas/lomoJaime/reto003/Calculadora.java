@@ -185,4 +185,44 @@ public class Calculadora {
         ingresarNumero(valor);
         calcularPorcentaje();
     }
+  
+    public void intercambiar() {
+        if (verificarOperandos(2)) {
+            double[] operandos = extraerOperandos(2);
+            ingresarNumero(operandos[1]);
+            ingresarNumero(operandos[0]);
+        }
+    }
+
+    public void duplicarNumero() {
+        if (verificarOperandos(1)) {
+            double[] operandos = extraerOperandos(1);
+            ingresarNumero(operandos[0]);
+            ingresarNumero(operandos[0]);
+        }
+    }
+
+    public void calcularRaizCuadrada() {
+        if (verificarOperandos(1)) {
+            double[] operandos = extraerOperandos(1);
+            if (operandos[0] >= 0) {
+                ingresarNumero(Math.sqrt(operandos[0]));
+            }else{
+                error = true;
+                mensajeError = "No se puede hacer raiz cuadrade de numeros negativos";
+            }
+        }
+    }
+
+    public void calcularPotencia() {
+        if (verificarOperandos(2)) {
+            double[] operandos = extraerOperandos(2);
+             ingresarNumero(Math.pow(operandos[0], operandos[1]));
+        }
+    }
+
+    public void calcularPotencia(double exponente) {
+        ingresarNumero(exponente);
+        calcularPotencia();
+    }
 }
