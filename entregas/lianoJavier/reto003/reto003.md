@@ -68,7 +68,7 @@ La clase `Calculadora` debe implementar los métodos especificados en la vista p
 |-|-|-|
 |✅|`public Calculadora()`|Constructor por defecto que inicializa una calculadora con capacidad para 10 números|
 |✅|`public Calculadora(int capacidad)`|Constructor que inicializa una calculadora con la capacidad especificada|
-|🔲|`public Calculadora(double valorInicial)`|Constructor que inicializa una calculadora e ingresa un valor inicial|
+|✅|`public Calculadora(double valorInicial)`|Constructor que inicializa una calculadora e ingresa un valor inicial|
 |🔲|`public Calculadora(double[] valoresIniciales)`|Constructor que inicializa una calculadora con un arreglo de valores iniciales|
 |✅|`public void ingresarNumero(double valor)`|Ingresa un número a la calculadora|
 |✅|`public String mostrar()`|Devuelve el último valor ingresado o el mensaje de error|
