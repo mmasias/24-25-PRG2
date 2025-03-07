@@ -179,4 +179,24 @@ public class Calculadora {
             ingresarNumero((operandos[0] * valor) / 100);
         }
     }
+
+    public void calcularFactorial() {
+        if (verificarOperandos(1)) {
+            double[] operandos = extraerOperandos(1);
+            ingresarNumero(factorial((int) operandos[0]));
+        }
+    }
+
+    private double factorial(int n) {
+        if (n == 0) {
+            return 1;
+        }
+        double result = 1;
+        for (int i = 1; i <= n; i++) {
+            result *= i;
+        }
+        return result;
+    }
+
+    
 }
