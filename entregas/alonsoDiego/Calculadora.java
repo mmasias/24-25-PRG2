@@ -234,5 +234,11 @@ public class Calculadora {
             ingresarNumero(operandos[1]); 
         }
     }
+    public void duplicarNumero() {
+        if (verificarOperandos(1)) {
+            double num = numeros[posicionActual - 1];
+            ingresarNumero(num);
+        }
+    }
     
 }
