@@ -138,6 +138,25 @@ public class Calculadora {
 
     public void calcularSumatoria() {
         int numeroDeOperandos = posicionActual;
-        for (int i = 0; i < numeroDeOperandos - 1; i++);
+        for (int i = 0; i < numeroDeOperandos - 1; i++) {
+            sumar();
+        }
+    }
+
+    public void calcularFactorial() {
+        if (verificarOperandos(1)) {
+            double operando = extraerOperando();
+            if (operando < 0) {
+                error = true;
+                mensajeError = "El factorial no está definido para números negativos.";
+                return;
+            }
+            int n = (int) operando;
+            long factorial = 1;
+            for (int i = 1; i <= n; i++) {
+                factorial *= i;
+            }
+            ingresarNumero(factorial);
+        }
     }
 }
