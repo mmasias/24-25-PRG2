@@ -50,7 +50,7 @@ public class Calculadora {
             return "-";
         }
     }
-
+    
     public String mostrarTodo() {
         String resultado = "";
         for (int i = 0; i < posicionActual; i = i + 1) {
