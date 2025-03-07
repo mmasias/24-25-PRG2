@@ -219,4 +219,30 @@ public class Calculadora {
         }
     }
 
+    public void calcularRaizCuadrada() {
+        if (verificarOperandos(1)) {
+            double valor = extraerOperando();
+            if (valor >= 0) {
+                ingresarNumero(Math.sqrt(valor));
+            } else {
+                error = true;
+                mensajeError = "RAIZ NEGATIVA!";
+            }
+        }
+    }
+
+    public void calcularPotencia() {
+        if (verificarOperandos(2)) {
+            double[] operandos = extraerOperandos(2);
+            ingresarNumero(Math.pow(operandos[0], operandos[1]));
+        }
+    }
+
+    public void calcularPotencia(double exponente) {
+        if (verificarOperandos(1)) {
+            double base = extraerOperando();
+            ingresarNumero(Math.pow(base, exponente));
+        }
+    }
+
 }
