@@ -40,8 +40,12 @@ public class Calculadora {
         // System.out.println("Minimo: " + calculadora.mostrar());
         // calculadora.sumar(7);
         // System.out.println("Suma: " + calculadora.mostrar());
-        calculadora.restar(1);
-        System.out.println("Resta: " + calculadora.mostrar());
+        // calculadora.restar(1);
+        // System.out.println("Resta: " + calculadora.mostrar());
+        // calculadora.multiplicar(7);
+        // System.out.println("Multiplicacion: " + calculadora.mostrar());
+        calculadora.dividir(14);
+        System.out.println("Division: " + calculadora.mostrar());
     }
 
     public Calculadora(int capacidad) {
@@ -228,6 +232,20 @@ public class Calculadora {
         if (verificarOperandos(1)) {
             double[] operandos = extraerOperandos(1);
             ingresarNumero(operandos[0] - valor);
+        }
+    }
+
+    public void multiplicar(double valor) {
+        if (verificarOperandos(1)) {
+            double[] operandos = extraerOperandos(1);
+            ingresarNumero(operandos[0] * valor);
+        }
+    }
+
+ 	public void dividir(double valor) {
+        if (verificarOperandos(1)) {
+            double[] operandos = extraerOperandos(1);
+            ingresarNumero(operandos[0] / valor);
         }
     }
 }
