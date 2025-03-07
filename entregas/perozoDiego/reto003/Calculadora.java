@@ -155,51 +155,64 @@ public class Calculadora {
         limpiar();
         ingresarNumero(valorMaximo);
     }
-    
-    
-
-    public void calcularMinimo() {
-
+    public void calcularMinimo(){
+        double valorMinimo = numeros[0];
+        for(int i = 1; i < posicionActual; i++){
+            if (valorMinimo > numeros[i]){
+                valorMinimo = numeros[i];
+            }
+        }
+        limpiar();
+        ingresarNumero(valorMinimo);
     }
 
-    public void sumar(double valor) {
-
+    public void intercambiar(){
+        double numeroParaCambiar = numeros[posicionActual];
+        numeros[posicionActual] = numeros[posicionActual - 1];
+        numeros[posicionActual - 1] = numeroParaCambiar;
     }
 
-    public void restar(double valor) {
-
+    public void calcularPotencia(){
+        double potencia = Math.pow(numeros[posicionActual], numeros[posicionActual - 1]);
+        ingresarNumero(potencia);
     }
 
-    public void multiplicar(double valor) {
-
+    public void calcularPotencia(double exponente){
+        double potencia = Math.pow(numeros[posicionActual], exponente);
+        ingresarNumero(potencia);
     }
 
-    public void dividir(double valor) {
-
+    public void calcularRaizCuadrada(){
+        double radical = Math.sqrt(numeros[posicionActual]);
+        ingresarNumero(radical);
     }
 
-    public void calcularPorcentaje(double valor) {
-
+    public void sumar(double valor){
+        ingresarNumero(numeros[posicionActual] + valor);
     }
 
-    public void intercambiar() {
-
+    public void restar(double valor){
+        ingresarNumero(numeros[posicionActual] - valor);
     }
 
-    public void duplicarNumero() {
-
+    public void multiplicar(double valor){
+        ingresarNumero(numeros[posicionActual] * valor);
     }
 
-    public void calcularRaizCuadrada() {
-
+    public void dividir(double valor){
+        ingresarNumero(numeros[posicionActual] / valor);
     }
 
-    public void calcularPotencia() {
-
+    public void calcularPorcentage(double valor){
+        dividir(valor);
     }
 
-    public void calcularPotencia(double exponente) {
-
+    public void duplicarNumero(){
+        if (posicionActual == (numeros.length - 1)){
+            error = true;
+            mensajeError = "La memoria esta llena";
+        }else{
+            numeros[posicionActual + 1] = numeros[posicionActual];
+        }
     }
-
 }
