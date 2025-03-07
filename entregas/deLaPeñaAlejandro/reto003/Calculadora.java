@@ -240,4 +240,10 @@ public class Calculadora {
         }
     }
     
+    public void calcularRaizCuadrada() {
+        if (verificarOperandos(1)) {
+            double[] operandos = extraerOperandos(1);
+            ingresarNumero(Math.sqrt(operandos[0]));
+        }
+    }
 }
