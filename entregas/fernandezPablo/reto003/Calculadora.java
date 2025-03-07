@@ -122,6 +122,17 @@ public class Calculadora {
         }
     }
 
+    public void calcularPorcentaje(double valor) {
+        if (posicionActual > 0) {
+            double ultimoValor = numeros[posicionActual - 1];
+            double resultado = (ultimoValor * valor) / 100;
+            numeros[posicionActual - 1] = resultado;
+        } else {
+            error = true;
+            mensajeError = "No hay valores almacenados para calcular el porcentaje.";
+        }
+    }
+
     private double[] extraerOperandos(int numeroOperandos) {
         double[] operandos = new double[numeroOperandos];
         for (int i = 0; i < numeroOperandos; i++) {
