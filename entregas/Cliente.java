@@ -76,6 +76,48 @@ public class Cliente {
         System.out.println("Ingresado -15: " + calculadora.mostrar());
         calculadora.invertir();
         System.out.println("Invertir signo (-15 → 15): " + calculadora.mostrar());
+
+        calculadora.ingresarNumero(10);
+        calculadora.sumar(5);
+        System.out.println("Suma con 5: " + calculadora.mostrar());
+
+        calculadora.ingresarNumero(20);
+        calculadora.restar(5);
+        System.out.println("Resta con 5: " + calculadora.mostrar());
+
+        calculadora.ingresarNumero(3);
+        calculadora.multiplicar(2);
+        System.out.println("Multiplicación con 2: " + calculadora.mostrar());
+
+        calculadora.ingresarNumero(10);
+        calculadora.dividir(2);
+        System.out.println("División con 2: " + calculadora.mostrar());
+
+        calculadora.ingresarNumero(50);
+        calculadora.calcularPorcentaje(10);
+        System.out.println("10% de 50: " + calculadora.mostrar());
+
+        calculadora.ingresarNumero(5);
+        calculadora.ingresarNumero(10);
+        calculadora.intercambiar();
+        System.out.println("Intercambio: " + calculadora.mostrarTodo());
+
+        calculadora.ingresarNumero(7);
+        calculadora.duplicarNumero();
+        System.out.println("Duplicar: " + calculadora.mostrarTodo());
+
+        calculadora.ingresarNumero(16);
+        calculadora.calcularRaizCuadrada();
+        System.out.println("Raíz cuadrada: " + calculadora.mostrar());
+
+        calculadora.ingresarNumero(2);
+        calculadora.ingresarNumero(3);
+        calculadora.calcularPotencia();
+        System.out.println("Potencia: " + calculadora.mostrar());
+
+        calculadora.ingresarNumero(4);
+        calculadora.calcularPotencia(2);
+        System.out.println("Potencia con exponente 2: " + calculadora.mostrar());
     }
 
     private static void probarConstructores() {

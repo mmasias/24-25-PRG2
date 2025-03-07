@@ -85,17 +85,16 @@ La clase `Calculadora` debe implementar los métodos especificados en la vista p
 |✅|`public void calcularFactorial()`|Calcula el factorial del último valor|
 |✅|`public void calcularMaximo()`|Devuelve el valor máximo entre los almacenados|
 |✅|`public void calcularMinimo()`|Devuelve el valor mínimo entre los almacenados|
-|🔲|`public void sumar(double valor)`|Suma el valor al número en la última posición|
-|🔲|`public void restar(double valor)`|Resta el valor al número en la última posición|
-|🔲|`public void multiplicar(double valor)`|Multiplica el valor al número en la última posición|
-|🔲|`public void dividir(double valor)`|Divide entre el valor al número en la última posición|
-|🔲|`public void calcularPorcentaje(double valor)`|Calcula el porcentaje correspondiente a valor al número en la última posición|
-|🔲|`public void intercambiar()`|Intercambia de posicion los dos últimos valores ingresados|
-|🔲|`public void duplicarNumero()`|Duplica el último valor ingresado|
-|🔲|`public void calcularRaizCuadrada()`|Calcula la raíz cuadrada del último valor|
-|🔲|`public void calcularFactorial()`|Calcula el factorial del último valor|
-|🔲|`public void calcularPotencia()`|Eleva el penúltimo valor al último (similar a elevar)|
-|🔲|`public void calcularPotencia(double exponente)`|Eleva el último valor al exponente especificado|
+|✅|`public void sumar(double valor)`|Suma el valor al número en la última posición|
+|✅|`public void restar(double valor)`|Resta el valor al número en la última posición|
+|✅|`public void multiplicar(double valor)`|Multiplica el valor al número en la última posición|
+|✅|`public void dividir(double valor)`|Divide entre el valor al número en la última posición|
+|✅|`public void calcularPorcentaje(double valor)`|Calcula el porcentaje correspondiente a valor al número en la última posición|
+|✅|`public void intercambiar()`|Intercambia de posicion los dos últimos valores ingresados|
+|✅|`public void duplicarNumero()`|Duplica el último valor ingresado|
+|✅|`public void calcularRaizCuadrada()`|Calcula la raíz cuadrada del último valor|
+|✅|`public void calcularPotencia()`|Eleva el penúltimo valor al último (similar a elevar)|
+|✅|`public void calcularPotencia(double exponente)`|Eleva el último valor al exponente especificado|
 
 ### Comprobación de la implementación
 
