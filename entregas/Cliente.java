@@ -40,10 +40,9 @@ public class Cliente {
         calculadora.ingresarNumero(5);
         calculadora.calcularFactorial();
         System.out.println("Factorial: " + calculadora.mostrar());
-        
-        calculadora.ingresarNumero(5.5);
-        calculadora.calcularFactorial();
-        System.out.println("Factorial: " + calculadora.mostrar());
+
+        calculadora.calcularMinimo();
+        System.out.println("Mínimo: " + calculadora.mostrar());
     }
 
     private static void probarOperacionesBasicas(Calculadora calculadora) {

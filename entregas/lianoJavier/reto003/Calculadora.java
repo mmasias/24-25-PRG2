@@ -173,5 +173,30 @@ public class Calculadora {
             ingresarNumero(calcularFactorial(numero));
         }
     }
-    
+
+    public void calcularMaximo() {
+        if (verificarOperandos(1)) {
+            double[] operandos = extraerOperandos(1);
+            double maximo = operandos[0];
+            for (int operando = 1; operando < posicionActual; operando++) {
+                if (numeros[operando] > maximo) {
+                    maximo = numeros[operando];
+                }
+            }
+            ingresarNumero(maximo);
+        }
+    }
+
+    public void calcularMinimo() {
+        if (verificarOperandos(1)) {
+            double[] operandos = extraerOperandos(1);
+            double minimo = operandos[0];
+            for (int operando = 1; operando < posicionActual; operando++) {
+                if (numeros[operando] < minimo) {
+                    minimo = numeros[operando];
+                }
+            }
+            ingresarNumero(minimo);
+        }
+    }
 }
