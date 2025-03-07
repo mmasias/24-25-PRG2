@@ -1,4 +1,4 @@
-package entregas.masiasManuel.reto003;
+package entregas.uretaAaron.reto003;
 
 public class Calculadora {
 
@@ -7,29 +7,38 @@ public class Calculadora {
     private boolean error;
     private String mensajeError;
     static final private int CAPACIDAD_POR_DEFECTO = 10;
-
+    public Calculadora(double valorInicial) {
+        this(CAPACIDAD_POR_DEFECTO); 
+        ingresarNumero(valorInicial);
+    }
     public Calculadora(int capacidad) {
         numeros = new double[capacidad];
         posicionActual = 0;
         error = false;
         mensajeError = "";
     }
-
-    public Calculadora() {
-        this(CAPACIDAD_POR_DEFECTO);
-    }
     public Calculadora(double valorInicial) {
-        this(CAPACIDAD_POR_DEFECTO);
+        this();
         ingresarNumero(valorInicial);
     }
 
-    public Calculadora(double [] valoresIniciales) {
+
+    public Calculadora(double[] valoresIniciales) {
         this(valoresIniciales.length);
-        for(double valor: valoresIniciales) {
+        for (double valor : valoresIniciales) {
             ingresarNumero(valor);
         }
     }
-
+    
+    public void calcularPorcentaje() {
+        if (verificarOperandos(2)) {
+            double[] operandos = extraerOperandos(2);
+            ingresarNumero(operandos[1] * (operandos[0] / 100));
+        }
+    }
+    
+    
+    
     public void ingresarNumero(double valor) {
         if (posicionActual < numeros.length) {
             numeros[posicionActual] = valor;
@@ -80,9 +89,9 @@ public class Calculadora {
         return operandos;
     }
 
-    private double extraerOperando() {
+    private double extraerOperando(){
         posicionActual--;
-        return numeros[posicionActual];
+        return numeros[posicionActual];        
     }
 
     private boolean verificarOperandos(int numeroOperandos) {
