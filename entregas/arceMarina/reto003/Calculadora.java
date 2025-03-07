@@ -239,6 +239,16 @@ public class Calculadora {
                 mensajeError = "No se puede calcular el porcentaje con un divisor cero!";
             }
         }
+    
+
+        public void intercambiar() {
+            if (verificarOperandos(2)) {
+                double ultimo = extraerOperando(); 
+                double penultimo = extraerOperando(); 
+                ingresarNumero(ultimo); 
+                ingresarNumero(penultimo); 
+            }
+        }
     }
 }
 
