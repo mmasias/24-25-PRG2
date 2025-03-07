@@ -95,6 +95,33 @@ public class Calculadora {
         }
     }
 
+    public void multiplicar(double valor) {
+        if (posicionActual > 0) {
+            double ultimoValor = numeros[posicionActual - 1];
+            double resultado = ultimoValor * valor;
+            numeros[posicionActual - 1] = resultado;
+        } else {
+            error = true;
+            mensajeError = "No hay valores almacenados para multiplicar.";
+        }
+    }
+
+    public void dividir(double valor) {
+        if (posicionActual > 0) {
+            if (valor == 0) {
+                error = true;
+                mensajeError = "No se puede dividir entre cero.";
+                return;
+            }
+            double ultimoValor = numeros[posicionActual - 1];
+            double resultado = ultimoValor / valor;
+            numeros[posicionActual - 1] = resultado;
+        } else {
+            error = true;
+            mensajeError = "No hay valores almacenados para dividir.";
+        }
+    }
+
     private double[] extraerOperandos(int numeroOperandos) {
         double[] operandos = new double[numeroOperandos];
         for (int i = 0; i < numeroOperandos; i++) {
@@ -132,18 +159,6 @@ public class Calculadora {
         }
     }
 
-    public void dividir() {
-        if (verificarOperandos(2)) {
-            double[] operandos = extraerOperandos(2);
-            if (operandos[0] == 0) {
-                error = true;
-                mensajeError = "No se puede dividir entre cero.";
-            } else {
-                ingresarNumero(operandos[1] / operandos[0]);
-            }
-        }
-    }
-
     public void multiplicar() {
         if (verificarOperandos(2)) {
             double[] operandos = extraerOperandos(2);
@@ -152,10 +167,14 @@ public class Calculadora {
     }
 
     public void calcularMedia() {
+        if (posicionActual == 0) {
+            error = true;
+            mensajeError = "No hay valores almacenados para calcular la media.";
+            return;
+        }
         int numeroDeOperandos = posicionActual;
         calcularSumatoria();
         ingresarNumero(numeroDeOperandos);
-        dividir();
     }
 
     public void calcularSumatoria() {
