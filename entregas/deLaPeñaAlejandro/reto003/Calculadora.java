@@ -246,4 +246,11 @@ public class Calculadora {
             ingresarNumero(Math.sqrt(operandos[0]));
         }
     }
+
+    public void calcularPotencia() {
+        if (verificarOperandos(2)) {
+            double[] operandos = extraerOperandos(2);
+            ingresarNumero(Math.pow(operandos[1], operandos[0]));
+        }
+    }
 }
