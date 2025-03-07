@@ -32,8 +32,10 @@ public class Calculadora {
         // System.out.println("Calculadora limpiada. Estado actual: " + calculadora.mostrar());
         // calculadora.calcularPorcentaje();
         // System.out.println("Porcentaje: " + calculadora.mostrar() + "%");
-        calculadora.calcularFactorial();
-        System.out.println("Factorial: " + calculadora.mostrar());
+        // calculadora.calcularFactorial();
+        // System.out.println("Factorial: " + calculadora.mostrar());
+        calculadora.calcularMaximo();
+        System.out.println("Maximo: " + calculadora.mostrar());
     }
 
     public Calculadora(int capacidad) {
@@ -184,5 +186,17 @@ public class Calculadora {
                 ingresarNumero(resultado);
             }
         }
+    }
+
+    public void calcularMaximo() {
+        int numeroDeOperandos = posicionActual;
+        double maximo = numeros[0];
+
+        for (int i = 1; i < numeroDeOperandos; i++) {
+            if (numeros[i] > maximo) {
+                maximo = numeros[i];
+            }
+        }
+        ingresarNumero(maximo);
     }
 }
