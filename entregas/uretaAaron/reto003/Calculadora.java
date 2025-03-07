@@ -18,6 +18,10 @@ public class Calculadora {
     public Calculadora() {
         this(CAPACIDAD_POR_DEFECTO);
     }
+    public Calculadora(double valorInicial) {
+        this(CAPACIDAD_POR_DEFECTO);
+        ingresarNumero(valorInicial);
+    }
 
     public void ingresarNumero(double valor) {
         if (posicionActual < numeros.length) {
