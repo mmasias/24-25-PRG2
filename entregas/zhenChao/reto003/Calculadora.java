@@ -180,23 +180,25 @@ public class Calculadora {
 
     public int pedirValorUsuario(Scanner entrada) {
         System.out.println("Digite un valor");
-        return entrada.nextInt();
+        int valorUsuario = entrada.nextInt();
+        return valorUsuario;
     }
 
-    public void sumarConEntradaUsuario(Scanner entrada) {
-        int valorIngresado = pedirValorUsuario(entrada);
+    public void sumarConEntradaUsuario(Scanner valorUsuario) {
+        int valorIngresado = pedirValorUsuario(valorUsuario);
         ingresarNumero(valorIngresado);
         sumar();
     }
 
-    public void restarConEntradaUsuario(Scanner entrada) {
-        int valorIngresado = pedirValorUsuario(entrada);
+    public void restarConEntradaUsuario(Scanner valorUsuario) {
+        int valorIngresado = pedirValorUsuario(valorUsuario);
         ingresarNumero(valorIngresado);
         restar();
     }
 
-    public void restar(double valor){
+    public void multiplicar(double valor){
 
     }
+
 
 }
