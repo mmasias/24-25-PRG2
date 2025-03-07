@@ -199,15 +199,20 @@ class Calculadora {
     }
 
     public void calcularPorcentaje(double valor) {
-
+        ingresarNumero(valor);
+        calcularPorcentaje();
     }
 
     public void intercambiar() {
-
+        if (verficarOperandos(2)) {
+            double[] operandos = extraerOperadores(2);
+            ingresarNumero(operandos[1]);
+            ingresarNumero(operandos[0]);
+        }
     }
 
     public void duplicarNumero() {
-
+        
     }
 
     public void calcularRaizCuadrada() {
@@ -215,10 +220,13 @@ class Calculadora {
     }
 
     public void calcularPotencia() {
-
+        if (verficarOperandos(2)) {
+            double[] operandos = extraerOperadores(2);
+             ingresarNumero(Math.pow(operandos[0], operandos[1]));
+        }
     }
 
     public void calcularPotencia(double exponente) {
-
+        
     }
 }
