@@ -193,5 +193,20 @@ public class Calculadora {
         double radical = Math.pow(numeros[posicionActual], (1/2));
         ingresarNumero(radical);
     }
- 
+    
+    public void sumar(double valor){
+        ingresarNumero(valor + numeros[posicionActual]);
+    }
+
+    public void restar(double valor){
+        ingresarNumero(numeros[posicionActual] - valor);
+    }
+
+    public void multiplicar(double valor){
+        ingresarNumero(valor * numeros[posicionActual]);
+    }
+
+    public void dividir(double valor){
+        ingresarNumero(numeros[posicionActual] / valor);
+    }
 }
