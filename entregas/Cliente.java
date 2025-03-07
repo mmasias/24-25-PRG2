@@ -8,8 +8,33 @@ public class Cliente {
 
         probarConstructores();
 
-        System.out.println("-- Operaciones básicas --");
         Calculadora calculadora = new Calculadora();
+
+        probarOperacionesBasicas(calculadora);
+
+        calculadora.limpiar();
+        probarOperacionesEstadisticas(calculadora);
+
+        System.out.println("==== FIN DE PRUEBAS ====");
+    }
+
+    private static void probarOperacionesEstadisticas(Calculadora calculadora) {
+        System.out.println("-- Estadísticas --");
+        calculadora.ingresarNumero(10);
+        calculadora.ingresarNumero(20);
+        calculadora.ingresarNumero(30);
+        calculadora.ingresarNumero(40);
+        System.out.println("Valores: " + calculadora.mostrarTodo());
+
+        calculadora.calcularMedia();
+        System.out.println("Media: " + calculadora.mostrar());
+
+        calculadora.calcularSumatoria();
+        System.out.println("Sumatoria: " + calculadora.mostrar());
+    }
+
+    private static void probarOperacionesBasicas(Calculadora calculadora) {
+        System.out.println("-- Operaciones básicas --");
 
         calculadora.ingresarNumero(10.5);
         System.out.println("Ingresado 10.5: " + calculadora.mostrar());
