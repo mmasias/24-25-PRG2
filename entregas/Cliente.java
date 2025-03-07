@@ -1,10 +1,10 @@
 package entregas;
 
-import entregas.masiasManuel.reto003.Calculadora;
+import entregas.delaasuncionJose.reto003.Calculadora;
 
 public class Cliente {
     public static void main(String[] args) {
-        System.out.println("==== PRUEBA DE CALCULADORA ====");
+/*        System.out.println("==== PRUEBA DE CALCULADORA ====");
 
         System.out.println("-- Prueba de constructores --");
         Calculadora calculadora1 = new Calculadora();
@@ -59,6 +59,17 @@ public class Cliente {
         calculadora.calcularSumatoria();
         System.out.println("Sumatoria: " + calculadora.mostrar());
 
-        System.out.println("==== FIN DE PRUEBAS ====");
+        System.out.println("==== FIN DE PRUEBAS ===="); 
+ */
+        Calculadora calculadora = new Calculadora();
+
+        calculadora.ingresarNumero(5);
+        calculadora.ingresarNumero(10);
+
+        calculadora.calcularPorcentaje();
+        calculadora.ingresarNumero(3);
+        calculadora.calcularFactorial();
+
+        System.out.println(calculadora.mostrar());
     }
 }

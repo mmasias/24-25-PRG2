@@ -1,4 +1,4 @@
-package entregas.masiasManuel.reto003;
+package entregas.delaasuncionJose.reto003;
 
 public class Calculadora {
 
@@ -91,32 +91,46 @@ public class Calculadora {
         }
     }
 
+    public void restarValor(double valor) {
+        if (verificarOperandos(1)) {
+            ingresarNumero(extraerOperando() - valor);
+        }
+    }
+
     public void restar() {
         if (verificarOperandos(2)) {
-            double[] operandos = extraerOperandos(2);
-            ingresarNumero(operandos[1] - operandos[0]);
+            restarValor(extraerOperando());
+        }
+    }
+
+    public void dividirValor(double valor) {
+        if (verificarOperandos(1)) {
+            ingresarNumero(extraerOperando() / valor);
         }
     }
 
     public void dividir() {
         if (verificarOperandos(2)) {
-            double[] operandos = extraerOperandos(2);
-            ingresarNumero(operandos[1] / operandos[0]);
+            dividirValor(extraerOperando());
+        }
+    }
+
+    public void multiplicarValor(double valor) {
+        if (verificarOperandos(1)) {
+            ingresarNumero(extraerOperando() * valor);
         }
     }
 
     public void multiplicar() {
         if (verificarOperandos(2)) {
-            double[] operandos = extraerOperandos(2);
-            ingresarNumero(operandos[1] * operandos[0]);
+           multiplicarValor(extraerOperando());
         }
     }
 
     public void calcularMedia() {
         int numeroDeOperandos = posicionActual;
         calcularSumatoria();
-        ingresarNumero(numeroDeOperandos);
-        dividir();
+        dividirValor(numeroDeOperandos);
     }
 
     public void calcularSumatoria() {
@@ -125,4 +139,29 @@ public class Calculadora {
             sumar();
         }
     }
+
+    public void calcularPorcentajeValor(double valor) {
+        if (verificarOperandos(1)) {
+            dividirValor(valor);
+            multiplicarValor(100);
+        }
+    }
+
+    public void calcularPorcentaje() {
+        if (verificarOperandos(2)) {
+            calcularPorcentajeValor(extraerOperando());
+        }
+    }
+
+    public void calcularFactorial() {
+        if (verificarOperandos(1)) {
+            int factorial = (int) Math.abs(extraerOperando());
+            ingresarNumero(1);
+            for (int i = 1;i<=factorial;i++){
+                multiplicarValor(i);
+            }
+        }
+    }
+
+
 }
