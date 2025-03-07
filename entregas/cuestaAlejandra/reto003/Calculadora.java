@@ -189,4 +189,12 @@ public class Calculadora {
     public void calcularRaizCuadrada() {
         if (posicionActual > 0) numeros[posicionActual - 1] = Math.sqrt(numeros[posicionActual - 1]);
     }
+
+    public void calcularPotencia() {
+        if (posicionActual >= 2) {
+            numeros[posicionActual - 2] = Math.pow(numeros[posicionActual - 2], numeros[posicionActual - 1]);
+            posicionActual--;
+        }
+    }
+
 }
