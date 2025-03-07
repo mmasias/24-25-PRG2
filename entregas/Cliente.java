@@ -64,6 +64,22 @@ public class Cliente {
         calculadora.calcularPorcentaje();
         System.out.println("Porcentaje: " + calculadora.mostrar());
 
+        calculadora.calcularFactorial();
+        calculadora.carcularMaximo();
+        calculadora.calcularMinimo();
+        calculadora.sumar(0);;
+        calculadora.restar(0);
+        calculadora.multiplicar(0);
+        calculadora.dividir(0);
+        calculadora.calcularPorcentaje(0);
+        calculadora.intercambiar();
+        calculadora.duplicarNumero();
+        calculadora.calcularRaizCuadrada();
+        calculadora.calcularPotencia();
+        calculadora.calcularPotencia(0);
+
+        
+
         System.out.println("==== FIN DE PRUEBAS ====");
     }
 }
