@@ -73,6 +73,28 @@ public class Calculadora {
         }
     }
 
+    public void sumar(double valor) {
+        if (posicionActual > 0) {
+            double ultimoValor = numeros[posicionActual - 1];
+            double resultado = ultimoValor + valor;
+            numeros[posicionActual - 1] = resultado;
+        } else {
+            error = true;
+            mensajeError = "No hay valores almacenados para sumar.";
+        }
+    }
+
+    public void restar(double valor) {
+        if (posicionActual > 0) {
+            double ultimoValor = numeros[posicionActual - 1];
+            double resultado = ultimoValor - valor;
+            numeros[posicionActual - 1] = resultado;
+        } else {
+            error = true;
+            mensajeError = "No hay valores almacenados para restar.";
+        }
+    }
+
     private double[] extraerOperandos(int numeroOperandos) {
         double[] operandos = new double[numeroOperandos];
         for (int i = 0; i < numeroOperandos; i++) {
