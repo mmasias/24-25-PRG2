@@ -8,58 +8,6 @@ public class Calculadora {
     private String mensajeError;
     static final private int CAPACIDAD_POR_DEFECTO = 10;
 
-    public static void main(String[] args) {
-        Calculadora calculadora = new Calculadora();
-        calculadora.ingresarNumero(5);
-        calculadora.ingresarNumero(3);
-        calculadora.ingresarNumero(7);
-        System.out.println("Último número ingresado: " + calculadora.mostrar());
-        System.out.println("Todos los números ingresados:");
-        System.out.println(calculadora.mostrarTodo());
-        // calculadora.sumar();
-        // System.out.println("Resultado de la suma: " + calculadora.mostrar());
-        // calculadora.restar();
-        // System.out.println("Resultado de la resta: " + calculadora.mostrar());
-        // calculadora.multiplicar();
-        // System.out.println("Resultado de la multiplicación: " + calculadora.mostrar());
-        // calculadora.dividir();
-        // System.out.println("Resultado de la división: " + calculadora.mostrar());
-        // calculadora.invertir();
-        // System.out.println("Número invertido: " + calculadora.mostrar());
-        // calculadora.calcularMedia();
-        // System.out.println("Resultado de la media: " + calculadora.mostrar());
-        // calculadora.limpiar();
-        // System.out.println("Calculadora limpiada. Estado actual: " + calculadora.mostrar());
-        // calculadora.calcularPorcentaje();
-        // System.out.println("Porcentaje: " + calculadora.mostrar() + "%");
-        // calculadora.calcularFactorial();
-        // System.out.println("Factorial: " + calculadora.mostrar());
-        // calculadora.calcularMaximo();
-        // System.out.println("Maximo: " + calculadora.mostrar());
-        // calculadora.calcularMinimo();
-        // System.out.println("Minimo: " + calculadora.mostrar());
-        // calculadora.sumar(7);
-        // System.out.println("Suma: " + calculadora.mostrar());
-        // calculadora.restar(1);
-        // System.out.println("Resta: " + calculadora.mostrar());
-        // calculadora.multiplicar(7);
-        // System.out.println("Multiplicacion: " + calculadora.mostrar());
-        // calculadora.dividir(14);
-        // System.out.println("Division: " + calculadora.mostrar());
-        // calculadora.calcularPorcentaje(14);
-        // System.out.println("Porcentaje: " + calculadora.mostrar());
-        // calculadora.intercambiar();
-        // System.out.println("Intercambiados: " + calculadora.mostrarTodo());
-        // calculadora.duplicarNumero();
-        // System.out.println("Duplicado: " + calculadora.mostrarTodo());
-        // calculadora.calcularRaizCuadrada();
-        // System.out.println("Raiz cuadrada: " + calculadora.mostrar());
-        // calculadora.calcularPotencia();
-        // System.out.println("Potencia: " + calculadora.mostrar());
-        // calculadora.calcularPotencia(2);
-        // System.out.println("Potencia: " + calculadora.mostrar());
-    }
-
     public Calculadora(int capacidad) {
         numeros = new double[capacidad];
         posicionActual = 0;
