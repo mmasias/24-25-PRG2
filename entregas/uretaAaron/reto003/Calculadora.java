@@ -8,15 +8,15 @@ public class Calculadora {
     private String mensajeError;
     static final private int CAPACIDAD_POR_DEFECTO = 10;
 
+    public Calculadora() {
+        this(CAPACIDAD_POR_DEFECTO);
+    }
+
     public Calculadora(int capacidad) {
         numeros = new double[capacidad];
         posicionActual = 0;
         error = false;
         mensajeError = "";
-    }
-
-    public Calculadora() {
-        this(CAPACIDAD_POR_DEFECTO);
     }
 
     public Calculadora(double valorInicial) {
@@ -73,12 +73,6 @@ public class Calculadora {
         }
     }
 
-    public void sumar(double valor) {
-        if (verificarOperandos(1)) {
-            ingresarNumero(extraerOperando() + valor);
-        }
-    }
-
     public void restar() {
         if (verificarOperandos(2)) {
             double[] operandos = extraerOperandos(2);
@@ -86,22 +80,10 @@ public class Calculadora {
         }
     }
 
-    public void restar(double valor) {
-        if (verificarOperandos(1)) {
-            ingresarNumero(extraerOperando() - valor);
-        }
-    }
-
     public void multiplicar() {
         if (verificarOperandos(2)) {
             double[] operandos = extraerOperandos(2);
-            ingresarNumero(operandos[1] * operandos[0]);
-        }
-    }
-
-    public void multiplicar(double valor) {
-        if (verificarOperandos(1)) {
-            ingresarNumero(extraerOperando() * valor);
+            ingresarNumero(operandos[0] * operandos[1]);
         }
     }
 
@@ -123,16 +105,30 @@ public class Calculadora {
         }
     }
 
+    public void calcularMedia() {
+        if (posicionActual > 0) {
+            double suma = 0;
+            for (int i = 0; i < posicionActual; i++) {
+                suma += numeros[i];
+            }
+            ingresarNumero(suma / posicionActual);
+        }
+    }
+
+    public void calcularSumatoria() {
+        if (posicionActual > 0) {
+            double suma = 0;
+            for (int i = 0; i < posicionActual; i++) {
+                suma += numeros[i];
+            }
+            ingresarNumero(suma);
+        }
+    }
+
     public void calcularPorcentaje() {
         if (verificarOperandos(2)) {
             double[] operandos = extraerOperandos(2);
             ingresarNumero(operandos[1] * (operandos[0] / 100));
-        }
-    }
-
-    public void calcularPorcentaje(double valor) {
-        if (verificarOperandos(1)) {
-            ingresarNumero(extraerOperando() * (valor / 100));
         }
     }
 
@@ -148,6 +144,96 @@ public class Calculadora {
                     resultado *= i;
                 }
                 ingresarNumero(resultado);
+            }
+        }
+    }
+
+    public void calcularMaximo() {
+        if (posicionActual > 0) {
+            double max = numeros[0];
+            for (int i = 1; i < posicionActual; i++) {
+                if (numeros[i] > max) {
+                    max = numeros[i];
+                }
+            }
+            ingresarNumero(max);
+        }
+    }
+
+    public void calcularMinimo() {
+        if (posicionActual > 0) {
+            double min = numeros[0];
+            for (int i = 1; i < posicionActual; i++) {
+                if (numeros[i] < min) {
+                    min = numeros[i];
+                }
+            }
+            ingresarNumero(min);
+        }
+    }
+
+    public void sumar(double valor) {
+        if (verificarOperandos(1)) {
+            ingresarNumero(extraerOperando() + valor);
+        }
+    }
+
+    public void restar(double valor) {
+        if (verificarOperandos(1)) {
+            ingresarNumero(extraerOperando() - valor);
+        }
+    }
+
+    public void multiplicar(double valor) {
+        if (verificarOperandos(1)) {
+            ingresarNumero(extraerOperando() * valor);
+        }
+    }
+
+    public void dividir(double valor) {
+        if (verificarOperandos(1)) {
+            if (valor == 0) {
+                error = true;
+                mensajeError = "Error: División por cero!";
+            } else {
+                ingresarNumero(extraerOperando() / valor);
+            }
+        }
+    }
+
+    public void calcularPorcentaje(double valor) {
+        if (verificarOperandos(1)) {
+            ingresarNumero(extraerOperando() * (valor / 100));
+        }
+    }
+
+    public void intercambiar() {
+        if (verificarOperandos(2)) {
+            double temp = numeros[posicionActual - 1];
+            numeros[posicionActual - 1] = numeros[posicionActual - 2];
+            numeros[posicionActual - 2] = temp;
+        }
+    }
+
+    public void duplicarNumero() {
+        if (verificarOperandos(1)) {
+            ingresarNumero(numeros[posicionActual - 1]);
+        }
+    }
+
+    public void calcularRaizCuadrada() {
+        if (verificarOperandos(1)) {
+            double operando = extraerOperando();
+            if (operando < 0) {
+                error = true;
+                mensajeError = "Error: Raíz cuadrada de número negativo!";
+            } else {
+                double raiz = 1;
+                double incremento = 0.1; 
+                while (raiz * raiz < operando) {
+                    raiz += incremento;
+                }
+                ingresarNumero(raiz);
             }
         }
     }
