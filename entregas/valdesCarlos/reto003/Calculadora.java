@@ -171,5 +171,20 @@ public class Calculadora {
             ingresarNumero(minimo);
         }
     }
-    
+
+    public void intercambiar() {
+        if (verificarOperandos(2)) {
+            double a = extraerOperando();
+            double b = extraerOperando();
+            ingresarNumero(a);
+            ingresarNumero(b);
+        }
+    }
+
+    public void duplicarNumero() {
+        if (verificarOperandos(1)) {
+            double numero = numeros[posicionActual - 1];
+            ingresarNumero(numero);
+        }
+    }
 }
