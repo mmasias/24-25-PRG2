@@ -13,6 +13,9 @@ public class Cliente {
         Calculadora calculadora2 = new Calculadora(5);
         System.out.println("Constructor con capacidad: " + calculadora2.mostrarTodo());
 
+        Calculadora calculadora3 = new Calculadora(5.0);
+        System.out.println("Constructor con valor inicial: " + calculadora3.mostrarTodo());
+
         System.out.println("-- Operaciones básicas --");
         Calculadora calculadora = new Calculadora();
 

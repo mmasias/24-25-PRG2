@@ -15,6 +15,11 @@ public class Calculadora {
         mensajeError = "";
     }
 
+    public Calculadora(double valorInicial) {
+        this(CAPACIDAD_POR_DEFECTO);
+        ingresarNumero(valorInicial);
+    }
+
     public Calculadora() {
         this(CAPACIDAD_POR_DEFECTO);
     }
