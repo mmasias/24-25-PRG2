@@ -160,6 +160,23 @@ public class Calculadora {
         }
     }
 
+    public void calcularFactorial() {
+        if (verificarOperandos(1)) {
+            double operando = extraerOperando();
+            if (operando < 0 || operando != Math.floor(operando)) {
+                error = true;
+                mensajeError = "El factorial no está definido para números negativos o no enteros.";
+                return;
+            }
+            int n = (int) operando;
+            long factorial = 1;
+            for (int i = 1; i <= n; i++) {
+                factorial *= i;
+            }
+            ingresarNumero(factorial);
+        }
+    }
+
     private double[] extraerOperandos(int numeroOperandos) {
         double[] operandos = new double[numeroOperandos];
         for (int i = 0; i < numeroOperandos; i++) {
@@ -219,23 +236,6 @@ public class Calculadora {
         int numeroDeOperandos = posicionActual;
         for (int i = 0; i < numeroDeOperandos - 1; i++) {
             sumar();
-        }
-    }
-
-    public void calcularFactorial() {
-        if (verificarOperandos(1)) {
-            double operando = extraerOperando();
-            if (operando < 0) {
-                error = true;
-                mensajeError = "El factorial no está definido para números negativos.";
-                return;
-            }
-            int n = (int) operando;
-            long factorial = 1;
-            for (int i = 1; i <= n; i++) {
-                factorial *= i;
-            }
-            ingresarNumero(factorial);
         }
     }
 
