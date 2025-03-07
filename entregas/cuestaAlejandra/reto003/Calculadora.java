@@ -169,4 +169,8 @@ public class Calculadora {
     public void dividir(double valor) {
         if (posicionActual > 0 && valor != 0) numeros[posicionActual - 1] /= valor;
     }
+
+    public void calcularPorcentaje(double valor) {
+        if (posicionActual > 0) numeros[posicionActual - 1] = (numeros[posicionActual - 1] * valor) / 100;
+    }
 }
