@@ -190,7 +190,7 @@ public class Calculadora {
     }
 
     public void calcularRaizCuadrada(){
-        double radical = Math.pow(numeros[posicionActual], (1/2));
+        double radical = Math.sqrt(numeros[posicionActual]);
         ingresarNumero(radical);
     }
     
