@@ -1,4 +1,5 @@
 package zhenChao.reto003;
+
 import java.util.Scanner;
 
 public class Calculadora {
@@ -8,10 +9,9 @@ public class Calculadora {
     private boolean error;
     private String mensajeError;
     static final private int CAPACIDAD_POR_DEFECTO = 10;
-    final private boolean ENTERO;
 
     public Calculadora(int capacidad) {
-        this.ENTERO = posicionActual > 0;
+
         numeros = new double[capacidad];
         posicionActual = 0;
         error = false;
@@ -138,7 +138,7 @@ public class Calculadora {
     }
 
     public void calcularMaximo() {
-        if (ENTERO) {
+        if (posicionActual > 0) {
             double maximo = numeros[0];
             for (int i = 1; i < posicionActual; i++) {
                 if (numeros[i] > maximo) {
@@ -153,7 +153,7 @@ public class Calculadora {
 
     public void calcularMinimo() {
 
-        if (ENTERO) {
+        if (posicionActual > 0) {
             double minimo = numeros[0];
             for (int i = 1; i < posicionActual; i++) {
                 if (numeros[i] < minimo) {
@@ -177,23 +177,26 @@ public class Calculadora {
             ingresarNumero(resultado);
         }
     }
-    public int pedirValorUsuario (){
-        Scanner entrada = new Scanner(System.in);
+
+    public int pedirValorUsuario(Scanner entrada) {
         System.out.println("Digite un valor");
-        double valorIngresado = entrada. nextInt();
-                return (int) valorIngresado;  
+        return entrada.nextInt();
     }
 
-    public void sumar(double valorIngresado){
-        pedirValorUsuario();
-        sumar(); 
+    public void sumarConEntradaUsuario(Scanner entrada) {
+        int valorIngresado = pedirValorUsuario(entrada);
+        ingresarNumero(valorIngresado);
+        sumar();
+    }
+
+    public void restarConEntradaUsuario(Scanner entrada) {
+        int valorIngresado = pedirValorUsuario(entrada);
+        ingresarNumero(valorIngresado);
+        restar();
     }
 
     public void restar(double valor){
-        Scanner entrada = new Scanner(System.in);
-        System.out.println("Digite un valor");
-        double valorIngresado = entrada. nextInt();  
-        sumar(valorIngresado); 
+
     }
 
 }
