@@ -158,24 +158,25 @@ public class Calculadora {
     }
 
     public void calcularMaximo() {
-        double maximo = numeros[0];
+        double max = numeros[0];
         for (int i = 1; i < posicionActual; i++) {
-            if (numeros[i] > maximo) {
-                maximo = numeros[i];
+            if (numeros[i] > max) {
+                max = numeros[i];
             }
         }
         limpiar();
-        ingresarNumero(maximo);
+        ingresarNumero(max);
     }
 
     public void calcularMinimo() {
-        double minimo = numeros[0];
+        double min = numeros[0];
         for (int i = 1; i < posicionActual; i++) {
-            if (numeros[i] < minimo) {
-                minimo = numeros[i];
+            if (numeros[i] < min) {
+                min = numeros[i];
             }
         }
-        ingresarNumero(minimo);
+        limpiar();
+        ingresarNumero(min);
     }
 
     public void sumar(double valor){
@@ -209,5 +210,32 @@ public class Calculadora {
             ingresarNumero(operandos[1]);
             ingresarNumero(operandos[0]);
         }
+    }
+
+    public void duplicarNumero() {
+        if (verificarOperandos(1)) {
+            double[] operandos = extraerOperandos(1);
+            ingresarNumero(operandos[0]);
+            ingresarNumero(operandos[0]);
+        }
+    }
+
+    public void calcularRaizCuadrada() {
+        if (verificarOperandos(1)) {
+            double[] operandos = extraerOperandos(1);
+            ingresarNumero(Math.sqrt(operandos[0]));
+        }
+    }
+
+    public void calcularPotencia() {
+        if (verificarOperandos(2)) {
+            double[] operandos = extraerOperandos(2);
+            ingresarNumero(Math.pow(operandos[1], operandos[0]));
+        }
+    }
+
+    public void calcularPotencia(double valor) {
+        ingresarNumero(valor);
+        calcularPotencia();
     }
 }
