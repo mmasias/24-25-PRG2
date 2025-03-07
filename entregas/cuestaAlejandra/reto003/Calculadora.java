@@ -153,4 +153,8 @@ public class Calculadora {
         for (int i = 0; i < posicionActual; i++) min = Math.min(min, numeros[i]);
         ingresarNumero(min);
     }
+
+    public void sumar(double valor) {
+        if (posicionActual > 0) numeros[posicionActual - 1] += valor;
+    }
 }
