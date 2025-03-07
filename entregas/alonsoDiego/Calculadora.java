@@ -142,5 +142,24 @@ public class Calculadora {
             ingresarNumero((operandos[1] * operandos[0]) / 100);
         }
     }
-     
+    public void calcularFactorial() {
+        if (verificarOperandos(1)) {
+            double num = extraerOperando();
+            if (num < 0 || num != (int) num) { 
+                error = true;
+                mensajeError = "No se puede calcular el factorial de un número negativo o decimal";
+                return;
+            }
+            ingresarNumero(factorial((int) num));
+        }
+    }
+    
+    private int factorial(int n) {
+        int resultado = 1;
+        for (int i = 2; i <= n; i++) {
+            resultado *= i;
+        }
+        return resultado;
+    }
+    
 }
