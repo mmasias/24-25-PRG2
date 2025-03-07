@@ -92,22 +92,48 @@ public class Calculadora {
     }
 
     public void sumar(double valor){
+        if (verificarOperandos(1)) {
+            double[] operandos = extraerOperandos(1);
+            ingresarNumero(operandos[0] + valor);
+        }
 
     }
 
     public void restar(double valor){
+        if (verificarOperandos(1)) {
+            double[] operandos = extraerOperandos(1);
+            ingresarNumero(operandos[0] - valor);
+        }
 
     }
 
     public void multiplicar(double valor){
+        if (verificarOperandos(1)) {
+            double[] operandos = extraerOperandos(1);
+            ingresarNumero(operandos[0] * valor);
+        }
 
     }
 
     public void dividir(double valor){
+        if (valor == 0) {
+            error = true;
+            mensajeError = "No se puede dividir por cero";
+            return;
+        }
+        
+        if (verificarOperandos(1)) {
+            double[] operandos = extraerOperandos(1);
+            ingresarNumero(operandos[0] / valor);
+        }
 
     }
 
     public void calcularPorcentaje(double valor){
+        if (verificarOperandos(1)) {
+            double[] operandos = extraerOperandos(1);
+            ingresarNumero(operandos[0] * valor / 100);
+        }
 
     }
 
