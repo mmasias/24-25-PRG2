@@ -181,4 +181,8 @@ public class Calculadora {
             numeros[posicionActual - 2] = temp;
         }
     }
+
+    public void duplicarNumero() {
+        if (posicionActual > 0) ingresarNumero(numeros[posicionActual - 1]);
+    }
 }
