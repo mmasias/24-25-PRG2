@@ -1,6 +1,6 @@
 package entregas;
 
-import entregas.masiasManuel.reto003.Calculadora;
+import entregas.caicedoEsteban.reto003.Calculadora;
 
 public class Cliente {
     public static void main(String[] args) {
