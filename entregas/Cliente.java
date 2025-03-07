@@ -1,6 +1,6 @@
 package entregas;
 
-import entregas.masiasManuel.reto003.Calculadora;
+import entregas.perozoDiego.reto003.Calculadora;
 
 public class Cliente {
     public static void main(String[] args) {
@@ -58,6 +58,9 @@ public class Cliente {
 
         calculadora.calcularSumatoria();
         System.out.println("Sumatoria: " + calculadora.mostrar());
+
+        calculadora.calcularPorcentaje();
+        System.out.println("Porcentaje: " + calculadora.mostrar());
 
         System.out.println("==== FIN DE PRUEBAS ====");
     }

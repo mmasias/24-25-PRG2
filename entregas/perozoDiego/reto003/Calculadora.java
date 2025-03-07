@@ -1,4 +1,4 @@
-package entregas.masiasManuel.reto003;
+package entregas.perozoDiego.reto003;
 
 public class Calculadora {
 
@@ -124,5 +124,10 @@ public class Calculadora {
         for (int i = 0; i < numeroDeOperandos - 1; i++) {
             sumar();
         }
+    }
+
+    public void calcularPorcentaje() {
+        int numeroDeOperandos = posicionActual;
+        
     }
 }
