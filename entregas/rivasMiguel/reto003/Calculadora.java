@@ -54,7 +54,9 @@ public class Calculadora {
         // System.out.println("Duplicado: " + calculadora.mostrarTodo());
         // calculadora.calcularRaizCuadrada();
         // System.out.println("Raiz cuadrada: " + calculadora.mostrar());
-        calculadora.calcularPotencia();
+        // calculadora.calcularPotencia();
+        // System.out.println("Potencia: " + calculadora.mostrar());
+        calculadora.calcularPotencia(2);
         System.out.println("Potencia: " + calculadora.mostrar());
     }
 
@@ -308,6 +310,13 @@ public class Calculadora {
         if (verificarOperandos(2)) {
             double[] operandos = extraerOperandos(2);
             ingresarNumero(Math.pow(operandos[1], operandos[0]));
+        }
+    }
+
+    public void calcularPotencia(double exponente) {
+        if (verificarOperandos(1)) {
+            double operando = extraerOperando();
+            ingresarNumero(Math.pow(operando, exponente));
         }
     }
 }
