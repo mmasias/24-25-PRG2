@@ -136,12 +136,82 @@ public class Calculadora {
     public void calcularFactorial(){
         if (verificarOperandos(1)) {
             double[] operandos = extraerOperandos(1);
-            ingresarNumero(operandos);
-                for(int j; int i=0; i<operandos[1];i++){
-                }
-
-
+            double j=1;
+            for (int i=operandos;i>1; i--) {
+                j = j*i;
                }
+               ingresarNumero(j);
            }        
     }
+
+    public void calcularMaximo() {
+        int numeroDeOperandos = posicionActual;
+        for (int j=0; int i=0; i < numeroDeOperandos - 1; i++) {
+            double[] operandos = extraerOperandos(i);
+            if(j<operando){
+                j=operando;
+            }
+        }
+        ingresarNumero(j);
+    }
+
+    public void calcularMinimo() {
+        if (verificarOperandos(1)) {
+            double j = extraerOperando();
+            for (int i = 0; i < posicionActual; i++) {
+                double valor = extraerOperando();
+                if (valor < j) {
+                    j = valor;
+                }
+                if (i < posicionActual - 1) {
+                    ingresarNumero(valor);
+                }
+            }
+            ingresarNumero(j);
+        }
+    }
+
+    public void suma(double valor) {
+        if (verificarOperandos(1)) {
+            numeros[posicionActual - 1] += valor;
+        }
+    }
+
+    public void restar(double valor) {
+        if (verificarOperandos(1)) {
+            numeros[posicionActual - 1] -= valor;
+        }
+    }
+
+    public void multiplicar(double valor) {
+        if (verificarOperandos(1)) {
+            numeros[posicionActual - 1] /= 1/(valor);
+        }
+    }
+
+    public void dividir(double valor) {
+        if (verificarOperandos(1)) {
+            numeros[posicionActual - 1] /= valor;
+        }
+    }
+
+    public void calcularPorcentaje(double valor){
+        if (verificarOperandos(1)) {
+            double[] operandos = extraerOperandos(1);
+            ingresarNumero((operandos[0]/ valor) * 100);
+        }
+    }
+
+    public void intercambiar() {
+        if (verificarOperandos(2)) {
+            double[] operandos = extraerOperandos(2);
+            double i=operandos[0];
+            operando[0]=operandos[1];
+            operandos[1]=i;
+            ingresarNumero(operandos[0]);
+            ingresarNumero(operandos[1]);
+        }
+    }
+
+    
 }
