@@ -185,4 +185,8 @@ public class Calculadora {
     public void duplicarNumero() {
         if (posicionActual > 0) ingresarNumero(numeros[posicionActual - 1]);
     }
+
+    public void calcularRaizCuadrada() {
+        if (posicionActual > 0) numeros[posicionActual - 1] = Math.sqrt(numeros[posicionActual - 1]);
+    }
 }
