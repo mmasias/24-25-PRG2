@@ -19,14 +19,14 @@ class Calculadora {
         mensajeError = "";
     }
 
-    public Calculadora(double valorInicial){
+    public Calculadora(double valorInicial) {
         this(CAPACIDAD_POR_DEFECTO);
         ingresarNumero(valorInicial);
-    }	
+    }
 
-	public Calculadora(double[] valoresIniciales){
+    public Calculadora(double[] valoresIniciales) {
         this(valoresIniciales.length);
-        for(int i = 0; i < valoresIniciales.length; i++){
+        for (int i = 0; i < valoresIniciales.length; i++) {
             ingresarNumero(valoresIniciales[i]);
         }
     }
@@ -137,4 +137,71 @@ class Calculadora {
         dividir();
     }
 
+    public void calcularPorcentaje() {
+        final int PORCENTAJE = 100;
+        if (verficarOperandos(2)) {
+            double[] operandos = extraerOperadores(2);
+            ingresarNumero((operandos[1] / PORCENTAJE) * operandos[0]);
+        }
+    }
+
+    public void calcularFactorial() {
+        if (verficarOperandos(1)) {
+            double[] operando = extraerOperadores(1);
+                int factorial = 1;
+                for (int i = 1; i <= operando[0]; i++) {
+                    factorial *= i;
+                }
+                ingresarNumero(factorial);
+            }
+        }
+    }
+
+    public void calcularMaximo() {
+
+    }
+
+    public void calcularMinimo() {
+
+    }
+
+    public void sumar(double valor) {
+
+    }
+
+    public void restar(double valor) {
+
+    }
+
+    public void multiplicar(double valor) {
+
+    }
+
+    public void dividir(double valor) {
+
+    }
+
+    public void calcularPorcentaje(double valor) {
+
+    }
+
+    public void intercambiar() {
+
+    }
+
+    public void duplicarNumero() {
+
+    }
+
+    public void calcularRaizCuadrada() {
+
+    }
+
+    public void calcularPotencia() {
+
+    }
+
+    public void calcularPotencia(double exponente) {
+
+    }
 }
