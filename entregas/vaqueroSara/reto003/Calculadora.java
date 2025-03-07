@@ -176,6 +176,41 @@ public class Calculadora {
         }
     }
 
+    public void calcularRaizCuadrada() {
+        if (posicionActual == 0) {
+            error = true;
+            mensajeError = "No hay números en la memoria.";
+        } else {
+            double ultimoValor = numeros[posicionActual - 1];
+            if (ultimoValor < 0) {
+                error = true;
+                mensajeError = "Error: No se puede calcular la raíz cuadrada de un número negativo.";
+            } else {
+                double resultado = Math.sqrt(ultimoValor);
+                ingresarNumero(resultado);
+            }
+        }
+    }
+    
+    public void calcularPotencia() {
+        if (posicionActual < 2) {
+            error = true;
+            mensajeError = "Faltan operandos para calcular la potencia.";
+        } else {
+            ingresarNumero(Math.pow(numeros[posicionActual - 2], numeros[posicionActual - 1]));
+        }
+    }
+    
+    public void calcularPotencia(double exponente) {
+        if (posicionActual == 0) {
+            error = true;
+            mensajeError = "No hay números en la memoria.";
+        } else {
+            double base = numeros[posicionActual - 1];
+            ingresarNumero(Math.pow(base, exponente));
+        }
+    }
+    
     public void calcularMaximo() {
         if (posicionActual == 0) {
             error = true;
@@ -206,6 +241,27 @@ public class Calculadora {
         }
     }
 
+    public void duplicarNumero() {
+        if (posicionActual == 0) {
+            error = true;
+            mensajeError = "No hay números en la memoria.";
+        } else {
+            double ultimoValor = numeros[posicionActual - 1];  // Último número en la memoria
+            ingresarNumero(ultimoValor);  // Ingresa el mismo número nuevamente en la memoria
+        }
+    }
+
+    public void intercambiar() {
+        if (posicionActual < 2) {
+            error = true;
+            mensajeError = "No hay suficientes números para intercambiar.";
+        } else {
+            double temp = numeros[posicionActual - 1];
+            numeros[posicionActual - 1] = numeros[posicionActual - 2];
+            numeros[posicionActual - 2] = temp;
+        }
+    }
+    
     public void calcularPorcentaje() {
         if (verificarOperandos(2)) {  
             double[] operandos = extraerOperandos(2);
@@ -213,6 +269,17 @@ public class Calculadora {
             double porcentaje = operandos[0];  
             double resultado = (valor * porcentaje) / 100;
             ingresarNumero(resultado);  
+        }
+    }
+
+    public void calcularPorcentaje(double valor) {
+        if (posicionActual == 0) {
+            error = true;
+            mensajeError = "No hay números en la memoria.";
+        } else {
+            double ultimoValor = numeros[posicionActual - 1]; 
+            double resultado = (ultimoValor * valor) / 100;
+            ingresarNumero(resultado);
         }
     }
 
