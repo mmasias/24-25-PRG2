@@ -1,6 +1,4 @@
-package entregas;
-
-import entregas.masiasManuel.reto003.Calculadora;
+package zhenChao.reto003;
 
 public class Cliente {
     public static void main(String[] args) {
@@ -21,6 +19,7 @@ public class Cliente {
         calculadora.ingresarNumero(5.5);
         System.out.println("Ingresado 5.5: " + calculadora.mostrar());
         System.out.println("Todos los valores: " + calculadora.mostrarTodo());
+
 
         calculadora.sumar();
         System.out.println("Suma (10.5 + 5.5): " + calculadora.mostrar());
@@ -60,5 +59,8 @@ public class Cliente {
         System.out.println("Sumatoria: " + calculadora.mostrar());
 
         System.out.println("==== FIN DE PRUEBAS ====");
+
+        
+
     }
 }
