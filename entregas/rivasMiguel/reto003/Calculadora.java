@@ -52,8 +52,10 @@ public class Calculadora {
         // System.out.println("Intercambiados: " + calculadora.mostrarTodo());
         // calculadora.duplicarNumero();
         // System.out.println("Duplicado: " + calculadora.mostrarTodo());
-        calculadora.calcularRaizCuadrada();
-        System.out.println("Raiz cuadrada: " + calculadora.mostrar());
+        // calculadora.calcularRaizCuadrada();
+        // System.out.println("Raiz cuadrada: " + calculadora.mostrar());
+        calculadora.calcularPotencia();
+        System.out.println("Potencia: " + calculadora.mostrar());
     }
 
     public Calculadora(int capacidad) {
@@ -299,6 +301,13 @@ public class Calculadora {
             mensajeError = "¡No se puede calcular la raíz cuadrada de un número negativo!";
         } else {
             ingresarNumero(Math.sqrt(operando));
+        }
+    }
+
+    public void calcularPotencia() {
+        if (verificarOperandos(2)) {
+            double[] operandos = extraerOperandos(2);
+            ingresarNumero(Math.pow(operandos[1], operandos[0]));
         }
     }
 }
