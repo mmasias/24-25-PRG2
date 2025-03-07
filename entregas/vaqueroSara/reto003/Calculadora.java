@@ -1,4 +1,4 @@
-package entregas.masiasManuel.reto003;
+package entregas.vaqueroSara.reto003;
 
 public class Calculadora {
 
@@ -7,6 +7,10 @@ public class Calculadora {
     private boolean error;
     private String mensajeError;
     static final private int CAPACIDAD_POR_DEFECTO = 10;
+
+    public static void main(String[] args) {
+        System.out.println("HOLA");
+    }
 
     public Calculadora(int capacidad) {
         numeros = new double[capacidad];
@@ -18,6 +22,19 @@ public class Calculadora {
     public Calculadora() {
         this(CAPACIDAD_POR_DEFECTO);
     }
+
+    public Calculadora(double valorInicial) {
+        this(CAPACIDAD_POR_DEFECTO);
+        ingresarNumero(valorInicial);  
+    }
+
+    public Calculadora(double[] valoresIniciales) {
+        this(valoresIniciales.length);  
+        for (int i = 0; i < valoresIniciales.length; i++) {
+            ingresarNumero(valoresIniciales[i]);
+        }
+    }
+
 
     public void ingresarNumero(double valor) {
         if (posicionActual < numeros.length) {
@@ -109,6 +126,16 @@ public class Calculadora {
         if (verificarOperandos(2)) {
             double[] operandos = extraerOperandos(2);
             ingresarNumero(operandos[1] * operandos[0]);
+        }
+    }
+
+    public void calcularPorcentaje() {
+        if (verificarOperandos(2)) {  
+            double[] operandos = extraerOperandos(2);
+            double valor = operandos[1];  
+            double porcentaje = operandos[0];  
+            double resultado = (valor * porcentaje) / 100;
+            ingresarNumero(resultado);  
         }
     }
 
