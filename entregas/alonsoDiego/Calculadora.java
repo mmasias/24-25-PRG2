@@ -221,5 +221,11 @@ public class Calculadora {
             ingresarNumero(num / valor);
         }
     }
-            
+    public void calcularPorcentaje(double valor) {
+        if (verificarOperandos(1)) {
+            double num = extraerOperando();
+            ingresarNumero((num * valor) / 100);
+        }
+    }
+    
 }
