@@ -109,7 +109,7 @@ class Calculadora {
         }
     }
 
-    public double[] extraerOperadores(int numeroOperandos) {
+    private double[] extraerOperadores(int numeroOperandos) {
         double[] operandos = new double[numeroOperandos];
         for (int i = 0; i < numeroOperandos; i++) {
             posicionActual = posicionActual - 1;
@@ -118,7 +118,7 @@ class Calculadora {
         return operandos;
     }
 
-    public boolean verficarOperandos(int numeroOperandos) {
+    private boolean verficarOperandos(int numeroOperandos) {
         if (posicionActual >= numeroOperandos) {
             return true;
         } else {
@@ -135,7 +135,7 @@ class Calculadora {
         }
     }
 
-    public void calcurarMedia() {
+    public void calcularMedia() {
         int numeroDeOperandos = posicionActual;
         calcularSumatoria();
         ingresarNumero(numeroDeOperandos);
