@@ -204,4 +204,43 @@ public class Calculadora {
         ingresarNumero(valor);
         calcularPorcentaje();
     }
+
+    public void intercambiar() {
+        double[] operandos = extraerOperandos(2);
+        double ultimoValor = extraerOperando();
+        double swap = ultimoValor;
+        operandos[0] = operandos[1];
+        operandos[1] = swap;
+        ingresarNumero(operandos[0]);
+        ingresarNumero(operandos[1]);
+    }
+
+    public void duplicarNumero() {
+        double ultimoValor = extraerOperando();
+        ingresarNumero(ultimoValor);
+        ingresarNumero(ultimoValor);
+    }
+
+    public void calcularRaizCuadrada() {
+        double ultimoValor = extraerOperando();
+        ingresarNumero(Math.sqrt(ultimoValor));
+    }
+
+    public void calcularFactorial(double valor) {
+        ingresarNumero(valor);
+        calcularFactorial();
+    }
+
+    public void calcularPotencia() {
+        if (verificarOperandos(2)) {
+            double penultimoValor = extraerOperando();
+            double ultimoValor = extraerOperando();
+            ingresarNumero(Math.pow(ultimoValor, penultimoValor));
+        }
+    }
+
+    public void calcularPotencia(double valor) {
+        ingresarNumero(valor);
+        calcularPotencia();
+    }
 }
