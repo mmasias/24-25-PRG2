@@ -129,7 +129,7 @@ public class Calculadora {
         }
     }
 
-    public void caclcularPorcentajes() {
+    public void calcularPorcentajes() {
         if (verificarOperandos(2)) {
             double[] operandos = extraerOperandos(2);
             double porcentaje = (operandos[0] / operandos[1]) * 100;
@@ -196,11 +196,25 @@ public class Calculadora {
         restar();
     }
 
-    public void multiplicar(double valorUsuario){
+    public void multiplicarConEntradaUsuario(double valorUsuario){
         pedirValorUsuario(null);
         ingresarNumero(valorUsuario);
         multiplicar();
     }
+
+    public void dividirConEntradaUsuario(double valorUsuario){
+        pedirValorUsuario(null);
+        ingresarNumero(valorUsuario);
+        dividir();
+    }
+
+    public void calcularPorcentajesConEntradaUsuario(double valorUsuario){
+        pedirValorUsuario(null);
+        ingresarNumero(valorUsuario);
+        calcularPorcentajes();
+    }
+
+
 
 
 }
