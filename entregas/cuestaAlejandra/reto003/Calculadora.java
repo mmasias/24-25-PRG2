@@ -197,4 +197,7 @@ public class Calculadora {
         }
     }
 
+    public void calcularPotencia(double exponente) {
+        if (posicionActual > 0) numeros[posicionActual - 1] = Math.pow(numeros[posicionActual - 1], exponente);
+    }
 }
