@@ -171,4 +171,39 @@ public class Calculadora {
             ingresarNumero(factorial);
         }
     }
+    public void calcularMaximo() {
+        if (posicionActual == 0) {
+            error = true;
+            mensajeError = "No hay números almacenados para calcular el máximo!";
+            return;
+        }
+
+        double maximo = numeros[0];
+        for (int i = 1; i < posicionActual; i++) {
+            if (numeros[i] > maximo) {
+                maximo = numeros[i];
+            }
+        }
+
+        limpiar();
+        ingresarNumero(maximo);
+    }
+
+    public void calcularMinimo() {
+        if (posicionActual == 0) {
+            error = true;
+            mensajeError = "No hay números almacenados para calcular el mínimo!";
+            return;
+        }
+
+        double minimo = numeros[0];
+        for (int i = 1; i < posicionActual; i++) {
+            if (numeros[i] < minimo) {
+                minimo = numeros[i];
+            }
+        }
+
+        limpiar();
+        ingresarNumero(minimo);
+    }
 }
