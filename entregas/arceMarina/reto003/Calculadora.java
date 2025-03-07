@@ -263,8 +263,18 @@ public class Calculadora {
                 ingresarNumero(raizCuadrada);
             } else {
                 error = true;
-                mensajeError = "No se puede calcular la raíz cuadrada de un número negativo!";
+                mensajeError = "No se puede calcular la raíz cuadrada de un número negativo";
             }
+        }
+    }
+
+    public void calcularPotencia() {
+        if (verificarOperandos(2)) {
+            double[] operandos = extraerOperandos(2);
+            double base = operandos[1];
+            double exponente = operandos[0];
+            double resultado = Math.pow(base, exponente);
+            ingresarNumero(resultado);
         }
     }
 }
