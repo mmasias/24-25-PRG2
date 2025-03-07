@@ -45,3 +45,14 @@
   - Atributos de una clase
   - Constructor
   - Implantación de los métodos públicos
+
+## 4 Mar
+
+- Vista privada de las clases:
+  - Definición de atributos.
+  - Definición de constructores.
+  - Definición de métodos.
+  - Referencia this.
+  - Refinición de métodos privados.
+- [Primera versión "completa" de la calculadora](/src/calculadora/Calculadora.java)
+- Importancia del proceso de creación y la aplicación (con lo visto anteriormente) de abstracción, encapsulación y -de momento en menor medida- de modularización y jerarquización.
