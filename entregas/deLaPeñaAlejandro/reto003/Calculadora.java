@@ -165,4 +165,18 @@ public class Calculadora {
             sumar();
         }
     }
+
+    public void calcularPorcentaje() {
+        if (verificarOperandos(2)) {
+            double[] operandos = extraerOperandos(2);
+            ingresarNumero((operandos[1] * operandos[0]) / 100);
+        }
+    }
+
+    public void calcularPorcentaje(double valor) {
+        if (verificarOperandos(1)) {
+            double[] operandos = extraerOperandos(1);
+            ingresarNumero((operandos[0] * valor) / 100);
+        }
+    }
 }
