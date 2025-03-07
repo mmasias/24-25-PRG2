@@ -34,8 +34,10 @@ public class Calculadora {
         // System.out.println("Porcentaje: " + calculadora.mostrar() + "%");
         // calculadora.calcularFactorial();
         // System.out.println("Factorial: " + calculadora.mostrar());
-        calculadora.calcularMaximo();
-        System.out.println("Maximo: " + calculadora.mostrar());
+        // calculadora.calcularMaximo();
+        // System.out.println("Maximo: " + calculadora.mostrar());
+        calculadora.calcularMinimo();
+        System.out.println("Minimo: " + calculadora.mostrar());
     }
 
     public Calculadora(int capacidad) {
@@ -198,5 +200,16 @@ public class Calculadora {
             }
         }
         ingresarNumero(maximo);
+    }
+
+    public void calcularMinimo() {
+        int numeroDeOperandos = posicionActual;
+        double minimo = numeros[0];
+        for (int i = 1; i < numeroDeOperandos; i++) {
+            if (numeros[i] < minimo) {
+                minimo = numeros[i];
+            }
+        }
+        ingresarNumero(minimo);
     }
 }
