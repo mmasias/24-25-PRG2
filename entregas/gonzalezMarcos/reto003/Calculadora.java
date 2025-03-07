@@ -175,6 +175,27 @@ public class Calculadora {
         }
     }
 
-    
+    public void restar(double valor) {
+        if (verificarOperandos(1)) {
+            numeros[posicionActual - 1] -= valor;
+        }
+    }
+
+    public void multiplicar(double valor) {
+        if (verificarOperandos(1)) {
+            numeros[posicionActual - 1] *= valor;
+        }
+    }
+
+    public void dividir(double valor) {
+        if (verificarOperandos(1)) {
+            if (valor != 0) {
+                numeros[posicionActual - 1] /= valor;
+            } else {
+                error = true;
+                mensajeError = "DIVISION ENTRE CERO!";
+            }
+        }
+    }
 
 }
