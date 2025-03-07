@@ -142,15 +142,33 @@ public class Calculadora {
            ingresarNumero((operando[1]/PORCENTAJE)* operando[0]);
         }
     }
-    public void calcularFactorial(){
-        if(verificarOperandos(numeroOperandos:1)) {
-            double[] operando = extraerOperandos(numeroOperandos:1);
+    public void calcularFactorial() {
+        if(verificarOperandos(1)) {
+            double[] operando = extraerOperandos(1);
             int factorial = 1;
             for(int i = 1; i<= operando[0];i++){
                 factorial *= i;
             }
             ingresarNumero(factorial);
         }
+    }
+    public void calcularMaximo(){
+        double valorMaximo = numeros [0];
+        for(int i=1; i<posicionActual;i++) {
+            if(numeros[i] > valorMaximo){
+                valorMaximo = numeros[i];
+            }
+        }
+    }
+    public void cacularMinimo(){
+        double valorMinimo= numeros[0];
+        for(int i=1; i<posicionActual;i++) {
+            if(numeros[i] > valorMinimo){
+                valorMinimo = numeros[i];
+            }
+        }
 
     }
+
+    
 }
