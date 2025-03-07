@@ -189,5 +189,37 @@ public class Calculadora {
         }
         ingresarNumero(minimo);
     }
-        
+    public void sumar(double valor) {
+        if (verificarOperandos(1)) {
+            double num = extraerOperando();
+            ingresarNumero(num + valor);
+        }
+    }
+    
+    public void restar(double valor) {
+        if (verificarOperandos(1)) {
+            double num = extraerOperando();
+            ingresarNumero(num - valor);
+        }
+    }
+    
+    public void multiplicar(double valor) {
+        if (verificarOperandos(1)) {
+            double num = extraerOperando();
+            ingresarNumero(num * valor);
+        }
+    }
+    
+    public void dividir(double valor) {
+        if (verificarOperandos(1)) {
+            double num = extraerOperando();
+            if (valor == 0) {
+                error = true;
+                mensajeError = "No se puede dividir por 0";
+                return;
+            }
+            ingresarNumero(num / valor);
+        }
+    }
+            
 }
