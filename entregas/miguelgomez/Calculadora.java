@@ -1,4 +1,4 @@
-package src.calculadora;
+package entregas.miguelgomez;
 
 public class Calculadora {
 
@@ -69,9 +69,9 @@ public class Calculadora {
         return operandos;
     }
 
-    private double extraerOperando(){
+    private double extraerOperando() {
         posicionActual--;
-        return numeros[posicionActual];        
+        return numeros[posicionActual];
     }
 
     private boolean verificarOperandos(int numeroOperandos) {
@@ -124,5 +124,46 @@ public class Calculadora {
         for (int i = 0; i < numeroDeOperandos - 1; i++) {
             sumar();
         }
+
+    public void calcularPorcentaje() {
+        if (verificarOperandos(2)) {
+            double[] operandos = extraerOperandos(2);
+            ingresarNumero(operandos[0] / operandos[1] * 100);
+        }
     }
-}
+
+    public void calcularFactorial() {
+        if (verificarOperandos(1)) {
+            double[] operandos = extraerOperandos(1);
+            double resultado = 1;
+            for (int i = 1; i <= operandos[0]; i++) {
+                resultado *= i;
+            ingresarNumero(resultado);
+        }
+    }
+
+    public void calcularMaximo() {
+        if (verificarOperandos(1)) {
+            double maximo = numeros[0];
+            for (int i = 1; i < posicionActual; i++) {
+                if (numeros[i] > maximo) {
+                    maximo = numeros[i];
+                }
+            }
+            ingresarNumero(maximo);
+        }
+    }
+
+    public void calcularMinimo() {
+        if (verificarOperandos(1)) {
+            double minimo = numeros[0];
+            for (int i = 1; i < posicionActual; i++) {
+                if (numeros[i] < minimo) {
+                    minimo = numeros[i];
+                }
+            }
+            ingresarNumero(minimo);
+        }
+    }
+
+}}

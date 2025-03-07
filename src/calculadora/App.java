@@ -1,5 +1,7 @@
 package src.calculadora;
 
+import entregas.miguelgomez.Calculadora;
+
 public class App {
 
     public static void main(String[] args) {
@@ -8,29 +10,29 @@ public class App {
 
         calculadora.ingresarNumero(5);
         calculadora.ingresarNumero(3);
-        calculadora.sumar();       
+        calculadora.sumar();
         System.out.println(calculadora.mostrarTodo());
 
         calculadora.ingresarNumero(5);
         calculadora.ingresarNumero(3);
-        calculadora.restar();       
+        calculadora.restar();
         System.out.println(calculadora.mostrarTodo());
 
         calculadora.ingresarNumero(5);
         calculadora.ingresarNumero(3);
-        calculadora.multiplicar();       
+        calculadora.multiplicar();
         System.out.println(calculadora.mostrarTodo());
 
         calculadora.ingresarNumero(45);
         calculadora.ingresarNumero(5);
-        calculadora.dividir();       
+        calculadora.dividir();
         System.out.println(calculadora.mostrarTodo());
 
         calculadora.calcularSumatoria();
         System.out.println(calculadora.mostrarTodo());
 
-        for(int i=0;i<15;i++){
-            calculadora.ingresarNumero(Math.random()*100);
+        for (int i = 0; i < 15; i++) {
+            calculadora.ingresarNumero(Math.random() * 100);
         }
         System.out.println(calculadora.mostrarTodo());
 
