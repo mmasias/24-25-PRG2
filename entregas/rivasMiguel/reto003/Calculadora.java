@@ -245,11 +245,11 @@ public class Calculadora {
 
     public void calcularRaizCuadrada() {
         double operando = extraerOperando();
-        if (operando >= 0) {
-            ingresarNumero(Math.sqrt(operando));
-        } else {
+        if (esNegativo(operando)) {
             error = true;
             mensajeError = "¡No se puede calcular la raíz cuadrada de un número negativo!";
+        } else {
+            ingresarNumero(Math.sqrt(operando));
         }
     }
 }
