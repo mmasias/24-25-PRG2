@@ -36,8 +36,10 @@ public class Calculadora {
         // System.out.println("Factorial: " + calculadora.mostrar());
         // calculadora.calcularMaximo();
         // System.out.println("Maximo: " + calculadora.mostrar());
-        calculadora.calcularMinimo();
-        System.out.println("Minimo: " + calculadora.mostrar());
+        // calculadora.calcularMinimo();
+        // System.out.println("Minimo: " + calculadora.mostrar());
+        calculadora.sumar(7);
+        System.out.println("Suma: " + calculadora.mostrar());
     }
 
     public Calculadora(int capacidad) {
@@ -211,5 +213,12 @@ public class Calculadora {
             }
         }
         ingresarNumero(minimo);
+    }
+
+    public void sumar(double valor) {
+        if (verificarOperandos(1)) {
+            double[] operandos = extraerOperandos(1);
+            ingresarNumero(operandos[0] + valor);
+        }
     }
 }
