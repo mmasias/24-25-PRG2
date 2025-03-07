@@ -8,48 +8,6 @@ public class Calculadora {
     private String mensajeError;
     static final private int CAPACIDAD_POR_DEFECTO = 10;
 
-    public static void main(String[] args) {
-        Calculadora calculadora = new Calculadora();
-        calculadora.ingresarNumero(5);
-        calculadora.ingresarNumero(3);
-        calculadora.ingresarNumero(7);
-        System.out.println("Último número ingresado: " + calculadora.mostrar());
-        System.out.println("Todos los números ingresados:");
-        System.out.println(calculadora.mostrarTodo());
-        // calculadora.sumar();
-        // System.out.println("Resultado de la suma: " + calculadora.mostrar());
-        // calculadora.restar();
-        // System.out.println("Resultado de la resta: " + calculadora.mostrar());
-        // calculadora.multiplicar();
-        // System.out.println("Resultado de la multiplicación: " + calculadora.mostrar());
-        // calculadora.dividir();
-        // System.out.println("Resultado de la división: " + calculadora.mostrar());
-        // calculadora.invertir();
-        // System.out.println("Número invertido: " + calculadora.mostrar());
-        // calculadora.calcularMedia();
-        // System.out.println("Resultado de la media: " + calculadora.mostrar());
-        // calculadora.limpiar();
-        // System.out.println("Calculadora limpiada. Estado actual: " + calculadora.mostrar());
-        // calculadora.calcularPorcentaje();
-        // System.out.println("Porcentaje: " + calculadora.mostrar() + "%");
-        // calculadora.calcularFactorial();
-        // System.out.println("Factorial: " + calculadora.mostrar());
-        // calculadora.calcularMaximo();
-        // System.out.println("Maximo: " + calculadora.mostrar());
-        // calculadora.calcularMinimo();
-        // System.out.println("Minimo: " + calculadora.mostrar());
-        // calculadora.sumar(7);
-        // System.out.println("Suma: " + calculadora.mostrar());
-        // calculadora.restar(1);
-        // System.out.println("Resta: " + calculadora.mostrar());
-        // calculadora.multiplicar(7);
-        // System.out.println("Multiplicacion: " + calculadora.mostrar());
-        // calculadora.dividir(14);
-        // System.out.println("Division: " + calculadora.mostrar());
-        calculadora.calcularPorcentaje(14);
-        System.out.println("Porcentaje: " + calculadora.mostrar());
-    }
-
     public Calculadora(int capacidad) {
         numeros = new double[capacidad];
         posicionActual = 0;
@@ -72,7 +30,7 @@ public class Calculadora {
             ingresarNumero(valor);
         }
     }
-    
+
     public void ingresarNumero(double valor) {
         if (posicionActual < numeros.length) {
             numeros[posicionActual] = valor;
@@ -275,6 +233,23 @@ public class Calculadora {
             double temp = numeros[posicionActual - 1];
             numeros[posicionActual - 1] = numeros[posicionActual - 2];
             numeros[posicionActual - 2] = temp;
+        }
+    }
+
+    public void duplicarNumero() {
+        if (extraerOperando()) {
+            double operando = extraerOperando();
+            ingresarNumero(operando);
+        }
+    }
+
+    public void calcularRaizCuadrada() {
+        double operando = extraerOperando();
+        if (operando >= 0) {
+            ingresarNumero(Math.sqrt(operando));
+        } else {
+            error = true;
+            mensajeError = "¡No se puede calcular la raíz cuadrada de un número negativo!";
         }
     }
 }
