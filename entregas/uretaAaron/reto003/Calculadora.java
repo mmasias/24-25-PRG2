@@ -1,5 +1,4 @@
 package entregas.uretaAaron.reto003;
-
 public class Calculadora {
 
     private double[] numeros;
@@ -7,38 +6,27 @@ public class Calculadora {
     private boolean error;
     private String mensajeError;
     static final private int CAPACIDAD_POR_DEFECTO = 10;
-    public Calculadora(double valorInicial) {
-        this(CAPACIDAD_POR_DEFECTO); 
-        ingresarNumero(valorInicial);
-    }
+
     public Calculadora(int capacidad) {
         numeros = new double[capacidad];
         posicionActual = 0;
         error = false;
         mensajeError = "";
     }
-    public Calculadora(double valorInicial) {
-        this();
+
+    public Calculadora() {
+        this(CAPACIDAD_POR_DEFECTO);
+    }
+    public Calculadora(double [] valorIncial) {
+        this()
         ingresarNumero(valorInicial);
     }
-
-
-    public Calculadora(double[] valoresIniciales) {
+    public Calculadora(double[] valoresIniciales) { 
         this(valoresIniciales.length);
         for (double valor : valoresIniciales) {
             ingresarNumero(valor);
         }
     }
-    
-    public void calcularPorcentaje() {
-        if (verificarOperandos(2)) {
-            double[] operandos = extraerOperandos(2);
-            ingresarNumero(operandos[1] * (operandos[0] / 100));
-        }
-    }
-    
-    
-    
     public void ingresarNumero(double valor) {
         if (posicionActual < numeros.length) {
             numeros[posicionActual] = valor;
@@ -61,7 +49,7 @@ public class Calculadora {
 
     public String mostrarTodo() {
         String resultado = "";
-        for (int i = 0; i < posicionActual; i = i + 1) {
+        for (int i = 0; i < posicionActual; i++) {
             resultado = resultado + "[" + i + "] " + numeros[i] + "\n";
         }
         resultado = resultado + "-".repeat(10);
@@ -79,7 +67,16 @@ public class Calculadora {
             double[] operandos = extraerOperandos(2);
             ingresarNumero(operandos[0] + operandos[1]);
         }
+        public void restar(double valor) {
+            if (verificarOperandos(1)) {
+                ingresarNumero(extraerOperando() - valor);
+            }
+
+        }
     }
+ public void multiplicar(double valor) {
+
+ }
 
     private double[] extraerOperandos(int numeroOperandos) {
         double[] operandos = new double[numeroOperandos];
