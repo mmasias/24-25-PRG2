@@ -23,6 +23,13 @@ public class Calculadora {
         ingresarNumero(valorInicial);
     }
 
+    public Calculadora(double [] valoresIniciales) {
+        this(valoresIniciales.length);
+        for(double valor: valoresIniciales) {
+            ingresarNumero(valor);
+        }
+    }
+
     public void ingresarNumero(double valor) {
         if (posicionActual < numeros.length) {
             numeros[posicionActual] = valor;
