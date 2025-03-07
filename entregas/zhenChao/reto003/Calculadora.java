@@ -135,5 +135,18 @@ public class Calculadora {
             ingresarNumero(porcentaje);
         }
     }
+    public void calcularMaximo() {
+        if (ENTERO) {
+            double maximo = numeros[0];
+            for (int i = 1; i < posicionActual; i++) {
+                if (numeros[i] > maximo) {
+                    maximo = numeros[i];
+                }
+            }
+        } else {
+            error = true;
+            mensajeError = "ERROR para calcular el máximo!";
+        }
+    }
 
 }
