@@ -93,8 +93,8 @@ La clase `Calculadora` debe implementar los métodos especificados en la vista p
 |🔲|`public void intercambiar()`|Intercambia de posicion los dos últimos valores ingresados|
 |🔲|`public void duplicarNumero()`|Duplica el último valor ingresado|
 |🔲|`public void calcularRaizCuadrada()`|Calcula la raíz cuadrada del último valor|
-|🔲|`public void calcularFactorial()`|Calcula el factorial del último valor|
-|🔲|`public void calcularPotencia()`|Eleva el penúltimo valor al último (similar a elevar)|
+|🔲|`public void calcularFactorial()`|Calcula el factorial del último valor ([ISSUE aclaratorio](https://github.com/mmasias/24-25-PRG2/issues/178))|
+|🔲|`public void calcularPotencia()`|Eleva el penúltimo valor al último (similar a dividir)|
 |🔲|`public void calcularPotencia(double exponente)`|Eleva el último valor al exponente especificado|
 
 ### Comprobación de la implementación
