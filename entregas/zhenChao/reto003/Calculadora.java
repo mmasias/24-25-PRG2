@@ -1,4 +1,5 @@
 package zhenChao.reto003;
+import java.util.Scanner;
 
 public class Calculadora {
 
@@ -10,7 +11,7 @@ public class Calculadora {
     final private boolean ENTERO;
 
     public Calculadora(int capacidad) {
-        this.ENTERO = posicionActual>0;
+        this.ENTERO = posicionActual > 0;
         numeros = new double[capacidad];
         posicionActual = 0;
         error = false;
@@ -135,6 +136,7 @@ public class Calculadora {
             ingresarNumero(porcentaje);
         }
     }
+
     public void calcularMaximo() {
         if (ENTERO) {
             double maximo = numeros[0];
@@ -150,7 +152,7 @@ public class Calculadora {
     }
 
     public void calcularMinimo() {
-        
+
         if (ENTERO) {
             double minimo = numeros[0];
             for (int i = 1; i < posicionActual; i++) {
@@ -170,9 +172,28 @@ public class Calculadora {
             int numero = (int) operandos[0];
             long resultado = 1;
             for (int i = 1; i <= numero; i++) {
-                resultado *= i;  
+                resultado *= i;
             }
             ingresarNumero(resultado);
-        }    
+        }
     }
+    public int pedirValorUsuario (){
+        Scanner entrada = new Scanner(System.in);
+        System.out.println("Digite un valor");
+        double valorIngresado = entrada. nextInt();
+                return (int) valorIngresado;  
+    }
+
+    public void sumar(double valorIngresado){
+        pedirValorUsuario();
+        sumar(); 
+    }
+
+    public void restar(double valor){
+        Scanner entrada = new Scanner(System.in);
+        System.out.println("Digite un valor");
+        double valorIngresado = entrada. nextInt();  
+        sumar(valorIngresado); 
+    }
+
 }
