@@ -14,6 +14,18 @@ public class Calculadora {
         mensajeError = "";
     }
 
+    public Calculadora(double valorInicial){
+        this(CAPACIDAD_POR_DEFECTO);
+        numeros[0] = valorInicial;
+    }
+
+    public Calculadora(double[] valoresIniciales){
+        this(CAPACIDAD_POR_DEFECTO);
+        for(int i = 0; i < CAPACIDAD_POR_DEFECTO; i++){
+            numeros[i] = valoresIniciales[i];
+        }
+    }
+
     public Calculadora() {
         this(CAPACIDAD_POR_DEFECTO);
     }
@@ -175,6 +187,11 @@ public class Calculadora {
     public void calcularPotencia(double exponente){
         double potencia = Math.pow(numeros[posicionActual], exponente);
         ingresarNumero(potencia);
+    }
+
+    public void calcularRaizCuadrada(){
+        double radical = Math.pow(numeros[posicionActual], (1/2));
+        ingresarNumero(radical);
     }
  
 }
