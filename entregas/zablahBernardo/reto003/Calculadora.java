@@ -178,4 +178,36 @@ public class Calculadora {
         ingresarNumero(minimo);
     }
 
+    public void sumar(double valor){
+        ingresarNumero(valor);
+        sumar();
+    }
+
+    public void restar(double valor){
+        ingresarNumero(valor);
+        restar();
+    }
+
+    public void multiplicar(double valor){
+        ingresarNumero(valor);
+        multiplicar();
+    }
+
+    public void dividir(double valor){
+        ingresarNumero(valor);
+        dividir();
+    }
+
+    public void calcularPorcentaje(double valor){
+        ingresarNumero(valor);
+        calcularPorcentaje();
+    }
+
+    public void intercambiar(){
+        if (verificarOperandos(2)) {
+            double[] operandos = extraerOperandos(2);
+            ingresarNumero(operandos[1]);
+            ingresarNumero(operandos[0]);
+        }
+    }
 }
