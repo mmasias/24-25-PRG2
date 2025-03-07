@@ -178,26 +178,28 @@ public class Calculadora {
         }
     }
 
-    public int pedirValorUsuario(Scanner entrada) {
+    public double pedirValorUsuario(Scanner entrada) {
         System.out.println("Digite un valor");
-        int valorUsuario = entrada.nextInt();
+        double valorUsuario = entrada.nextDouble();
         return valorUsuario;
     }
 
-    public void sumarConEntradaUsuario(Scanner valorUsuario) {
-        int valorIngresado = pedirValorUsuario(valorUsuario);
-        ingresarNumero(valorIngresado);
+    public void sumarConEntradaUsuario(double valorUsuario) {
+        pedirValorUsuario(null);
+        ingresarNumero(valorUsuario);
         sumar();
     }
 
-    public void restarConEntradaUsuario(Scanner valorUsuario) {
-        int valorIngresado = pedirValorUsuario(valorUsuario);
-        ingresarNumero(valorIngresado);
+    public void restarConEntradaUsuario(double valorUsuario) {
+        pedirValorUsuario(null);
+        ingresarNumero(valorUsuario);
         restar();
     }
 
-    public void multiplicar(double valor){
-
+    public void multiplicar(double valorUsuario){
+        pedirValorUsuario(null);
+        ingresarNumero(valorUsuario);
+        multiplicar();
     }
 
 
