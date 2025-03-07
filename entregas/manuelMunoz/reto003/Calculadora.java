@@ -195,7 +195,7 @@ public class Calculadora {
     }
     
     public void sumar(double valor){
-        ingresarNumero(valor + numeros[posicionActual]);
+        ingresarNumero(numeros[posicionActual] + valor);
     }
 
     public void restar(double valor){
@@ -203,10 +203,23 @@ public class Calculadora {
     }
 
     public void multiplicar(double valor){
-        ingresarNumero(valor * numeros[posicionActual]);
+        ingresarNumero(numeros[posicionActual] * valor);
     }
 
     public void dividir(double valor){
         ingresarNumero(numeros[posicionActual] / valor);
+    }
+
+    public void calcularPorcentage(double valor){
+        dividir(valor);
+    }
+
+    public void duplicarNumero(){
+        if (posicionActual == (numeros.length - 1)){
+            error = true;
+            mensajeError = "La memoria esta llena";
+        }else{
+            numeros[posicionActual + 1] = numeros[posicionActual];
+        }
     }
 }
