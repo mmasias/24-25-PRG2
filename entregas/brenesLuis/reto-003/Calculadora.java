@@ -15,17 +15,13 @@ public class Calculadora {
         mensajeError = "";
     }
 
-    public Calculadora() {
-        this(CAPACIDAD_POR_DEFECTO);
-    }
-
     public Calculadora(double valorInicial) {
-        this();
+        this(CAPACIDAD_POR_DEFECTO);
         ingresarNumero(valorInicial);
     }
 
     public Calculadora(double[] valoresIniciales) {
-        this(valoresIniciales.length);
+        this(valoresIniciales.length > 0 ? valoresIniciales.length : CAPACIDAD_POR_DEFECTO);
         for (double valor : valoresIniciales) {
             ingresarNumero(valor);
         }
@@ -56,7 +52,9 @@ public class Calculadora {
         for (int i = 0; i < posicionActual; i = i + 1) {
             resultado = resultado + "[" + i + "] " + numeros[i] + "\n";
         }
-        resultado = resultado + "-".repeat(10);
+        for (int i = 0; i < 10; i++) {
+            resultado = resultado + "-";
+        }
         return error ? mensajeError : resultado;
     }
 
@@ -145,37 +143,37 @@ public class Calculadora {
         }
     }
 
-    public void calcularFactorial(){
+    public void calcularFactorial() {
         if (verificarOperandos(1)) {
             double[] operandos = extraerOperandos(1);
-            double resultado = 1;
-            for (int i = 1; i <= operandos[0]; i++) {
-                resultado = resultado * i;
+            double factorial = 1;
+            for (int i = 1; i < operandos[0]; i++) {
+                factorial = factorial * i;
             }
-            ingresarNumero(resultado);
+            ingresarNumero(factorial);
         }
     }
 
     public void calcularMaximo() {
-        if (posicionActual > 0) {
-            double maximo = numeros[0];
-            for (int i = 1; i < posicionActual; i++) {
-                if (numeros[i] > maximo) {
-                    maximo = numeros[i];
-                }
+        double max = numeros[0];
+        for (int i = 1; i < posicionActual; i++) {
+            if (numeros[i] > max) {
+                max = numeros[i];
             }
         }
+        limpiar();
+        ingresarNumero(max);
     }
 
     public void calcularMinimo() {
-        if (posicionActual > 0) {
-            double minimo = numeros[0];
-            for (int i = 1; i < posicionActual; i++) {
-                if (numeros[i] < minimo) {
-                    minimo = numeros[i];
-                }
+        double min = numeros[0];
+        for (int i = 1; i < posicionActual; i++) {
+            if (numeros[i] < min) {
+                min = numeros[i];
             }
         }
+        limpiar();
+        ingresarNumero(min);
     }
 
     public void sumar(double valor) {
@@ -198,7 +196,7 @@ public class Calculadora {
         dividir();
     }
 
-    public void calcularPorcentaje(double valor){
+    public void calcularPorcentaje(double valor) {
         ingresarNumero(valor);
         calcularPorcentaje();
     }
@@ -206,15 +204,16 @@ public class Calculadora {
     public void intercambiar() {
         if (verificarOperandos(2)) {
             double[] operandos = extraerOperandos(2);
-            ingresarNumero(operandos[0]);
             ingresarNumero(operandos[1]);
+            ingresarNumero(operandos[0]);
         }
     }
 
     public void duplicarNumero() {
         if (verificarOperandos(1)) {
-            double ultimo = numeros[posicionActual - 1];
-            ingresarNumero(ultimo);
+            double[] operandos = extraerOperandos(1);
+            ingresarNumero(operandos[0]);
+            ingresarNumero(operandos[0]);
         }
     }
 
@@ -232,12 +231,8 @@ public class Calculadora {
         }
     }
 
-    public void calcularPotencia(double exponente){
-        if (verificarOperandos(1)) {
-            double[] operandos = extraerOperandos(1);
-            ingresarNumero(Math.pow(operandos[0], exponente));
-            
-        }
+    public void calcularPotencia(double valor) {
+        ingresarNumero(valor);
+        calcularPotencia();
     }
-
 }
