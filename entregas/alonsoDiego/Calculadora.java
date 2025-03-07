@@ -69,9 +69,9 @@ public class Calculadora {
         return operandos;
     }
 
-    private double extraerOperando(){
+    private double extraerOperando() {
         posicionActual--;
-        return numeros[posicionActual];        
+        return numeros[posicionActual];
     }
 
     private boolean verificarOperandos(int numeroOperandos) {
@@ -125,27 +125,30 @@ public class Calculadora {
             sumar();
         }
     }
+
     public Calculadora(double valorInicial) {
         this();
         ingresarNumero(valorInicial);
     }
-    
+
     public Calculadora(double[] valoresIniciales) {
         this(valoresIniciales.length);
         for (double valor : valoresIniciales) {
             ingresarNumero(valor);
         }
     }
+
     public void calcularPorcentaje() {
         if (verificarOperandos(2)) {
             double[] operandos = extraerOperandos(2);
             ingresarNumero((operandos[1] * operandos[0]) / 100);
         }
     }
+
     public void calcularFactorial() {
         if (verificarOperandos(1)) {
             double num = extraerOperando();
-            if (num < 0 || num != (int) num) { 
+            if (num < 0 || num != (int) num) {
                 error = true;
                 mensajeError = "No se puede calcular el factorial de un número negativo o decimal";
                 return;
@@ -153,7 +156,7 @@ public class Calculadora {
             ingresarNumero(factorial((int) num));
         }
     }
-    
+
     private int factorial(int n) {
         int resultado = 1;
         for (int i = 2; i <= n; i++) {
@@ -161,6 +164,7 @@ public class Calculadora {
         }
         return resultado;
     }
+
     public void calcularMaximo() {
         if (posicionActual == 0) {
             error = true;
@@ -175,6 +179,7 @@ public class Calculadora {
         }
         ingresarNumero(maximo);
     }
+
     public void calcularMinimo() {
         if (posicionActual == 0) {
             error = true;
@@ -189,27 +194,28 @@ public class Calculadora {
         }
         ingresarNumero(minimo);
     }
+
     public void sumar(double valor) {
         if (verificarOperandos(1)) {
             double num = extraerOperando();
             ingresarNumero(num + valor);
         }
     }
-    
+
     public void restar(double valor) {
         if (verificarOperandos(1)) {
             double num = extraerOperando();
             ingresarNumero(num - valor);
         }
     }
-    
+
     public void multiplicar(double valor) {
         if (verificarOperandos(1)) {
             double num = extraerOperando();
             ingresarNumero(num * valor);
         }
     }
-    
+
     public void dividir(double valor) {
         if (verificarOperandos(1)) {
             double num = extraerOperando();
@@ -221,25 +227,29 @@ public class Calculadora {
             ingresarNumero(num / valor);
         }
     }
+
     public void calcularPorcentaje(double valor) {
         if (verificarOperandos(1)) {
             double num = extraerOperando();
             ingresarNumero((num * valor) / 100);
         }
     }
+
     public void intercambiar() {
         if (verificarOperandos(2)) {
             double[] operandos = extraerOperandos(2);
-            ingresarNumero(operandos[0]); 
-            ingresarNumero(operandos[1]); 
+            ingresarNumero(operandos[0]);
+            ingresarNumero(operandos[1]);
         }
     }
+
     public void duplicarNumero() {
         if (verificarOperandos(1)) {
             double num = numeros[posicionActual - 1];
             ingresarNumero(num);
         }
     }
+
     public void calcularRaizCuadrada() {
         if (verificarOperandos(1)) {
             double num = extraerOperando();
@@ -251,17 +261,18 @@ public class Calculadora {
             ingresarNumero(Math.sqrt(num));
         }
     }
+
     public void calcularPotencia() {
         if (verificarOperandos(2)) {
             double[] operandos = extraerOperandos(2);
             ingresarNumero(Math.pow(operandos[1], operandos[0]));
         }
     }
-    
+
     public void calcularPotencia(double exponente) {
         if (verificarOperandos(1)) {
             double base = extraerOperando();
             ingresarNumero(Math.pow(base, exponente));
         }
     }
-}   
+}
