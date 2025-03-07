@@ -207,8 +207,6 @@ public class Calculadora {
         ingresarNumero(minimo);
     }
 
-
-
     public void multiplicar(double valor) {
         if (verificarOperandos(1)) {
             double ultimoNumero = extraerOperando();
@@ -256,6 +254,20 @@ public class Calculadora {
             ingresarNumero(ultimoNumero * 2);
         }
     }
+
+    public void calcularRaizCuadrada() {
+        if (verificarOperandos(1)) {
+            double[] operandos = extraerOperandos(1);
+            if (operandos[0] >= 0) {
+                double raizCuadrada = Math.sqrt(operandos[0]);
+                ingresarNumero(raizCuadrada);
+            } else {
+                error = true;
+                mensajeError = "No se puede calcular la raíz cuadrada de un número negativo!";
+            }
+        }
+    }
+}
 
 
  
