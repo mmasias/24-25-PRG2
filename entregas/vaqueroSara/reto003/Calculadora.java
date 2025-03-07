@@ -78,6 +78,17 @@ public class Calculadora {
         }
     }
 
+    public void sumar(double valor) {
+        if (posicionActual == 0) {
+            error = true;
+            mensajeError = "No hay números en la memoria.";
+        } else {
+            double ultimoValor = numeros[posicionActual - 1];
+            double resultado = ultimoValor + valor;
+            ingresarNumero(resultado);
+        }
+    }
+
     private double[] extraerOperandos(int numeroOperandos) {
         double[] operandos = new double[numeroOperandos];
         for (int i = 0; i < numeroOperandos; i++) {
@@ -115,6 +126,17 @@ public class Calculadora {
         }
     }
 
+    public void restar(double valor) {
+        if (posicionActual == 0) {
+            error = true;
+            mensajeError = "No hay números en la memoria.";
+        } else {
+            double ultimoValor = numeros[posicionActual - 1];
+            double resultado = ultimoValor - valor;
+            ingresarNumero(resultado);
+        }
+    }
+
     public void dividir() {
         if (verificarOperandos(2)) {
             double[] operandos = extraerOperandos(2);
@@ -122,10 +144,35 @@ public class Calculadora {
         }
     }
 
+    public void dividir(double valor) {
+        if (posicionActual == 0) {
+            error = true;
+            mensajeError = "No hay números en la memoria.";
+        } else if (valor == 0) {
+            error = true;
+            mensajeError = "Error: División por cero.";
+        } else {
+            double ultimoValor = numeros[posicionActual - 1];
+            double resultado = ultimoValor / valor;
+            ingresarNumero(resultado);
+        }
+    }
+
     public void multiplicar() {
         if (verificarOperandos(2)) {
             double[] operandos = extraerOperandos(2);
             ingresarNumero(operandos[1] * operandos[0]);
+        }
+    }
+
+    public void multiplicar(double valor) {
+        if (posicionActual == 0) {
+            error = true;
+            mensajeError = "No hay números en la memoria.";
+        } else {
+            double ultimoValor = numeros[posicionActual - 1];  // Último número en la memoria
+            double resultado = ultimoValor * valor;  // Multiplica el valor ingresado por el último número
+            ingresarNumero(resultado);  // Ingresa el resultado de la multiplicación a la memoria
         }
     }
 
