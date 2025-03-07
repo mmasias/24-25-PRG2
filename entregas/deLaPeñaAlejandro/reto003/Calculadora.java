@@ -253,4 +253,11 @@ public class Calculadora {
             ingresarNumero(Math.pow(operandos[1], operandos[0]));
         }
     }
+
+    public void calcularPotencia(double exponente) {
+        if (verificarOperandos(1)) {
+            double[] operandos = extraerOperandos(1);
+            ingresarNumero(Math.pow(operandos[0], exponente));
+        }
+    }
 }
