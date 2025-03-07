@@ -133,6 +133,16 @@ public class Calculadora {
         numeros[posicionActual - 2] = temp;
     }
 
+    public void duplicarNumero() {
+        if (posicionActual > 0) {
+            double ultimoValor = numeros[posicionActual - 1];
+            ingresarNumero(ultimoValor);
+        } else {
+            error = true;
+            mensajeError = "No hay valores almacenados para duplicar.";
+        }
+    }
+
     private double[] extraerOperandos(int numeroOperandos) {
         double[] operandos = new double[numeroOperandos];
         for (int i = 0; i < numeroOperandos; i++) {
