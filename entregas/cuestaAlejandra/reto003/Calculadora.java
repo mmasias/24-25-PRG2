@@ -131,4 +131,14 @@ public class Calculadora {
             numeros[posicionActual - 2] = (numeros[posicionActual - 2] * numeros[posicionActual - 1]) / 100;
             posicionActual--;
         }
+    }
+
+    public void calcularFactorial() {
+        if (posicionActual > 0) {
+            int n = (int) numeros[posicionActual - 1];
+            double resultado = 1;
+            for (int i = 2; i <= n; i++) resultado *= i;
+            numeros[posicionActual - 1] = resultado;
+        }
+    }
 }
