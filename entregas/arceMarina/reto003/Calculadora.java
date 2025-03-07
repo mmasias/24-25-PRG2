@@ -207,6 +207,8 @@ public class Calculadora {
         ingresarNumero(minimo);
     }
 
+
+
     public void multiplicar(double valor) {
         if (verificarOperandos(1)) {
             double ultimoNumero = extraerOperando();
@@ -225,4 +227,19 @@ public class Calculadora {
             }
         }
     }
+
+    public void calcularPorcentaje(double valor) {
+        if (verificarOperandos(1)) {
+            if (valor != 0) {
+                double ultimoNumero = extraerOperando();
+                double porcentaje = (ultimoNumero / valor) * 100;
+                ingresarNumero(porcentaje);
+            } else {
+                error = true;
+                mensajeError = "No se puede calcular el porcentaje con un divisor cero!";
+            }
+        }
+    }
 }
+
+ 
