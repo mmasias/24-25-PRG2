@@ -177,6 +177,14 @@ public class Calculadora {
         }
     }
 
+    public void calcularPotencia() {
+        if (verificarOperandos(2)) {
+            double[] operandos = extraerOperandos(2);
+            double resultado = Math.pow(operandos[1], operandos[0]);
+            ingresarNumero(resultado);
+        }
+    }
+
     private double[] extraerOperandos(int numeroOperandos) {
         double[] operandos = new double[numeroOperandos];
         for (int i = 0; i < numeroOperandos; i++) {
