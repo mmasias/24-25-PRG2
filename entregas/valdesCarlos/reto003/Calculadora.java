@@ -187,4 +187,52 @@ public class Calculadora {
             ingresarNumero(numero);
         }
     }
+
+    public void calcularRaizCuadrada() {
+        if (verificarOperandos(1)) {
+            double numero = extraerOperando();
+            if (numero < 0) {
+                error = true;
+                mensajeError = "Raíz cuadrada de número negativo!";
+            } else {
+                ingresarNumero(Math.sqrt(numero));
+            }
+        }
+    }
+
+    public void sumar(double valor) {
+        if (verificarOperandos(1)) {
+            numeros[posicionActual - 1] += valor;
+        }
+    }
+
+    public void restar(double valor) {
+        if (verificarOperandos(1)) {
+            numeros[posicionActual - 1] -= valor;
+        }
+    }
+
+    public void multiplicar(double valor) {
+        if (verificarOperandos(1)) {
+            numeros[posicionActual - 1] *= valor;
+        }
+    }
+
+    public void dividir(double valor) {
+        if (verificarOperandos(1)) {
+            if (valor == 0) {
+                error = true;
+                mensajeError = "No se puede dividir por cero!";
+            } else {
+                numeros[posicionActual - 1] /= valor;
+            }
+        }
+    }
+
+    public void calcularPorcentaje(double valor) {
+        if (verificarOperandos(1)) {
+            numeros[posicionActual - 1] = (numeros[posicionActual - 1] * valor) / 100;
+        }
+    }
+
 }
