@@ -13,12 +13,10 @@ public class Calculadora {
         posicionActual = 0;
         error = false;
         mensajeError = "";
-        System.out.println("Me configuro con el parámetro " + capacidad);
     }
 
     public Calculadora() {
         this(CAPACIDAD_POR_DEFECTO);
-        System.out.println("Me configuro sin parámetros");
     }
 
     public void ingresarNumero(double valor) {
@@ -29,7 +27,6 @@ public class Calculadora {
             error = true;
             mensajeError = "MEMORIA LLENA!!!";
         }
-        System.out.println("Aqui ingresa un numero");
     }
 
     public String mostrar() {
@@ -55,7 +52,13 @@ public class Calculadora {
         posicionActual = 0;
         error = false;
         mensajeError = "";
-        System.out.println("Aqui limpio");
+    }
+
+    public void sumar() {
+        if (verificarOperandos(2)) {
+            double[] operandos = extraerOperandos(2);
+            ingresarNumero(operandos[0] + operandos[1]);
+        }
     }
 
     private double[] extraerOperandos(int numeroOperandos) {
@@ -81,21 +84,18 @@ public class Calculadora {
         }
     }
 
-    public void sumar() {
-        if (verificarOperandos(2)) {
-            double[] operandos = extraerOperandos(2);
-            ingresarNumero(operandos[0] + operandos[1]);
-        }
-        System.out.println("Sumaré");
-    }
-
     public void invertir() {
-        System.out.println("Invertiré!");
+        if (verificarOperandos(1)) {
+            double[] operadores = extraerOperandos(1);
+            ingresarNumero(-operadores[0]);
+        }
     }
 
     public void restar() {
-        invertir();
-        sumar();
+        if (verificarOperandos(2)) {
+            double[] operandos = extraerOperandos(2);
+            ingresarNumero(operandos[1] - operandos[0]);
+        }
     }
 
     public void dividir() {
@@ -103,7 +103,6 @@ public class Calculadora {
             double[] operandos = extraerOperandos(2);
             ingresarNumero(operandos[1] / operandos[0]);
         }
-        System.out.println("Dividiré!");
     }
 
     public void multiplicar() {
@@ -111,7 +110,6 @@ public class Calculadora {
             double[] operandos = extraerOperandos(2);
             ingresarNumero(operandos[1] * operandos[0]);
         }
-        System.out.println("Multiplicaré!");
     }
 
     public void calcularMedia() {
@@ -119,7 +117,6 @@ public class Calculadora {
         calcularSumatoria();
         ingresarNumero(numeroDeOperandos);
         dividir();
-        System.out.println("Calcularé la media!");
     }
 
     public void calcularSumatoria() {
@@ -127,6 +124,5 @@ public class Calculadora {
         for (int i = 0; i < numeroDeOperandos - 1; i++) {
             sumar();
         }
-        System.out.println("Calcularé la sumatoria!");
     }
 }
