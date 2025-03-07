@@ -198,4 +198,25 @@ public class Calculadora {
         }
     }
 
+    public void calcularPorcentaje(double valor) {
+        if (verificarOperandos(1)) {
+            numeros[posicionActual - 1] = (numeros[posicionActual - 1] * valor) / 100;
+        }
+    }
+
+    public void intercambiar() {
+        if (verificarOperandos(2)) {
+            double temp = numeros[posicionActual - 1];
+            numeros[posicionActual - 1] = numeros[posicionActual - 2];
+            numeros[posicionActual - 2] = temp;
+        }
+    }
+
+    public void duplicarNumero() {
+        if (verificarOperandos(1)) {
+            double valor = numeros[posicionActual - 1];
+            ingresarNumero(valor);
+        }
+    }
+
 }
