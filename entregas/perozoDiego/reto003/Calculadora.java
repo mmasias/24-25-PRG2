@@ -134,12 +134,29 @@ public class Calculadora {
     }
 
     public void calcularFactorial() {
-
+        if (verificarOperandos(1)) {
+            double[] operandos = extraerOperandos(1);
+            int n = (int) operandos[0];
+            int resultado = 1;
+            for (int i = 1; i <= n; i++) {
+                resultado *= i;
+            }
+            ingresarNumero(resultado);
+        }
     }
-
-    public void carcularMaximo() {
-
+    
+    public void calcularMaximo(){
+        double valorMaximo = 0;
+        for(int i = 0; i < posicionActual; i++){
+            if (valorMaximo < numeros[i]){
+                valorMaximo = numeros[i];
+            }
+        }
+        limpiar();
+        ingresarNumero(valorMaximo);
     }
+    
+    
 
     public void calcularMinimo() {
 

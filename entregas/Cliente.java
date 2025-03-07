@@ -64,21 +64,48 @@ public class Cliente {
         calculadora.calcularPorcentaje();
         System.out.println("Porcentaje: " + calculadora.mostrar());
 
+        calculadora.ingresarNumero(2);
         calculadora.calcularFactorial();
-        calculadora.carcularMaximo();
-        calculadora.calcularMinimo();
-        calculadora.sumar(0);;
-        calculadora.restar(0);
-        calculadora.multiplicar(0);
-        calculadora.dividir(0);
-        calculadora.calcularPorcentaje(0);
-        calculadora.intercambiar();
-        calculadora.duplicarNumero();
-        calculadora.calcularRaizCuadrada();
-        calculadora.calcularPotencia();
-        calculadora.calcularPotencia(0);
+        System.out.println("Factorial: " + calculadora.mostrar());
 
+        calculadora.ingresarNumero(46);
+        calculadora.ingresarNumero(5);
+        calculadora.ingresarNumero(25);
+        calculadora.calcularMaximo();
+        System.out.println("Número Máximo: " + calculadora.mostrar());        
+
+        calculadora.calcularMinimo();
+        System.out.println("");
         
+        calculadora.sumar(0);;
+        System.out.println("");
+        
+        calculadora.restar(0);
+        System.out.println("");
+        
+        calculadora.multiplicar(0);
+        System.out.println("");
+        
+        calculadora.dividir(0);
+        System.out.println("");
+        
+        calculadora.calcularPorcentaje(0);
+        System.out.println("");
+        
+        calculadora.intercambiar();
+        System.out.println("");
+        
+        calculadora.duplicarNumero();
+        System.out.println("");
+        
+        calculadora.calcularRaizCuadrada();
+        System.out.println("");
+        
+        calculadora.calcularPotencia();
+        System.out.println("");
+        
+        calculadora.calcularPotencia(0);
+        System.out.println("");
 
         System.out.println("==== FIN DE PRUEBAS ====");
     }
