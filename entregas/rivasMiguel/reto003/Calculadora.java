@@ -56,8 +56,8 @@ public class Calculadora {
         // System.out.println("Raiz cuadrada: " + calculadora.mostrar());
         // calculadora.calcularPotencia();
         // System.out.println("Potencia: " + calculadora.mostrar());
-        calculadora.calcularPotencia(2);
-        System.out.println("Potencia: " + calculadora.mostrar());
+        // calculadora.calcularPotencia(2);
+        // System.out.println("Potencia: " + calculadora.mostrar());
     }
 
     public Calculadora(int capacidad) {
@@ -247,36 +247,36 @@ public class Calculadora {
 
     public void sumar(double valor) {
         if (verificarOperandos(1)) {
-            double[] operandos = extraerOperandos(1);
-            ingresarNumero(operandos[0] + valor);
+            double operando = extraerOperando();
+            ingresarNumero(operando + valor);
         }
     }
 
     public void restar(double valor) {
         if (verificarOperandos(1)) {
-            double[] operandos = extraerOperandos(1);
-            ingresarNumero(operandos[0] - valor);
+            double operando = extraerOperando();
+            ingresarNumero(operando - valor);
         }
     }
 
     public void multiplicar(double valor) {
         if (verificarOperandos(1)) {
-            double[] operandos = extraerOperandos(1);
-            ingresarNumero(operandos[0] * valor);
+            double operando = extraerOperando();
+            ingresarNumero(operando * valor);
         }
     }
 
  	public void dividir(double valor) {
         if (verificarOperandos(1)) {
-            double[] operandos = extraerOperandos(1);
-            ingresarNumero(operandos[0] / valor);
+            double operando = extraerOperando();
+            ingresarNumero(operando / valor);
         }
     }
 
     public void calcularPorcentaje(double valor) {
         if (verificarOperandos(1)) {
-            double[] operandos = extraerOperandos(1);
-            ingresarNumero((valor / operandos[0]) * 100);
+            double operando = extraerOperando();
+            ingresarNumero((valor / operando) * 100);
         }
     }
 
