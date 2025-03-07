@@ -147,4 +147,29 @@ public class Calculadora {
             ingresarNumero(resultado);
         }
     }
+
+    public void calcularMaximo() {
+        if (posicionActual > 0) {
+            double maximo = numeros[0];
+            for (int i = 1; i < posicionActual; i++) {
+                if (numeros[i] > maximo) {
+                    maximo = numeros[i];
+                }
+            }
+            ingresarNumero(maximo);
+        }
+    }
+
+    public void calcularMinimo() {
+        if (posicionActual > 0) {
+            double minimo = numeros[0];
+            for (int i = 1; i < posicionActual; i++) {
+                if (numeros[i] < minimo) {
+                    minimo = numeros[i];
+                }
+            }
+            ingresarNumero(minimo);
+        }
+    }
+    
 }
