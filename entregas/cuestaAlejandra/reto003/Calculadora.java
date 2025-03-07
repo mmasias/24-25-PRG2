@@ -1,4 +1,4 @@
-package src.calculadora;
+package entregas.cuestaAlejandra.reto003;
 
 public class Calculadora {
 
@@ -140,5 +140,11 @@ public class Calculadora {
             for (int i = 2; i <= n; i++) resultado *= i;
             numeros[posicionActual - 1] = resultado;
         }
+    }
+
+    public void calcularMaximo() {
+        double max = Double.NEGATIVE_INFINITY;
+        for (int i = 0; i < posicionActual; i++) max = Math.max(max, numeros[i]);
+        ingresarNumero(max);
     }
 }
