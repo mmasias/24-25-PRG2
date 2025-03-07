@@ -177,11 +177,14 @@ public class Calculadora {
         }
     }
 
-    public void calcularPotencia() {
-        if (verificarOperandos(2)) {
-            double[] operandos = extraerOperandos(2);
-            double resultado = Math.pow(operandos[1], operandos[0]);
-            ingresarNumero(resultado);
+    public void calcularPotencia(double exponente) {
+        if (posicionActual > 0) {
+            double ultimoValor = numeros[posicionActual - 1];
+            double resultado = Math.pow(ultimoValor, exponente);
+            numeros[posicionActual - 1] = resultado;
+        } else {
+            error = true;
+            mensajeError = "No hay valores almacenados para calcular la potencia.";
         }
     }
 
