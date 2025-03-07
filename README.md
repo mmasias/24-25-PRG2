@@ -1,38 +1,79 @@
-# 👨‍💻 Programación II
+# 👨‍💻 Programación II - RAMA DE ENTREGAS
 
-Repositorio de materiales y proyectos de la asignatura **Programación II** del [Grado de Ingeniería Informática](https://www.uneatlantico.es/escuela-politecnica-superior/estudios-grado-oficial-en-ingenieria-informatica) la [Universidad Europea del Atlántico](https://www.uneatlantico.es).
+Usamos esta rama para las entregas, tal y como lo especificamos con más detalle en el artículo de [flujoGIT](/documentos/flujoGIT.md)
 
-## ⏰ Curso *[24][25]*
+<div align=center>
 
-- [Temario](/PRG2-2025-02-04-12-06.pdf)
-  - [A día de hoy, deberíamos saber...](temario/aDiaDeHoy.md)
-  - [Casos de uso](temario/casosDeUso/README.md)
-  - [Ejercicios](temario/ejercicios/README.md)
-- Evaluaciones
-  - Evaluación continua: [Retos!](evaluaciones/retos/README.md)
-  - Exámenes
-    - **Parcial**: [Enunciado](evaluaciones/examenes/examenParcial/README.md) | Repositorio de trabajo y entrega.
-    - **Final**: [Enunciado](evaluaciones/examenes/examenFinal/README.md) | Repositorio de trabajo y entrega.
-    - **Extraordinario**: [Enunciado](evaluaciones/examenes/examenExtraordinario/README.md) | Repositorio de trabajo y entrega.
+```mermaid
+%%{init: {
+  'theme': 'base',
+  'gitGraph': {
+    'showBranches': true,
+    'showCommitLabel': true,
+    'mainBranchName': 'main',
+    'mainBranchOrder': 0
+  },
+  'themeVariables': {
+    'git0': '#E64A19',     # main: naranja oscuro
+    'git1': '#388E3C',     # entregas: verde oscuro
+    'git2': '#1976D2',     # entrega1: azul
+    'git3': '#7B1FA2',     # entrega2: morado
+    'git4': '#82B1FF',     # alumno1: azul claro
+    'git5': '#B39DDB',     # alumno2: morado claro
+    'commitLabelColor': '#000000',
+    'commitLabelBackground': '#FFFFFF',
+    'tagLabelColor': '#000000',
+    'tagLabelBackground': '#FFE0B2',
+    'tagLabelBorder': '#FB8C00'
+  }
+}}%%
+gitGraph
+    commit id: "REPO ASIGNATURA: inicio curso"
+    branch entregas order: 1
+    checkout entregas
+    commit id: "config inicial entregas" type: REVERSE
+    
+    %% Forks iniciales de los alumnos
+    branch "FORK ALUMNO1" order: 4
+    branch "FORK ALUMNO2" order: 5
+    
+    %% Creación Entrega1 y trabajo
+    checkout entregas
+    branch entrega1 order: 2
+    commit id: "creación rama entrega1" type: REVERSE
+    
+    checkout "FORK ALUMNO1"
+    branch "FORK ALUMNO1: tarea1" order: 6
+    commit id: "trabajo1 alumno1"
+    checkout entrega1
+    merge "FORK ALUMNO1: tarea1" tag: "PR1 alumno1"
+    
+    checkout "FORK ALUMNO2"
+    branch "FORK ALUMNO2: tarea1" order: 7
+    commit id: "trabajo1 alumno2"
+    checkout entrega1
+    merge "FORK ALUMNO2: tarea1" tag: "PR1 alumno2"
+    
+    %% Avanza el curso, nueva entrega
+    checkout main
+    commit id: "avance del curso" type: HIGHLIGHT
+    
+    %% Creación Entrega2 y trabajo
+    checkout entregas
+    branch entrega2 order: 3
+    commit id: "creación rama entrega2" type: REVERSE
+    
+    checkout "FORK ALUMNO1"
+    branch "FORK ALUMNO1: tarea2" order: 8
+    commit id: "trabajo2 alumno1"
+    checkout entrega2
+    merge "FORK ALUMNO1: tarea2" tag: "PR2 alumno1"
+    
+    checkout "FORK ALUMNO2"
+    branch "FORK ALUMNO2: tarea2" order: 9
+    commit id: "trabajo2 alumno2"
+    checkout entrega2
+    merge "FORK ALUMNO2: tarea2" tag: "PR2 alumno2"
+```
 
-> [!IMPORTANT]
-> Los repositorios de entrega de exámenes estarán disponible días antes del examen. El repositorio con el enunciado del examen se activa al inicio del examen y permitirá entregas hasta la finalización del mismo.
-
-## 🔧 Herramientas et al
-
-- [GIT](https://git-scm.com/) & [GitHub](https://github.com/)
-- [Visual Studio Code](https://code.visualstudio.com/)
-- [PlantText](https://www.planttext.com/), para usar el formato [PlantUML](https://plantuml.com/es/) al realizar diagramas de:
-  - [estados](https://plantuml.com/es/state-diagram) / [actividades](https://plantuml.com/es/activity-diagram-beta) / [clases](https://plantuml.com/es/class-diagram) / [objetos](https://plantuml.com/es/object-diagram) / [y otros...](https://plantuml.com/es/sitemap-language-specification)
-- [Google Docs](https://drive.google.com/drive/u/0/my-drive)
-- [Plantillas](/documentos/plantillas.md)
-
-## 📖 Bibliografía & enlaces interesantes
-
-> [!NOTE]
-> Algunos enlaces podrían requerir *credenciales de acceso al campus* o a otros espacios colaborativos.
-
-- Hoja de asistencia et-al
-- [Trabajando con GIT](documentos/flujoGIT.md)
-- [Libro(s) de la asignatura@CampusVirtual](https://campus.uneatlantico.es/mod/folder/view.php?id=63401)
-- Este repo, versión de ediciones pasadas: [[23][24]](https://github.com/mmasias/23-24-PRG2)
+</div>
