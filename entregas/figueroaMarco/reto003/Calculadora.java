@@ -57,13 +57,6 @@ public class Calculadora {
         mensajeError = "";
     }
 
-    public void sumar() {
-        if (verificarOperandos(2)) {
-            double[] operandos = extraerOperandos(2);
-            ingresarNumero(operandos[0] + operandos[1]);
-        }
-    }
-
     private double[] extraerOperandos(int numeroOperandos) {
         double[] operandos = new double[numeroOperandos];
         for (int i = 0; i < numeroOperandos; i++) {
@@ -172,16 +165,30 @@ public class Calculadora {
             ingresarNumero(minimo);
         }
 
-    public void pedirNumerosUsuario() {
+
+    private double pedirNumerosUsuario() {
         Scanner input = new Scanner(System.in);
-        System.out.println("Ingrese el numero a sumar");
+        System.out.println("Ingrese el numero a operar");
         double numero = input.nextDouble();
-        ingresarNumero(numero);
+        return numero;
     }
 
-    public void sumar(double valor) {
-        ingresarNumero(valor);
-        sumar();
+    public void sumar() {
+        if(posicionActual == 0){
+            double num1 = pedirNumerosUsuario();
+            ingresarNumero(num1);
+   
+            double num2 = pedirNumerosUsuario();
+            ingresarNumero(num2);
+   
+            sumar();
+       }else{
+         if (verificarOperandos(2)) {
+            double[] operandos = extraerOperandos(2);
+            ingresarNumero(operandos[0] + operandos[1]);
+            }
+        }
+
     }
 
 }
