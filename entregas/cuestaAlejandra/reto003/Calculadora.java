@@ -147,4 +147,10 @@ public class Calculadora {
         for (int i = 0; i < posicionActual; i++) max = Math.max(max, numeros[i]);
         ingresarNumero(max);
     }
+
+    public void calcularMinimo() {
+        double min = Double.POSITIVE_INFINITY;
+        for (int i = 0; i < posicionActual; i++) min = Math.min(min, numeros[i]);
+        ingresarNumero(min);
+    }
 }
