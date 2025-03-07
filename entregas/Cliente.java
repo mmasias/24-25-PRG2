@@ -6,15 +6,7 @@ public class Cliente {
     public static void main(String[] args) {
         System.out.println("==== PRUEBA DE CALCULADORA ====");
 
-        System.out.println("-- Prueba de constructores --");
-        Calculadora calculadora1 = new Calculadora();
-        System.out.println("Constructor por defecto: " + calculadora1.mostrarTodo());
-
-        Calculadora calculadora2 = new Calculadora(5);
-        System.out.println("Constructor con capacidad: " + calculadora2.mostrarTodo());
-
-        Calculadora calculadora3 = new Calculadora(5.0);
-        System.out.println("Constructor con valor inicial: " + calculadora3.mostrarTodo());
+        probarConstructores();
 
         System.out.println("-- Operaciones básicas --");
         Calculadora calculadora = new Calculadora();
@@ -63,5 +55,17 @@ public class Cliente {
         System.out.println("Sumatoria: " + calculadora.mostrar());
 
         System.out.println("==== FIN DE PRUEBAS ====");
+    }
+
+    private static void probarConstructores() {
+        System.out.println("-- Prueba de constructores --");
+        Calculadora calculadora1 = new Calculadora();
+        System.out.println("Constructor por defecto: " + calculadora1.mostrarTodo());
+
+        Calculadora calculadora2 = new Calculadora(5);
+        System.out.println("Constructor con capacidad: " + calculadora2.mostrarTodo());
+
+        Calculadora calculadora3 = new Calculadora(5.0);
+        System.out.println("Constructor con valor inicial: " + calculadora3.mostrarTodo());
     }
 }
