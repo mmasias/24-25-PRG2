@@ -161,4 +161,8 @@ public class Calculadora {
     public void restar(double valor) {
         if (posicionActual > 0) numeros[posicionActual - 1] -= valor;
     }
+
+    public void multiplicar(double valor) {
+        if (posicionActual > 0) numeros[posicionActual - 1] *= valor;
+    }
 }
