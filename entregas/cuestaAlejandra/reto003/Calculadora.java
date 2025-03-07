@@ -157,4 +157,8 @@ public class Calculadora {
     public void sumar(double valor) {
         if (posicionActual > 0) numeros[posicionActual - 1] += valor;
     }
+
+    public void restar(double valor) {
+        if (posicionActual > 0) numeros[posicionActual - 1] -= valor;
+    }
 }
