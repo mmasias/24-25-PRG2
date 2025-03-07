@@ -128,6 +128,7 @@ public class Calculadora {
             mensajeError = "No hay suficientes valores para intercambiar.";
             return;
         }
+
         double temp = numeros[posicionActual - 1];
         numeros[posicionActual - 1] = numeros[posicionActual - 2];
         numeros[posicionActual - 2] = temp;
@@ -140,6 +141,22 @@ public class Calculadora {
         } else {
             error = true;
             mensajeError = "No hay valores almacenados para duplicar.";
+        }
+    }
+
+    public void calcularRaizCuadrada() {
+        if (posicionActual > 0) {
+            double ultimoValor = numeros[posicionActual - 1];
+            if (ultimoValor < 0) {
+                error = true;
+                mensajeError = "No se puede calcular la raíz cuadrada de un número negativo.";
+                return;
+            }
+            double resultado = Math.sqrt(ultimoValor);
+            numeros[posicionActual - 1] = resultado;
+        } else {
+            error = true;
+            mensajeError = "No hay valores almacenados para calcular la raíz cuadrada.";
         }
     }
 
