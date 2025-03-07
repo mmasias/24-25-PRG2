@@ -165,4 +165,8 @@ public class Calculadora {
     public void multiplicar(double valor) {
         if (posicionActual > 0) numeros[posicionActual - 1] *= valor;
     }
+
+    public void dividir(double valor) {
+        if (posicionActual > 0 && valor != 0) numeros[posicionActual - 1] /= valor;
+    }
 }
