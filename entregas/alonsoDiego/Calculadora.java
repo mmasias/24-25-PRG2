@@ -240,5 +240,17 @@ public class Calculadora {
             ingresarNumero(num);
         }
     }
+    public void calcularRaizCuadrada() {
+        if (verificarOperandos(1)) {
+            double num = extraerOperando();
+            if (num < 0) {
+                error = true;
+                mensajeError = "No se puede calcular la raíz de un número negativo";
+                return;
+            }
+            ingresarNumero(Math.sqrt(num));
+        }
+    }
+    
     
 }
