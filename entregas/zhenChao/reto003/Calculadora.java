@@ -196,25 +196,30 @@ public class Calculadora {
         restar();
     }
 
-    public void multiplicarConEntradaUsuario(double valorUsuario){
+    public void multiplicarConEntradaUsuario(double valorUsuario) {
         pedirValorUsuario(null);
         ingresarNumero(valorUsuario);
         multiplicar();
     }
 
-    public void dividirConEntradaUsuario(double valorUsuario){
+    public void dividirConEntradaUsuario(double valorUsuario) {
         pedirValorUsuario(null);
         ingresarNumero(valorUsuario);
         dividir();
     }
 
-    public void calcularPorcentajesConEntradaUsuario(double valorUsuario){
+    public void calcularPorcentajesConEntradaUsuario(double valorUsuario) {
         pedirValorUsuario(null);
         ingresarNumero(valorUsuario);
         calcularPorcentajes();
     }
 
-
-
+    public void intercambiar() {
+        if (verificarOperandos(2)) {
+            double ultimoValor = numeros[posicionActual - 1];
+            numeros[posicionActual - 1] = numeros[posicionActual - 2];
+            numeros[posicionActual - 2] = ultimoValor;
+        }
+    }
 
 }
