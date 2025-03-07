@@ -231,4 +231,13 @@ public class Calculadora {
             numeros[posicionActual - 2] = temp;
         }
     }
+
+    public void duplicarNumero() {
+        if (verificarOperandos(1)) {
+            double[] operandos = extraerOperandos(1);
+            ingresarNumero(operandos[0]);
+            ingresarNumero(operandos[0]);
+        }
+    }
+    
 }
