@@ -1,4 +1,5 @@
 package entregas.uretaAaron.reto003;
+
 public class Calculadora {
 
     private double[] numeros;
@@ -17,16 +18,19 @@ public class Calculadora {
     public Calculadora() {
         this(CAPACIDAD_POR_DEFECTO);
     }
-    public Calculadora(double [] valorIncial) {
-        this()
+
+    public Calculadora(double valorInicial) {
+        this();
         ingresarNumero(valorInicial);
     }
-    public Calculadora(double[] valoresIniciales) { 
+
+    public Calculadora(double[] valoresIniciales) {
         this(valoresIniciales.length);
         for (double valor : valoresIniciales) {
             ingresarNumero(valor);
         }
     }
+
     public void ingresarNumero(double valor) {
         if (posicionActual < numeros.length) {
             numeros[posicionActual] = valor;
@@ -50,9 +54,9 @@ public class Calculadora {
     public String mostrarTodo() {
         String resultado = "";
         for (int i = 0; i < posicionActual; i++) {
-            resultado = resultado + "[" + i + "] " + numeros[i] + "\n";
+            resultado += "[" + i + "] " + numeros[i] + "\n";
         }
-        resultado = resultado + "-".repeat(10);
+        resultado += "-".repeat(10);
         return error ? mensajeError : resultado;
     }
 
@@ -67,44 +71,11 @@ public class Calculadora {
             double[] operandos = extraerOperandos(2);
             ingresarNumero(operandos[0] + operandos[1]);
         }
-        public void restar(double valor) {
-            if (verificarOperandos(1)) {
-                ingresarNumero(extraerOperando() - valor);
-            }
-
-        }
-    }
- public void multiplicar(double valor) {
-
- }
-
-    private double[] extraerOperandos(int numeroOperandos) {
-        double[] operandos = new double[numeroOperandos];
-        for (int i = 0; i < numeroOperandos; i++) {
-            operandos[i] = extraerOperando();
-        }
-        return operandos;
     }
 
-    private double extraerOperando(){
-        posicionActual--;
-        return numeros[posicionActual];        
-    }
-
-    private boolean verificarOperandos(int numeroOperandos) {
-        if (posicionActual >= numeroOperandos) {
-            return true;
-        } else {
-            error = true;
-            mensajeError = "Faltan operandos!";
-            return false;
-        }
-    }
-
-    public void invertir() {
+    public void sumar(double valor) {
         if (verificarOperandos(1)) {
-            double[] operadores = extraerOperandos(1);
-            ingresarNumero(-operadores[0]);
+            ingresarNumero(extraerOperando() + valor);
         }
     }
 
@@ -115,10 +86,9 @@ public class Calculadora {
         }
     }
 
-    public void dividir() {
-        if (verificarOperandos(2)) {
-            double[] operandos = extraerOperandos(2);
-            ingresarNumero(operandos[1] / operandos[0]);
+    public void restar(double valor) {
+        if (verificarOperandos(1)) {
+            ingresarNumero(extraerOperando() - valor);
         }
     }
 
@@ -129,17 +99,79 @@ public class Calculadora {
         }
     }
 
-    public void calcularMedia() {
-        int numeroDeOperandos = posicionActual;
-        calcularSumatoria();
-        ingresarNumero(numeroDeOperandos);
-        dividir();
+    public void multiplicar(double valor) {
+        if (verificarOperandos(1)) {
+            ingresarNumero(extraerOperando() * valor);
+        }
     }
 
-    public void calcularSumatoria() {
-        int numeroDeOperandos = posicionActual;
-        for (int i = 0; i < numeroDeOperandos - 1; i++) {
-            sumar();
+    public void dividir() {
+        if (verificarOperandos(2)) {
+            double[] operandos = extraerOperandos(2);
+            if (operandos[0] == 0) {
+                error = true;
+                mensajeError = "Error: División por cero!";
+            } else {
+                ingresarNumero(operandos[1] / operandos[0]);
+            }
+        }
+    }
+
+    public void invertir() {
+        if (verificarOperandos(1)) {
+            ingresarNumero(-extraerOperando());
+        }
+    }
+
+    public void calcularPorcentaje() {
+        if (verificarOperandos(2)) {
+            double[] operandos = extraerOperandos(2);
+            ingresarNumero(operandos[1] * (operandos[0] / 100));
+        }
+    }
+
+    public void calcularPorcentaje(double valor) {
+        if (verificarOperandos(1)) {
+            ingresarNumero(extraerOperando() * (valor / 100));
+        }
+    }
+
+    public void calcularFactorial() {
+        if (verificarOperandos(1)) {
+            int valor = (int) extraerOperando();
+            if (valor < 0) {
+                error = true;
+                mensajeError = "Error: Factorial de número negativo!";
+            } else {
+                int resultado = 1;
+                for (int i = 2; i <= valor; i++) {
+                    resultado *= i;
+                }
+                ingresarNumero(resultado);
+            }
+        }
+    }
+
+    private double[] extraerOperandos(int numeroOperandos) {
+        double[] operandos = new double[numeroOperandos];
+        for (int i = 0; i < numeroOperandos; i++) {
+            operandos[i] = extraerOperando();
+        }
+        return operandos;
+    }
+
+    private double extraerOperando() {
+        posicionActual--;
+        return numeros[posicionActual];
+    }
+
+    private boolean verificarOperandos(int numeroOperandos) {
+        if (posicionActual >= numeroOperandos) {
+            return true;
+        } else {
+            error = true;
+            mensajeError = "Faltan operandos!";
+            return false;
         }
     }
 }
