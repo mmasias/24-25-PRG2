@@ -38,8 +38,10 @@ public class Calculadora {
         // System.out.println("Maximo: " + calculadora.mostrar());
         // calculadora.calcularMinimo();
         // System.out.println("Minimo: " + calculadora.mostrar());
-        calculadora.sumar(7);
-        System.out.println("Suma: " + calculadora.mostrar());
+        // calculadora.sumar(7);
+        // System.out.println("Suma: " + calculadora.mostrar());
+        calculadora.restar(1);
+        System.out.println("Resta: " + calculadora.mostrar());
     }
 
     public Calculadora(int capacidad) {
@@ -219,6 +221,13 @@ public class Calculadora {
         if (verificarOperandos(1)) {
             double[] operandos = extraerOperandos(1);
             ingresarNumero(operandos[0] + valor);
+        }
+    }
+
+    public void restar(double valor) {
+        if (verificarOperandos(1)) {
+            double[] operandos = extraerOperandos(1);
+            ingresarNumero(operandos[0] - valor);
         }
     }
 }
