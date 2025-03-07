@@ -158,5 +158,17 @@ public class Calculadora {
     public void calcularFactorial() {
         if (verificarOperandos(1)) { 
             double[] operandos = extraerOperandos(1);
+            int numero = (int) operandos[0];
+            if (numero < 0){
+                error = true;
+                mensajeError = "No se puede calcular el factorial de un número negativo";
+                return;
+            }
+            int factorial = 1;
+            for (int i = 1; i <= numero; i++) {
+                factorial *= i;
+            }
+            ingresarNumero(factorial);
         }
     }
+}
