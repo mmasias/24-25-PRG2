@@ -18,6 +18,18 @@ public class Calculadora {
         this(CAPACIDAD_POR_DEFECTO);
     }
 
+    public Calculadora(double valorInicial) {
+        this(CAPACIDAD_POR_DEFECTO);
+        ingresarNumero(valorInicial);
+    }
+    
+    public Calculadora(double[] valoresIniciales) {
+        this(Math.max(valoresIniciales.length, CAPACIDAD_POR_DEFECTO));
+        for (double valor : valoresIniciales) {
+            ingresarNumero(valor);
+        }
+    }
+
     public void ingresarNumero(double valor) {
         if (posicionActual < numeros.length) {
             numeros[posicionActual] = valor;
@@ -132,22 +144,6 @@ public class Calculadora {
         }
     }
 
-    public void calcularFactorial() {
-        if (verificarOperandos(1)) {
-            double numero = extraerOperando();
-            if (numero < 0 || numero != (int) numero) {
-                error = true;
-                mensajeError = "Factorial no definido para negativos o decimales!";
-                return;
-            }
-            int resultado = 1;
-            for (int i = 2; i <= numero; i++) {
-                resultado *= i;
-            }
-            ingresarNumero(resultado);
-        }
-    }
-
     public void calcularMaximo() {
         if (posicionActual > 0) {
             double maximo = numeros[0];
@@ -235,4 +231,17 @@ public class Calculadora {
         }
     }
 
+    public void calcularPotencia() {
+        if (verificarOperandos(2)) {
+            double[] operandos = extraerOperandos(2);
+            ingresarNumero(Math.pow(operandos[1], operandos[0]));
+        }
+    }
+
+    public void calcularPotencia(double exponente) {
+        if (verificarOperandos(1)) {
+            double[] operandos = extraerOperandos(1);
+            ingresarNumero(Math.pow(operandos[0], exponente));
+        }
+    }
 }
