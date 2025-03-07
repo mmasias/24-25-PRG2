@@ -1,7 +1,5 @@
 package entregas.figueroaMarco.reto003;
 
-import java.util.Scanner;
-
 public class Calculadora {
 
     private double[] numeros;
@@ -57,6 +55,18 @@ public class Calculadora {
         mensajeError = "";
     }
 
+    public Calculadora(double valorInicial) {
+        this(CAPACIDAD_POR_DEFECTO);
+        ingresarNumero(valorInicial);
+    }
+
+    public Calculadora(double[] valoresIniciales) {
+        this(valoresIniciales.length > 0 ? valoresIniciales.length : CAPACIDAD_POR_DEFECTO);
+        for (double valor : valoresIniciales) {
+            ingresarNumero(valor);
+        }
+    }
+
     private double[] extraerOperandos(int numeroOperandos) {
         double[] operandos = new double[numeroOperandos];
         for (int i = 0; i < numeroOperandos; i++) {
@@ -77,6 +87,13 @@ public class Calculadora {
             error = true;
             mensajeError = "Faltan operandos!";
             return false;
+        }
+    }
+
+    public void sumar() {
+        if (verificarOperandos(2)) {
+            double[] operandos = extraerOperandos(2);
+            ingresarNumero(operandos[0] + operandos[1]);
         }
     }
 
@@ -165,30 +182,65 @@ public class Calculadora {
             ingresarNumero(minimo);
         }
 
-
-    private double pedirNumerosUsuario() {
-        Scanner input = new Scanner(System.in);
-        System.out.println("Ingrese el numero a operar");
-        double numero = input.nextDouble();
-        return numero;
+    public void sumar(double valor) {
+        ingresarNumero(valor);
+        sumar();
     }
 
-    public void sumar() {
-        if(posicionActual == 0){
-            double num1 = pedirNumerosUsuario();
-            ingresarNumero(num1);
-   
-            double num2 = pedirNumerosUsuario();
-            ingresarNumero(num2);
-   
-            sumar();
-       }else{
-         if (verificarOperandos(2)) {
+    public void restar(double valor) {
+        ingresarNumero(valor);
+        restar();
+    }
+
+    public void multiplicar(double valor) {
+        ingresarNumero(valor);
+        multiplicar();
+    }
+
+    public void dividir(double valor) {
+        ingresarNumero(valor);
+        dividir();
+    }
+
+    public void calcularPorcentaje(double valor) {
+        ingresarNumero(valor);
+        calcularPorcentaje();
+    }
+
+    public void intercambiar() {
+        if (verificarOperandos(2)) {
             double[] operandos = extraerOperandos(2);
-            ingresarNumero(operandos[0] + operandos[1]);
-            }
+            ingresarNumero(operandos[1]);
+            ingresarNumero(operandos[0]);
         }
-
     }
+
+    public void duplicarNumero() {
+        if (verificarOperandos(1)) {
+            double[] operandos = extraerOperandos(1);
+            ingresarNumero(operandos[0]);
+            ingresarNumero(operandos[0]);
+        }
+    }
+
+    public void calcularRaizCuadrada() {
+        if (verificarOperandos(1)) {
+            double[] operandos = extraerOperandos(1);
+            ingresarNumero(Math.sqrt(operandos[0]));
+        }
+    }
+
+    public void calcularPotencia() {
+        if (verificarOperandos(2)) {
+            double[] operandos = extraerOperandos(2);
+            ingresarNumero(Math.pow(operandos[1], operandos[0]));
+        }
+    }
+
+    public void calcularPotencia(double valor) {
+        ingresarNumero(valor);
+        calcularPotencia();
+    }
+    
 
 }
