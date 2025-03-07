@@ -64,22 +64,6 @@ public class Cliente {
         System.out.println("Ingresado -15: " + calculadora.mostrar());
         calculadora.invertir();
         System.out.println("Invertir signo (-15 → 15): " + calculadora.mostrar());
-
-        calculadora.limpiar();
-        System.out.println("-- Estadísticas --");
-        calculadora.ingresarNumero(10);
-        calculadora.ingresarNumero(20);
-        calculadora.ingresarNumero(30);
-        calculadora.ingresarNumero(40);
-        System.out.println("Valores: " + calculadora.mostrarTodo());
-
-        calculadora.calcularMedia();
-        System.out.println("Media: " + calculadora.mostrar());
-
-        calculadora.calcularSumatoria();
-        System.out.println("Sumatoria: " + calculadora.mostrar());
-
-        System.out.println("==== FIN DE PRUEBAS ====");
     }
 
     private static void probarConstructores() {
