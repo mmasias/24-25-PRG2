@@ -15,6 +15,18 @@ public class Calculadora {
         mensajeError = "";
     }
 
+    public Calculadora(double numero) {
+        this();
+        ingresarNumero(numero);
+    }
+
+    public Calculadora(double[] numerosIngresados) {
+        this((numerosIngresados.length>CAPACIDAD_POR_DEFECTO) ? numerosIngresados.length:CAPACIDAD_POR_DEFECTO);
+        for (double numero : numerosIngresados){
+            ingresarNumero(numero);
+        }
+    }
+
     public Calculadora() {
         this(CAPACIDAD_POR_DEFECTO);
     }
@@ -54,13 +66,6 @@ public class Calculadora {
         mensajeError = "";
     }
 
-    public void sumar() {
-        if (verificarOperandos(2)) {
-            double[] operandos = extraerOperandos(2);
-            ingresarNumero(operandos[0] + operandos[1]);
-        }
-    }
-
     private double[] extraerOperandos(int numeroOperandos) {
         double[] operandos = new double[numeroOperandos];
         for (int i = 0; i < numeroOperandos; i++) {
@@ -84,10 +89,38 @@ public class Calculadora {
         }
     }
 
+    public void intercambiar() {
+        if (verificarOperandos(2)) {
+            double[] operandos = extraerOperandos(2);
+            ingresarNumero(operandos[1]);
+            ingresarNumero(operandos[0]);
+        }
+    }
+
+    public void duplicar() {
+        if (verificarOperandos(1)) {
+            double operando = extraerOperando();
+            ingresarNumero(operando);
+            ingresarNumero(operando);
+        }
+    }
+
     public void invertir() {
         if (verificarOperandos(1)) {
             double[] operadores = extraerOperandos(1);
             ingresarNumero(-operadores[0]);
+        }
+    }
+
+    public void sumarValor(double valor) {
+        if (verificarOperandos(1)) {
+            ingresarNumero(extraerOperando() + valor);
+        }
+    }
+
+    public void sumar() {
+        if (verificarOperandos(2)) {
+            sumarValor(extraerOperando());
         }
     }
 
@@ -127,6 +160,22 @@ public class Calculadora {
         }
     }
 
+    public void calcularPotenciaValor(double valor) {
+        if (verificarOperandos(1)) {
+            ingresarNumero(Math.pow(extraerOperando(),valor));
+        }
+    }
+
+    public void calcularPotencia() {
+        if (verificarOperandos(2)){
+            calcularPotenciaValor(extraerOperando());
+        }
+    }
+
+    public void calcularRaizCuadrada() {
+        calcularPotenciaValor(0.5);
+    }
+
     public void calcularMedia() {
         int numeroDeOperandos = posicionActual;
         calcularSumatoria();
@@ -140,10 +189,15 @@ public class Calculadora {
         }
     }
 
+    public void calcularValorAbsoluto() {
+        calcularPotenciaValor(2);
+        calcularRaizCuadrada();
+    }
+
     public void calcularPorcentajeValor(double valor) {
         if (verificarOperandos(1)) {
-            dividirValor(valor);
-            multiplicarValor(100);
+            multiplicarValor(valor);
+            dividirValor(100);
         }
     }
 
@@ -155,7 +209,8 @@ public class Calculadora {
 
     public void calcularFactorial() {
         if (verificarOperandos(1)) {
-            int factorial = (int) Math.abs(extraerOperando());
+            calcularValorAbsoluto();
+            int factorial = (int) extraerOperando();
             ingresarNumero(1);
             for (int i = 1;i<=factorial;i++){
                 multiplicarValor(i);
@@ -163,5 +218,22 @@ public class Calculadora {
         }
     }
 
+    public void calcularMinimo() {
+        calcularMinMax(true);
+    }
 
+    public void calcularMaximo() {
+        calcularMinMax(false);
+    }
+
+    private void calcularMinMax(boolean minimo){
+        double[] operandos = extraerOperandos(posicionActual);
+        double valor = operandos[0];
+        for(int i = 1; i < operandos.length; i++){
+            if ((minimo && valor > operandos[i]) || (!minimo && valor < operandos[i])){
+                valor = operandos[i];
+            }
+        }
+        ingresarNumero(valor);
+    }
 }

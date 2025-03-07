@@ -4,7 +4,7 @@ import entregas.delaasuncionJose.reto003.Calculadora;
 
 public class Cliente {
     public static void main(String[] args) {
-/*        System.out.println("==== PRUEBA DE CALCULADORA ====");
+        System.out.println("==== PRUEBA DE CALCULADORA ====");
 
         System.out.println("-- Prueba de constructores --");
         Calculadora calculadora1 = new Calculadora();
@@ -59,17 +59,68 @@ public class Cliente {
         calculadora.calcularSumatoria();
         System.out.println("Sumatoria: " + calculadora.mostrar());
 
-        System.out.println("==== FIN DE PRUEBAS ===="); 
- */
-        Calculadora calculadora = new Calculadora();
+        System.out.println("-- Calcular porcentaje --");
 
         calculadora.ingresarNumero(5);
         calculadora.ingresarNumero(10);
 
         calculadora.calcularPorcentaje();
-        calculadora.ingresarNumero(3);
-        calculadora.calcularFactorial();
 
         System.out.println(calculadora.mostrar());
+
+        System.out.println("-- Calcular factorial --");
+
+        calculadora.ingresarNumero(3);
+
+        calculadora.calcularFactorial();
+        System.out.println(calculadora.mostrar());
+
+        calculadora.limpiar();
+        System.out.println("-- Calcular Max/Min --");
+
+        calculadora.ingresar(3);
+        calculadora.ingresar(1);
+        calculadora.ingresar(7);
+        calculadora.ingresar(18);
+
+        calculadora.calcularMaximo();
+        System.out.println(calculadora.mostrar());
+
+        calculadora.ingresar(3);
+        calculadora.ingresar(1);
+        calculadora.ingresar(7);
+        calculadora.ingresar(18);
+
+        calculadora.calcularMinimo();
+        System.out.println(calculadora.mostrar());
+
+        System.out.println("-- Calcular Ptencias/Raiz cuadrada --");
+
+        calculadora.ingresar(3);
+        calculadora.ingresar(2);
+
+        calcularPotencia();
+        System.out.println(calculadora.mostrar());
+
+        calculadora.ingresar(4);
+
+        calcularRaizCuadrada();
+        System.out.println(calculadora.mostrar());
+
+        System.out.println("-- Intercambiar numero/Duplicar --");
+        calculadora.limpiar();
+
+        calculadora.ingresar(3);
+        calculadora.ingresar(2);
+
+        calculadora.intercambiar();
+        System.out.println(calculadora.mostrar());
+        System.out.println(calculadora.mostrar());
+
+        calculadora.sumarValor(1);
+        calculadora.duplicar();
+        System.out.println(calculadora.mostrar());
+
+        System.out.println("==== FIN DE PRUEBAS ===="); 
     }
 }
