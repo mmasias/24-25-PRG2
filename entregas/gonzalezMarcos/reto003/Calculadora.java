@@ -19,6 +19,19 @@ public class Calculadora {
         this(CAPACIDAD_POR_DEFECTO);
     }
 
+    public Calculadora(double valorInicial) {
+        this(CAPACIDAD_POR_DEFECTO); 
+        ingresarNumero(valorInicial); 
+    }
+
+    
+    public Calculadora(double[] valoresIniciales) {
+        this(valoresIniciales.length); 
+        for (double valor : valoresIniciales) {
+            ingresarNumero(valor); 
+        }
+    }
+
     public void ingresarNumero(double valor) {
         if (posicionActual < numeros.length) {
             numeros[posicionActual] = valor;
@@ -136,12 +149,20 @@ public class Calculadora {
     public void calcularFactorial() {
         if (verificarOperandos(1)) {
             double valor = extraerOperando();
-            ingresarNumero(factorial((int) valor));
+            double resultado = factorial((int) valor);
+            
+            if (resultado == -1) {
+                System.out.println("El factorial no está definido para números negativos.");
+            } else {
+                ingresarNumero(resultado);
+            }
         }
     }
-
+    
     private double factorial(int n) {
-        if (n < 0) return Double.NaN;
+        if (n < 0) {
+            return -1; 
+        }
         double resultado = 1;
         for (int i = 2; i <= n; i++) {
             resultado *= i;
