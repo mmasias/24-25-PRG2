@@ -145,6 +145,8 @@ public class Calculadora {
                     maximo = numeros[i];
                 }
             }
+            limpiar();
+        ingresarNumero(maximo);
         } else {
             error = true;
             mensajeError = "ERROR para calcular el máximo!";
@@ -160,6 +162,8 @@ public class Calculadora {
                     minimo = numeros[i];
                 }
             }
+            limpiar();
+        ingresarNumero(minimo);
         } else {
             error = true;
             mensajeError = "ERROR AL CALCULAR EL MINIMO!";
