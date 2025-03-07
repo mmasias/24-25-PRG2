@@ -222,7 +222,21 @@ public class Calculadora {
         }
     }
 
+    public void duplicarNumero() {
+        if (verificarOperandos(1)) {
+            double[] operandos = extraerOperandos(1);
+            ingresarNumero(operandos[0]);
+            ingresarNumero(operandos[0]);
+        }
+    }
     
+    public void calcularRaizCuadrada() {
+        if (verificarOperandos(1)) {
+            double[] operandos = extraerOperandos(1);
+            ingresarNumero(Math.sqrt(operandos[0]));
+        }
+    }
+
 
 
 
