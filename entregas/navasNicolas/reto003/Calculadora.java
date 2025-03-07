@@ -125,4 +125,42 @@ public class Calculadora {
             sumar();
         }
     }
+
+    public void calcularPorcentaje(){
+        if (verificarOperandos(2)) {
+            double[] operandos = extraerOperandos(2);
+            ingresarNumero((operandos[1] / operandos[0])*100);
+        }
+    }
+
+    public void calcularFactorial () {
+        if (verificarOperandos(1)) {
+            double[] operandos = extraerOperandos(1);
+            for (int i = 1; i <= operandos[0] ; i++) {
+                operandos[0] *= i;
+            }
+        }
+    }
+
+    public void calcularMaximo(){
+        double valorMaximo = numeros[0];
+        for (int i = 1; i > posicionActual; i++){
+            if(numeros[1] > valorMaximo){
+                valorMaximo = numeros[1];
+            }
+        }
+        limpiar();
+        ingresarNumero(valorMaximo);
+    }
+
+    public void calcularMinimo(){
+        double valorMinimo = numeros[0];
+        for (int i = 1; i < posicionActual; i++){
+            if(numeros[1] < valorMinimo){
+                valorMinimo = numeros[1];
+            }
+        }
+        limpiar();
+        ingresarNumero(valorMinimo);
+    }
 }
