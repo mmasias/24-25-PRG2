@@ -85,7 +85,7 @@ class Calculadora {
             double[] operandos = extraerOperadores(2);
             if (operandos[0] != 0) {
                 ingresarNumero(operandos[1] / operandos[0]);
-            }else{
+            } else {
                 error = true;
                 mensajeError = "No se puede dividir por 0";
             }
@@ -109,7 +109,7 @@ class Calculadora {
         }
     }
 
-    private double[] extraerOperadores(int numeroOperandos) {
+    public double[] extraerOperadores(int numeroOperandos) {
         double[] operandos = new double[numeroOperandos];
         for (int i = 0; i < numeroOperandos; i++) {
             posicionActual = posicionActual - 1;
@@ -118,7 +118,7 @@ class Calculadora {
         return operandos;
     }
 
-    private boolean verficarOperandos(int numeroOperandos) {
+    public boolean verficarOperandos(int numeroOperandos) {
         if (posicionActual >= numeroOperandos) {
             return true;
         } else {
@@ -229,7 +229,7 @@ class Calculadora {
             double[] operandos = extraerOperadores(1);
             if (operandos[0] >= 0) {
                 ingresarNumero(Math.sqrt(operandos[0]));
-            }else{
+            } else {
                 error = true;
                 mensajeError = "No se puede hacer raiz cuadrade de numeros negativos";
             }
@@ -239,7 +239,7 @@ class Calculadora {
     public void calcularPotencia() {
         if (verficarOperandos(2)) {
             double[] operandos = extraerOperadores(2);
-             ingresarNumero(Math.pow(operandos[0], operandos[1]));
+            ingresarNumero(Math.pow(operandos[0], operandos[1]));
         }
     }
 
