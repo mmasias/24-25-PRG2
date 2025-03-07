@@ -127,7 +127,62 @@ public class Calculadora {
     }
 
     public void calcularPorcentaje() {
-        int numeroDeOperandos = posicionActual;
-        
+        if (verificarOperandos(2)) {
+            double[] operandos = extraerOperandos(2);
+            ingresarNumero((operandos[0] / 100) * operandos[1]);
+        }
     }
+
+    public void calcularFactorial() {
+
+    }
+
+    public void carcularMaximo() {
+
+    }
+
+    public void calcularMinimo() {
+
+    }
+
+    public void sumar(double valor) {
+
+    }
+
+    public void restar(double valor) {
+
+    }
+
+    public void multiplicar(double valor) {
+
+    }
+
+    public void dividir(double valor) {
+
+    }
+
+    public void calcularPorcentaje(double valor) {
+
+    }
+
+    public void intercambiar() {
+
+    }
+
+    public void duplicarNumero() {
+
+    }
+
+    public void calcularRaizCuadrada() {
+
+    }
+
+    public void calcularPotencia() {
+
+    }
+
+    public void calcularPotencia(double exponente) {
+
+    }
+
 }
