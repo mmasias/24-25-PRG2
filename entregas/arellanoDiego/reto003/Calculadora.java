@@ -32,18 +32,62 @@ public class Calculadora {
     }
 
     public void calcularPorcentaje(){
-
+        if (verificarOperandos(2)) {
+            double[] operandos = extraerOperandos(2);
+            ingresarNumero(operandos[1] * operandos[0] / 100);
+        }
     }
 
     public void calcularFactorial(){
-
+        if (verificarOperandos(1)) {
+            double[] operandos = extraerOperandos(1);
+            int n = (int) operandos[0];
+            
+            if (n < 0) {
+                error = true;
+                mensajeError = "No se puede calcular el factorial de un número negativo";
+                return;
+            }
+            
+            double resultado = 1;
+            for (int i = 2; i <= n; i++) {
+                resultado *= i;
+            }
+            ingresarNumero(resultado);
+        }
     }
 
     public void calcularMaximo(){
-
+        if (posicionActual > 0) {
+            double max = numeros[0];
+            for (int i = 1; i < posicionActual; i++) {
+                if (numeros[i] > max) {
+                    max = numeros[i];
+                }
+            }
+            limpiar();
+            ingresarNumero(max);
+        } else {
+            error = true;
+            mensajeError = "No hay números para calcular el máximo";
+        }
     }
 
+
     public void calcularMinimo(){
+        if (posicionActual > 0) {
+            double min = numeros[0];
+            for (int i = 1; i < posicionActual; i++) {
+                if (numeros[i] < min) {
+                    min = numeros[i];
+                }
+            }
+            limpiar();
+            ingresarNumero(min);
+        } else {
+            error = true;
+            mensajeError = "No hay números para calcular el mínimo";
+        }
 
     }
 
