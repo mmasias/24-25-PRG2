@@ -132,4 +132,47 @@ public class Calculadora {
             ingresarNumero((operandos[0] * operandos[1]) / 100);
         }
     }
+
+    public void calcularFactorial() {
+        if (verificarOperandos(1)) {
+            double valor = extraerOperando();
+            ingresarNumero(factorial((int) valor));
+        }
+    }
+
+    private double factorial(int n) {
+        if (n < 0) return Double.NaN;
+        double resultado = 1;
+        for (int i = 2; i <= n; i++) {
+            resultado *= i;
+        }
+        return resultado;
+    }
+    
+    public void calcularMaximo() {
+        if (posicionActual > 0) {
+            double max = numeros[0];
+            for (int i = 1; i < posicionActual; i++) {
+                if (numeros[i] > max) max = numeros[i];
+            }
+            ingresarNumero(max);
+        }
+    }
+
+    public void calcularMinimo() {
+        if (posicionActual > 0) {
+            double min = numeros[0];
+            for (int i = 1; i < posicionActual; i++) {
+                if (numeros[i] < min) min = numeros[i];
+            }
+            ingresarNumero(min);
+        }
+    }
+
+    public void sumar(double valor) {
+        if (verificarOperandos(1)) {
+            numeros[posicionActual - 1] += valor;
+        }
+    }
+
 }
