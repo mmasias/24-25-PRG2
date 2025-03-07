@@ -1,7 +1,6 @@
-package entregas.uretaAaron.reto003;
+package entregas.uretaAaron.reto003
 
 public class Calculadora {
-
     private double[] numeros;
     private int posicionActual;
     private boolean error;
@@ -56,7 +55,6 @@ public class Calculadora {
         for (int i = 0; i < posicionActual; i++) {
             resultado.append("[").append(i).append("] ").append(numeros[i]).append("\n");
         }
-        // Reemplazo de "-".repeat(10) para compatibilidad con versiones anteriores
         for (int i = 0; i < 10; i++) {
             resultado.append("-");
         }
