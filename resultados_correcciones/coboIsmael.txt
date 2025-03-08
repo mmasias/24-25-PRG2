@@ -1,0 +1,34 @@
+===== CORRECCIÓN PARA coboIsmael =====
+Fecha: sáb 08 mar 2025 17:05:35 CET
+
+===== RESULTADOS DE COMPILACIÓN =====
+Compilación exitosa para coboIsmael.
+
+===== RESULTADOS DE EJECUCIÓN =====
+==== PRUEBA DE CALCULADORA ====
+-- Prueba de constructores --
+Constructor por defecto: ----------
+Constructor con capacidad: ----------
+-- Operaciones básicas --
+Ingresado 10.5: 10.5
+Ingresado 5.5: 5.5
+Todos los valores: [0] 10.5
+[1] 5.5
+----------
+Suma (10.5 + 5.5): 16.0
+Resta (20 - 4): 16.0
+Multiplicación (6 * 7): 42.0
+División (20 / 5): 4.0
+Ingresado -15: -15.0
+Invertir signo (-15 → 15): 15.0
+-- Estadísticas --
+Valores: [0] 10.0
+[1] 20.0
+[2] 30.0
+[3] 40.0
+----------
+Media: 25.0
+Sumatoria: 25.0
+==== FIN DE PRUEBAS ====
+
+===== FIN DE LA CORRECCIÓN =====

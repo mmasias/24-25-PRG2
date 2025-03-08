@@ -1,0 +1,29 @@
+===== CORRECCIÓN PARA doaltoBienvenido =====
+Fecha: sáb 08 mar 2025 17:05:37 CET
+
+===== RESULTADOS DE COMPILACIÓN =====
+entregas/Cliente.java:3: error: Calculadora is not public in entregas.doaltoBienvenido.reto003; cannot be accessed from outside package
+import entregas.doaltoBienvenido.reto003.Calculadora;
+                                        ^
+entregas/Cliente.java:10: error: Calculadora is not public in entregas.doaltoBienvenido.reto003; cannot be accessed from outside package
+        Calculadora calculadora1 = new Calculadora();
+        ^
+entregas/Cliente.java:10: error: Calculadora is not public in entregas.doaltoBienvenido.reto003; cannot be accessed from outside package
+        Calculadora calculadora1 = new Calculadora();
+                                       ^
+entregas/Cliente.java:13: error: Calculadora is not public in entregas.doaltoBienvenido.reto003; cannot be accessed from outside package
+        Calculadora calculadora2 = new Calculadora(5);
+        ^
+entregas/Cliente.java:13: error: Calculadora is not public in entregas.doaltoBienvenido.reto003; cannot be accessed from outside package
+        Calculadora calculadora2 = new Calculadora(5);
+                                       ^
+entregas/Cliente.java:17: error: Calculadora is not public in entregas.doaltoBienvenido.reto003; cannot be accessed from outside package
+        Calculadora calculadora = new Calculadora();
+        ^
+entregas/Cliente.java:17: error: Calculadora is not public in entregas.doaltoBienvenido.reto003; cannot be accessed from outside package
+        Calculadora calculadora = new Calculadora();
+                                      ^
+7 errors
+
+ERROR: La compilación falló. No se ejecutó el código.
+===== FIN DE LA CORRECCIÓN =====

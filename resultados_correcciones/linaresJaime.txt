@@ -1,0 +1,44 @@
+===== CORRECCIÓN PARA linaresJaime =====
+Fecha: sáb 08 mar 2025 17:05:38 CET
+
+===== RESULTADOS DE COMPILACIÓN =====
+entregas/Cliente.java:3: error: cannot access Calculadora
+import entregas.linaresJaime.reto003.Calculadora;
+                                    ^
+  bad source file: ./entregas/linaresJaime/reto003/Calculadora.java
+    file does not contain class entregas.linaresJaime.reto003.Calculadora
+    Please remove or make sure it appears in the correct subdirectory of the sourcepath.
+entregas/Cliente.java:10: error: cannot find symbol
+        Calculadora calculadora1 = new Calculadora();
+        ^
+  symbol:   class Calculadora
+  location: class Cliente
+entregas/Cliente.java:10: error: cannot find symbol
+        Calculadora calculadora1 = new Calculadora();
+                                       ^
+  symbol:   class Calculadora
+  location: class Cliente
+entregas/Cliente.java:13: error: cannot find symbol
+        Calculadora calculadora2 = new Calculadora(5);
+        ^
+  symbol:   class Calculadora
+  location: class Cliente
+entregas/Cliente.java:13: error: cannot find symbol
+        Calculadora calculadora2 = new Calculadora(5);
+                                       ^
+  symbol:   class Calculadora
+  location: class Cliente
+entregas/Cliente.java:17: error: cannot find symbol
+        Calculadora calculadora = new Calculadora();
+        ^
+  symbol:   class Calculadora
+  location: class Cliente
+entregas/Cliente.java:17: error: cannot find symbol
+        Calculadora calculadora = new Calculadora();
+                                      ^
+  symbol:   class Calculadora
+  location: class Cliente
+7 errors
+
+ERROR: La compilación falló. No se ejecutó el código.
+===== FIN DE LA CORRECCIÓN =====

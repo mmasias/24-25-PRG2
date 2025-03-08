@@ -1,0 +1,115 @@
+===== CORRECCIÓN PARA chavezGuillermo =====
+Fecha: sáb 08 mar 2025 17:05:34 CET
+
+===== RESULTADOS DE COMPILACIÓN =====
+./entregas/chavezGuillermo/reto003/Calculadora.java:149: error: '.class' expected
+        for (int j=0; int i=0; i < numeroDeOperandos - 1; i++) {
+                          ^
+./entregas/chavezGuillermo/reto003/Calculadora.java:149: error: ')' expected
+        for (int j=0; int i=0; i < numeroDeOperandos - 1; i++) {
+                             ^
+./entregas/chavezGuillermo/reto003/Calculadora.java:149: error: > expected
+        for (int j=0; int i=0; i < numeroDeOperandos - 1; i++) {
+                                                     ^
+./entregas/chavezGuillermo/reto003/Calculadora.java:149: error: not a statement
+        for (int j=0; int i=0; i < numeroDeOperandos - 1; i++) {
+                                 ^
+./entregas/chavezGuillermo/reto003/Calculadora.java:149: error: ';' expected
+        for (int j=0; int i=0; i < numeroDeOperandos - 1; i++) {
+                                                             ^
+./entregas/chavezGuillermo/reto003/Calculadora.java:234: error: ';' expected
+            i=(operandos[1]*operandos[1]).repeat(operandos[0])
+                                                              ^
+./entregas/chavezGuillermo/reto003/Calculadora.java:241: error: ';' expected
+        i=(operandos*operandos).repeat(exponente)
+                                                 ^
+./entregas/chavezGuillermo/reto003/Calculadora.java:140: error: incompatible types: double[] cannot be converted to double
+            for (double i=operandos;i>1; i--) {
+                          ^
+./entregas/chavezGuillermo/reto003/Calculadora.java:149: error: unexpected type
+        for (int j=0; int i=0; i < numeroDeOperandos - 1; i++) {
+                      ^
+  required: value
+  found:    class
+./entregas/chavezGuillermo/reto003/Calculadora.java:149: error: cannot find symbol
+        for (int j=0; int i=0; i < numeroDeOperandos - 1; i++) {
+                               ^
+  symbol:   class i
+  location: class Calculadora
+./entregas/chavezGuillermo/reto003/Calculadora.java:149: error: cannot find symbol
+        for (int j=0; int i=0; i < numeroDeOperandos - 1; i++) {
+                                   ^
+  symbol:   class numeroDeOperandos
+  location: class Calculadora
+./entregas/chavezGuillermo/reto003/Calculadora.java:149: error: cannot find symbol
+        for (int j=0; int i=0; i < numeroDeOperandos - 1; i++) {
+                                                          ^
+  symbol:   variable i
+  location: class Calculadora
+./entregas/chavezGuillermo/reto003/Calculadora.java:150: error: cannot find symbol
+            double[] operandos = extraerOperandos(i);
+                                                  ^
+  symbol:   variable i
+  location: class Calculadora
+./entregas/chavezGuillermo/reto003/Calculadora.java:151: error: cannot find symbol
+            if(j<operando){
+               ^
+  symbol:   variable j
+  location: class Calculadora
+./entregas/chavezGuillermo/reto003/Calculadora.java:151: error: cannot find symbol
+            if(j<operando){
+                 ^
+  symbol:   variable operando
+  location: class Calculadora
+./entregas/chavezGuillermo/reto003/Calculadora.java:152: error: cannot find symbol
+                j=operando;
+                ^
+  symbol:   variable j
+  location: class Calculadora
+./entregas/chavezGuillermo/reto003/Calculadora.java:152: error: cannot find symbol
+                j=operando;
+                  ^
+  symbol:   variable operando
+  location: class Calculadora
+./entregas/chavezGuillermo/reto003/Calculadora.java:155: error: cannot find symbol
+        ingresarNumero(j);
+                       ^
+  symbol:   variable j
+  location: class Calculadora
+./entregas/chavezGuillermo/reto003/Calculadora.java:209: error: cannot find symbol
+            operando[0]=operandos[1];
+            ^
+  symbol:   variable operando
+  location: class Calculadora
+./entregas/chavezGuillermo/reto003/Calculadora.java:234: error: cannot find symbol
+            i=(operandos[1]*operandos[1]).repeat(operandos[0])
+            ^
+  symbol:   variable i
+  location: class Calculadora
+./entregas/chavezGuillermo/reto003/Calculadora.java:234: error: double cannot be dereferenced
+            i=(operandos[1]*operandos[1]).repeat(operandos[0])
+                                         ^
+./entregas/chavezGuillermo/reto003/Calculadora.java:235: error: cannot find symbol
+            ingresarNumero(i);
+                           ^
+  symbol:   variable i
+  location: class Calculadora
+./entregas/chavezGuillermo/reto003/Calculadora.java:241: error: cannot find symbol
+        i=(operandos*operandos).repeat(exponente)
+        ^
+  symbol:   variable i
+  location: class Calculadora
+./entregas/chavezGuillermo/reto003/Calculadora.java:241: error: bad operand types for binary operator '*'
+        i=(operandos*operandos).repeat(exponente)
+                    ^
+  first type:  double[]
+  second type: double[]
+./entregas/chavezGuillermo/reto003/Calculadora.java:242: error: cannot find symbol
+        ingresarNumero(i);
+                       ^
+  symbol:   variable i
+  location: class Calculadora
+25 errors
+
+ERROR: La compilación falló. No se ejecutó el código.
+===== FIN DE LA CORRECCIÓN =====
