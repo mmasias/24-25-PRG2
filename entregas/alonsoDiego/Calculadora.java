@@ -1,4 +1,4 @@
-package entregas.alonsoDiego;
+package entregas;
 
 public class Calculadora {
 
