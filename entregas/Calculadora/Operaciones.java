@@ -2,9 +2,6 @@ package entregas.Calculadora;
 
 public class Operaciones extends Calculadora {
 
-    public Operaciones(Calculadora calculadora) {
-        super();
-    }
 
     public double sumar(){
         double resultado = 0;

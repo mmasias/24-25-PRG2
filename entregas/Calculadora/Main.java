@@ -2,15 +2,14 @@ package entregas.Calculadora;
 
 public class Main {
     public static void main(String[] args) {
-        Calculadora calculadora = new Calculadora();
+        Operaciones calculadora = new Operaciones();
 
-        calculadora.agregarNumeros(5);
         calculadora.agregarNumeros(10);
+        calculadora.agregarNumeros(5);
 
         calculadora.mostrarNumeros();
 
-        Operaciones suma = new Operaciones(calculadora);
-        System.out.println("suma: " + suma.sumar());
+        System.out.println(calculadora.sumar());
     }
     
 }
