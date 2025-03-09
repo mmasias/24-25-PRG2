@@ -256,4 +256,9 @@ public class Calculadora {
     private double verOperando() {
         return numeros[posicionActual - 1];
     }
+
+    public void salirError(){
+        error = false;
+        mensajeError = "";
+    }
 }
