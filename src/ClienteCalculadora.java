@@ -10,5 +10,16 @@ public class ClienteCalculadora {
         calculadora.ingresarNumero(16);
         calculadora.calcularRaizCuadrada();
         System.out.println(calculadora.mostrarTodo());
+        //calculadora.invertir();
+        calculadora.calcularRaizCuadrada();
+        System.out.println(calculadora.mostrarTodo());
+        //calculadora.invertir();
+        //calculadora.calcularRaizCuadrada();
+        //System.out.println(calculadora.mostrarTodo());
+        //calculadora.ingresarPI();
+        calculadora.multiplicar(3);
+        calculadora.calcularFactorial();
+        System.out.println(calculadora.mostrarTodo());
+
     }
 }

@@ -146,17 +146,12 @@ public class Calculadora {
     }
 
     public void calcularFactorial() {
-        if (verificarOperandos(1)) {
+        if (verificarOperandos(1) & verificarPositivo()) {
             int operando = (int) extraerOperando();
-            if (operando < 0) {
-                error = true;
-                mensajeError = "No se puede calcular factorial de valores negativos";
-            } else {
-                ingresarNumero(1);
-                for (int i = 1; i <= operando; i++) {
-                    ingresarNumero(i);
-                    multiplicar();
-                }
+            ingresarNumero(1);
+            for (int i = 1; i <= operando; i++) {
+                ingresarNumero(i);
+                multiplicar();
             }
         }
     }
@@ -206,13 +201,13 @@ public class Calculadora {
     public void duplicarNumero() {
         if (verificarOperandos(1)) {
             double operando = extraerOperando();
-            for (int i = 0; i < 2; i++){
+            for (int i = 0; i < 2; i++) {
                 ingresarNumero(operando);
             }
         }
     }
 
-    public void intercambiar(){
+    public void intercambiar() {
         if (verificarOperandos(2)) {
             double[] operandos = extraerOperandos(2);
             ingresarNumero(operandos[0]);
@@ -220,45 +215,45 @@ public class Calculadora {
         }
     }
 
-    public void calcularPotencia(){
+    public void calcularPotencia() {
         if (verificarOperandos(2)) {
             double[] operandos = extraerOperandos(2);
-            ingresarNumero(Math.pow(operandos[1],operandos[0]));
+            ingresarNumero(Math.pow(operandos[1], operandos[0]));
         }
     }
 
-    public void calcularPotencia(double exponente){
+    public void calcularPotencia(double exponente) {
         if (verificarOperandos(1)) {
             ingresarNumero(exponente);
             calcularPotencia();
-        }        
+        }
     }
 
-    public void ingresarPI(){
+    public void ingresarPI() {
         ingresarNumero(Math.PI);
     }
 
-    public void ingresarE(){
+    public void ingresarE() {
         ingresarNumero(Math.E);
     }
 
-    public void calcularRaizCuadrada(){
+    public void calcularRaizCuadrada() {
         if (verificarOperandos(1) && verificarPositivo()) {
             ingresarNumero(0.5);
             calcularPotencia();
         }
     }
-    
-    private boolean verificarPositivo(){
-        if(verOperando()>0){
+
+    private boolean verificarPositivo() {
+        if (verOperando() > 0) {
             return true;
         }
         error = true;
         mensajeError = "No se puede operar con valores negativos!";
         return false;
     }
-    
-    private double verOperando(){
-        return numeros[posicionActual-1];
+
+    private double verOperando() {
+        return numeros[posicionActual - 1];
     }
 }
