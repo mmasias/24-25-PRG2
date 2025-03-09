@@ -45,4 +45,11 @@
 
 ### Jerarquía de las operaciones definidas
 
-![](/images/src/calculadora/operaciones.svg)
+<div align=center>
+
+|![](/images/src/calculadora/operaciones.svg)
+|-
+
+</div>
+
+> *La importancia de `ingresarNumero(double valor)` y `verificarOperandos(int numeroOperandos)`*

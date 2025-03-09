@@ -32,12 +32,14 @@ public class Calculadora {
     }
 
     public void ingresarNumero(double valor) {
-        if (posicionActual < numeros.length) {
-            numeros[posicionActual] = valor;
-            posicionActual++;
-        } else {
-            error = true;
-            mensajeError = "MEMORIA LLENA!!!";
+        if(!error){
+            if (posicionActual < numeros.length) {
+                numeros[posicionActual] = valor;
+                posicionActual++;
+            } else {
+                error = true;
+                mensajeError = "MEMORIA LLENA!!!";
+            }
         }
     }
 
@@ -87,11 +89,15 @@ public class Calculadora {
     }
 
     private boolean verificarOperandos(int numeroOperandos) {
-        if (posicionActual >= numeroOperandos) {
-            return true;
+        if(!error){
+            if (posicionActual >= numeroOperandos) {
+                return true;
+            } else {
+                error = true;
+                mensajeError = "Faltan operandos!";
+                return false;
+            }
         } else {
-            error = true;
-            mensajeError = "Faltan operandos!";
             return false;
         }
     }
