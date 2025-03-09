@@ -242,5 +242,23 @@ public class Calculadora {
         ingresarNumero(Math.E);
     }
 
-
+    public void calcularRaizCuadrada(){
+        if (verificarOperandos(1) && verificarPositivo()) {
+            ingresarNumero(0.5);
+            calcularPotencia();
+        }
+    }
+    
+    private boolean verificarPositivo(){
+        if(verOperando()>0){
+            return true;
+        }
+        error = true;
+        mensajeError = "No se puede operar con valores negativos!";
+        return false;
+    }
+    
+    private double verOperando(){
+        return numeros[posicionActual-1];
+    }
 }

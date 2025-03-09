@@ -41,3 +41,4 @@
 |✅|`public void calcularPotencia(double exponente)`|Eleva el último valor al exponente especificado|
 |✅|`public void ingresarPI()`|Ingresa el valor de Pi|
 |✅|`public void ingresarE()`|Ingresa el valor de e (constante de Euler)|
+|✅|`public void calcularRaizCuadrada()`|Calcula la raíz cuadrada del último valor|
