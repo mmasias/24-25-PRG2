@@ -1,0 +1,55 @@
+hide circle
+hide empty members
+
+title Operaciones
+
+class "<b>Primitivas</b>" as OperacionesPrimitivas {
+    ingresarNumero()
+    extraerOperando()
+    verificarOperandos()
+    verificarPositivo()
+    verOperando()
+}
+
+class "<b>Básicas</b>" as OperacionesBasicas {
+    sumar()
+    restar()
+    multiplicar()
+    dividir()
+    invertir()
+    intercambiar()
+    duplicarNumero()
+}
+
+class "<b>Extendidas</b>" as OperacionesExtendidas {
+    calcularPotencia()
+    calcularRaizCuadrada()
+    calcularPorcentaje()
+    calcularFactorial()
+}
+
+class "<b>Estadísticas</b>" as OperacionesEstadisticas {
+    calcularMedia()
+    calcularSumatoria()
+    calcularMaximo()
+    calcularMinimo()
+}
+
+class "<b>Constantes</b>" as OperacionesConstantes {
+    ingresarPI()
+    ingresarE()
+}
+
+class "<b>Manejo del estado</b>" as ManejoEstado {
+    mostrar()
+    mostrarTodo()
+    limpiar()
+    salirError()
+}
+
+OperacionesPrimitivas <-- OperacionesBasicas
+OperacionesPrimitivas <-- OperacionesExtendidas
+OperacionesPrimitivas <-- OperacionesEstadisticas
+OperacionesPrimitivas <-- OperacionesConstantes
+OperacionesBasicas <-- OperacionesExtendidas
+OperacionesBasicas <-- OperacionesEstadisticas

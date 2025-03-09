@@ -42,3 +42,7 @@
 |✅|`public void ingresarPI()`|Ingresa el valor de Pi|
 |✅|`public void ingresarE()`|Ingresa el valor de e (constante de Euler)|
 |✅|`public void calcularRaizCuadrada()`|Calcula la raíz cuadrada del último valor|
+
+### Jerarquía de las operaciones definidas
+
+![](/images/src/calculadora/operaciones.svg)
