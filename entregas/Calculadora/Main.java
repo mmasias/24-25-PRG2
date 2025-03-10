@@ -7,9 +7,17 @@ public class Main {
         calculadora.agregarNumeros(10);
         calculadora.agregarNumeros(5);
 
+        
+        
+
         calculadora.mostrarNumeros();
 
-        System.out.println(calculadora.sumar());
+        
+       
+        System.out.println("----------");
+
+        calculadora.mostrarNumeros();
+
     }
     
 }

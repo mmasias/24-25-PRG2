@@ -30,7 +30,27 @@ public class Calculadora {
         tamañoActual++;
     }
 
-    public int obtenerTamañoActual(){
+    public void eliminarNumeros(int numero) {
+        if (numero >= 0 && numero < tamañoActual) {
+            for (int i = numero; i < tamañoActual - 1; i++) {
+                numeros[i] = numeros[i + 1];
+            }
+            numeros[tamañoActual - 1] = 0;
+            tamañoActual--;
+        } else {
+            System.out.println("Índice fuera de rango");
+        }
+    }
+
+    public void borrarMemoria() {
+        for (int i = 0; i < tamañoActual; i++) {
+            numeros[i] = 0;
+        }
+        tamañoActual = 0;
+    }
+
+    public int obtenerTamañoActual() {
         return tamañoActual;
     }
+
 }
