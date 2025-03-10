@@ -35,6 +35,8 @@ public class Reto001 {
 
             String acordeMayor = "[" + escalaMayor[0] + "] / [" + escalaMayor[2] + "] / [" + escalaMayor[4] + "]";
             System.out.println("El acorde de " + NOTAS[opcion] + " Mayor está conformado por: " + acordeMayor);
+
+            System.out.println("julio");
         }
     }
 }
