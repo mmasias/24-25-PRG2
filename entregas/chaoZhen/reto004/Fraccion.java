@@ -6,7 +6,7 @@ public class Fraccion {
     private int denominador;
 
     public Fraccion(int numerador, int denominador) {
-       assert denominador !=0:"INVALIDACIÓN";
+        assert denominador != 0 : "INVALIDACIÓN";
 
         if (denominador < 0) {
             numerador = -numerador;
@@ -36,10 +36,10 @@ public class Fraccion {
     }
 
     public Fraccion(int numerador) {
-
+        this(numerador, 1);
     }
 
     public Fraccion() {
-
+        this(0);
     }
 }
