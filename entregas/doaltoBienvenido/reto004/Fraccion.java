@@ -60,10 +60,34 @@ class Fraccion {
         int nuevoDenominador = this.denominador * fraccion.denominador;
         return new Fraccion(nuevoNumerador, nuevoDenominador);
     }	
-    
+
     public Fraccion restar(int entero){
         int nuevoNumerador = this.numerador - (entero * this.denominador);
         int nuevoDenominador = this.denominador;
+        return new Fraccion(nuevoNumerador, nuevoDenominador);
+    }
+
+    public Fraccion multiplicar(Fraccion fraccion){
+        int nuevoNumerador = this.numerador * fraccion.numerador;
+        int nuevoDenominador = this.denominador * fraccion.denominador;
+        return new Fraccion(nuevoNumerador, nuevoDenominador);
+    }	
+
+    public Fraccion multiplicar(int entero){
+        int nuevoNumerador = this.numerador * entero;
+        int nuevoDenominador = this.denominador; 
+        return new Fraccion(nuevoNumerador, nuevoDenominador);
+    }
+
+    public Fraccion dividir(Fraccion fraccion){
+        int nuevoNumerador = this.numerador * fraccion.denominador;
+        int nuevoDenominador = this.denominador * fraccion.numerador;
+        return new Fraccion(nuevoNumerador, nuevoDenominador);
+    }	
+    
+    public Fraccion dividir(int entero){
+        int nuevoNumerador = this.numerador;
+        int nuevoDenominador = this.denominador * entero; 
         return new Fraccion(nuevoNumerador, nuevoDenominador);
     }
 }
