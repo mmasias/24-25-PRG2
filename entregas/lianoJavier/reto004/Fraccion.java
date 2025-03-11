@@ -4,6 +4,11 @@ public class Fraccion {
     private int denominador;
     private int numerador;
 
+    public static void main(String[] args) {
+        Fraccion fraccion = new Fraccion(1, 2);
+        System.out.println(fraccion);
+    }
+
     public Fraccion(int numerador, int denominador) {
         this.numerador = numerador;
         this.denominador = denominador;
