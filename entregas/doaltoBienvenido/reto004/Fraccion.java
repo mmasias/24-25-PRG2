@@ -112,8 +112,28 @@ class Fraccion {
     public boolean esMayor(Fraccion fraccion){
         return this.numerador * fraccion.denominador > fraccion.numerador * this.denominador;
     }
-    	
+
     public boolean esIgual(Fraccion fraccion){
         return this.numerador * fraccion.denominador == fraccion.numerador * this.denominador;
+    }
+
+    public double valueOf(){
+        return (double) this.numerador / this.denominador;
+    }
+    
+    public int compareTo(Fraccion fraccion){
+        return this.esIgual(fraccion) ? 0 : (this.esMayor(fraccion) ? 1 : -1);
+    }
+
+    public Fraccion clone(){
+        return new Fraccion(this.numerador, this.denominador);
+    }
+
+    public Fraccion invertir(){
+        return new Fraccion(this.denominador, this.numerador);
+    }
+
+    public Fraccion oponer(){
+        return new Fraccion(-this.numerador, this.denominador);
     }
 }
