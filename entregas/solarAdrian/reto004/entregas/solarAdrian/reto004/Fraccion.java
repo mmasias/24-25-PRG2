@@ -123,14 +123,13 @@ public class Fraccion {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
-        // Entrada de fracción 1
         System.out.print("Introduce el numerador de la primera fracción: ");
         int num1 = scanner.nextInt();
         System.out.print("Introduce el denominador de la primera fracción: ");
         int den1 = scanner.nextInt();
         Fraccion fraccion1 = new Fraccion(num1, den1);
 
-        // Entrada de fracción 2
+        
         System.out.print("Introduce el numerador de la segunda fracción: ");
         int num2 = scanner.nextInt();
         System.out.print("Introduce el denominador de la segunda fracción: ");
@@ -141,7 +140,6 @@ public class Fraccion {
         System.out.println("Numerador:   [" + fraccion1.numerador() + "]");
         System.out.println("Denominador: [" + fraccion1.denominador() + "]");
 
-        // Realizar operaciones y mostrar resultados
         Fraccion resultado;
 
         resultado = fraccion1.sumar(fraccion2);
