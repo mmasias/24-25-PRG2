@@ -5,8 +5,10 @@ public class Fraccion {
     private int numerador;
 
     public static void main(String[] args) {
-        Fraccion fraccion = new Fraccion(1, 2);
+        Fraccion fraccion = new Fraccion(3, 9);
         System.out.println(fraccion);
+        Fraccion fraccion2 = new Fraccion(2, -4);
+        System.out.println(fraccion2);
     }
 
     public Fraccion(int numerador, int denominador) {
@@ -18,7 +20,7 @@ public class Fraccion {
             this.denominador *= -1;
         }
 
-        int MinimoComunDivisor = calcularMinimoComunDivisor(numerador, denominador);
+        int MinimoComunDivisor = calcularMinimoComunDivisor(Math.abs(numerador), denominador);
         this.numerador /= MinimoComunDivisor;
         this.denominador /= MinimoComunDivisor;
     }
