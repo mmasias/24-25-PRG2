@@ -68,8 +68,8 @@ La clase `Calculadora` debe implementar los métodos especificados en la vista p
 |-|-|-|
 |✅|`public Calculadora()`|Constructor por defecto que inicializa una calculadora con capacidad para 10 números|
 |✅|`public Calculadora(int capacidad)`|Constructor que inicializa una calculadora con la capacidad especificada|
-|🔲|`public Calculadora(double valorInicial)`|Constructor que inicializa una calculadora e ingresa un valor inicial|
-|🔲|`public Calculadora(double[] valoresIniciales)`|Constructor que inicializa una calculadora con un arreglo de valores iniciales|
+|✅|`public Calculadora(double valorInicial)`|Constructor que inicializa una calculadora e ingresa un valor inicial|
+|✅|`public Calculadora(double[] valoresIniciales)`|Constructor que inicializa una calculadora con un arreglo de valores iniciales|
 |✅|`public void ingresarNumero(double valor)`|Ingresa un número a la calculadora|
 |✅|`public String mostrar()`|Devuelve el último valor ingresado o el mensaje de error|
 |✅|`public String mostrarTodo()`|Devuelve todos los valores almacenados o el mensaje de error|
@@ -81,20 +81,20 @@ La clase `Calculadora` debe implementar los métodos especificados en la vista p
 |✅|`public void invertir()`|Cambia el signo del último valor ingresado|
 |✅|`public void calcularMedia()`|Calcula la media de todos los valores almacenados|
 |✅|`public void calcularSumatoria()`|Calcula la suma de todos los valores almacenados|
-|🔲|`public void calcularPorcentaje()`|Calcula el porcentaje del penúltimo valor según el último|
-|🔲|`public void calcularFactorial()`|Calcula el factorial del último valor|
-|🔲|`public void calcularMaximo()`|Devuelve el valor máximo entre los almacenados|
-|🔲|`public void calcularMinimo()`|Devuelve el valor mínimo entre los almacenados|
-|🔲|`public void sumar(double valor)`|Suma el valor al número en la última posición|
-|🔲|`public void restar(double valor)`|Resta el valor al número en la última posición|
-|🔲|`public void multiplicar(double valor)`|Multiplica el valor al número en la última posición|
-|🔲|`public void dividir(double valor)`|Divide entre el valor al número en la última posición|
+|✅|`public void calcularPorcentaje()`|Calcula el porcentaje del penúltimo valor según el último|
+|✅|`public void calcularFactorial()`|Calcula el factorial del último valor|
+|✅|`public void calcularMaximo()`|Devuelve el valor máximo entre los almacenados|
+|✅|`public void calcularMinimo()`|Devuelve el valor mínimo entre los almacenados|
+|✅|`public void sumar(double valor)`|Suma el valor al número en la última posición|
+|✅|`public void restar(double valor)`|Resta el valor al número en la última posición|
+|✅|`public void multiplicar(double valor)`|Multiplica el valor al número en la última posición|
+|✅|`public void dividir(double valor)`|Divide entre el valor al número en la última posición|
 |🔲|`public void calcularPorcentaje(double valor)`|Calcula el porcentaje correspondiente a valor al número en la última posición|
 |🔲|`public void intercambiar()`|Intercambia de posicion los dos últimos valores ingresados|
 |🔲|`public void duplicarNumero()`|Duplica el último valor ingresado|
 |🔲|`public void calcularRaizCuadrada()`|Calcula la raíz cuadrada del último valor|
-|🔲|`public void calcularFactorial()`|Calcula el factorial del último valor|
-|🔲|`public void calcularPotencia()`|Eleva el penúltimo valor al último (similar a elevar)|
+|🔲|`public void calcularFactorial()`|Calcula el factorial del último valor ([ISSUE aclaratorio](https://github.com/mmasias/24-25-PRG2/issues/178))|
+|🔲|`public void calcularPotencia()`|Eleva el penúltimo valor al último (similar a dividir)|
 |🔲|`public void calcularPotencia(double exponente)`|Eleva el último valor al exponente especificado|
 
 ### Comprobación de la implementación
@@ -138,7 +138,7 @@ Completada la implementación, debe realizarse el pull request a la rama entrega
 
 Solo se aceptarán:
 
-- Entregas a la rama entrega-003, provenientes de la rama entrega-003
+- [Entregas a la rama entrega-003, provenientes de la rama entrega-003](https://github.com/mmasias/24-25-PRG2/pulls?q=base%3Aentrega-003+created%3A2025-03-07+head%3Aentrega-003)
 - Que contengan un único archivo
 - Que el archivo se llame Calculadora.java
 - Que el archivo esté en la ruta adecuada.
