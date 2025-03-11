@@ -1,3 +1,7 @@
+package entregas;
+
+import entregas.larinAlejandro.reto004.Fraccion;
+
 public class Fraccion {
     private int numerador;
     private int denominador;
