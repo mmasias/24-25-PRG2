@@ -3,8 +3,6 @@ package entregas.lianoJavier.reto004;
 public class Fraccion {
     private int denominador;
     private int numerador;
-    private int nuevoNumerador;
-    private int nuevoDenominador;
 
     public static void main(String[] args) {
         Fraccion fraccion = new Fraccion(3, 9);
