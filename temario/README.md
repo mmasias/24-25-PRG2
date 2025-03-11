@@ -1,13 +1,33 @@
 # Temario
 
-- [x] **[Introducción](00-00-introduccion.md)**
-  - [x] **[Sub tema introducción](00-01-Algoritmos.md)**
-- [ ] Tema 1
-  - [ ] Sub tema 1.1
-  - [ ] Sub tema 1.2
-  - [ ] Sub tema 1.3
-- [ ] Tema 2
-- [ ] Tema 3
+- [x] [Introducción](introduccion.md)
+  - [x] [Repaso de programación estructurada](https://github.com/mmasias/23-24-prg1/blob/main/temario/README.md)
+  - [x] [Evolución de los lenguajes de programación](evolucion.md)
+  - [ ] [Objetivos](pooObjetivos.md)
+- OOP
+  - Programación basada a objetos
+    - [x] [Clases y objetos](clasesObjetos.md)
+      - [x] [Introducción](introVistas.md)
+      - [x] [Vista pública de las clases](vistaPublicaClases.md)
+      - [x] [Vista pública de los objetos](vistaPublicaObjetos.md)
+      - [x] [Vista privada de las clases](vistaPrivadaClases.md) / [Ejemplo: Calculadora.java](/src/calculadora/README.md)
+      - [ ] Vista privada de los objetos
+      - [ ] Miembros de clase
+  - [ ] Colaboración entre objetos: *HOOD*
+    - [ ] Desarrollo de aplicaciones usando HOOD:
+      - [ ] Tic Tac Toe
+      - [ ] Klondike
+      - [ ] Blackjack
+  - Programación orientada a objetos
+    - [ ] Relación de Herencia
+      - [ ] Herencia por extensión
+      - [ ] Clases Abstractas
+      - [ ] Herencia por Implementación
+      - [ ] Limitaciones de la Herencia
+      - [ ] Beneficios de la Herencia
+    - [ ] Polimorfismo
+    - [ ] Conversión de Tipos
+    - [ ] Herencia y Enumerados
 
 ## Temario++
 
