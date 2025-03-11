@@ -1,6 +1,6 @@
 package entregas.orejaPaula.reto004;
 
-public class Fraccion {
+public class Fraccion implements Comparable<Fraccion>, Cloneable {
     private int numerador;
     private int denominador;
 
@@ -11,6 +11,10 @@ public class Fraccion {
         int gcd = gcd(numerador, denominador);
         this.numerador = numerador / gcd;
         this.denominador = denominador / gcd;
+        if (this.denominador < 0) {
+            this.numerador = -this.numerador;
+            this.denominador = -this.denominador;
+        }
     }
 
     public Fraccion(int numerador) {
@@ -30,12 +34,9 @@ public class Fraccion {
         return new Fraccion(this.numerador + entero * this.denominador, this.denominador);
     }
 
-    public Fraccion oponer() {
-        return new Fraccion(-this.numerador, this.denominador);
-    }
-
     public Fraccion restar(Fraccion fraccion) {
-        return this.sumar(fraccion.oponer());
+        return new Fraccion(this.numerador * fraccion.denominador - fraccion.numerador * this.denominador,
+                            this.denominador * fraccion.denominador);
     }
 
     public Fraccion restar(int entero) {
@@ -62,11 +63,22 @@ public class Fraccion {
     }
 
     public Fraccion dividir(int entero) {
+        if (entero == 0) {
+            throw new ArithmeticException("No se puede dividir por cero.");
+        }
         return new Fraccion(this.numerador, this.denominador * entero);
     }
 
     public Fraccion elevar(int exponente) {
         return new Fraccion((int) Math.pow(this.numerador, exponente), (int) Math.pow(this.denominador, exponente));
+    }
+
+    public int numerador() {
+        return this.numerador;
+    }
+
+    public int denominador() {
+        return this.denominador;
     }
 
     public boolean esMenor(Fraccion fraccion) {
@@ -78,7 +90,7 @@ public class Fraccion {
     }
 
     public boolean esIgual(Fraccion fraccion) {
-        return this.numerador * fraccion.denominador == fraccion.numerador * this.denominador;
+        return this.numerador == fraccion.numerador && this.denominador == fraccion.denominador;
     }
 
     public double valueOf() {
@@ -86,26 +98,20 @@ public class Fraccion {
     }
 
     public int compareTo(Fraccion fraccion) {
-        return Integer.compare(this.numerador * fraccion.denominador, fraccion.numerador * this.denominador);
-    }
-
-    public int numerador() {
-        return this.numerador;
-    }
-
-    public int denominador() {
-        return this.denominador;
+        if (this.esIgual(fraccion)) return 0;
+        return this.esMayor(fraccion) ? 1 : -1;
     }
 
     public String toString() {
-        return numerador + "/" + denominador;
+        return this.denominador == 1 ? String.valueOf(this.numerador) : this.numerador + "/" + this.denominador;
     }
 
     public Fraccion clone() {
         return new Fraccion(this.numerador, this.denominador);
     }
 
-    private static int gcd(int a, int b) {
+    private int gcd(int a, int b) {
         return b == 0 ? Math.abs(a) : gcd(b, a % b);
     }
 }
+
