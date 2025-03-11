@@ -5,10 +5,7 @@ public class Fraccion {
     private int denominador;
     
     public Fraccion(int numerador, int denominador) {
-        if (denominador == 0) {
-            System.out.println("Denominador no puede ser cero");
-            denominador = 1;
-        }
+        
         this.numerador = numerador;
         this.denominador = denominador;
         simplificar();
@@ -97,23 +94,21 @@ public class Fraccion {
         return this.esMayor(fraccion) ? 1 : -1;
     }
 
-    @Override
     public String toString() {
         return numerador + "/" + denominador;
     }
 
-    @Override
     public Fraccion clone() {
         return new Fraccion(this.numerador, this.denominador);
     }
 
     private void simplificar() {
-        int gcd = gcd(Math.abs(numerador), Math.abs(denominador));
-        numerador /= gcd;
-        denominador /= gcd;
+        int mcd = mcd(Math.abs(numerador), Math.abs(denominador));
+        numerador /= mcd;
+        denominador /= mcd;
     }
 
-    private int gcd(int a, int b) {
-        return b == 0 ? a : gcd(b, a % b);
+    private int mcd(int a, int b) {
+        return b == 0 ? a : mcd(b, a % b);
     }
 }
