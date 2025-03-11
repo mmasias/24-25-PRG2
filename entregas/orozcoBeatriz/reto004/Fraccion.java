@@ -148,4 +148,12 @@ public class Fraccion {
     public Fraccion clone() {
         return new Fraccion(numerador, denominador);
     }
+
+    public int simplificarFraccion() {
+        if (this.numerador == 0) {
+            return 0;
+        } else if (this.numerador == this.denominador) {
+            return 1;
+        }
+    }
 }
