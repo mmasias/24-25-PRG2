@@ -8,5 +8,19 @@ public class Fraccion {
         if (den == 0) {
             den = 1;
         }
+        numerador = num;
+        denominador = den;
+    }
+
+    public Fraccion(int num) {
+        numerador = num;
+        denominador = 1;
+    }
+
+    public Fraccion() {
+        numerador = 0;
+        denominador = 1;
+    }
+
     
 }
