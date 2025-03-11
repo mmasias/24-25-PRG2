@@ -1,4 +1,4 @@
-package src.calculadora;
+package src.calderonJimena.calculadora;
 
 public class App {
 
@@ -37,8 +37,4 @@ public class App {
         calculadora.calcularMedia();
         System.out.println(calculadora.mostrarTodo());
     }
-<<<<<<< HEAD
 }
-=======
-}
->>>>>>> 5a296627d8df5fced592c45ab9d1706b5f736d16
