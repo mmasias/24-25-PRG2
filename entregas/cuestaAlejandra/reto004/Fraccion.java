@@ -110,7 +110,6 @@ public class Fraccion {
 
      public Fraccion clone() {
         return new Fraccion(numerador, denominador);
+
     }
-
-
 }
