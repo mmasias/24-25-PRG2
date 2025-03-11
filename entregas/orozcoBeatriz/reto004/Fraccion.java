@@ -13,13 +13,13 @@ public class Fraccion {
             denominador = -denominador;
         }
 
-        int mcd = mcd(Math.abs(numerador), denominador);
-        this.numerador = numerador / mcd;
-        this.denominador = denominador / mcd;
+        int maximoComunDivisor = maximoComunDivisor(Math.abs(numerador), denominador);
+        this.numerador = numerador / maximoComunDivisor;
+        this.denominador = denominador / maximoComunDivisor;
 
     }
 
-    private int mcd(int a, int b) {
+    private int maximoComunDivisor(int a, int b) {
         while (b != 0) {
             int temp = b;
             b = a % b;
@@ -55,6 +55,9 @@ public class Fraccion {
     public Fraccion restar(Fraccion fraccion) {
         int numeradorNuevo = this.numerador * fraccion.denominador - fraccion.numerador * this.denominador;
         int denominadorNuevo = this.denominador * fraccion.denominador;
+        if (numeradorNuevo == 0) {
+            return new Fraccion(0);
+        }
         return new Fraccion(numeradorNuevo, denominadorNuevo);
     }
 
@@ -81,6 +84,9 @@ public class Fraccion {
     public Fraccion dividir(Fraccion fraccion) {
         int numeradorNuevo = this.numerador * fraccion.denominador;
         int denominadorNuevo = this.denominador * fraccion.numerador;
+        if (numeradorNuevo == denominadorNuevo) {
+            return new Fraccion(1);
+        }
         return new Fraccion(numeradorNuevo, denominadorNuevo);
     }
 
@@ -149,11 +155,4 @@ public class Fraccion {
         return new Fraccion(numerador, denominador);
     }
 
-    public int simplificarFraccion() {
-        if (this.numerador == 0) {
-            return 0;
-        } else if (this.numerador == this.denominador) {
-            return 1;
-        }
-    }
 }
