@@ -65,7 +65,7 @@ public class EscalaMayor {
 
     private static void imprimirArray(String[] array) {
         for (String nota : array) {
-            System.out.print("[" + nota + "] / ");
+            System.out.print("[" + nota nota + "] / ");
         }
         System.out.println();
     }
