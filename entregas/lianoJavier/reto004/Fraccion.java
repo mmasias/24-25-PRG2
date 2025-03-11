@@ -39,13 +39,11 @@ public class Fraccion {
     }
 
     public Fraccion(int numerador) {
-        this.numerador = numerador;
-        this.denominador = 1;
+        this(numerador, 1);
     }
 
     public Fraccion() {
-        this.numerador = 0;
-        this.denominador = 1;
+        this(0);
     }
 
     public String toString() {
