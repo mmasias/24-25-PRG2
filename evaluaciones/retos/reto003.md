@@ -138,7 +138,7 @@ Completada la implementación, debe realizarse el pull request a la rama entrega
 
 Solo se aceptarán:
 
-- [Entregas a la rama entrega-003, provenientes de la rama entrega-003](https://github.com/mmasias/24-25-PRG2/pulls?q=is%3Apr+is%3Aopen+base%3Aentrega-003+created%3A2025-03-07+head%3Aentrega-003)
+- [Entregas a la rama entrega-003, provenientes de la rama entrega-003](https://github.com/mmasias/24-25-PRG2/pulls?q=base%3Aentrega-003+created%3A2025-03-07+head%3Aentrega-003)
 - Que contengan un único archivo
 - Que el archivo se llame Calculadora.java
 - Que el archivo esté en la ruta adecuada.
