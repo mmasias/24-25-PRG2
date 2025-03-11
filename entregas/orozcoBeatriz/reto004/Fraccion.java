@@ -16,7 +16,6 @@ public class Fraccion {
         int maximoComunDivisor = maximoComunDivisor(Math.abs(numerador), denominador);
         this.numerador = numerador / maximoComunDivisor;
         this.denominador = denominador / maximoComunDivisor;
-
     }
 
     private int maximoComunDivisor(int a, int b) {
@@ -55,9 +54,6 @@ public class Fraccion {
     public Fraccion restar(Fraccion fraccion) {
         int numeradorNuevo = this.numerador * fraccion.denominador - fraccion.numerador * this.denominador;
         int denominadorNuevo = this.denominador * fraccion.denominador;
-        if (numeradorNuevo == 0) {
-            return new Fraccion(0);
-        }
         return new Fraccion(numeradorNuevo, denominadorNuevo);
     }
 
@@ -84,9 +80,6 @@ public class Fraccion {
     public Fraccion dividir(Fraccion fraccion) {
         int numeradorNuevo = this.numerador * fraccion.denominador;
         int denominadorNuevo = this.denominador * fraccion.numerador;
-        if (numeradorNuevo == denominadorNuevo) {
-            return new Fraccion(1);
-        }
         return new Fraccion(numeradorNuevo, denominadorNuevo);
     }
 
