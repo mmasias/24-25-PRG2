@@ -11,7 +11,8 @@ public class Fraccion {
         System.out.println(fraccion2);
         Fraccion fraccion3 = new Fraccion(0, 1);
         System.out.println(fraccion3);
-
+        Fraccion fraccion4 = new Fraccion(1, 0);
+        System.out.println(fraccion4);
     }
 
     public Fraccion(int numerador, int denominador) {
