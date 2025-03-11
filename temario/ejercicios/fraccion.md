@@ -27,12 +27,15 @@
 ## Tester
 
 ```java
+public class ClienteFraccion {
     public static void main(String[] args) {
 
         System.out.print("Constructor & .toString(): ");
         Fraccion fraccion = new Fraccion(2, 3);
         System.out.println(fraccion);
-        
+        System.out.println("Numerador:   [" + fraccion.numerador() + "]");
+        System.out.println("Denominador: [" + fraccion.denominador() + "]");
+
         System.out.print("Sumar: ");
         System.out.println(fraccion.sumar(new Fraccion(2,3)));
         System.out.println(fraccion.sumar(3));
@@ -67,7 +70,7 @@
         System.out.print("Es igual: ");
         System.out.println(fraccion.esIgual(new Fraccion(2, 3)));
 
-        System.out.print("Es igual: ");
+        System.out.print(".compareTo(): ");
         System.out.println(fraccion.compareTo(new Fraccion(2, 3)));
 
         System.out.print("valueOf(): ");
@@ -75,5 +78,6 @@
 
         System.out.print("clone(): ");
         System.out.println(fraccion.clone());        
-    }
+    }    
+}
 ```
