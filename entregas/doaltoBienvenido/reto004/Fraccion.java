@@ -84,10 +84,36 @@ class Fraccion {
         int nuevoDenominador = this.denominador * fraccion.numerador;
         return new Fraccion(nuevoNumerador, nuevoDenominador);
     }	
-    
+
     public Fraccion dividir(int entero){
         int nuevoNumerador = this.numerador;
         int nuevoDenominador = this.denominador * entero; 
         return new Fraccion(nuevoNumerador, nuevoDenominador);
+    }
+
+    public Fraccion elevar(int exponente){
+        int nuevoNumerador = (int) Math.pow(this.numerador, exponente);
+        int nuevoDenominador = (int) Math.pow(this.denominador, exponente);
+        return new Fraccion(nuevoNumerador, nuevoDenominador);
+    }
+
+    public int numerador(){
+        return this.numerador;
+    }
+
+    public int denominador(){
+        return this.denominador;
+    }
+
+    public boolean esMenor(Fraccion fraccion){
+        return this.numerador * fraccion.denominador < fraccion.numerador * this.denominador;
+    }	
+
+    public boolean esMayor(Fraccion fraccion){
+        return this.numerador * fraccion.denominador > fraccion.numerador * this.denominador;
+    }
+    	
+    public boolean esIgual(Fraccion fraccion){
+        return this.numerador * fraccion.denominador == fraccion.numerador * this.denominador;
     }
 }
