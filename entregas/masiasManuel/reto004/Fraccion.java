@@ -6,14 +6,18 @@ public class Fraccion {
     private int denominador;
 
     public Fraccion(int numerador, int denominador){
-        this.numerador=numerador;
-        this.denominador=denominador;
+        assert denominador!=0: "El denominador no puede ser CERO!"; 
+        if(denominador<0){
+            numerador=-numerador;
+            denominador=-denominador;
+        }
 
-        int mcd=mcd(numerador,denominador);
+        int mcd=mcd(Math.abs(numerador),denominador);
         this.numerador=numerador/mcd;
         this.denominador=denominador/mcd;
 
     }
+
 
     private int mcd(int a,int b){
         while (b!=0){
