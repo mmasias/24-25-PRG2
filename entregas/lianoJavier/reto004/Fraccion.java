@@ -1,41 +1,67 @@
 package entregas.lianoJavier.reto004;
 
 public class Fraccion {
-    private int denominador;
     private int numerador;
+    private int denominador;
 
     public static void main(String[] args) {
-        Fraccion fraccion = new Fraccion(3, 9);
-        System.out.println(fraccion);
-        Fraccion fraccion2 = new Fraccion(2, -4);
-        System.out.println(fraccion2);
-        Fraccion fraccion3 = new Fraccion(0, 1);
-        System.out.println(fraccion3);
-        Fraccion fraccion4 = new Fraccion(1, 0);
-        System.out.println(fraccion4);
+        // Test constructors
+        Fraccion f1 = new Fraccion(2, 4);
+        System.out.println("f1: " + f1.toString()); // Expected: 1/2
+
+        Fraccion f2 = new Fraccion(2, -4);
+        System.out.println("f2: " + f2.toString()); // Expected: -1/2
+
+        Fraccion f3 = new Fraccion(5);
+        System.out.println("f3: " + f3.toString()); // Expected: 5/1
+
+        Fraccion f4 = new Fraccion();
+        System.out.println("f4: " + f4.toString()); // Expected: 0/1
+
+        // Test arithmetic operations
+        Fraccion sum = f1.sumar(f2);
+        System.out.println("f1 + f2: " + sum.toString()); // Expected: 0
+
+        Fraccion product = f1.multiplicar(f2);
+        System.out.println("f1 * f2: " + product.toString()); // Expected: -1/4
+
+        Fraccion difference = f1.restar(f2);
+        System.out.println("f1 - f2: " + difference.toString()); // Expected: 1
+
+        Fraccion quotient = f1.dividir(f2);
+        System.out.println("f1 / f2: " + quotient.toString()); // Expected: -1/2
+
+        // Test comparisons
+        System.out.println("f1 < f2: " + f1.esMenor(f2)); // Expected: false
+        System.out.println("f1 > f2: " + f1.esMayor(f2)); // Expected: false
+        System.out.println("f1 == f2: " + f1.esIgual(f2)); // Expected: false
+
+        // Test valueOf
+        System.out.println("f1 value: " + f1.valueOf()); // Expected: 0.5
+
+        // Test clone
+        Fraccion f1Clone = f1.clone();
+        System.out.println("f1 clone: " + f1Clone.toString()); // Expected: 1/2
     }
 
     public Fraccion(int numerador, int denominador) {
         assert denominador != 0 : "El denominador no puede ser 0";
 
         if (denominador < 0) {
-            this.numerador *= -1;
-            this.denominador *= -1;
+            numerador *= -1;
+            denominador *= -1;
         }
 
-        int MinimoComunDivisor = calcularMinimoComunDivisor(Math.abs(numerador), denominador);
-        this.numerador /= MinimoComunDivisor;
-        this.denominador /= MinimoComunDivisor;
-
-        this.numerador = numerador;
-        this.denominador = denominador;
+        int maximoComunDivisor = calcularMaximoComunDivisor(Math.abs(numerador), Math.abs(denominador));
+        this.numerador = numerador / maximoComunDivisor;
+        this.denominador = denominador / maximoComunDivisor;
     }
 
-    private int calcularMinimoComunDivisor(int primerValor, int segundoValor) {
+    private int calcularMaximoComunDivisor(int primerValor, int segundoValor) {
         if (segundoValor == 0) {
             return primerValor;
         }
-        return calcularMinimoComunDivisor(segundoValor, primerValor % segundoValor);
+        return calcularMaximoComunDivisor(segundoValor, primerValor % segundoValor);
     }
 
     public Fraccion(int numerador) {
@@ -138,5 +164,4 @@ public class Fraccion {
     public Fraccion clone() {
         return new Fraccion(numerador, denominador);
     }
-
 }
