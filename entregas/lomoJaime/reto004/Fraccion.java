@@ -15,6 +15,15 @@ public class Fraccion {
         this.numerador = numerador/ mcd;
         this.denominador = denominador/mcd;
     }
+
+
+    public Fraccion(int numerador){
+        this(numerador,1);
+    }
+
+    public Fraccion(){
+        this(0);
+    }
     private int mcd (int a,int b){
         while (b != 0) {
             int temp = b;
@@ -30,16 +39,5 @@ public class Fraccion {
             return numerador + "/" + denominador;
         }
     }
-    public Fraccion(int numerador){
-
-
-    }
-
-
-
-
-
-
-
-
+   
 }
