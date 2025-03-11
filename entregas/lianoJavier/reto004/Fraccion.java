@@ -9,9 +9,14 @@ public class Fraccion {
         System.out.println(fraccion);
         Fraccion fraccion2 = new Fraccion(2, -4);
         System.out.println(fraccion2);
+        Fraccion fraccion3 = new Fraccion(0, 1);
+        System.out.println(fraccion3);
+
     }
 
     public Fraccion(int numerador, int denominador) {
+        assert denominador != 0 : "El denominador no puede ser 0";
+
         if (denominador < 0) {
             this.numerador *= -1;
             this.denominador *= -1;
