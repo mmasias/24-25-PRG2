@@ -12,9 +12,6 @@ public class Fraccion {
     }
 
     public Fraccion(int numerador, int denominador) {
-        this.numerador = numerador;
-        this.denominador = denominador;
-
         if (denominador < 0) {
             this.numerador *= -1;
             this.denominador *= -1;
@@ -23,6 +20,9 @@ public class Fraccion {
         int MinimoComunDivisor = calcularMinimoComunDivisor(Math.abs(numerador), denominador);
         this.numerador /= MinimoComunDivisor;
         this.denominador /= MinimoComunDivisor;
+
+        this.numerador = numerador;
+        this.denominador = denominador;
     }
 
     private int calcularMinimoComunDivisor(int primerValor, int segundoValor) {
