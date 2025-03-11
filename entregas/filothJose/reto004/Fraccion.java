@@ -20,6 +20,10 @@ public class Fraccion {
         this.denominador = denominador / mcd;
     }
 
+    public Fraccion(int numerador) {
+        this(numerador, 1);
+    }
+
     private int mcd(int a, int b){
         while (b != 0 ) {
             int temp = b;
