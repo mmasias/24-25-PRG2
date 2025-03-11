@@ -8,9 +8,24 @@ public class Fraccion {
         if (denominador == 0) {
             System.out.println("El denominador no puede ser 0. Será 1.");
             denominador = 1;
+        } else if (denominador < 0) {
+            numerador = -numerador;
+            denominador = -denominador;
         }
-        this.numerador = numerador;
-        this.denominador = denominador;
+
+        int mcd = mcd(Math.abs(numerador), denominador);
+        this.numerador = numerador / mcd;
+        this.denominador = denominador / mcd;
+
+    }
+
+    private int mcd(int a, int b) {
+        while (b != 0) {
+            int temp = b;
+            b = a % b;
+            a = temp;
+        }
+        return a;
     }
 
     public Fraccion(int numerador) {
