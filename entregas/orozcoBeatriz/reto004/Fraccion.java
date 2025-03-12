@@ -141,6 +141,11 @@ public class Fraccion {
     }
 
     public String toString() {
+        if (numerador == denominador) {
+            return "1";
+        } else if (numerador == 0) {
+            return "0";
+        }
         return numerador + "/" + denominador;
     }
 
