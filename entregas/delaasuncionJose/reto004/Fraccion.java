@@ -20,11 +20,11 @@ public class Fraccion {
         this(0);
     }
 
-    public int denominador(){
+    public int denominador() {
         return denominador;
     }
 
-    public int numerador(){
+    public int numerador() {
         return numerador;
     }
 
@@ -41,7 +41,7 @@ public class Fraccion {
         return (a*b)/mcd(a,b);
     }
 
-    public void invertir(){
+    public void invertir() {
         int a = numerador;
         numerador = denominador;
         denominador = a;
@@ -67,22 +67,51 @@ public class Fraccion {
         numerador -= denominador * numero;
     }
 
-    public void multiplicar	(Fraccion fraccion) {
+    public void multiplicar(Fraccion fraccion) {
         numerador *= fraccion.numerador;
         denominador *= fraccion.denominador;
     }
 
-    public void multiplicar	(int numero) {
+    public void multiplicar(int numero) {
         numerador *= numero;
     }
 
-    public void dividir	(Fraccion fraccion) {
+    public void dividir(Fraccion fraccion) {
         fraccion.invertir();
         multiplicar(fraccion);
     }
 
-    public void dividir	(int numero) {
+    public void dividir(int numero) {
         denominador *= numero;
+    }
+
+    public void elevar(int valor) {
+        denominador = Math.pow(denominador,valor);
+        numerador = Math.pow(numerador,valor);
+    }
+
+    public boolean esMayor(Fraccion fraccion){
+        return fraccion.valueOf() > (numerador/denominador);
+    }
+
+    public boolean esIgual(Fraccion fraccion) {
+        return fraccion.numerador == numerador && fraccion.denominador == denominador;
+    }
+
+    public boolean esMayor(Fraccion fraccion){
+        return fraccion.valueOf() < (numerador/denominador);
+    }
+
+    public int compareTo(Fraccion fraccion) {
+        return esMayor(fraccion) ? 1 : esIgual(fraccion) ? 0 : -1;
+    }
+
+    public double valueOf() {
+        return (numerador / denominador);
+    }
+
+    public String toString() {
+        return numerador + "\n — \n" + denominador
     }
 
     public Fraccion clone() {
