@@ -41,65 +41,62 @@ public class Fraccion {
         return (a*b)/mcd(a,b);
     }
 
-    public void invertir() {
-        int a = numerador;
-        numerador = denominador;
-        denominador = a;
+    public Fraccion invertir() {
+        return new Fraccion(denominador,numerador);
     }
 
-    public void sumar(Fraccion fraccion) {
+    public Fraccion oponer(){
+        return new Fraccion(-numerador,denominador);
+    }
+
+    public Fraccion sumar(Fraccion fraccion) {
         int mcm = mcm(denominador, fraccion.denominador);
-        numerador = numerador*mcm + fraccion.numerador*mcm;
-        denominador = mcm;
+        return new Fraccion(numerador*mcm + fraccion.numerador*mcm,mcm*denominador);
     }
 
-    public void sumar(int numero) {
-        numerador += denominador * numero;
+    public Fraccion sumar(int numero) {
+        return new Fraccion(numerador + numero*denominador,denominador);
     }
 
-    public void restar(Fraccion fraccion) {
-        int mcm = mcm(denominador, fraccion.denominador);
-        numerador = numerador*mcm - fraccion.numerador*mcm;
-        denominador = mcm;
+    public Fraccion restar(Fraccion fraccion) {
+        return this.sumar(fraccion.oponer());
     }
 
-    public void restar(int numero) {
-        numerador -= denominador * numero;
+    public Fraccion restar(int numero) {
+        return new Fraccion(numerador - denominador*numero, denominador);
     }
 
-    public void multiplicar(Fraccion fraccion) {
-        numerador *= fraccion.numerador;
-        denominador *= fraccion.denominador;
+    public Fraccion multiplicar(Fraccion fraccion) {
+        return new Fraccion(numerador * fraccion.numerador,denominador * fraccion.denominador);
     }
 
-    public void multiplicar(int numero) {
-        numerador *= numero;
+    public Fraccion multiplicar(int numero) {
+        return new Fraccion(numerador * numero, denominador);
     }
 
-    public void dividir(Fraccion fraccion) {
-        fraccion.invertir();
-        multiplicar(fraccion);
+    public Fraccion dividir(Fraccion fraccion) {
+        return this.multiplicar(fraccion.invertir());
     }
 
-    public void dividir(int numero) {
-        denominador *= numero;
+    public Fraccion dividir(int numero) {
+        return new Fraccion(numerador,denominador * numero);
     }
 
-    public void elevar(int valor) {
-        denominador = Math.pow(denominador,valor);
-        numerador = Math.pow(numerador,valor);
+    public Fraccion elevar(int valor) {
+        if (valor<0) return this.invertir().elevar(-valor);
+        return new Fraccion((int) Math.pow(numerador,valor),(int) Math.pow(denominador,valor));
     }
 
     public boolean esMayor(Fraccion fraccion){
-        return fraccion.valueOf() > (numerador/denominador);
+        return fraccion.valueOf() > this.valueOf();
     }
 
     public boolean esIgual(Fraccion fraccion) {
-        return fraccion.numerador == numerador && fraccion.denominador == denominador;
+        return fraccion.valueOf() == this.valueOf();
     }
 
-    public boolean esMayor(Fraccion fraccion){
-        return fraccion.valueOf() < (numerador/denominador);
+    public boolean esMenor(Fraccion fraccion){
+        return fraccion.valueOf() < this.valueOf();
     }
 
     public int compareTo(Fraccion fraccion) {
@@ -111,11 +108,10 @@ public class Fraccion {
     }
 
     public String toString() {
-        return numerador + "\n — \n" + denominador
+        return numerador + "/" + denominador;
     }
 
     public Fraccion clone() {
-        Fraccion fraccion(numerador, denominador);
-        return fraccion;
+        return new Fraccion(numerador, denominador);
     }
 }
