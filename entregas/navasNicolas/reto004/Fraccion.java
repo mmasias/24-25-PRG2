@@ -1,4 +1,4 @@
-package navas.Nicolas.entregas.reto004;
+package entregas.navasNicolas.reto004;
 
 public class Fraccion {
     private int numerador;
@@ -14,6 +14,7 @@ public class Fraccion {
 
         this.numerador = numerador;
         this.denominador = denominador;
+        this.denominador = entero;
         int mcd = mcd(Math.abs(numerador), denominador);
         this.numerador = numerador / mcd;
         this.denominador = denominador / mcd;
