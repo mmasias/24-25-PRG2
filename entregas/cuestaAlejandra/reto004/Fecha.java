@@ -58,4 +58,19 @@ public class Fecha {
     public boolean esDiaValido(int dia) {
         return dia >= 1 && dia <= 30;
     }
+
+    public String toString() {
+        return dia + "/" + mes + "/" + año;
+    }
+
+    public static void main(String[] args) {
+        Fecha fecha1 = new Fecha(2025, 3, 14);
+        Fecha fecha2 = new Fecha(2025, 3, 15);
+        
+        System.out.println("Fecha 1: " + fecha1);
+        System.out.println("Fecha 2: " + fecha2);
+        System.out.println("¿Fecha 1 es antes que Fecha 2? " + fecha1.antesQue(fecha2));
+        System.out.println("¿Fecha 1 es después de Fecha 2? " + fecha1.despuesDe(fecha2));
+        System.out.println("Día siguiente de Fecha 1: " + fecha1.siguiente());
+    }
 }
