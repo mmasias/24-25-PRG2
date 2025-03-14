@@ -76,26 +76,18 @@ public class Fraccion {
     }
 
     public Fraccion sumar(int entero) {
-        return new Fraccion(
-            this.numerador * fraccion.denominador + fraccion.numerador * this.denominador,
-            this.denominador * fraccion.denominador);
+        return this.sumar(new Fraccion(entero));
     }
 
     public Fraccion restar(int entero) {
-        return new Fraccion(
-            this.numerador * fraccion.denominador - fraccion.numerador * this.denominador,
-            this.denominador * fraccion.denominador);
+        return this.restar(new Fraccion(entero));
     }
 
     public Fraccion multiplicar(int entero) {
-        return new Fraccion(
-            this.numerador * fraccion.numerador,
-            this.denominador * fraccion.denominador);
+        return this.multiplicar(new Fraccion(entero));
     }
 
     public Fraccion dividir(int entero){
-        return new Fraccion(
-            this.numerador * fraccion.denominador,
-            this.denominador * fraccion.numerador);
+        return this.dividir(new Fraccion(entero));
     };
 }
