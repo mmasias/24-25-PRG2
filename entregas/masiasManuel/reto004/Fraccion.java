@@ -1,5 +1,5 @@
 package entregas.masiasManuel.reto004;
 
-public class Fraccion {
+public class Fraccion [
     
-}
+]
