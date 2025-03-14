@@ -64,8 +64,8 @@ public class Fecha {
     }
 
     public static void main(String[] args) {
-        Fecha fecha1 = new Fecha(2025, 3, 14);
-        Fecha fecha2 = new Fecha(2025, 3, 15);
+        Fecha fecha1 = new Fecha();
+        Fecha fecha2 = new Fecha();
         
         System.out.println("Fecha 1: " + fecha1);
         System.out.println("Fecha 2: " + fecha2);
