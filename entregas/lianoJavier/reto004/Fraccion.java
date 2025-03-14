@@ -35,6 +35,9 @@ public class Fraccion {
 
         System.out.println("fraccionSimplificada value: " + fraccionSimplificada.valueOf());
 
+        // Fraccion fraccionInvalida = new Fraccion(1, 0);
+        // System.out.println("fraccionInvalida: " + fraccionInvalida.toString());
+
         Fraccion fraccionClonada = fraccionSimplificada.clone();
         System.out.println("fraccionSimplificada clone: " + fraccionClonada.toString());
     }
