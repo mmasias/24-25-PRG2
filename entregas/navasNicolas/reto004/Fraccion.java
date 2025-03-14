@@ -61,7 +61,13 @@ public class Fraccion {
 
     public Fraccion multiplicar(Fraccion fraccion) {
         int numerador = (this.numerador * fraccion.numerador);
-        int denominador = this.denominador * fraccion.denominador;
+        int denominador = (this.denominador * fraccion.denominador);
+        return new Fraccion(numerador, denominador);
+    };
+
+    public Fraccion dividir(Fraccion fraccion){
+        int numerador = (this.numerador * fraccion.denominador);
+        int denominador = (this.denominador * fraccion.numerador);
         return new Fraccion(numerador, denominador);
     };
 
