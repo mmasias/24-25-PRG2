@@ -5,38 +5,38 @@ public class Fraccion {
     private int denominador;
 
     public static void main(String[] args) {
-        Fraccion f1 = new Fraccion(2, 4);
-        System.out.println("f1: " + f1.toString());
+        Fraccion fraccionSimplificada = new Fraccion(2, 4);
+        System.out.println("fraccionSimplificada: " + fraccionSimplificada.toString());
 
-        Fraccion f2 = new Fraccion(2, -4);
-        System.out.println("f2: " + f2.toString());
+        Fraccion fraccionNegativa = new Fraccion(2, -4);
+        System.out.println("fraccionNegativa: " + fraccionNegativa.toString());
 
-        Fraccion f3 = new Fraccion(5);
-        System.out.println("f3: " + f3.toString());
+        Fraccion fraccionEntera = new Fraccion(5);
+        System.out.println("fraccionEntera: " + fraccionEntera.toString());
 
-        Fraccion f4 = new Fraccion();
-        System.out.println("f4: " + f4.toString());
+        Fraccion fraccionVacia = new Fraccion();
+        System.out.println("fraccionVacia: " + fraccionVacia.toString());
 
-        Fraccion sum = f1.sumar(f2);
-        System.out.println("f1 + f2: " + sum.toString());
+        Fraccion resultadoSuma = fraccionSimplificada.sumar(fraccionNegativa);
+        System.out.println("fraccionSimplificada + fraccionNegativa: " + resultadoSuma.toString());
 
-        Fraccion product = f1.multiplicar(f2);
-        System.out.println("f1 * f2: " + product.toString());
+        Fraccion resultadoMultiplicacion = fraccionSimplificada.multiplicar(fraccionNegativa);
+        System.out.println("fraccionSimplificada * fraccionNegativa: " + resultadoMultiplicacion.toString());
 
-        Fraccion difference = f1.restar(f2);
-        System.out.println("f1 - f2: " + difference.toString());
+        Fraccion resultadoResta = fraccionSimplificada.restar(fraccionNegativa);
+        System.out.println("fraccionSimplificada - fraccionNegativa: " + resultadoResta.toString());
 
-        Fraccion quotient = f1.dividir(f2);
-        System.out.println("f1 / f2: " + quotient.toString());
+        Fraccion resultadoDivision = fraccionSimplificada.dividir(fraccionNegativa);
+        System.out.println("fraccionSimplificada / fraccionNegativa: " + resultadoDivision.toString());
 
-        System.out.println("f1 < f2: " + f1.esMenor(f2));
-        System.out.println("f1 > f2: " + f1.esMayor(f2));
-        System.out.println("f1 == f2: " + f1.esIgual(f2));
+        System.out.println("fraccionSimplificada < fraccionNegativa: " + fraccionSimplificada.esMenor(fraccionNegativa));
+        System.out.println("fraccionSimplificada > fraccionNegativa: " + fraccionSimplificada.esMayor(fraccionNegativa));
+        System.out.println("fraccionSimplificada == fraccionNegativa: " + fraccionSimplificada.esIgual(fraccionNegativa));
 
-        System.out.println("f1 value: " + f1.valueOf());
+        System.out.println("fraccionSimplificada value: " + fraccionSimplificada.valueOf());
 
-        Fraccion f1Clone = f1.clone();
-        System.out.println("f1 clone: " + f1Clone.toString());
+        Fraccion fraccionClonada = fraccionSimplificada.clone();
+        System.out.println("fraccionSimplificada clone: " + fraccionClonada.toString());
     }
 
     public Fraccion(int numerador, int denominador) {
