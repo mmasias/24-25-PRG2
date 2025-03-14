@@ -6,3 +6,6 @@ public class Tiempo {
         this.minutos = esMinutoValido(minutos) ? minutos : 0;
         this.segundos = esSegundoValido(segundos) ? segundos : 0;
     }
+    public boolean equals(Tiempo tiempo) {
+        return compareTo(tiempo) == 0;
+    }
