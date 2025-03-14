@@ -42,14 +42,18 @@ public class Fraccion {
     public Fraccion(int numerador, int denominador) {
         assert denominador != 0 : "El denominador no puede ser 0";
 
-        if (denominador < 0) {
-            numerador *= -1;
-            denominador *= -1;
-        }
+        alternarPolaridad(numerador, denominador);
 
         int maximoComunDivisor = calcularMaximoComunDivisor(Math.abs(numerador), Math.abs(denominador));
         this.numerador = numerador / maximoComunDivisor;
         this.denominador = denominador / maximoComunDivisor;
+    }
+
+    private void alternarPolaridad(int numerador2, int denominador2) {
+        if (denominador < 0) {
+            numerador *= -1;
+            denominador *= -1;
+        }
     }
 
     private int calcularMaximoComunDivisor(int primerValor, int segundoValor) {
