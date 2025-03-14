@@ -1,4 +1,4 @@
-package entregas.masiasManuel.reto004;
+package entregas.anayaAndrea.reto004;
 
 public class Fraccion {
 
