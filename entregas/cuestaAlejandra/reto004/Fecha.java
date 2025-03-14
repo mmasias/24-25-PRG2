@@ -50,4 +50,9 @@ public class Fecha {
         }
         return new Fecha(nuevoAño, nuevoMes, nuevoDia);
     }
+
+    public boolean esMesValido(int mes) {
+        return mes >= 1 && mes <= 12;
+    }
+
 }
