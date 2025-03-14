@@ -44,9 +44,15 @@ class Fraccion {
     }
 
     public Fraccion sumar(Fraccion fraccion){
-        int nuevoNumerador = this.numerador * fraccion.denominador + fraccion.numerador * this.denominador;
-        int nuevoDenominador = this.denominador * fraccion.denominador;
-        return new Fraccion(nuevoNumerador, nuevoDenominador);
+        if (this.denominador == fraccion.denominador) {
+            int nuevoNumerador = this.numerador + fraccion.numerador;
+            int nuevoDenominador = this.denominador;
+            return new Fraccion(nuevoNumerador,nuevoDenominador);
+        }else{
+            int nuevoNumerador = this.numerador * fraccion.denominador + fraccion.numerador * this.denominador;
+            int nuevoDenominador = this.denominador * fraccion.denominador;
+            return new Fraccion(nuevoNumerador, nuevoDenominador);
+        }
     }
 
     public Fraccion sumar(int entero){
@@ -56,9 +62,15 @@ class Fraccion {
     }
 
     public Fraccion restar(Fraccion fraccion){
-        int nuevoNumerador = this.numerador * fraccion.denominador - fraccion.numerador * this.denominador;
-        int nuevoDenominador = this.denominador * fraccion.denominador;
-        return new Fraccion(nuevoNumerador, nuevoDenominador);
+        if (this.denominador == fraccion.denominador) {
+            int nuevoNumerador = this.numerador - fraccion.numerador;
+            int nuevoDenominador = this.denominador;
+            return new Fraccion(nuevoNumerador,nuevoDenominador);
+        }else{
+            int nuevoNumerador = this.numerador * fraccion.denominador - fraccion.numerador * this.denominador;
+            int nuevoDenominador = this.denominador * fraccion.denominador;
+            return new Fraccion(nuevoNumerador, nuevoDenominador);
+        }
     }	
 
     public Fraccion restar(int entero){
