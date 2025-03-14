@@ -25,7 +25,19 @@ public class Fraccion {
     }
 
     public Fraccion sumar(Fraccion fraccion){
-        Fraccion fraccionResultante = new Fraccion(fraccion.numerador, fraccion.denominador);
+        int mcm = mcm(this.denominador, fraccion.denominador);
+
+        this.numerador = this.numerador * (mcm/fraccion.denominador);
+        this.denominador = this.denominador * (mcm/fraccion.denominador);
+        fraccion.numerador = fraccion.numerador * (mcm/this.denominador);
+        fraccion.denominador = fraccion.denominador * (mcm/this.denominador);
+
+        System.out.println(this.numerador);
+        System.out.println(this.denominador);
+        System.out.println(fraccion.numerador);
+        System.out.println(fraccion.numerador);
+
+        Fraccion fraccionResultante = new Fraccion((this.numerador + fraccion.numerador), (this.denominador + fraccion.denominador));
         return fraccionResultante;
     }
     
@@ -44,5 +56,10 @@ public class Fraccion {
             a = temp;
         }
         return a;
+    }
+
+    private int mcm(int a, int b){
+        int resultado = (a * b) / mcd(a,b);
+        return  resultado;
     }
 }
