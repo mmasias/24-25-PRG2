@@ -92,4 +92,10 @@ public class Fraccion {
             this.numerador * fraccion.numerador,
             this.denominador * fraccion.denominador);
     }
+
+    public Fraccion dividir(int entero){
+        return new Fraccion(
+            this.numerador * fraccion.denominador,
+            this.denominador * fraccion.numerador);
+    };
 }
