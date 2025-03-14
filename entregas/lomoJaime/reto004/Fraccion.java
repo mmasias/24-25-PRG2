@@ -5,7 +5,7 @@ public class Fraccion {
         private int denominador;
 
     public Fraccion(int numerador, int denominador){
-        assert denominador != 0;
+        assert denominador != 0:"El denominador no puede ser 0";
 
         if (denominador < 0) {
             numerador = -numerador;
@@ -39,5 +39,30 @@ public class Fraccion {
             return numerador + "/" + denominador;
         }
     }
+    public Fraccion sumar(Fraccion fraccion){
+        assert fraccion != null;
+       return new Fraccion(
+        this.numerador*fraccion.denominador + fraccion.numerador*this.denominador,
+        this.denominador * fraccion.numerador);
+    }
+    public Fraccion sumar(int entero){
+       return this.sumar(new Fraccion(entero));
+    }
+    public Fraccion oponer() {
+        return new Fraccion(-this.numerador, this.denominador);
+    }
+
+    public Fraccion restar(Fraccion fraccion) {
+        assert fraccion != null;
+        return this.sumar(fraccion.oponer());
+    }
+
+    public Fraccion restar(int entero) {
+        return this.restar(new Fraccion(entero));
+    }
+
    
+
+
+
 }
