@@ -3,6 +3,7 @@ package navas.Nicolas.entregas.reto004;
 public class Fraccion {
     private int numerador;
     private int denominador;
+    private int entero;
 
     public Fraccion(int numerador, int denominador) {
         assert denominador!=0: "El Denominador no puede ser Cero";
@@ -58,7 +59,31 @@ public class Fraccion {
         }
     }
 
+    public Fraccion multiplicar(Fraccion fraccion) {
+        int numerador = (this.numerador * fraccion.numerador);
+        int denominador = this.denominador * fraccion.denominador;
+        return new Fraccion(numerador, denominador);
+    };
+
     public String toString() {
         return numerador + "/" + denominador;
+    }
+
+    public Fraccion sumar(int entero) {
+        return new Fraccion(
+            this.numerador * fraccion.denominador + fraccion.numerador * this.denominador,
+            this.denominador * fraccion.denominador);
+    }
+
+    public Fraccion restar(int entero) {
+        return new Fraccion(
+            this.numerador * fraccion.denominador - fraccion.numerador * this.denominador,
+            this.denominador * fraccion.denominador);
+    }
+
+    public Fraccion multiplicar(int entero) {
+        return new Fraccion(
+            this.numerador * fraccion.numerador,
+            this.denominador * fraccion.denominador);
     }
 }
