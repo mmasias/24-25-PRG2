@@ -34,4 +34,20 @@ public class Fecha {
             return this.dia - fecha.dia;
         }
     }
+
+    public Fecha siguiente() {
+        int nuevoDia = this.dia + 1;
+        int nuevoMes = this.mes;
+        int nuevoAño = this.año;
+
+        if (!esDiaValido(nuevoDia)) {
+            nuevoDia = 1;
+            nuevoMes++;
+            if (!esMesValido(nuevoMes)) {
+                nuevoMes = 1;
+                nuevoAño++;
+            }
+        }
+        return new Fecha(nuevoAño, nuevoMes, nuevoDia);
+    }
 }
