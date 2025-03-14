@@ -20,3 +20,7 @@ public class Fecha {
     public boolean antesQue(Fecha fecha) {
         return compareTo(fecha) < 0;
     }
+
+    public boolean despuesDe(Fecha fecha) {
+        return compareTo(fecha) > 0;
+    }
