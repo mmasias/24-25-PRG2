@@ -1,177 +1,122 @@
 package entregas.alonsoDiego.reto004;
-
 public class Fraccion {
     private int numerador;
     private int denominador;
 
     public Fraccion(int numerador, int denominador) {
         if (denominador == 0) {
-            throw new ArithmeticException("El denominador no puede ser cero");
-        }
-        if (denominador < 0) {
-            this.numerador = -numerador;
-            this.denominador = -denominador;
+            this.numerador = 0;
+            this.denominador = 1;
         } else {
             this.numerador = numerador;
             this.denominador = denominador;
         }
-        simplificar();
     }
 
     public Fraccion(int numerador) {
-        this(numerador, 1);
+        this.numerador = numerador;
+        this.denominador = 1;
     }
 
     public Fraccion() {
-        this(0, 1);
+        this.numerador = 0;
+        this.denominador = 1;
     }
 
-    public Fraccion sumar(Fraccion fraccion) {
+    public Fraccion sumarFraccion(Fraccion fraccion) {
         int nuevoNumerador = this.numerador * fraccion.denominador + fraccion.numerador * this.denominador;
         int nuevoDenominador = this.denominador * fraccion.denominador;
         return new Fraccion(nuevoNumerador, nuevoDenominador);
     }
 
-    public Fraccion sumar(int entero) {
-        return sumar(new Fraccion(entero));
+    public Fraccion sumarEntero(int numeroEntero) {
+        return this.sumarFraccion(new Fraccion(numeroEntero));
     }
 
-    public Fraccion oponer() {
-        return new Fraccion(-this.numerador, this.denominador);
-    }
-
-    public Fraccion restar(Fraccion fraccion) {
-        return sumar(fraccion.oponer());
-    }
-
-    public Fraccion restar(int entero) {
-        return restar(new Fraccion(entero));
-    }
-
-    public Fraccion multiplicar(Fraccion fraccion) {
-        int nuevoNumerador = this.numerador * fraccion.numerador;
+    public Fraccion restarFraccion(Fraccion fraccion) {
+        int nuevoNumerador = this.numerador * fraccion.denominador - fraccion.numerador * this.denominador;
         int nuevoDenominador = this.denominador * fraccion.denominador;
         return new Fraccion(nuevoNumerador, nuevoDenominador);
     }
 
-    public Fraccion multiplicar(int entero) {
-        return multiplicar(new Fraccion(entero));
+    public Fraccion restarEntero(int numeroEntero) {
+        return this.restarFraccion(new Fraccion(numeroEntero));
     }
 
-    public Fraccion invertir() {
-        if (numerador == 0) {
-            throw new ArithmeticException("No se puede invertir una fracción con numerador 0");
-        }
-        return new Fraccion(denominador, numerador);
+    public Fraccion multiplicarFraccion(Fraccion fraccion) {
+        return new Fraccion(this.numerador * fraccion.numerador, this.denominador * fraccion.denominador);
     }
 
-    public Fraccion dividir(Fraccion fraccion) {
+    public Fraccion multiplicarEntero(int numeroEntero) {
+        return new Fraccion(this.numerador * numeroEntero, this.denominador);
+    }
+
+    public Fraccion dividirFraccion(Fraccion fraccion) {
         if (fraccion.numerador == 0) {
-            throw new ArithmeticException("No se puede dividir entre cero");
+            return new Fraccion(0, 1);
         }
-
-        Fraccion resultado = multiplicar(fraccion.invertir());
-
-        if (resultado.numerador == 1 && resultado.denominador == 1) {
-            return new Fraccion(1);
-        }
-
-        return resultado;
+        return new Fraccion(this.numerador * fraccion.denominador, this.denominador * fraccion.numerador);
     }
 
-    public Fraccion dividir(int entero) {
-        return dividir(new Fraccion(entero));
+    public Fraccion dividirEntero(int numeroEntero) {
+        if (numeroEntero == 0) {
+            return new Fraccion(0, 1);
+        }
+        return new Fraccion(this.numerador, this.denominador * numeroEntero);
     }
 
-    public Fraccion elevar(int exponente) {
-        if (exponente == 0) {
-            return new Fraccion(1, 1);
-        }
-        if (exponente < 0) {
-            return invertir().elevar(-exponente);
-        }
-        int nuevoNumerador = (int) Math.pow(numerador, exponente);
-        int nuevoDenominador = (int) Math.pow(denominador, exponente);
-        return new Fraccion(nuevoNumerador, nuevoDenominador);
+    public Fraccion elevarExponente(int exponente) {
+        return new Fraccion((int) Math.pow(this.numerador, exponente), (int) Math.pow(this.denominador, exponente));
     }
 
-    public int numerador() {
+    public Fraccion obtenerOpuesta() {
+        return new Fraccion(-this.numerador, this.denominador);
+    }
+
+    public Fraccion obtenerInversa() {
+        if (this.numerador == 0) {
+            return new Fraccion(0, 1);
+        }
+        return new Fraccion(this.denominador, this.numerador);
+    }
+
+    public int obtenerNumerador() {
         return numerador;
     }
 
-    public int denominador() {
+    public int obtenerDenominador() {
         return denominador;
     }
 
-    public boolean esMenor(Fraccion fraccion) {
-        return compareTo(fraccion) < 0;
+    public boolean verificarSiEsMenorQue(Fraccion fraccion) {
+        return this.numerador * fraccion.denominador < fraccion.numerador * this.denominador;
     }
 
-    public boolean esMayor(Fraccion fraccion) {
-        return compareTo(fraccion) > 0;
+    public boolean verificarSiEsMayorQue(Fraccion fraccion) {
+        return this.numerador * fraccion.denominador > fraccion.numerador * this.denominador;
     }
 
-    public boolean esIgual(Fraccion fraccion) {
-        return compareTo(fraccion) == 0;
+    public boolean verificarSiEsIgualA(Fraccion fraccion) {
+        return this.numerador * fraccion.denominador == fraccion.numerador * this.denominador;
     }
 
-    public double valueOf() {
-        return (double) numerador / denominador;
+    public int compararConFraccion(Fraccion fraccion) {
+        if (this.verificarSiEsIgualA(fraccion)) return 0;
+        if (this.verificarSiEsMayorQue(fraccion)) return 1;
+        return -1;
     }
 
-    public int compareTo(Fraccion fraccion) {
-        long a = (long) this.numerador * fraccion.denominador;
-        long b = (long) fraccion.numerador * this.denominador;
-        if (a < b) {
-            return -1;
-        } else if (a > b) {
-            return 1;
-        } else {
-            return 0;
-        }
+    public double obtenerValorDecimal() {
+        return (double) this.numerador / this.denominador;
     }
 
-    public String toString() {
-        if (numerador == 0) {
-            return "0";
-        }
-        if (numerador == 1 && denominador == 1) {
-            return "1";
-        }
+    public String convertirAString() {
+        if (denominador == 1) return numerador + "";
         return numerador + "/" + denominador;
     }
 
-    @Override
-    public Fraccion clone() {
-        return new Fraccion(numerador, denominador);
-    }
-
-    private void simplificar() {
-        if (numerador == 0) {
-            denominador = 1;
-            return;
-        }
-
-        int mcd = calcularMCD(Math.abs(numerador), Math.abs(denominador));
-
-        if (mcd != 0) {
-            numerador /= mcd;
-            denominador /= mcd;
-        }
-
-        if (denominador < 0) {
-            numerador = -numerador;
-            denominador = -denominador;
-        }
-    }
-
-    private int calcularMCD(int a, int b) {
-        while (b != 0) {
-            int temp = b;
-            b = a % b;
-            a = temp;
-        }
-        return a;
+    public Fraccion clonarFraccion() {
+        return new Fraccion(this.numerador, this.denominador);
     }
 }
 
