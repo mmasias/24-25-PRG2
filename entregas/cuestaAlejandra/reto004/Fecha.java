@@ -24,3 +24,14 @@ public class Fecha {
     public boolean despuesDe(Fecha fecha) {
         return compareTo(fecha) > 0;
     }
+
+    public int compareTo(Fecha fecha) {
+        if (this.año != fecha.año) {
+            return this.año - fecha.año;
+        } else if (this.mes != fecha.mes) {
+            return this.mes - fecha.mes;
+        } else {
+            return this.dia - fecha.dia;
+        }
+    }
+}
