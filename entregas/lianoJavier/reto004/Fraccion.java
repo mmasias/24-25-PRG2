@@ -5,43 +5,38 @@ public class Fraccion {
     private int denominador;
 
     public static void main(String[] args) {
-        // Test constructors
         Fraccion f1 = new Fraccion(2, 4);
-        System.out.println("f1: " + f1.toString()); // Expected: 1/2
+        System.out.println("f1: " + f1.toString());
 
         Fraccion f2 = new Fraccion(2, -4);
-        System.out.println("f2: " + f2.toString()); // Expected: -1/2
+        System.out.println("f2: " + f2.toString());
 
         Fraccion f3 = new Fraccion(5);
-        System.out.println("f3: " + f3.toString()); // Expected: 5/1
+        System.out.println("f3: " + f3.toString());
 
         Fraccion f4 = new Fraccion();
-        System.out.println("f4: " + f4.toString()); // Expected: 0/1
+        System.out.println("f4: " + f4.toString());
 
-        // Test arithmetic operations
         Fraccion sum = f1.sumar(f2);
-        System.out.println("f1 + f2: " + sum.toString()); // Expected: 0
+        System.out.println("f1 + f2: " + sum.toString());
 
         Fraccion product = f1.multiplicar(f2);
-        System.out.println("f1 * f2: " + product.toString()); // Expected: -1/4
+        System.out.println("f1 * f2: " + product.toString());
 
         Fraccion difference = f1.restar(f2);
-        System.out.println("f1 - f2: " + difference.toString()); // Expected: 1
+        System.out.println("f1 - f2: " + difference.toString());
 
         Fraccion quotient = f1.dividir(f2);
-        System.out.println("f1 / f2: " + quotient.toString()); // Expected: -1/2
+        System.out.println("f1 / f2: " + quotient.toString());
 
-        // Test comparisons
-        System.out.println("f1 < f2: " + f1.esMenor(f2)); // Expected: false
-        System.out.println("f1 > f2: " + f1.esMayor(f2)); // Expected: false
-        System.out.println("f1 == f2: " + f1.esIgual(f2)); // Expected: false
+        System.out.println("f1 < f2: " + f1.esMenor(f2));
+        System.out.println("f1 > f2: " + f1.esMayor(f2));
+        System.out.println("f1 == f2: " + f1.esIgual(f2));
 
-        // Test valueOf
-        System.out.println("f1 value: " + f1.valueOf()); // Expected: 0.5
+        System.out.println("f1 value: " + f1.valueOf());
 
-        // Test clone
         Fraccion f1Clone = f1.clone();
-        System.out.println("f1 clone: " + f1Clone.toString()); // Expected: 1/2
+        System.out.println("f1 clone: " + f1Clone.toString());
     }
 
     public Fraccion(int numerador, int denominador) {
