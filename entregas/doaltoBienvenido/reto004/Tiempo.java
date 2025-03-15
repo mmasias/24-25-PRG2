@@ -32,6 +32,25 @@ class Tiempo {
         return equals(tiempo) ? 0 : (this.despuesDe(tiempo) ? 1 : -1);
     }
 
+    public Tiempo next() {
+        int horaNueva = this.hora;
+        int minutoNuevo = this.minuto;
+        int segundoNuevo = this.segundo + 1;
+        
+
+        if (segundoNuevo > 59) {
+            segundoNuevo = 0;
+            minutoNuevo++;
+        }else if (minutoNuevo > 59) {
+            minutoNuevo = 0;
+            horaNueva++;
+        }else if (horaNueva > 23) {
+            horaNueva = 0;
+        }
+
+        return new Tiempo(horaNueva, minutoNuevo, segundoNuevo);
+    }
+
     public String toString() {
         return hora+":"+minuto+":"+segundo;
     }
