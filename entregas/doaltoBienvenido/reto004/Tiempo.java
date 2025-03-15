@@ -17,6 +17,25 @@ class Tiempo {
         return this.hora == tiempo.hora && this.minuto == tiempo.minuto && this.segundo == tiempo.segundo;
     }
 
+    public boolean antesQue(Tiempo tiempo){
+        if (this.hora < tiempo.hora) return true;
+        else if (this.hora == tiempo.hora && this.minuto < tiempo.minuto) return true;
+        else if (this.hora == tiempo.hora && this.minuto == tiempo.minuto && this.segundo < tiempo.segundo) return true; 
+        else return false;
+    }
+
+    public boolean despuesDe(Tiempo tiempo){
+        return !antesQue(tiempo) && !equals(tiempo);
+    }
+
+    public int compareTo(Tiempo tiempo){
+        return equals(tiempo) ? 0 : (this.despuesDe(tiempo) ? 1 : -1);
+    }
+
+    public String toString() {
+        return hora+":"+minuto+":"+segundo;
+    }
+    
     public boolean esHoraValida(int hora){
         return hora >= 0 && hora <= 23;
     }
