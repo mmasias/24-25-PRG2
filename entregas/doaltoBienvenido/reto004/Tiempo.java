@@ -54,6 +54,19 @@ class Tiempo {
     public String toString() {
         return hora+":"+minuto+":"+segundo;
     }
+
+    public Tiempo sumar(Tiempo tiempo) {
+        int sumaSegundos = this.segundo + tiempo.segundo;
+        int sumaMinutos = this.minuto + tiempo.minuto + (sumaSegundos / 60);
+        int sumaHoras = this.hora + tiempo.hora + (sumaMinutos / 60);
+    
+        
+        sumaSegundos %= 60;
+        sumaMinutos %= 60;
+        sumaHoras %= 24;
+    
+        return new Tiempo(sumaHoras, sumaMinutos, sumaSegundos);
+    }
     
     public boolean esHoraValida(int hora){
         return hora >= 0 && hora <= 23;
