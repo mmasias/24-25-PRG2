@@ -13,31 +13,50 @@ class Fecha {
         this.dia = esDiaValido(dia) ? dia : 1;
         
     }
+
     public boolean equals(Fecha fecha){
         return this.año == fecha.año && this.mes == fecha.mes && this.dia == fecha.dia;
     }
-    // public boolean antesQue(Fecha fecha){
 
-    // }
-    // public boolean despuesDe(Fecha date){
+    public boolean antesQue(Fecha fecha){
+        if (this.año < fecha.año) return true;
+        else if (this.año == fecha.año && this.mes < fecha.mes) return true;
+        else if (this.año == fecha.año && this.mes == fecha.mes && this.dia < fecha.dia) return true; 
+        else return false;
+    }
 
-    // }
-    //public int compareTo(Fecha date){
+    public boolean despuesDe(Fecha fecha){
+        return !antesQue(fecha) && !equals(fecha);
+    }
 
-    //}
+    public int compareTo(Fecha fecha){
+        return equals(fecha) ? 0 : (this.despuesDe(fecha) ? 1 : -1);
+    }
 
-    public void siguiente() {
-        this.dia +=1;
+    public Fecha siguiente() {
+        int diaNuevo = this.dia +1;
+        int mesNuevo = this.mes;
+        int añoNuevo = this.año;
+
+        if (!esDiaValido(diaNuevo)) {
+            diaNuevo = 1;
+            mesNuevo++;
+            if (!esMesValido(mesNuevo)) {
+                mesNuevo = 1;
+                añoNuevo++;
+            }
+        }
+        return new Fecha(diaNuevo,mesNuevo,añoNuevo);
     }
 
     public String toString() {
         return dia + "/" + mes + "/" + año;
     }
     public boolean esMesValido(int mes){
-        return mes >= 1 && mes <=12;
+        return mes >= 1 && mes <= 12;
     }
 
     public boolean esDiaValido(int dia){
-        return dia >= 1 && dia <= 30;
+        return dia >= 1 && dia <= 31;
     }
 }
