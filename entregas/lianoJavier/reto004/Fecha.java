@@ -41,4 +41,8 @@ public class Fecha {
         return new Fecha(año, mes, dia + 1);
     }
 
+    public String toString() {
+        return año + "/" + mes + "/" + dia;
+    }
+
 }
