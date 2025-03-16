@@ -10,7 +10,9 @@ public class Fecha {
     despuesDe(Fecha date)
 
     compareTo(Fecha date)
+
     siguiente()
+
     toString()
 
     esMesValido(int mes)
