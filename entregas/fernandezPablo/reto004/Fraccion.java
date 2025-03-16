@@ -34,14 +34,6 @@ public class Fraccion {
         return a;
     }
 
-    public String toString(){
-        if (denominador == 1){
-            return "" + numerador;
-        } else {
-            return numerador + "/" + denominador;
-        }
-    }
-
     public Fraccion() {
         this(0, 1);
     }
@@ -54,6 +46,10 @@ public class Fraccion {
 
     public Fraccion sumar(int entero) {
         return sumar(new Fraccion(entero));
+    }
+
+    public Fraccion oponer(){
+        return new Fraccion(-this.numerador, this.denominador);
     }
 
     public Fraccion restar(Fraccion fraccion) {
@@ -73,6 +69,10 @@ public class Fraccion {
 
     public Fraccion multiplicar(int entero) {
         return multiplicar(new Fraccion(entero));
+    }
+
+    public Fraccion invertir(){
+        return new Fraccion(this.denominador, this.numerador);
     }
 
     public Fraccion dividir(Fraccion fraccion){
@@ -135,15 +135,16 @@ public class Fraccion {
         }
     }
 
+    public String toString(){
+        if (denominador == 1){
+            return "" + numerador;
+        } else {
+            return numerador + "/" + denominador;
+        }
+    }
+
+
     public Fraccion clone(){
         return new Fraccion(this.numerador, this.denominador);
-    }
-
-    public Fraccion invertir(){
-        return new Fraccion(this.denominador, this.numerador);
-    }
-
-    public Fraccion oponer(){
-        return new Fraccion(-this.numerador, this.denominador);
     }
 }
