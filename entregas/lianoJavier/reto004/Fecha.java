@@ -45,4 +45,8 @@ public class Fecha {
         return año + "/" + mes + "/" + dia;
     }
 
+    public boolean esMesValido(int mes) {
+        return mes >= 1 && mes <= 12;
+    }
+
 }
