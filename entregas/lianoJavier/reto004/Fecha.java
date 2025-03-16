@@ -14,26 +14,26 @@ public class Fecha {
     }
 
     public boolean equals(Fecha fecha) {
-        return this.año == fecha.año && this.mes == fecha.mes && this.dia == fecha.dia;
+        return año == fecha.año && mes == fecha.mes && dia == fecha.dia;
     }
 
     public boolean antesQue(Fecha fecha) {
-        if (this.año < fecha.año) return true;
-        if (this.mes < fecha.mes) return true;
-        if (this.dia < fecha.dia) return true;
+        if (año < fecha.año) return true;
+        if (mes < fecha.mes) return true;
+        if (dia < fecha.dia) return true;
         return false;
     }
 
     public boolean despuesQue(Fecha fecha) {
-        if (this.año > fecha.año) return true;
-        if (this.mes > fecha.mes) return true;
-        if (this.dia > fecha.dia) return true;
+        if (año > fecha.año) return true;
+        if (mes > fecha.mes) return true;
+        if (dia > fecha.dia) return true;
         return false;
     }
 
     public int compareTo(Fecha fecha) {
-        if (this.antesQue(fecha)) return -1;
-        if (this.despuesQue(fecha)) return 1;
+        if (antesQue(fecha)) return -1;
+        if (despuesQue(fecha)) return 1;
         return 0;
     }
 
