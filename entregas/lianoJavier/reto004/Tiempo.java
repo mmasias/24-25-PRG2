@@ -65,14 +65,14 @@ public class Tiempo {
 
         private void formatearMinutos() {
                 if (minutos >= 60) {
-                        horas += minutos / 60;
+                        sumarHoras(minutos / 60);
                         minutos %= 60;
                 }
         }
 
         private void formatearSegundos() {
                 if (segundos >= 60) {
-                        minutos += segundos / 60;
+                        sumarMinutos(segundos / 60);
                         segundos %= 60;
                 }
         }
