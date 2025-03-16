@@ -23,4 +23,12 @@ public class Fecha {
         if (this.dia < fecha.dia) return true;
         return false;
     }
+
+    public boolean despuesQue(Fecha fecha) {
+        if (this.año > fecha.año) return true;
+        if (this.mes > fecha.mes) return true;
+        if (this.dia > fecha.dia) return true;
+        return false;
+    }
+
 }
