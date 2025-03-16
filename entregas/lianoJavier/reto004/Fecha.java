@@ -16,4 +16,11 @@ public class Fecha {
     public boolean equals(Fecha fecha) {
         return this.año == fecha.año && this.mes == fecha.mes && this.dia == fecha.dia;
     }
+
+    public boolean antesQue(Fecha fecha) {
+        if (this.año < fecha.año) return true;
+        if (this.mes < fecha.mes) return true;
+        if (this.dia < fecha.dia) return true;
+        return false;
+    }
 }
