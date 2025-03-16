@@ -14,7 +14,7 @@ public class Fraccion {
 
         this.numerador = numerador;
         this.denominador = denominador;
-        this.denominador = entero;
+
         int mcd = mcd(Math.abs(numerador), denominador);
         this.numerador = numerador / mcd;
         this.denominador = denominador / mcd;
@@ -49,15 +49,12 @@ public class Fraccion {
 
     }
 
+    public Fraccion oponer() {
+        return new Fraccion(-this.numerador, this.denominador);
+    };
+
     public Fraccion restar(Fraccion fraccion) {
-        if (this.denominador == fraccion.denominador) {
-            int numerador = this.numerador - fraccion.numerador;
-            return new Fraccion(numerador, fraccion.denominador);
-        } else {
-            int numerador = (this.numerador * fraccion.denominador) - (fraccion.numerador * this.denominador);
-            int denominador = this.denominador * fraccion.denominador;
-            return new Fraccion(numerador, denominador);
-        }
+        return sumar(fraccion.oponer());
     }
 
     public Fraccion multiplicar(Fraccion fraccion) {
@@ -91,4 +88,13 @@ public class Fraccion {
     public Fraccion dividir(int entero){
         return this.dividir(new Fraccion(entero));
     };
+
+    public int numerador() {
+        return numerador;
+    };
+
+    public int denominador() {
+        return denominador;
+    };
+
 }
