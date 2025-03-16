@@ -31,18 +31,7 @@ public class Fraccion {
     }
 
     private int calcularMaximoComunDivisor(int primerValor, int segundoValor) {
-        if (segundoValor == 0) {
-            return primerValor;
-        }
-        return calcularMaximoComunDivisor(segundoValor, primerValor % segundoValor);
-    }
-
-    public Fraccion(int numerador) {
-        this(numerador, 1);
-    }
-
-    public Fraccion() {
-        this(0);
+        return segundoValor == 0 ? primerValor : calcularMaximoComunDivisor(segundoValor, primerValor % segundoValor);
     }
 
     public String toString() {
