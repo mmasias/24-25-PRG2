@@ -36,4 +36,9 @@ public class Fecha {
         if (this.despuesQue(fecha)) return 1;
         return 0;
     }
+
+    public Fecha siguiente() {
+        return new Fecha(año, mes, dia + 1);
+    }
+
 }
