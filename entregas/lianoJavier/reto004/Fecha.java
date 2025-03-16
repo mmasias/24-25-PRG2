@@ -31,4 +31,9 @@ public class Fecha {
         return false;
     }
 
+    public int compareTo(Fecha fecha) {
+        if (this.antesQue(fecha)) return -1;
+        if (this.despuesQue(fecha)) return 1;
+        return 0;
+    }
 }
