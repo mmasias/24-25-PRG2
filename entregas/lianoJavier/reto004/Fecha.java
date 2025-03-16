@@ -49,4 +49,7 @@ public class Fecha {
         return mes >= 1 && mes <= 12;
     }
 
+    public boolean esDiaValido(int dia) {
+        return dia >= 1 && dia <= 31;
+    }
 }
