@@ -15,6 +15,14 @@ public class Fraccion {
         this.denominador = denominador / maximoComunDivisor;
     }
 
+    public Fraccion(int numerador) {
+        this(numerador, 1);
+    }
+
+    public Fraccion() {
+        this(0);
+    }
+
     private void alternarPolaridad(int numerador2, int denominador2) {
         if (denominador < 0) {
             numerador *= -1;
