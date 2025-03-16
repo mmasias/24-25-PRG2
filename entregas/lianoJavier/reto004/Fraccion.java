@@ -4,43 +4,6 @@ public class Fraccion {
     private int numerador;
     private int denominador;
 
-    public static void main(String[] args) {
-        Fraccion fraccionSimplificada = new Fraccion(2, 4);
-        System.out.println("fraccionSimplificada: " + fraccionSimplificada.toString());
-
-        Fraccion fraccionNegativa = new Fraccion(2, -4);
-        System.out.println("fraccionNegativa: " + fraccionNegativa.toString());
-
-        Fraccion fraccionEntera = new Fraccion(5);
-        System.out.println("fraccionEntera: " + fraccionEntera.toString());
-
-        Fraccion fraccionVacia = new Fraccion();
-        System.out.println("fraccionVacia: " + fraccionVacia.toString());
-
-        Fraccion resultadoSuma = fraccionSimplificada.sumar(fraccionNegativa);
-        System.out.println("fraccionSimplificada + fraccionNegativa: " + resultadoSuma.toString());
-
-        Fraccion resultadoMultiplicacion = fraccionSimplificada.multiplicar(fraccionNegativa);
-        System.out.println("fraccionSimplificada * fraccionNegativa: " + resultadoMultiplicacion.toString());
-
-        Fraccion resultadoResta = fraccionSimplificada.restar(fraccionNegativa);
-        System.out.println("fraccionSimplificada - fraccionNegativa: " + resultadoResta.toString());
-
-        Fraccion resultadoDivision = fraccionSimplificada.dividir(fraccionNegativa);
-        System.out.println("fraccionSimplificada / fraccionNegativa: " + resultadoDivision.toString());
-
-        System.out.println("fraccionSimplificada < fraccionNegativa: " + fraccionSimplificada.esMenor(fraccionNegativa));
-        System.out.println("fraccionSimplificada > fraccionNegativa: " + fraccionSimplificada.esMayor(fraccionNegativa));
-        System.out.println("fraccionSimplificada == fraccionNegativa: " + fraccionSimplificada.esIgual(fraccionNegativa));
-
-        System.out.println("fraccionSimplificada value: " + fraccionSimplificada.valueOf());
-
-        // Fraccion fraccionInvalida = new Fraccion(1, 0);
-        // System.out.println("fraccionInvalida: " + fraccionInvalida.toString());
-
-        Fraccion fraccionClonada = fraccionSimplificada.clone();
-        System.out.println("fraccionSimplificada clone: " + fraccionClonada.toString());
-    }
 
     public Fraccion(int numerador, int denominador) {
         assert denominador != 0 : "El denominador no puede ser 0";
