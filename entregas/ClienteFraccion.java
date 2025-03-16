@@ -1,6 +1,6 @@
 package entregas;
 
-import entregas.masiasManuel.reto004.Fraccion;
+import entregas.cuestaAlejandra.reto004.Fraccion;
 
 public class ClienteFraccion {
     public static void main(String[] args) {
