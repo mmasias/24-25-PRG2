@@ -4,7 +4,6 @@ public class Fraccion {
     private int numerador;
     private int denominador;
 
-
     public Fraccion(int numerador, int denominador) {
         assert denominador != 0 : "El denominador no puede ser 0";
 
@@ -42,8 +41,8 @@ public class Fraccion {
     }
 
     public Fraccion sumar(Fraccion fraccion) {
-        int nuevoDenominador = this.denominador * fraccion.denominador;
-        int nuevoNumerador = this.numerador * fraccion.denominador + fraccion.numerador * this.denominador;
+        int nuevoDenominador = denominador * fraccion.denominador;
+        int nuevoNumerador = numerador * fraccion.denominador + fraccion.numerador * denominador;
         return new Fraccion(nuevoNumerador, nuevoDenominador);
     }
 
@@ -98,15 +97,15 @@ public class Fraccion {
     }
 
     public boolean esMenor(Fraccion fraccion) {
-        return this.numerador * fraccion.denominador < fraccion.numerador * this.denominador;
+        return numerador * fraccion.denominador < fraccion.numerador * denominador;
     }
 
     public boolean esMayor(Fraccion fraccion) {
-        return this.numerador * fraccion.denominador > fraccion.numerador * this.denominador;
+        return numerador * fraccion.denominador > fraccion.numerador * denominador;
     }
 
     public boolean esIgual(Fraccion fraccion) {
-        return this.numerador * fraccion.denominador == fraccion.numerador * this.denominador;
+        return numerador * fraccion.denominador == fraccion.numerador * denominador;
     }
 
     public double valueOf() {
@@ -114,9 +113,9 @@ public class Fraccion {
     }
 
     public int compareTo(Fraccion fraccion) {
-        if (this.esMenor(fraccion)) {
+        if (esMenor(fraccion)) {
             return -1;
-        } else if (this.esMayor(fraccion)) {
+        } else if (esMayor(fraccion)) {
             return 1;
         } else {
             return 0;
