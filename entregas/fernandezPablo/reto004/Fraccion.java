@@ -1,25 +1,45 @@
 package entregas.fernandezPablo.reto004;
 
+
 public class Fraccion {
+
     private int numerador;
     private int denominador;
 
-    public Fraccion(int numerador, int denominador) {
-        if (denominador == 0) {
-            throw new ArithmeticException("El denominador no puede ser cero");
+    public Fraccion(int numerador, int denominador){
+
+        assert denominador != 0: "El denominador no puede ser 0";
+
+        if (denominador < 0){
+            numerador = -numerador;
+            denominador = -denominador;
         }
-        if (denominador < 0) {
-            this.numerador = -numerador;
-            this.denominador = -denominador;
-        } else {
-            this.numerador = numerador;
-            this.denominador = denominador;
-        }
-        simplificar();
+
+        int mcd = mcd(Math.abs(numerador),denominador);
+        this.numerador = numerador / mcd;
+        this.denominador = denominador / mcd;
+        
+    }
+    
+    public Fraccion(int numerador){
+        this(numerador, 1);
     }
 
-    public Fraccion(int numerador) {
-        this(numerador, 1);
+    private int mcd(int a, int b){
+        while (b != 0){
+            int temp = b;
+            b = a % b;
+            a = temp;
+        }
+        return a;
+    }
+
+    public String toString(){
+        if (denominador == 1){
+            return "" + numerador;
+        } else {
+            return numerador + "/" + denominador;
+        }
     }
 
     public Fraccion() {
@@ -36,10 +56,6 @@ public class Fraccion {
         return sumar(new Fraccion(entero));
     }
 
-    public Fraccion oponer() {
-        return new Fraccion(-this.numerador, this.denominador);
-    }
-
     public Fraccion restar(Fraccion fraccion) {
         return sumar(fraccion.oponer());
     }
@@ -51,6 +67,7 @@ public class Fraccion {
     public Fraccion multiplicar(Fraccion fraccion) {
         int nuevoNumerador = this.numerador * fraccion.numerador;
         int nuevoDenominador = this.denominador * fraccion.denominador;
+        
         return new Fraccion(nuevoNumerador, nuevoDenominador);
     }
 
@@ -58,29 +75,16 @@ public class Fraccion {
         return multiplicar(new Fraccion(entero));
     }
 
-    public Fraccion invertir() {
-        if (numerador == 0) {
-            throw new ArithmeticException("No se puede invertir una fracción con numerador 0");
-        }
-        return new Fraccion(denominador, numerador);
+    public Fraccion dividir(Fraccion fraccion){
+        assert fraccion != null;
+
+        int nuevoNumerador = this.numerador * fraccion.denominador;
+        int nuevoDenominador = this.denominador * fraccion.numerador;
+        return new Fraccion(nuevoNumerador, nuevoDenominador);
     }
 
-    public Fraccion dividir(Fraccion fraccion) {
-        if (fraccion.numerador == 0) {
-            throw new ArithmeticException("No se puede dividir entre cero");
-        }
-
-        Fraccion resultado = multiplicar(fraccion.invertir());
-
-        if (resultado.numerador == 1 && resultado.denominador == 1) {
-            return new Fraccion(1);
-        }
-
-        return resultado;
-    }
-
-    public Fraccion dividir(int entero) {
-        return dividir(new Fraccion(entero));
+    public Fraccion dividir(int entero){
+        return this.dividir(new Fraccion(entero));
     }
 
     public Fraccion elevar(int exponente) {
@@ -131,46 +135,15 @@ public class Fraccion {
         }
     }
 
-    public String toString() {
-        if (numerador == 0) {
-            return "0";
-        }
-        if (numerador == 1 && denominador == 1) {
-            return "1";
-        }
-        return numerador + "/" + denominador;
+    public Fraccion clone(){
+        return new Fraccion(this.numerador, this.denominador);
     }
 
-    @Override
-    public Fraccion clone() {
-        return new Fraccion(numerador, denominador);
+    public Fraccion invertir(){
+        return new Fraccion(this.denominador, this.numerador);
     }
 
-    private void simplificar() {
-        if (numerador == 0) {
-            denominador = 1;
-            return;
-        }
-
-        int mcd = calcularMCD(Math.abs(numerador), Math.abs(denominador));
-
-        if (mcd != 0) {
-            numerador /= mcd;
-            denominador /= mcd;
-        }
-
-        if (denominador < 0) {
-            numerador = -numerador;
-            denominador = -denominador;
-        }
-    }
-
-    private int calcularMCD(int a, int b) {
-        while (b != 0) {
-            int temp = b;
-            b = a % b;
-            a = temp;
-        }
-        return a;
+    public Fraccion oponer(){
+        return new Fraccion(-this.numerador, this.denominador);
     }
 }
