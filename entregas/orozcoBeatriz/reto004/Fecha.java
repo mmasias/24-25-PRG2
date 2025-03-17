@@ -1,3 +1,5 @@
+package entregas.orozcoBeatriz.reto004;
+
 public class Fecha {
 
     private int anio;
@@ -5,8 +7,7 @@ public class Fecha {
     private int dia;
 
     public Fecha(int anio, int mes, int dia) {
-        assert esMesValido(mes) : "Mes no válido";
-        assert esDiaValido(dia) : "Dia no válido";
+        assert esMesValido(mes) || esDiaValido(dia): "Fecha no válido";
 
         this.anio = anio;
         this.mes = mes;

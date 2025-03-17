@@ -1,3 +1,5 @@
+package entregas.orozcoBeatriz.reto004;
+
 public class Tiempo {
     private static final int MINUTOS = 60;
     private static final int HORAS = 24;
