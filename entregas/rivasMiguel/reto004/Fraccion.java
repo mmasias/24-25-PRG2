@@ -2,9 +2,9 @@ package entregas.rivasMiguel.reto004;
 
 public class Fraccion {
 public static void main(String[] args) {
-    Fraccion f1 = new Fraccion(1, 2);
-    Fraccion f2 = new Fraccion(2);
-    Fraccion resultado = f1.multiplicar(f2);
+    Fraccion f1 = new Fraccion(3, 2);
+    Fraccion f2 = new Fraccion(2, 4);
+    Fraccion resultado = f1.elevar(2);
     System.out.println(resultado);
 }
 
@@ -89,4 +89,24 @@ public static void main(String[] args) {
         return new Fraccion(nuevoNumerador, this.denominador);
     }
 
+    public Fraccion invertir() {
+        return new Fraccion(denominador, numerador);
+    }
+
+    public Fraccion dividir(Fraccion fraccion) {
+        int nuevoNumerador = this.numerador * fraccion.denominador;
+        int nuevoDenominador = this.denominador * fraccion.numerador;
+        return new Fraccion(nuevoNumerador, nuevoDenominador);
+    }
+
+    public Fraccion dividir(int entero) {
+        int nuevoDenominador = this.denominador * entero;
+        return new Fraccion(this.numerador, nuevoDenominador);
+    }
+
+    public Fraccion elevar(int exponente) {
+        int nuevoNumerador = (int) Math.pow(this.numerador, exponente);
+        int nuevoDenominador = (int) Math.pow(this.denominador, exponente);
+        return new Fraccion(nuevoNumerador, nuevoDenominador);
+    }
 }
