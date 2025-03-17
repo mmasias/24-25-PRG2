@@ -1,4 +1,3 @@
-package entregas.orejaPaula;
 public class Fecha {
     private int año, mes, dia;
 
