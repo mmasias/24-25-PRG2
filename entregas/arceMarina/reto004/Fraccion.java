@@ -44,7 +44,6 @@ class Fraccion {
 
     public Fraccion sumar(Fraccion fraccion) {
         assert fraccion != null;
-    
         int nuevoNumerador = this.numerador * fraccion.denominador + fraccion.numerador * this.denominador;
         int nuevoDenominador = this.denominador * fraccion.denominador;
         return new Fraccion(nuevoNumerador, nuevoDenominador);
@@ -56,7 +55,6 @@ class Fraccion {
 
     public Fraccion restar(Fraccion fraccion) {
         assert fraccion != null;
-    
         int nuevoNumerador = this.numerador * fraccion.denominador - fraccion.numerador * this.denominador;
         int nuevoDenominador = this.denominador * fraccion.denominador;
         return new Fraccion(nuevoNumerador, nuevoDenominador);
@@ -68,10 +66,7 @@ class Fraccion {
 
     public Fraccion multiplicar(Fraccion fraccion) {
         assert fraccion != null;
-    
-        int nuevoNumerador = this.numerador * fraccion.numerador;
-        int nuevoDenominador = this.denominador * fraccion.denominador;
-        return new Fraccion(nuevoNumerador, nuevoDenominador);
+        return new Fraccion(this.numerador * fraccion.numerador, this.denominador * fraccion.denominador);
     }
     
     public Fraccion multiplicar(int entero) {
@@ -80,10 +75,7 @@ class Fraccion {
 
     public Fraccion dividir(Fraccion fraccion) {
         assert fraccion != null;
-    
-        int nuevoNumerador = this.numerador * fraccion.denominador;
-        int nuevoDenominador = this.denominador * fraccion.numerador;
-        return new Fraccion(nuevoNumerador, nuevoDenominador);
+        return new Fraccion(this.numerador * fraccion.denominador, this.denominador * fraccion.numerador);
     }
     
     public Fraccion dividir(int entero) {
