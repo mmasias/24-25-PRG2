@@ -74,10 +74,12 @@ public class Fraccion {
     }
 
     public Fraccion dividir(Fraccion fraccion) {
+        assert fraccion.numerador != 0 : "No se puede dividir una fracción con numerador 0";
         return this.multiplicar(fraccion.invertir());
     }
 
     public Fraccion dividir(int entero) {
+        assert entero != 0 : "No se puede dividir entre 0";
         return this.multiplicar(new Fraccion(1, entero));
     }
 
