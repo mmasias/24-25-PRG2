@@ -47,8 +47,7 @@ public class Fraccion {
     }
 
     public Fraccion oponer() {
-        int numeradorNuevo = 0 - this.numerador;
-        return new Fraccion(numeradorNuevo, this.denominador);
+        return new Fraccion(- this.numerador, this.denominador);
     }
 
     public Fraccion restar(Fraccion fraccion) {
