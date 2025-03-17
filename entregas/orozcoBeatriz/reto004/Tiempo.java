@@ -1,4 +1,7 @@
 public class Tiempo {
+    private static final int MINUTOS = 60;
+    private static final int HORAS = 24;
+    private static final int SEGUNDOS = 60;
 
     private int horas;
     private int minutos;
@@ -42,13 +45,13 @@ public class Tiempo {
         int nuevosSegundos = segundos + 1;
         int nuevosMinutos = minutos;
         int nuevaHora = horas;
-        if (nuevosSegundos > 60) {
+        if (nuevosSegundos == SEGUNDOS) {
             nuevosSegundos = 0;
             nuevosMinutos = minutos + 1;
-            if (nuevosMinutos > 60) {
+            if (nuevosMinutos == MINUTOS) {
                 nuevosMinutos = 0;
                 nuevaHora = horas + 1;
-                if (nuevaHora > 24) {
+                if (nuevaHora == HORAS) {
                     nuevaHora = 0;
                 }
             }
@@ -64,18 +67,18 @@ public class Tiempo {
         int totalSegundos = this.segundos + tiempo.segundos;
         int totalMinutos = this.minutos + tiempo.minutos + (totalSegundos / 60);
         int totalHoras = this.horas + tiempo.horas + (totalMinutos / 60);
-        return new Tiempo(totalHoras % 24, totalMinutos % 60, totalSegundos % 60);
+        return new Tiempo(totalHoras % HORAS, totalMinutos % MINUTOS, totalSegundos % SEGUNDOS);
     }
 
     public boolean esHoraValida(int hora) {
-        return hora >= 0 && hora <= 23;
+        return hora >= 0 && hora < HORAS;
     }
 
     public boolean esMinutoValido(int minuto) {
-        return minuto >= 0 && minuto <= 59;
+        return minuto >= 0 && minuto < MINUTOS;
     }
 
     public boolean esSegundoValido(int segundo) {
-        return segundo >= 0 && segundo <= 59;
+        return segundo >= 0 && segundo < SEGUNDOS;
     }
 }
