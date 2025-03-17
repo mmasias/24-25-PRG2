@@ -11,6 +11,7 @@ class Fraccion {
             numerador = -numerador;
             denominador  = -denominador;
         }
+
         int mcd = mcd(Math.abs(numerador),denominador);
         this.numerador = numerador/ mcd;
         this.denominador = denominador/mcd;
@@ -31,6 +32,14 @@ class Fraccion {
             a = temp;
         }
         return a;
+    }
+
+    public String toString() {
+        if (denominador != 1) {
+            return numerador + "\n-\n" + denominador;
+        } else {
+            return numerador + "";
+        }
     }
 }
 
