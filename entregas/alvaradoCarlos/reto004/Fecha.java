@@ -2,13 +2,7 @@ package entregas.alvaradoCarlos.reto004;
 
 public class Fecha {
 
-    final int AÑO, MES, DIA;
-
-    public static void main(String[] args) {
-        Fecha fecha = new Fecha(2025, 3, 29);
-        Fecha fecha2 = new Fecha(2025, 3, 29);
-        System.out.println(new Fecha(2020, 2, 28).siguiente());
-    }
+    private int AÑO, MES, DIA;
 
     public Fecha(int año, int mes, int dia) {
 
