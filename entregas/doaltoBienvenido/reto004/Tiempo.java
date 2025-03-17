@@ -9,7 +9,7 @@ class Tiempo {
         assert esHoraValida(hora) && esMinutoValido(minuto) && esSegundoValido(segundo): "No es valido este Tiempo";
 
         this.hora = esHoraValida(hora) ? hora : 0;
-        this.minuto = esMinutoValido(minuto) ? minuto : 1;
+        this.minuto = esMinutoValido(minuto) ? minuto : 0;
         this.segundo = esSegundoValido(segundo) ? segundo : 1;
     }
 
