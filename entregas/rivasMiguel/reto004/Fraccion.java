@@ -4,7 +4,7 @@ public class Fraccion {
 public static void main(String[] args) {
     Fraccion f1 = new Fraccion(1, 2);
     Fraccion f2 = new Fraccion(2);
-    Fraccion resultado = f1.restar(f2);
+    Fraccion resultado = f1.multiplicar(f2);
     System.out.println(resultado);
 }
 
@@ -75,6 +75,17 @@ public static void main(String[] args) {
 
     public Fraccion restar(int entero) {
         int nuevoNumerador = this.numerador - entero * this.denominador;
+        return new Fraccion(nuevoNumerador, this.denominador);
+    }
+
+    public Fraccion multiplicar(Fraccion fraccion) {
+        int nuevoNumerador = this.numerador * fraccion.numerador;
+        int nuevoDenominador = this.denominador * fraccion.denominador;
+        return new Fraccion(nuevoNumerador, nuevoDenominador);
+    }
+
+    public Fraccion multiplicar(int entero) {
+        int nuevoNumerador = this.numerador * entero;
         return new Fraccion(nuevoNumerador, this.denominador);
     }
 
