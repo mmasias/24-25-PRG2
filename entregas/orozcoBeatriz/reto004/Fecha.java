@@ -1,23 +1,30 @@
 package entregas.orozcoBeatriz.reto004;
 
 public class Fecha {
-    public Fecha(int año, int mes, int dia) {
+
+    private int anio;
+    private int mes;
+    private int dia;
+
+    public Fecha(int anio, int mes, int dia) {
+        this.anio = anio;
+        this.mes = mes;
+        this.dia = dia;
+    }
+
+    public boolean equals(Fecha fecha) {
+        return this.anio == fecha.anio && this.mes == fecha.mes && this.dia == fecha.dia;
+    }
+
+    public boolean antesQue(Fecha fecha) {
 
     }
 
-    public Fecha equals(Fecha fecha) {
+    public boolean despuesDe(Fecha fecha) {
 
     }
 
-    public Fecha antesQue(Fecha fecha) {
-
-    }
-
-    public Fecha despuesDe(Fecha date) {
-
-    }
-
-    public int compareTo(Fecha date) {
+    public int compareTo(Fecha fecha) {
 
     }
 
@@ -32,7 +39,7 @@ public class Fecha {
     public boolean esMesValido(int mes) {
 
     }
-    
+
     public boolean esDiaValido(int dia) {
 
     }
