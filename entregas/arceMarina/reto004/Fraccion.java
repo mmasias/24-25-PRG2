@@ -53,5 +53,17 @@ class Fraccion {
     public Fraccion sumar(int entero) {
         return this.sumar(new Fraccion(entero));
     }
+
+    public Fraccion restar(Fraccion fraccion) {
+        assert fraccion != null;
+    
+        int nuevoNumerador = this.numerador * fraccion.denominador - fraccion.numerador * this.denominador;
+        int nuevoDenominador = this.denominador * fraccion.denominador;
+        return new Fraccion(nuevoNumerador, nuevoDenominador);
+    }
+    
+    public Fraccion restar(int entero) {
+        return this.restar(new Fraccion(entero));
+    }
 }
 
