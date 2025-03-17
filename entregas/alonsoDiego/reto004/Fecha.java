@@ -7,13 +7,22 @@ public class Fecha {
     private int dia;
 
     public Fecha(int año, int mes, int dia) {
-        assert esMesValido(mes) && esDiaValido(dia) : "No es valida esa fecha";
-
+        assert esMesValido(mes) && esDiaValido(dia, mes, año) : "No es válida esa fecha";
+    
         this.año = año;
-        this.mes = esMesValido(mes) ? mes : 1;
-        this.dia = esDiaValido(dia) ? dia : 1;
-
+        this.mes = mes;
+        this.dia = dia;
     }
+    
+    public boolean esDiaValido(int dia, int mes, int año) {
+        int[] diasPorMes = { 31, esBisiesto(año) ? 29 : 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31 };
+        return dia > 0 && dia <= diasPorMes[mes - 1];
+    }
+    public boolean esBisiesto(int año) {
+        return (año % 4 == 0 && año % 100 != 0) || (año % 400 == 0);
+    }
+        
+    
 
     public boolean equals(Fecha fecha) {
         return this.año == fecha.año && this.mes == fecha.mes && this.dia == fecha.dia;
@@ -52,7 +61,8 @@ public class Fecha {
         int nuevoDia = this.dia + 1;
         int nuevoMes = this.mes;
         int nuevoAño = this.año;
-        if (nuevoDia > 31) {
+    
+        if (!esDiaValido(nuevoDia, nuevoMes, nuevoAño)) {
             nuevoDia = 1;
             nuevoMes++;
             if (nuevoMes > 12) {
@@ -60,8 +70,10 @@ public class Fecha {
                 nuevoAño++;
             }
         }
+    
         return new Fecha(nuevoAño, nuevoMes, nuevoDia);
     }
+    
 
     public String toString() {
         return this.año + "/" + this.mes + "/" + this.dia;

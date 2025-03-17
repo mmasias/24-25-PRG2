@@ -7,13 +7,13 @@ public class Tiempo {
     private int segundo;
 
     public Tiempo(int horas, int minutos, int segundos) {
-        assert esHoraValida(hora) && esMinutoValido(minuto) && esSegundoValido(segundo) : "El tiempo no es válido";
-
+        assert esHoraValida(horas) && esMinutoValido(minutos) && esSegundoValido(segundos) : "El tiempo no es válido";
+    
         this.hora = horas;
         this.minuto = minutos;
         this.segundo = segundos;
     }
-
+    
     public boolean equals(Tiempo tiempo) {
         return this.hora == tiempo.hora && this.minuto == tiempo.minuto && this.segundo == tiempo.segundo;
     }
