@@ -65,5 +65,30 @@ class Fraccion {
     public Fraccion restar(int entero) {
         return this.restar(new Fraccion(entero));
     }
+
+    public Fraccion multiplicar(Fraccion fraccion) {
+        assert fraccion != null;
+    
+        int nuevoNumerador = this.numerador * fraccion.numerador;
+        int nuevoDenominador = this.denominador * fraccion.denominador;
+        return new Fraccion(nuevoNumerador, nuevoDenominador);
+    }
+    
+    public Fraccion multiplicar(int entero) {
+        return this.multiplicar(new Fraccion(entero));
+    }
+
+    public Fraccion dividir(Fraccion fraccion) {
+        assert fraccion != null;
+    
+        int nuevoNumerador = this.numerador * fraccion.denominador;
+        int nuevoDenominador = this.denominador * fraccion.numerador;
+        return new Fraccion(nuevoNumerador, nuevoDenominador);
+    }
+    
+    public Fraccion dividir(int entero) {
+        return this.dividir(new Fraccion(entero));
+    }
 }
+
 
