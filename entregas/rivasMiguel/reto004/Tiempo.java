@@ -1,23 +1,6 @@
 package entregas.rivasMiguel.reto004;
 
 public class Tiempo {
-public static void main(String[] args) {
-    Tiempo t1 = new Tiempo(22, 28, 57);
-    Tiempo t2 = new Tiempo(23, 28, 57);
-    Tiempo t3 = new Tiempo(22, 28, 57);
-
-    System.out.println("Tiempo: " + t1);
-    System.out.println("equals: " + t1.equals(t2));
-    System.out.println("antesQue: " + t1.antesQue(t2));
-    System.out.println("despuesDe: " + t1.despuesDe(t2));
-    System.out.println("compareTo: " + t1.compareTo(t2));
-    System.out.println("next: " + t1.next());
-    System.out.println("sumar: " + t1.sumar(t2));
-    System.out.println("Es hora valida: " + t1.esHoraValida(14));
-    System.out.println("Es minuto valido: " + t1.esMinutoValido(60));
-    System.out.println("Es segundo valido: " + t1.esSegundoValido(59));
-}
-
     private int horas;
     private int minutos;
     private int segundos;
