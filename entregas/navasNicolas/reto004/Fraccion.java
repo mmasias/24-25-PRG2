@@ -1,6 +1,6 @@
 package entregas.navasNicolas.reto004;
 
-public class Fraccion implements Comparable<Fraccion>, Cloneable {
+public class Fraccion {
     private int numerador;
     private int denominador;
 
