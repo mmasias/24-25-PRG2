@@ -48,7 +48,6 @@ public class Fecha {
         return new Fecha(nuevoAño, nuevoMes, nuevoDia);
     }
 
-    @Override
     public String toString() {
         return this.año + "-" + this.mes + "-" + this.dia;
     }
