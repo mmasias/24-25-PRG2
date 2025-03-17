@@ -5,14 +5,11 @@ public class Fraccion {
     private int numerador, denominador;
 
     public Fraccion(int numerador, int denominador) {
-        if (denominador == 0) {
-            System.out.println("El denominador no puede ser 0. Será 1.");
-            denominador = 1;
-        } else if (denominador < 0) {
+        assert denominador != 0 : "El denominador no puede ser 0";
+        if (denominador < 0) {
             numerador = -numerador;
             denominador = -denominador;
         }
-
         int maximoComunDivisor = maximoComunDivisor(Math.abs(numerador), denominador);
         this.numerador = numerador / maximoComunDivisor;
         this.denominador = denominador / maximoComunDivisor;
