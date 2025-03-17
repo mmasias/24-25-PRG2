@@ -2,6 +2,9 @@ package entregas.lianoJavier.reto004;
 
 public class Tiempo {
         private int horas, minutos, segundos;
+        private int SEGUNDO_POR_MINUTO = 60;
+        private int MINUTOS_POR_HORA = 60;
+        private int HORAS_POR_DIA = 24;
 
         Tiempo(int horas, int minutos, int segundos) {
             this.horas = horas;
@@ -64,16 +67,16 @@ public class Tiempo {
         }
 
         private void formatearMinutos() {
-                if (minutos >= 60) {
-                        sumarHoras(minutos / 60);
-                        minutos %= 60;
+                if (minutos >= MINUTOS_POR_HORA) {
+                        sumarHoras(minutos / MINUTOS_POR_HORA);
+                        minutos %= MINUTOS_POR_HORA;
                 }
         }
 
         private void formatearSegundos() {
-                if (segundos >= 60) {
-                        sumarMinutos(segundos / 60);
-                        segundos %= 60;
+                if (segundos >= SEGUNDO_POR_MINUTO) {
+                        sumarMinutos(segundos / SEGUNDO_POR_MINUTO);
+                        segundos %= SEGUNDO_POR_MINUTO;
                 }
         }
 
@@ -93,15 +96,15 @@ public class Tiempo {
         }
         
         public boolean esHoraValida() {
-                return horas >= 0 && horas < 24;
+                return horas >= 0 && horas < HORAS_POR_DIA;
         }
 
         public boolean esMinutoValido() {
-                return minutos >= 0 && minutos < 60;
+                return minutos >= 0 && minutos < MINUTOS_POR_HORA;
         }
 
         public boolean esSegundoValido() {
-                return segundos >= 0 && segundos < 60;
+                return segundos >= 0 && segundos < SEGUNDO_POR_MINUTO;
         }
 
         private void validarTiempo(String contexto) {
