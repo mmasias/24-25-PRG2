@@ -43,7 +43,6 @@ public final class Date {
         return this.year + "/" + this.month + "/" + this.day;
     }
 
-
     public void  next(){
         this.day++;
         if(!isDayCorrect(this.day)){

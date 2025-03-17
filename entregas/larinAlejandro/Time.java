@@ -99,7 +99,4 @@ public final class Time{
     public boolean isSecondCorrect(int seconds){
         return seconds >= 0 && seconds < 60;
     }
-  
-
-
 }
