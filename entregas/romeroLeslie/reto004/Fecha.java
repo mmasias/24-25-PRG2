@@ -30,6 +30,7 @@ public class Fecha {
     }
 
     public boolean equals(Fecha fecha) {
+        if (fecha == null) return false;
         return this.año == fecha.año && this.mes == fecha.mes && this.dia == fecha.dia;
     }
 
