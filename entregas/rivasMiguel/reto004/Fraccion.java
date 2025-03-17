@@ -1,29 +1,6 @@
 package entregas.rivasMiguel.reto004;
 
 public class Fraccion {
-public static void main(String[] args) {
-    Fraccion f1 = new Fraccion(2, 3);
-    Fraccion f2 = new Fraccion(2, 3);
-
-    System.out.println("Constructor & .toString(): " + f1);
-    System.out.println("Numerador:   [" + f1.numerador + "]");
-    System.out.println("Denominador: [" + f1.denominador + "]");
-    System.out.println("Sumar: " + f1.sumar(f2));
-    System.out.println("Oponer: " + f1.oponer());
-    System.out.println("Restar: " + f1.restar(f2));
-    System.out.println("Multiplicar: " + f1.multiplicar(f2));
-    System.out.println("Invertir: " + f1.invertir());
-    System.out.println("Dividir: " + f1.dividir(f2));
-    System.out.println("Elevar: " + f1.elevar(3));
-    System.out.println("Es mayor: " + f1.esMayor(f2));
-    System.out.println("Es menor: " + f1.esMenor(f2));
-    System.out.println("Es igual: " + f1.esIgual(f2));
-    System.out.println("compareTo: " + f1.compareTo(f2));
-    System.out.println("valueOf(): " + f1.valueOf());
-    System.out.println("clone(): " + f1.clone());
-}
-
-
     private int numerador;
     private int denominador;
 
