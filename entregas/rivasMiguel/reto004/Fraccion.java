@@ -3,8 +3,8 @@ package entregas.rivasMiguel.reto004;
 public class Fraccion {
 public static void main(String[] args) {
     Fraccion f1 = new Fraccion(1, 3);
-    Fraccion f2 = new Fraccion(1, 2);
-    boolean resultado = f1.esMayor(f2);
+    Fraccion f2 = new Fraccion(1, 3);
+    boolean resultado = f1.esIgual(f2);
     System.out.println(resultado);
 }
 
@@ -128,6 +128,10 @@ public static void main(String[] args) {
         double valor1 = (double) this.numerador / this.denominador;
         double valor2 = (double) fraccion.numerador / fraccion.denominador;
         return valor1 > valor2;
+    }
+
+    public boolean esIgual(Fraccion fraccion) {
+        return (this.numerador == fraccion.numerador) && (this.denominador == fraccion.denominador);
     }
 
 }
