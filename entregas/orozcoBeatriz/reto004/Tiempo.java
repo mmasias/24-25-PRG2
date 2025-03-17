@@ -5,6 +5,10 @@ public class Tiempo {
     private int segundos;
 
     public Tiempo(int horas, int minutos, int segundos) {
+        assert esHoraValida(horas) : "Hora no válida";
+        assert esMinutoValido(minutos) : "Minuto no válido";
+        assert esSegundoValido(segundos) : "Segundo no válido";
+
         this.horas = horas;
         this.minutos = minutos;
         this.segundos = segundos;
