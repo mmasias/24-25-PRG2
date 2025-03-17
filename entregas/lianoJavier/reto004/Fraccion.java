@@ -113,13 +113,9 @@ public class Fraccion {
     }
 
     public int compareTo(Fraccion fraccion) {
-        if (esMenor(fraccion)) {
-            return -1;
-        } else if (esMayor(fraccion)) {
-            return 1;
-        } else {
-            return 0;
-        }
+        if (esMenor(fraccion)) return -1;
+        if (esMayor(fraccion)) return 1;
+        return 0;
     }
 
     public Fraccion clone() {
