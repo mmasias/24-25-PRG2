@@ -1,4 +1,4 @@
-package entregas.coboIsmael.reto004.Fraccion;
+package entregas.coboIsmael.reto004;
 public class Fraccion {
     private int numerador;
     private int denominador;
