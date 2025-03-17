@@ -17,6 +17,14 @@ public class Fecha {
         assert esDiaValido(dia) : "El día debe estar entre 1 y 31";
     }
 
+    public boolean esMesValido(int mes) {
+        return mes >= 1 && mes <= 12;
+    }
+
+    public boolean esDiaValido(int dia) {
+        return dia >= 1 && dia <= 31;
+    }
+
     public boolean equals(Fecha fecha) {
         return año == fecha.año && mes == fecha.mes && dia == fecha.dia;
     }
@@ -47,13 +55,5 @@ public class Fecha {
 
     public String toString() {
         return año + "/" + mes + "/" + dia;
-    }
-
-    public boolean esMesValido(int mes) {
-        return mes >= 1 && mes <= 12;
-    }
-
-    public boolean esDiaValido(int dia) {
-        return dia >= 1 && dia <= 31;
     }
 }
