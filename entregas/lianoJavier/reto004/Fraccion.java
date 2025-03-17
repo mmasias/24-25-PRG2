@@ -34,9 +34,7 @@ public class Fraccion {
     }
 
     public String toString() {
-        if (denominador == 1) {
-            return "" + numerador;
-        }
+        if (denominador == 1) return "" + numerador;
         return numerador + "/" + denominador;
     }
 
