@@ -122,7 +122,6 @@ public class Fraccion {
     }
 }
 
-// Clase Fecha
 public class Fecha {
     private int año;
     private int mes;
@@ -173,7 +172,6 @@ public class Fecha {
         return new Fecha(nuevoAño, nuevoMes, nuevoDia);
     }
 
-    @Override
     public String toString() {
         return this.año + "-" + this.mes + "-" + this.dia;
     }
@@ -187,7 +185,6 @@ public class Fecha {
     }
 }
 
-// Clase Tiempo
 public class Tiempo {
     private int horas;
     private int minutos;
