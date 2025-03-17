@@ -119,4 +119,3 @@ public class Fraccion {
         return new Fraccion(this.numerador, this.denominador);
     }
 }
-
