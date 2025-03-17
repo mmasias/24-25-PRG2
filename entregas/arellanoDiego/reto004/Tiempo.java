@@ -6,14 +6,24 @@ public class Tiempo {
     private int segundos;
 
     public Tiempo(int horas, int minutos, int segundos) {
-        if (esHoraValida(horas) && esMinutoValido(minutos) && esSegundoValido(segundos)) {
+            if (!esHoraValida(horas)) {
+                System.out.println("Hora inválida. Se asigna 00.");
+                horas = 0;
+            }
+            if (!esMinutoValido(minutos)) {
+                System.out.println("Minuto inválido. Se asigna 00.");
+                minutos = 0;
+            }
+            if (!esSegundoValido(segundos)) {
+                System.out.println("Segundo inválido. Se asigna 00.");
+                segundos = 0;
+            }
+    
             this.horas = horas;
             this.minutos = minutos;
             this.segundos = segundos;
-        } else {
-            throw new IllegalArgumentException("Tiempo inválido");
         }
-    }
+    
 
     public boolean equals(Tiempo tiempo) {
         return this.horas == tiempo.horas && this.minutos == tiempo.minutos && this.segundos == tiempo.segundos;
