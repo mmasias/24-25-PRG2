@@ -4,7 +4,7 @@ public class Fraccion {
 public static void main(String[] args) {
     Fraccion f1 = new Fraccion(1, 3);
     Fraccion f2 = new Fraccion(1, 3);
-    boolean resultado = f1.esIgual(f2);
+    double resultado = f1.valueOf();
     System.out.println(resultado);
 }
 
@@ -119,19 +119,19 @@ public static void main(String[] args) {
     }
 
     public boolean esMenor(Fraccion fraccion) {
-        double valor1 = (double) this.numerador / this.denominador;
-        double valor2 = (double) fraccion.numerador / fraccion.denominador;
-        return valor1 < valor2;
+        return this.valueOf() < fraccion.valueOf();
     }
 
     public boolean esMayor(Fraccion fraccion) {
-        double valor1 = (double) this.numerador / this.denominador;
-        double valor2 = (double) fraccion.numerador / fraccion.denominador;
-        return valor1 > valor2;
+        return this.valueOf() > fraccion.valueOf();
     }
 
     public boolean esIgual(Fraccion fraccion) {
         return (this.numerador == fraccion.numerador) && (this.denominador == fraccion.denominador);
     }
 
+    public double valueOf() {
+        return (double) this.numerador / this.denominador;
+    }
+    
 }
