@@ -7,6 +7,9 @@ public class Fecha {
     private int dia;
 
     public Fecha(int anio, int mes, int dia) {
+        assert esMesValido(mes) : "Mes no válido";
+        assert esDiaValido(dia) : "Dia no válido";
+
         this.anio = anio;
         this.mes = mes;
         this.dia = dia;
@@ -25,9 +28,11 @@ public class Fecha {
     }
 
     public int compareTo(Fecha fecha) {
-        if ((this.anio < fecha.anio) || (this.anio == fecha.anio && this.mes < fecha.mes) || (this.anio == fecha.anio && this.mes == fecha.mes && this.dia < fecha.dia)) {
+        if ((this.anio < fecha.anio) || (this.anio == fecha.anio && this.mes < fecha.mes) || 
+        (this.anio == fecha.anio && this.mes == fecha.mes && this.dia < fecha.dia)) {
             return -1;
-        } else if ((this.anio > fecha.anio) || (this.anio == fecha.anio && this.mes > fecha.mes) || (this.anio == fecha.anio && this.mes == fecha.mes && this.dia > fecha.dia)) {
+        } else if ((this.anio > fecha.anio) || (this.anio == fecha.anio && this.mes > fecha.mes) ||
+         (this.anio == fecha.anio && this.mes == fecha.mes && this.dia > fecha.dia)) {
             return 1;
         } else {
             return 0;
