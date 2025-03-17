@@ -1,9 +1,13 @@
-public class Date {
+public final class Date {
     int year; 
     int month;
     int day;
 
-    public Date(int year, int month, int day){     
+    public Date(int year, int month, int day){    
+        assert year > 0 && month > 0 && day > 0 : "Invalid date";
+        assert isMonthCorrect(month) : "Invalid month";
+        assert isDayCorrect(day) : "Invalid day"; 
+
         this.year = year;
         this.month = month;
         this.day = day;
@@ -33,7 +37,13 @@ public class Date {
     public int compareTo(Date date)	{
         return isDateEqual(date) ? 0 : isDateAfter(date) ? 1 : -1;
     }
-    
+
+    @Override
+    public String toString() {
+        return this.year + "/" + this.month + "/" + this.day;
+    }
+
+
     public void  next(){
         this.day++;
         if(!isDayCorrect(this.day)){
