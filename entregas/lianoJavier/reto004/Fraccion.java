@@ -5,13 +5,17 @@ public class Fraccion {
     private int denominador;
 
     public Fraccion(int numerador, int denominador) {
-        assert denominador != 0 : "El denominador no puede ser 0";
+        validarFraccion(denominador);
 
         alternarPolaridad(numerador, denominador);
 
         int maximoComunDivisor = calcularMaximoComunDivisor(Math.abs(numerador), Math.abs(denominador));
         this.numerador = numerador / maximoComunDivisor;
         this.denominador = denominador / maximoComunDivisor;
+    }
+
+    private void validarFraccion(int denominador) {
+        assert denominador != 0 : "El denominador no puede ser 0";
     }
 
     public Fraccion(int numerador) {
