@@ -25,7 +25,9 @@ public class Fraccion {
     }
 
     public Fraccion sumar(Fraccion fraccion){
-        Fraccion fraccionResultante = new Fraccion(fraccion.numerador, fraccion.denominador);
+        Fraccion primeraFraccion = amplificacion(new Fraccion(this.numerador, this.denominador), fraccion);
+        Fraccion segundaFraccion = amplificacion(fraccion, new Fraccion(this.numerador, this.denominador));
+        Fraccion fraccionResultante = new Fraccion((primeraFraccion.numerador + segundaFraccion.numerador), (primeraFraccion.denominador));
         return fraccionResultante;
     }
     
@@ -44,5 +46,13 @@ public class Fraccion {
             a = temp;
         }
         return a;
+    }
+
+    private Fraccion amplificacion(Fraccion primeraFraccion, Fraccion segundaFraccion){
+        int mcm = (primeraFraccion.denominador * segundaFraccion. denominador) / mcd(primeraFraccion.denominador, segundaFraccion.denominador);
+        int amplificadorDeFraccion = mcm / primeraFraccion.denominador;
+        primeraFraccion.numerador = primeraFraccion.numerador * amplificadorDeFraccion;
+        primeraFraccion.denominador = primeraFraccion.denominador * amplificadorDeFraccion;
+        return primeraFraccion;
     }
 }
