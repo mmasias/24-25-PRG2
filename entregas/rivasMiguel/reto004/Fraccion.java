@@ -1,10 +1,13 @@
 package entregas.rivasMiguel.reto004;
 
 public class Fraccion {
-    public static void main(String[] args) {
-        Fraccion fraccion = new Fraccion(4, 7);
-        System.out.println(fraccion);
-    }
+public static void main(String[] args) {
+    Fraccion f1 = new Fraccion(1, 2);
+    Fraccion f2 = new Fraccion(2);
+    Fraccion resultado = f1.sumar(f2);
+    System.out.println(resultado);
+}
+
 
     private int numerador;
     private int denominador;
@@ -48,4 +51,16 @@ public class Fraccion {
         }
         return a;
     }
+
+    public Fraccion sumar(Fraccion fraccion) {
+        int nuevoNumerador = this.numerador * fraccion.denominador + fraccion.numerador * this.denominador;
+        int nuevoDenominador = this.denominador * fraccion.denominador;
+        return new Fraccion(nuevoNumerador, nuevoDenominador);
+    }
+
+    public Fraccion sumar(int entero) {
+        int nuevoNumerador = this.numerador + entero * this.denominador;
+        return new Fraccion(nuevoNumerador, this.denominador);
+    }
+
 }
