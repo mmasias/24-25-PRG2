@@ -1,6 +1,7 @@
 package entregas.orejaPaula.reto004;
 
-public class Fraccion implements Comparable<Fraccion>, Cloneable {
+public class Fraccion {
+    public static void main(String[] args) {
     private int numerador;
     private int denominador;
 
