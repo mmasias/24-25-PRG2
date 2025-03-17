@@ -7,11 +7,12 @@ public class ClienteFraccion {
 
         /*
          * System.out.print("Constructor & .toString(): ");
-         * Fraccion fraccion = new Fraccion(2, 3);
+         * Fraccion fraccion = new Fraccion(-1, 3);
          * System.out.println(fraccion);
+         
          * System.out.println("Numerador:   [" + fraccion.numerador() + "]");
          * System.out.println("Denominador: [" + fraccion.denominador() + "]");
-         * 
+          
          * System.out.print("Sumar: ");
          * System.out.println(fraccion.sumar(new Fraccion(2,3)));
          * System.out.println(fraccion.sumar(3));
