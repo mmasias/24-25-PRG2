@@ -1,4 +1,4 @@
-package entregas.arceMarina.reto004.reto004;
+package entregas.arceMarina.reto004;
 
 class Fraccion {
     private int numerador;
