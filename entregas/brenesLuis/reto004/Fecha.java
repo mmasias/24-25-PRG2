@@ -7,11 +7,13 @@ public class Fecha {
     private int dia;
 
     public Fecha(int año, int mes, int dia) {
-        assert año > 0 : "El año no puede ser negativo";
-        assert mes > 0 && mes < 13 : "El mes debe estar entre 1 y 12";
-        assert dia > 0 && dia < 32 : "El día debe estar entre 1 y 31";
-    }
+        assert esMesValido(mes) && esDiaValido(dia): "No es valida esa fecha";
 
+        this.año = año;
+        this.mes = esMesValido(mes) ? mes : 1;
+        this.dia = esDiaValido(dia) ? dia : 1;
+
+    }
     public boolean equals(Fecha fecha) {
         return this.año == fecha.año && this.mes == fecha.mes && this.dia == fecha.dia;
     }
