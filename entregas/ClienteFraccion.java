@@ -1,6 +1,4 @@
-package entregas;
-
-import entregas.masiasManuel.reto004.Fraccion;
+import entrega.orejaPaula.reto004.Fraccion;
 
 public class ClienteFraccion {
     public static void main(String[] args) {
@@ -57,3 +55,4 @@ public class ClienteFraccion {
          */
     }
 }
+
