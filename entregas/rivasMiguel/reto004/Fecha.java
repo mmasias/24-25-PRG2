@@ -1,23 +1,6 @@
 package entregas.rivasMiguel.reto004;
 
 public class Fecha {
-public static void main(String[] args) {
-    Fecha f1 = new Fecha(2025, 3, 17);
-    Fecha f2 = new Fecha(2025, 3, 18);
-    Fecha f3 = new Fecha(2025, 3, 17);
-
-    System.out.println("Fecha: " + f1);
-    System.out.println("equals: " + f1.equals(f2));
-    System.out.println("antesQue: " + f1.antesQue(f2));
-    System.out.println("despuesDe: " + f1.despuesDe(f2));
-    System.out.println("compareTo: " + f1.compareTo(f2));
-    System.out.println("siguiente: " + f1.siguiente());
-    System.out.println("Es mes valido (3): " + f1.esMesValido(3));
-    System.out.println("Es dia valido (17, 3, 2025): " + f1.esDiaValido(17, 3, 2025));
-    System.out.println("Es dia valido (32, 3, 2025): " + f1.esDiaValido(32, 3, 2025));
-
-    System.out.println("equals f1 y f3: " + f1.equals(f3));
-}
     private int año;
     private int mes;
     private int dia;
