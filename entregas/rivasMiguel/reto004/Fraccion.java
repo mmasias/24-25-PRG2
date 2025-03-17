@@ -4,7 +4,7 @@ public class Fraccion {
 public static void main(String[] args) {
     Fraccion f1 = new Fraccion(3, 2);
     Fraccion f2 = new Fraccion(2, 4);
-    Fraccion resultado = f1.elevar(2);
+    int resultado = f1.denominador();
     System.out.println(resultado);
 }
 
@@ -109,4 +109,13 @@ public static void main(String[] args) {
         int nuevoDenominador = (int) Math.pow(this.denominador, exponente);
         return new Fraccion(nuevoNumerador, nuevoDenominador);
     }
+
+    public int numerador() {
+        return this.numerador;
+    }
+
+    public int denominador() {
+        return this.denominador;
+    }
+
 }
