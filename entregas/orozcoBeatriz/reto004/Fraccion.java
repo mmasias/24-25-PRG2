@@ -77,14 +77,11 @@ public class Fraccion {
     }
 
     public Fraccion dividir(Fraccion fraccion) {
-        int numeradorNuevo = this.numerador * fraccion.denominador;
-        int denominadorNuevo = this.denominador * fraccion.numerador;
-        return new Fraccion(numeradorNuevo, denominadorNuevo);
+        return this.multiplicar(fraccion.invertir());
     }
 
     public Fraccion dividir(int entero) {
-        int denominadorNuevo = this.denominador * entero;
-        return new Fraccion(this.numerador, denominadorNuevo);
+        return this.multiplicar(new Fraccion(1, entero));
     }
 
     public Fraccion elevar(int exponente) {
