@@ -2,9 +2,9 @@ package entregas.rivasMiguel.reto004;
 
 public class Fraccion {
 public static void main(String[] args) {
-    Fraccion f1 = new Fraccion(3, 2);
-    Fraccion f2 = new Fraccion(2, 4);
-    int resultado = f1.denominador();
+    Fraccion f1 = new Fraccion(1, 3);
+    Fraccion f2 = new Fraccion(1, 2);
+    boolean resultado = f1.esMayor(f2);
     System.out.println(resultado);
 }
 
@@ -116,6 +116,18 @@ public static void main(String[] args) {
 
     public int denominador() {
         return this.denominador;
+    }
+
+    public boolean esMenor(Fraccion fraccion) {
+        double valor1 = (double) this.numerador / this.denominador;
+        double valor2 = (double) fraccion.numerador / fraccion.denominador;
+        return valor1 < valor2;
+    }
+
+    public boolean esMayor(Fraccion fraccion) {
+        double valor1 = (double) this.numerador / this.denominador;
+        double valor2 = (double) fraccion.numerador / fraccion.denominador;
+        return valor1 > valor2;
     }
 
 }
