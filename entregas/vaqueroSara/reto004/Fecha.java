@@ -12,6 +12,7 @@ public class Fecha {
         this.dia = dia;
     }
 
+    @Override
     public String toString() {
         return String.format("%02d/%02d/%d", this.dia, this.mes, this.año);
     }
