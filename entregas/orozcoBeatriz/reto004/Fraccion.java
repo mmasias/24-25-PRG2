@@ -103,27 +103,15 @@ public class Fraccion {
     }
 
     public boolean esMenor(Fraccion fraccion) {
-        boolean esMenor = false;
-        if (this.numerador * fraccion.denominador < fraccion.numerador * this.denominador) {
-            esMenor = true;
-        }
-        return esMenor;
+        return this.numerador * fraccion.denominador < fraccion.numerador * this.denominador;
     }
 
     public boolean esMayor(Fraccion fraccion) {
-        boolean esMayor = false;
-        if (this.numerador * fraccion.denominador > fraccion.numerador * this.denominador) {
-            esMayor = true;
-        }
-        return esMayor;
+        return this.numerador * fraccion.denominador > fraccion.numerador * this.denominador;
     }
 
     public boolean esIgual(Fraccion fraccion) {
-        boolean esIgual = false;
-        if (this.numerador * fraccion.denominador == fraccion.numerador * this.denominador) {
-            esIgual = true;
-        }
-        return esIgual;
+        return this.numerador * fraccion.denominador == fraccion.numerador * this.denominador;
     }
 
     public double valueOf() {
