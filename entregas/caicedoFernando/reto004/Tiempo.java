@@ -58,7 +58,7 @@ class Tiempo {
         return this;
     }
 
-    private tiempo sumarHoras(int horas){
+    private Tiempo sumarHoras(int horas){
         this.horas += horas;
         reiniciarReloj();
         validarTiempo("Sumar horas");
@@ -77,6 +77,11 @@ class Tiempo {
             minutos += segundos / SEGUNDOS_POR_MINUTO;
             segundos = segundos % SEGUNDOS_POR_MINUTO;
         }
+    }
+
+    private void reiniciarReloj(){
+        reiniciarMinutos();
+        reiniciarSegundos();
     }
 
     public Tiempo sumar(Tiempo tiempo){
