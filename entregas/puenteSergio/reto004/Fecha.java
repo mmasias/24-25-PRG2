@@ -71,7 +71,7 @@ public class Fecha {
         return new Fecha(nuevoAño, nuevoMes, nuevoDia);
     }
 
-    @Override
+    
     public String toString() {
         return String.format("%04d/%02d/%02d", año, mes, dia);
     }
