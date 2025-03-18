@@ -25,10 +25,87 @@ public class Fraccion {
     }
 
     public Fraccion sumar(Fraccion fraccion){
-        Fraccion primeraFraccion = amplificacion(new Fraccion(this.numerador, this.denominador), fraccion);
-        Fraccion segundaFraccion = amplificacion(fraccion, new Fraccion(this.numerador, this.denominador));
-        Fraccion fraccionResultante = new Fraccion((primeraFraccion.numerador + segundaFraccion.numerador), (primeraFraccion.denominador));
-        return fraccionResultante;
+        fraccion = amplificacion(fraccion);
+        return new Fraccion((this.numerador + fraccion.numerador), fraccion.denominador);
+    }
+
+    public Fraccion sumar(int valor){
+        Fraccion fraccion = new Fraccion(valor);
+        return this.sumar(fraccion);
+    }
+
+    public Fraccion restar(Fraccion fraccion){
+        fraccion = amplificacion(fraccion);
+        return new Fraccion((this.numerador - fraccion.numerador), fraccion.denominador);
+    }
+
+    public Fraccion restar(int valor){
+        Fraccion fraccion = new Fraccion(valor);
+        return this.restar(fraccion);
+    }
+
+    public Fraccion multiplicar(Fraccion fraccion){
+        return new Fraccion((this.numerador * fraccion.numerador), (this.denominador * fraccion.denominador));
+    }
+
+    public Fraccion multiplicar(int valor){
+        Fraccion fraccion = new Fraccion(valor);
+        return this.multiplicar(fraccion);
+    }
+
+    public Fraccion dividir(Fraccion fraccion){
+        return new Fraccion((this.numerador * fraccion.denominador),(this.denominador * fraccion.numerador));
+    }
+
+    public Fraccion dividir(int valor){
+        Fraccion fraccion = new Fraccion(valor);
+        return this.dividir(fraccion);
+    }
+
+    public Fraccion invertir(){
+        return new Fraccion(this.denominador, this.numerador);
+    }
+
+    public Fraccion elevar(int exponente){
+        return new Fraccion((int)Math.pow(this.numerador, exponente),(int)Math.pow(this.denominador, exponente));
+    }
+
+    public int numerador(){
+        return this.numerador;
+    }
+
+    public int denominador(){
+        return this.denominador;
+    }
+
+    public boolean esMenor(Fraccion fraccion){
+        return (this.numerador/this.denominador)<(fraccion.numerador/fraccion.denominador) ? true : false;
+    }
+
+    public boolean esMayor(Fraccion fraccion){
+        return (this.numerador/this.denominador)>(fraccion.numerador/fraccion.denominador) ? true : false;
+    }
+
+    public boolean esIgual(Fraccion fraccion){
+        return (this.numerador/this.denominador)==(fraccion.numerador/fraccion.denominador) ? true : false;
+    }
+
+    public double valueOf(){
+        return (this.numerador/this.denominador);
+    }
+
+    public int compareTo(Fraccion fraccion){
+        if (esIgual(fraccion)){
+            return 0;
+        }else if(esMayor(fraccion)){
+            return 1;
+        }else{
+            return -1;
+        }
+    }
+
+    public Fraccion clone(){
+        return new Fraccion(this.numerador, this.denominador);
     }
     
     public String toString(){
@@ -48,11 +125,14 @@ public class Fraccion {
         return a;
     }
 
-    private Fraccion amplificacion(Fraccion primeraFraccion, Fraccion segundaFraccion){
-        int mcm = (primeraFraccion.denominador * segundaFraccion. denominador) / mcd(primeraFraccion.denominador, segundaFraccion.denominador);
-        int amplificadorDeFraccion = mcm / primeraFraccion.denominador;
-        primeraFraccion.numerador = primeraFraccion.numerador * amplificadorDeFraccion;
-        primeraFraccion.denominador = primeraFraccion.denominador * amplificadorDeFraccion;
-        return primeraFraccion;
+    private Fraccion amplificacion(Fraccion fraccion){
+        int mcm = (fraccion.denominador * this.denominador) / mcd(fraccion.denominador, this.denominador);
+        int amplificadorDePrimeraFraccion = mcm / fraccion.denominador;
+        int amplificadorDeSegundaFraccion = mcm / this.denominador;
+        fraccion.numerador *= amplificadorDePrimeraFraccion;
+        fraccion.denominador *= amplificadorDePrimeraFraccion;
+        this.numerador *= amplificadorDeSegundaFraccion;
+        this.denominador *= amplificadorDeSegundaFraccion;
+        return fraccion;
     }
 }
