@@ -81,4 +81,18 @@ public class Fecha {
     private boolean esBisiesto(int año) {
         return (año % 4 == 0 && (año % 100 != 0 || año % 400 == 0));
     }
+
+    public int compareTo(Fecha fecha) {
+        if (fecha == null) {
+            throw new IllegalArgumentException("La fecha no puede ser nula.");
+        }
+        
+        if (this.año != fecha.año) {
+            return Integer.compare(this.año, fecha.año);
+        }
+        if (this.mes != fecha.mes) {
+            return Integer.compare(this.mes, fecha.mes);
+        }
+        return Integer.compare(this.dia, fecha.dia);
+    }
 }

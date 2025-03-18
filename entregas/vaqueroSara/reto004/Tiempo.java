@@ -99,4 +99,18 @@ public class Tiempo {
     public static boolean esSegundoValido(int segundo) {
         return segundo >= 0 && segundo < 60;
     }
+
+    public int compareTo(Tiempo tiempo) {
+        if (tiempo == null) {
+            throw new IllegalArgumentException("El tiempo no puede ser nulo.");
+        }
+        
+        if (this.horas != tiempo.horas) {
+            return Integer.compare(this.horas, tiempo.horas);
+        }
+        if (this.minutos != tiempo.minutos) {
+            return Integer.compare(this.minutos, tiempo.minutos);
+        }
+        return Integer.compare(this.segundos, tiempo.segundos);
+    }
 }
