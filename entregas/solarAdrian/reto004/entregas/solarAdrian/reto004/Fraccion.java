@@ -1,7 +1,5 @@
 package entregas.solarAdrian.reto004;
 
-import java.util.Scanner;
-
 public class Fraccion {
     private int numerador;
     private int denominador;
@@ -119,63 +117,81 @@ public class Fraccion {
     public Fraccion clone() {
         return new Fraccion(this.numerador, this.denominador);
     }
+}
 
-    public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
+public class Fecha {
+    private int anio, mes, dia;
 
-        // Entrada de fracción 1
-        System.out.print("Introduce el numerador de la primera fracción: ");
-        int num1 = scanner.nextInt();
-        System.out.print("Introduce el denominador de la primera fracción: ");
-        int den1 = scanner.nextInt();
-        Fraccion fraccion1 = new Fraccion(num1, den1);
+    public Fecha(int anio, int mes, int dia) {
+        if (!esMesValido(mes)) mes = 1;
+        if (!esDiaValido(dia)) dia = 1;
+        this.anio = anio;
+        this.mes = mes;
+        this.dia = dia;
+    }
 
-        // Entrada de fracción 2
-        System.out.print("Introduce el numerador de la segunda fracción: ");
-        int num2 = scanner.nextInt();
-        System.out.print("Introduce el denominador de la segunda fracción: ");
-        int den2 = scanner.nextInt();
-        Fraccion fraccion2 = new Fraccion(num2, den2);
+    public boolean equals(Fecha fecha) {
+        return this.anio == fecha.anio && this.mes == fecha.mes && this.dia == fecha.dia;
+    }
 
-        System.out.println("\nConstructor & .toString(): " + fraccion1.toString());
-        System.out.println("Numerador:   [" + fraccion1.numerador() + "]");
-        System.out.println("Denominador: [" + fraccion1.denominador() + "]");
+    public boolean antesQue(Fecha fecha) {
+        return compareTo(fecha) < 0;
+    }
 
-        // Realizar operaciones y mostrar resultados
-        Fraccion resultado;
+    public boolean despuesDe(Fecha fecha) {
+        return compareTo(fecha) > 0;
+    }
 
-        resultado = fraccion1.sumar(fraccion2);
-        System.out.println("Sumar: " + resultado);
+    public int compareTo(Fecha fecha) {
+        if (this.anio != fecha.anio) return Integer.compare(this.anio, fecha.anio);
+        if (this.mes != fecha.mes) return Integer.compare(this.mes, fecha.mes);
+        return Integer.compare(this.dia, fecha.dia);
+    }
 
-        resultado = fraccion1.sumar(1);
-        System.out.println("11/3");
+    public Fecha siguiente() {
+        return new Fecha(anio, mes, dia + 1);
+    }
 
-        resultado = fraccion1.oponer();
-        System.out.println("Oponer: " + resultado);
+    public String toString() {
+        return anio + "-" + mes + "-" + dia;
+    }
 
-        resultado = fraccion1.restar(fraccion2);
-        System.out.println("Restar: " + resultado);
+    public boolean esMesValido(int mes) {
+        return mes >= 1 && mes <= 12;
+    }
 
-        resultado = fraccion1.multiplicar(fraccion2);
-        System.out.println("Multiplicar: " + resultado);
+    public boolean esDiaValido(int dia) {
+        return dia >= 1 && dia <= 30;
+    }
+}
 
-        resultado = fraccion1.invertir();
-        System.out.println("Invertir: " + resultado);
+public class Tiempo {
+    private int horas, minutos, segundos;
 
-        resultado = fraccion1.dividir(fraccion2);
-        System.out.println("Dividir: " + resultado);
+    public Tiempo(int horas, int minutos, int segundos) {
+        if (!esHoraValida(horas)) horas = 0;
+        if (!esMinutoValido(minutos)) minutos = 0;
+        if (!esSegundoValido(segundos)) segundos = 0;
+        this.horas = horas;
+        this.minutos = minutos;
+        this.segundos = segundos;
+    }
 
-        resultado = fraccion1.elevar(3);
-        System.out.println("Elevar: " + resultado);
+    public boolean equals(Tiempo tiempo) {
+        return this.horas == tiempo.horas && this.minutos == tiempo.minutos && this.segundos == tiempo.segundos;
+    }
 
-        System.out.println("Es mayor: " + fraccion1.esMayor(fraccion2));
-        System.out.println("Es menor: " + fraccion1.esMenor(fraccion2));
-        System.out.println("Es igual: " + fraccion1.esIgual(fraccion2));
-        System.out.println("Es igual (compareTo): " + fraccion1.compareTo(fraccion2));
+    public boolean antesQue(Tiempo tiempo) {
+        return compareTo(tiempo) < 0;
+    }
 
-        System.out.println("valueOf(): " + fraccion1.valueOf());
-        System.out.println("clone(): " + fraccion1.clone());
+    public boolean despuesDe(Tiempo tiempo) {
+        return compareTo(tiempo) > 0;
+    }
 
-        scanner.close();
+    public int compareTo(Tiempo tiempo) {
+        if (this.horas != tiempo.horas) return Integer.compare(this.horas, tiempo.horas);
+        if (this.minutos != tiempo.minutos) return Integer.compare(this.minutos, tiempo.minutos);
+        return Integer.compare(this.segundos, tiempo.segundos);
     }
 }
