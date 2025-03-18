@@ -80,12 +80,12 @@ public class Tiempo {
             totalMinutos += totalSegundos / 60;
             totalSegundos = totalSegundos % 60;
         }
-        
+
         if (totalMinutos >= 60) {
             totalHoras += totalMinutos / 60;
             totalMinutos = totalMinutos % 60;
         }
-        
+
         if (totalHoras >= 24) {
             totalHoras = totalHoras % 24;
         }

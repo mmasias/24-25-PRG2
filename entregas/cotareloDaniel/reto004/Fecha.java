@@ -7,7 +7,7 @@ public class Fecha {
 
     public Fecha(int año, int mes, int dia) {
         assert (esMesValido(mes) && esDiaValido(dia)) : "Fecha no válida";
-    
+
         this.año = año;
         this.mes = mes;
         this.dia = dia;
@@ -18,20 +18,26 @@ public class Fecha {
     }
 
     public boolean antesQue(Fecha date) {
-        if (this.año < date.año) return true;
-        if (this.año == date.año && this.mes < date.mes) return true;
+        if (this.año < date.año)
+            return true;
+        if (this.año == date.año && this.mes < date.mes)
+            return true;
         return this.año == date.año && this.mes == date.mes && this.dia < date.dia;
     }
 
     public boolean despuesDe(Fecha date) {
-        if (this.año > date.año) return true;
-        if (this.año == date.año && this.mes > date.mes) return true;
+        if (this.año > date.año)
+            return true;
+        if (this.año == date.año && this.mes > date.mes)
+            return true;
         return this.año == date.año && this.mes == date.mes && this.dia > date.dia;
     }
 
     public int compareTo(Fecha fecha) {
-        if (this.antesQue(fecha)) return -1;
-        if (this.despuesDe(fecha)) return 1;
+        if (this.antesQue(fecha))
+            return -1;
+        if (this.despuesDe(fecha))
+            return 1;
         return 0;
     }
 
@@ -65,4 +71,3 @@ public class Fecha {
         return dia >= 1 && dia <= 30;
     }
 }
-
