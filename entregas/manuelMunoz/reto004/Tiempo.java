@@ -4,9 +4,9 @@ public class Tiempo {
     private int horas, minutos, segundos;
 
     public Tiempo(int horas, int minutos, int segundos){
-        assert horas > 24 : "Las horas no pueden ser mas de 24 horas";
-        assert minutos > 60 : "Los minutos no pueden ser mas de 60 minutos";
-        assert segundos > 60 : "Los segundos no pueden ser mas de 60 segundos";
+        assert horas <= 24 : "Las horas no pueden ser mas de 24 horas";
+        assert minutos <= 60 : "Los minutos no pueden ser mas de 60 minutos";
+        assert segundos <= 60 : "Los segundos no pueden ser mas de 60 segundos";
 
         this.horas = horas;
         this.minutos = minutos;
