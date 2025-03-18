@@ -79,19 +79,19 @@ public class Fraccion {
     }
 
     public boolean esMenor(Fraccion fraccion){
-        return (this.numerador/this.denominador)<(fraccion.numerador/fraccion.denominador) ? true : false;
+        return ((double)this.numerador/(double)this.denominador)<((double)fraccion.numerador/(double)fraccion.denominador) ? true : false;
     }
 
     public boolean esMayor(Fraccion fraccion){
-        return (this.numerador/this.denominador)>(fraccion.numerador/fraccion.denominador) ? true : false;
+        return ((double)this.numerador/(double)this.denominador)>((double)fraccion.numerador/(double)fraccion.denominador) ? true : false;
     }
 
     public boolean esIgual(Fraccion fraccion){
-        return (this.numerador/this.denominador)==(fraccion.numerador/fraccion.denominador) ? true : false;
+        return ((double)this.numerador/(double)this.denominador)==((double)fraccion.numerador/(double)fraccion.denominador) ? true : false;
     }
 
     public double valueOf(){
-        return (this.numerador/this.denominador);
+        return ((double)this.numerador / (double)this.denominador);
     }
 
     public int compareTo(Fraccion fraccion){
