@@ -56,22 +56,19 @@ public class Tiempo {
     }
 
     public Tiempo sumar(Tiempo tiempo){
-        return new Tiempo(esHoraValida(this.horas + tiempo.horas),esMinutoValido(this.minutos + tiempo.minutos),esSegundoValido(this.segundos + tiempo.segundos));
+        return new Tiempo((this.horas + tiempo.horas),(this.minutos + tiempo.minutos),(this.segundos + tiempo.segundos));
     }
 
-    public int esHoraValida(int hora){
-        assert this.horas + hora < 24 : "La hora insertada no es valida";
-        return this.horas += hora;
+    public void esHoraValida(int hora){
+        assert this.horas + hora <= 24 : "La hora insertada no es valida";
     }
 
-    public int esMinutoValido(int minuto){
-        assert this.minutos + minuto < 60 : "Los minutos ingresados no son validos";
-        return this.minutos += minuto;
+    public void esMinutoValido(int minuto){
+        assert this.minutos + minuto <= 60 : "Los minutos ingresados no son validos";
     }
 
-    public int esSegundoValido(int segundo){
-        assert this.segundos + segundo < 60 : "Los segundos ingresados no son validos";
-        return this.segundos += segundo;
+    public void esSegundoValido(int segundo){
+        assert this.segundos + segundo <= 60 : "Los segundos ingresados no son validos";
     }
 
 }
