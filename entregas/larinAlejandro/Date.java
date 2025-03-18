@@ -1,7 +1,7 @@
 public final class Date {
-    int year; 
-    int month;
-    int day;
+    private int year; 
+    private int month;
+    private int day;
 
     public Date(int year, int month, int day){    
         assert year > 0 && month > 0 && day > 0 : "Invalid date";
