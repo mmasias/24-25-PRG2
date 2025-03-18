@@ -45,7 +45,7 @@ public class Fecha {
         return date.antesQue(this);
     }
 
-    public boolean compareTo(Fecha date){
+    public int compareTo(Fecha date){
         assert date != null : "La fecha no puede ser nula";
 
         if (this.antesQue(date)) return -1;
