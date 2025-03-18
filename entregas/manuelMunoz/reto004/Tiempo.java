@@ -1,9 +1,7 @@
 package entregas.manuelMunoz.reto004;
 
 public class Tiempo {
-    private int horas;
-    private int minutos;
-    private int segundos;
+    private int horas, minutos, segundos;
 
     public Tiempo(int horas, int minutos, int segundos){
         assert horas > 24 : "Las horas no pueden ser mas de 24 horas";
