@@ -26,7 +26,7 @@ class Tablero {
     }
 
     public boolean hayTresEnRaya() {
-        return this.hayTresEnRaya("x") || this.hayTresEnRaya("o");
+        return this.hayTresEnRaya('x') || this.hayTresEnRaya('o');
     }
 
     public boolean hayTresEnRaya(char color) {
