@@ -127,12 +127,9 @@ public class Fraccion {
 
     private Fraccion amplificacion(Fraccion fraccion){
         int mcm = (fraccion.denominador * this.denominador) / mcd(fraccion.denominador, this.denominador);
-        int amplificadorDePrimeraFraccion = mcm / fraccion.denominador;
-        int amplificadorDeSegundaFraccion = mcm / this.denominador;
-        fraccion.numerador *= amplificadorDePrimeraFraccion;
-        fraccion.denominador *= amplificadorDePrimeraFraccion;
-        this.numerador *= amplificadorDeSegundaFraccion;
-        this.denominador *= amplificadorDeSegundaFraccion;
+        fraccion.numerador *=  mcm / fraccion.denominador;
+        fraccion.denominador = mcm;
+        this.numerador *= mcm / this.denominador;
         return fraccion;
     }
 }
