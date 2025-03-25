@@ -27,7 +27,7 @@
   - Jerarquízación.
 - Evolución de los lenguajes de programación y como fueron incorporando dichos mecanismos.
 
-## 18 Feb
+## 21 Feb
 
 - Clases y objetos: vistas publicas y privadas
   - Vista pública de una clase: cabeceras de métodos, sobrecarga de métodos.
@@ -38,4 +38,21 @@
 - Vista pública de un objeto:
   - Creación de un objeto.
   - Qué almacena una variable.
- 
+
+## 28 Feb
+
+- Inicio de la [implantación](/documentos/otros/calculadora.md).
+  - Atributos de una clase
+  - Constructor
+  - Implantación de los métodos públicos
+
+## 4 Mar
+
+- Vista privada de las clases:
+  - Definición de atributos.
+  - Definición de constructores.
+  - Definición de métodos.
+  - Referencia this.
+  - Refinición de métodos privados.
+- [Primera versión "completa" de la calculadora](/src/calculadora/Calculadora.java)
+- Importancia del proceso de creación y la aplicación (con lo visto anteriormente) de abstracción, encapsulación y -de momento en menor medida- de modularización y jerarquización.
