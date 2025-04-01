@@ -3,7 +3,7 @@
 - [x] [Introducción](introduccion.md)
   - [x] [Repaso de programación estructurada](https://github.com/mmasias/23-24-prg1/blob/main/temario/README.md)
   - [x] [Evolución de los lenguajes de programación](evolucion.md)
-  - [ ] [Objetivos](pooObjetivos.md)
+  - [x] [Objetivos](pooObjetivos.md)
 - OOP
   - Programación basada a objetos
     - [x] [Clases y objetos](clasesObjetos.md)
@@ -11,11 +11,11 @@
       - [x] [Vista pública de las clases](vistaPublicaClases.md)
       - [x] [Vista pública de los objetos](vistaPublicaObjetos.md)
       - [x] [Vista privada de las clases](vistaPrivadaClases.md) / [Ejemplo: Calculadora.java](/src/calculadora/README.md)
-      - [ ] Vista privada de los objetos
+      - [x] [Vista privada de los objetos](vistaPrivadaObjetos.md)
       - [ ] Miembros de clase
-  - [ ] Colaboración entre objetos: *HOOD*
+  - [x] [Colaboración entre objetos: HOOD (*a.k.a. FotB*)](https://github.com/mmasias/24-25-PRG2/discussions/312)
     - [ ] Desarrollo de aplicaciones usando HOOD:
-      - [ ] Tic Tac Toe
+      - [x] [Tic Tac Toe](https://github.com/mmasias/TicTacToe)
       - [ ] Klondike
       - [ ] Blackjack
   - Programación orientada a objetos
