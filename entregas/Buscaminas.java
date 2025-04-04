@@ -1,11 +1,11 @@
 
-package entregas.grizoniManuela.Reto004;	package entregas.grizoniManuela.Reto004;
+package entregas.puenteSergio.Reto004;	
 
 
 import java.util.Scanner;
 
-public class Buscaminas {	public class Buscaminas {
-    public static void main (String[] args){	    public static void main(String[] args) {
+public class Buscaminas {	
+    public static void main (String[] args){	    
 
         Scanner sc = new Scanner(System.in);
         Tablero tablero = new Tablero(6, 6, 6);
