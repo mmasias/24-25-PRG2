@@ -41,10 +41,54 @@ package bambaniang;
     System.out.print();
     for(int i=0; i<fila;i++){
         System.out.print((i+1) " ");
-
-
+    }
+    for(int j = 0;j<columnas;j++){
+        if(casillas[i][j] == mina){
+            System.out.print(casillaVacia+ " ");
+        }else{
+            System.out.print(casillas[i][j]+" ");
+        }
     }
    }
+
+   public boolean fin(){
+     for (int i = 0; i < NUM_FILAS; i++) {
+            for (int j = 0; j < NUM_COLUMNAS; j++) {
+                if (casillas[i][j] != MINA && casillas[i][j] != DESPEJADA) {
+                    return false;
+                }
+            }
+        }
+        return true;
+
+   }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
