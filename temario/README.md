@@ -19,8 +19,8 @@
       - [ ] Klondike
       - [ ] Blackjack
   - Programación orientada a objetos
-    - [ ] Relación de Herencia
-      - [ ] Herencia por extensión
+    - [x] [Relación de Herencia](herencia.md)
+      - [x] Herencia por extensión
       - [ ] Clases Abstractas
       - [ ] Herencia por Implementación
       - [ ] Limitaciones de la Herencia
