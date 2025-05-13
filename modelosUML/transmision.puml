@@ -1,0 +1,11 @@
+class Base as "Base\nSuper - Padre" {
+- attributos
++ metodos()
+}
+
+class Derived as "Derivada\nSub - Hija" {
+- attributes
++ methods()
+}
+
+Base <|-- Derived
