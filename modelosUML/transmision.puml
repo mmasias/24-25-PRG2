@@ -4,8 +4,8 @@ class Base as "Base\nSuper - Padre" {
 }
 
 class Derived as "Derivada\nSub - Hija" {
-- attributes
-+ methods()
+- attributos
++ metodos()
 }
 
 Base <|-- Derived
