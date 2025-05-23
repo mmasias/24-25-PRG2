@@ -193,10 +193,28 @@ Las interfaces son **clases abstractas puras** que no contienen ningún atributo
 
 ## Cómo "limitar" la herencia
 
-|Clases `final`|Metodos `final`|
-|-|-|
-|No permiten ningún tipo de herencia posterior|No permiten ningún tipo de redefinición posterior|
-|final class <clase> {<br>...<br>}|class <clase> {<br>  ...<br>  final <metodo><br>  ...<br>|
+### Clases `final`
+
+No permiten ningún tipo de herencia posterior
+
+### Metodos `final`
+
+No permiten ningún tipo de redefinición posterior
+
+
+```java
+final class <clase> {
+  ...
+}
+
+class <clase> {
+  ...
+  final <metodo> {
+    ...
+  }
+  ...
+}
+```
 
 ## Beneficios de la herencia
 
