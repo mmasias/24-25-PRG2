@@ -20,14 +20,14 @@
       - [ ] Blackjack
   - Programación orientada a objetos
     - [x] [Relación de Herencia](herencia.md)
-      - [x] Herencia por extensión
-      - [ ] Clases Abstractas
-      - [ ] Herencia por Implementación
-      - [ ] Limitaciones de la Herencia
-      - [ ] Beneficios de la Herencia
-    - [ ] Polimorfismo
-    - [ ] Conversión de Tipos
-    - [ ] Herencia y Enumerados
+      - [x] [Herencia por extensión](herencia.md#herencia-por-extensi%C3%B3n)
+      - [x] [Clases Abstractas](herencia.md#clases-abstractas)
+      - [x] [Herencia por Implementación](herencia.md#herencia-por-implementación-interfaces)
+      - [x] [Limitar la Herencia](herencia.md#cómo-limitar-la-herencia)
+      - [x] [Beneficios de la Herencia](herencia.md#beneficios-de-la-herencia)
+    - [ ] *Polimorfismo*
+    - [ ] *Conversión de Tipos*
+    - [ ] *Herencia y Enumerados*
 
 ## Temario++
 

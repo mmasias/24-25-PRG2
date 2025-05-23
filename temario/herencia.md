@@ -154,3 +154,61 @@ Sus implicaciones son:
 |-|-|
 En la implantación de cualquier clase derivada, es una referencia constante que guarda la dirección del objeto que recibe el mensaje correspondiente al método que se está redefiniendo, pero con el comportamiento de la clase padre.|Su utilidad será para la reutilización del método de la clase padre, anulado en la transmición, desde la redefinición del método de la clase hija.
 
+## Clases abstractas
+
+<div align=center>
+
+|Clases concretas|Clases abstractas|
+|-|-|
+|Surgen de la descripción de los atributos y métodos que definen el comportamiento de un cierto conjunto de objetos homogéneos|Son clases NO instanciables que surgen del factor común del código de otras clases con atributos comunes, métodos comunes y/o cabeceras de métodos comunes sin definición, pero no pueden ser con visibilidad privada
+
+</div>
+
+```java
+abstract class <ClaseAbstracta> {
+  ...
+  public abstract void <métodoAbstracto>( <parametros> );
+  protected abstract void <métodoAbstracto>( <parametros> );
+  // private abstract void <métodoAbstracto>( <parametros> ); ERROR!!!
+  ...
+}
+```
+
+### Entonces
+
+- Una clase abstracta puede ser hija de otra clase abstracta porque se especializa (añadiendo atributos y/o métodos y/o redefiniendo métodos) pero NO redefine todos los métodos abstractos transmitidos y/o añade algún método abstracto
+- una clase abstracta puede ser hija de una clase concreta si en su especialización añade algún método abstracto
+- Un método no abstracto de una clase abstracta puede definirse apoyándose en métodos abstractos entendiendo que será un código que se transmite hasta clases concretas que redefinen los métodos abstractos;
+
+## Herencia por implementación: interfaces
+
+Las interfaces son **clases abstractas puras** que no contienen ningún atributo ni la definición de ningún método, sólo contienen métodos abstractos.
+
+### Entonces
+
+|Una interfaz|Una clase|Herencia mútiple
+|-|-|-
+|NO puede heredar de una clase de ninguna manera|SI puede heredar de una clase por extensión|La herencia por extensión NO la permite
+|SI puede heredar de otro interfaz por extensión|SI puede heredar de varios interfaces por implementación|la herencia por implementación SI la permite
+
+## Cómo "limitar" la herencia
+
+|Clases `final`|Metodos `final`|
+|-|-|
+|No permiten ningún tipo de herencia posterior|No permiten ningún tipo de redefinición posterior|
+|final class <clase> {<br>...<br>}|class <clase> {<br>  ...<br>  final <metodo><br>  ...<br>|
+
+## Beneficios de la herencia
+
+### Integridad de la Arquitectura del Software
+
+La herencia favorece la comprensión de la arquitectura del software.
+
+La jerarquía de clasificación de las clases establece los niveles de generalización que reducen significativamente el número de clases al estudiar en un diseño.
+
+### Reusabilidad de código
+
+Utilización del código de la clase padre previamente escrito, probado y documentado
+
+No es necesario duplicar código similar, todo el código común se "factoriza" en la clase padre
+
