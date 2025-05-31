@@ -16,18 +16,18 @@
   - [x] [Colaboración entre objetos: HOOD (*a.k.a. FotB*)](https://github.com/mmasias/24-25-PRG2/discussions/312)
     - [ ] Desarrollo de aplicaciones usando HOOD:
       - [x] [Tic Tac Toe](https://github.com/mmasias/TicTacToe)
-      - [ ] Klondike
-      - [ ] Blackjack
+      - [x] [Klondike](https://github.com/mmasias/24-25-pyKlondike)
+      - [x] [Blackjack (*a.k.a. 21*)](https://github.com/mmasias/24-25-pyKlondike/tree/XXI)
   - Programación orientada a objetos
     - [x] [Relación de Herencia](herencia.md)
-      - [x] Herencia por extensión
-      - [ ] Clases Abstractas
-      - [ ] Herencia por Implementación
-      - [ ] Limitaciones de la Herencia
-      - [ ] Beneficios de la Herencia
-    - [ ] Polimorfismo
-    - [ ] Conversión de Tipos
-    - [ ] Herencia y Enumerados
+      - [x] [Herencia por extensión](herencia.md#herencia-por-extensi%C3%B3n)
+      - [x] [Clases Abstractas](herencia.md#clases-abstractas)
+      - [x] [Herencia por Implementación](herencia.md#herencia-por-implementación-interfaces)
+      - [x] [Limitar la Herencia](herencia.md#cómo-limitar-la-herencia)
+      - [x] [Beneficios de la Herencia](herencia.md#beneficios-de-la-herencia)
+    - [ ] *Polimorfismo*
+    - [ ] *Conversión de Tipos*
+    - [ ] *Herencia y Enumerados*
 
 ## Temario++
 
