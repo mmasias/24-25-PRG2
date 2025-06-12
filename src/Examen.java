@@ -5,8 +5,16 @@ class Examen{
 
     public Examen(String nombreExamen, Profesor profesorVigilando, String[] preguntas){
         this.nombreExamen = nombreExamen;
-        this.profesorVigilando = profesorVigilando;
+        Vigilar(profesorVigilando);
         this.preguntas = preguntas;
+    }
+
+    public String NombreExamen(){
+        return nombreExamen;
+    }
+
+    public String ProfesorVigilando(){
+        return profesorVigilando.Nombre();
     }
 
     public void DarPreguntas(){
@@ -15,6 +23,9 @@ class Examen{
         }
     }
 
-    
+    private void Vigilar(Profesor profesor){
+        this.profesorVigilando = profesor;
+        assert profesor.Imparte() == true;
+    }
 
 }

@@ -17,6 +17,10 @@ class Profesor {
         imparte = asignatura != null ? true : false;
     }
 
+    public String Nombre(){
+        return nombre;
+    }
+
     public String Datos(){
         return nombre + " / " + dNI;
     }
