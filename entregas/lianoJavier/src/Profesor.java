@@ -53,4 +53,8 @@ public class Profesor {
         return examen;
     }
 
+    public void mostrarDNI() {
+        mensaje(dni);
+    }
+
 }

@@ -32,6 +32,9 @@ public class Universidad {
 
         mensaje("Profesor: ");
         profesores[0].mostrarNombre();
+        mensaje(" / ");
+        mensaje("DNI ");
+        profesores[0].mostrarDNI();
         saltarLinea();
 
         mensaje("Asignatura: ");
@@ -44,6 +47,8 @@ public class Universidad {
 
         mensaje("Vigilado por: ");
         profesores[1].mostrarNombre();
+        mensaje(" / ");
+        profesores[0].mostrarDNI();
         saltarLinea();
 
         profesores[1].getExamen().mostrarPreguntas();
