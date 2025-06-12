@@ -1,0 +1,25 @@
+class Universidad{
+    String nombreUnversidad
+    Examen[]
+    Profesor profesor 1
+    Profesor profesor 2
+    asignar Puesto()
+    comprobarImpartiendo()
+    darDatos()
+}
+class Profesor{
+    String nombreUnversidad
+    String apellido
+    String Dni
+    crearExamen()
+    darExamen()
+}
+class asignatura{
+    String nombreUnversidad
+    int creditos
+}
+class examen{
+    int numero_pregutas
+    ExamenProgra[numero_preguntas]
+    crearPreguntas()
+}

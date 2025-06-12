@@ -10,11 +10,10 @@ class Universidad {
     }
     public static void main(String[] args) {
         Universidad universidad = new Universidad("Universidad Europea del Atlántico");
+        Asignatura asignatura = new Asignatura("Programación 2", 6);
 
         universidad.profesor1 = new Profesor("Ibuprofeno del Jesús", "Fernández Gomez de la Piedra y Cansado", "244455555X");
         universidad.profesor2 = new Profesor("Dalsy Piedad de los Remedios", "Albornoz del Campo", "666456665X");
-
-        Asignatura asignatura = new Asignatura("Programación 2", 6);
 
         universidad.asignarPuesto(universidad.profesor1, asignatura);
 
@@ -26,7 +25,6 @@ class Universidad {
 
         universidad.darDatos();
     }
-
 
     void asignarPuesto(Profesor profesor, Asignatura asignatura) {
         profesor.asignatura = asignatura;
