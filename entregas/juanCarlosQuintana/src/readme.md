@@ -1,4 +1,4 @@
-[Ir a la carpeta juanCarlosQuintana](juanCarlosQuintana/)
+[Ir a la carpeta juanCarlosQuintana](entregas/)
 
 
 
