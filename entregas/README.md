@@ -39,3 +39,5 @@ Todos están en `src/` en la rama [`Final`](https://github.com/GabrielMBP/24-25-
 - [`Examen.java`](src_GabrielBéjar/Examen.java) – Contiene preguntas.
 - [`Alumno.java`](src_GabrielBéjar/Alumno.java) – Interactúa en vigilancia.
 
+- Olvide incluir Escenario Universidad en la hoja, corrección hecha en código.
+
