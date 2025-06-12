@@ -20,6 +20,6 @@ Vista privada|***IMPLEMENTACIÓN***:<br>Definición de Atributos<br>Desencadenam
   - 1º **[Vista pública de las Clases](vistaPublicaClases.md)**
   - 2º **[Vista pública de los Objetos](vistaPublicaObjetos.md)**
 - Al definir atributos de una clase (generalmente, objetos de otras clases) y definir sus métodos (generalmente, lanzando mensajes a los objetos atributos), se debe respetar, transitivamente, la interfaz de otras clases =>
-  - 3º **Vista privada de las Clases**
+  - 3º **[Vista privada de las Clases](vistaPrivadaClases.md)**
 - Al crear un objeto se produce un desencadenamiento de instanciaciones y al lanzar un mensaje se produce un desencadenamiento de mensajes, acorde a la definición de atributos y de métodos de la clase del objeto =>
-  - 4º **Vista privada de Objetos**
+  - 4º **[Vista privada de Objetos](vistaPrivadaObjetos.md)**
