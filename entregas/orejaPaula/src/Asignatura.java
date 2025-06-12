@@ -1,4 +1,3 @@
-
 public class Asignatura {
     private String nombre;
     private int creditos;
@@ -8,17 +7,12 @@ public class Asignatura {
         this.creditos = creditos;
     }
 
-    public static void asignarAsignatura() {
-        Asignatura asignatura = Universidad.getAsignatura();
-        Profesor profesor = Universidad.getProfesor();
-        profesor.asignarAsignatura(asignatura);
-    }
-
-    public void mostrar() {
-        System.out.println("Asignatura: " + nombre + " - Créditos: " + creditos);
-    }
-
     public String getNombre() {
         return nombre;
     }
+
+    public void mostrar() {
+        System.out.println("Asignatura: " + nombre + " / Créditos: " + creditos);
+    }
 }
+
