@@ -16,10 +16,6 @@ En Profesor faltaron:
 - public int getNumAsignaturas()
 - public Asignatura getAsignatura(int i) (no lo puse exactamente)
 - public boolean tieneAsignatura(Asignatura a)
-- public void asignarAsignatura(Asignatura a)
-- public void quitarAsignatura(Asignatura a)
-- public Examen crearExamen(String nombreEx, Asignatura a, Scanner sc)
-- public void darExamen(Profesor vigilante, Examen e)
 
 En examen faltaron:
 - public String getNombre()
