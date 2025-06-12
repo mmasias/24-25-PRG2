@@ -30,8 +30,8 @@ public class Universidad {
                     crearAsignatura();
                 case 3:
                     asignarAsignatura();
-                case 4:
-
+                case 5:
+                    profesores[0].entregarExamen(examen, profesores[0], profesores[2]);
                 case 7:
                     System.out.println("Saliendo del programa...");
                 default:
@@ -77,7 +77,7 @@ public class Universidad {
         int creditos = scanner.nextInt();
         scanner.nextLine();
         this.asignatura = new Asignatura(nombreAsignatura, creditos);
-        System.out.println("Asignatura creada: " + asignatura);
+        System.out.println("Asignatura creada: " + asignatura.toString());
     }
 
     public void asignarAsignatura() {
@@ -108,6 +108,6 @@ public class Universidad {
         Profesor seleccionado = profesores[seleccion - 1];
         seleccionado.agregarAsignatura(asignatura);
 
-        System.out.println("Asignatura " + asignatura + " asignada al profesor " + seleccionado.nombre());
+        System.out.println("Asignatura " + asignatura.toString() + " asignada al profesor " + seleccionado.nombre());
     }
 }

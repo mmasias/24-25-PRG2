@@ -19,5 +19,9 @@ public class Examen {
         this.asignatura = asignatura;
         vigilado = true;
     }
+
+    public String toString() {
+        return tipo + asignatura.toString();
+    }
     
 }
