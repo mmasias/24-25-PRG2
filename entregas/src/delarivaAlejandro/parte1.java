@@ -15,3 +15,14 @@ public class Asignatura {
     public Profesor getProfesor();
     public Examen getExamen();
 }
+
+public class Profesor {
+    public Profesor(String nombre);
+    public void impartirAsignatura(Asignatura asignatura);
+    public Examen crearExamen();
+    public void vigilarExamen(Examen examen);
+    public void entregarExamenA(Examen examen, Profesor vigilante);
+    public String getNombre();
+    public Asignatura getAsignatura();
+    public List<Examen> getExamenesVigilados();
+}
