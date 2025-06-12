@@ -9,21 +9,21 @@ public class Profesor {
     }
 
     public Examen crearExamen() {
-        Examen e = new Examen(asignatura);
-        e.addPregunta("¿Cuánto es 2+2?",
+        Examen examen = new Examen(asignatura);
+        examen.addPregunta("¿Cuánto es 2+2?",
                       Arrays.asList("3","4","5"), 1);
-        e.addPregunta("¿Derivada de x^2?",
+        examen.addPregunta("¿Derivada de x^2?",
                       Arrays.asList("x","2x","x^2"), 1);
-        e.addPregunta("Integral de 1 dx?",
+        examen.addPregunta("Integral de 1 dx?",
                       Arrays.asList("x + C","1/x","0"), 0);
         System.out.println("Examen de " + asignatura +
                            " creado con 3 preguntas.");
-        return e;
+        return examen;
     }
 
-    public void supervisarExamen(Examen e) {
-        e.simularRespuestas();
+    public void supervisarExamen(Examen examen) {
+        examen.simularRespuestas();
         System.out.println("Examen supervisado: respuestas registradas.\n");
-        e.imprimirPreguntasYRespuestas();
+        examen.imprimirPreguntasYRespuestas();
     }
 }
