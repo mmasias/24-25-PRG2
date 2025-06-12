@@ -1,3 +1,2 @@
-# 👨‍💻 Programación II - RAMA DE ENTREGAS
-
-Usamos esta rama para las entregas, tal y como lo especificamos con más detalle en el artículo de [flujoGIT](/documentos/flujoGIT.md) y afinamos en el documento del reto / trabajo correspondiente.
+### Fallos que considero que he cometido en la vista pública de clases:
+1. Omitir Constructor en clases Profesores, Profesor y Vigilante.
