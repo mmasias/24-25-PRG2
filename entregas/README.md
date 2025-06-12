@@ -1,12 +1,26 @@
-# Carpeta de entregas
+# EXAMEN FINAL
 
-En esta carpeta, una carpeta con nombre ***apellidoNombre*** en la que coloquen las entregas de retos y/o sesiones.
+### Errores Parte 1 y Parte 2: 
 
-Cada reto o sesion debe ir en su correspondiente carpeta nombrada como *reto00x* o bien *sesionMesDia*. Ejemplo:
+- El DNI lo he puesto como int y deberia ser string por tener una letra al final.
 
-- /entregas/masiasManuel/reto001
-- /entregas/masiasManuel/sesion0204
+        private String dni;
 
-Los PR deben ser sólo de lo trabajado en dichas sesiones y se entregarán a la rama correspondiente.
+- Falta de atributos como examenVigilado
 
-No se corregirá si no se cumplen esas pautas.
+        public Examenes getExamenVigilado() {
+            return examenVigilado;
+        }
+- Falta de metodos como puedeVigilar o vigilarExamen
+
+        public boolean puedeVigilar() {
+            return asignatura == null;
+        }
+- Modificar nombres
+
+        public void asignarProfesores(Profesores p1, Profesores p2) {
+            this.profesor1 = p1;
+            this.profesor2 = p2;
+        }
+        
+### [Parte 3: vista privada de clases y objetos](entregas/maderoCarla/src)
