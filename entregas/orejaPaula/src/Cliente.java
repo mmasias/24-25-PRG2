@@ -3,11 +3,11 @@ public class Cliente {
         Universidad.crearAsignatura();
         Universidad.contratarProfesor();
         Asignatura asignatura = Asignatura.asignarAsignatura();
+
         Profesor.crearExamen(asignatura);
 
         Universidad.ContratarOtroProfesor();
-        
-        Profesor.entregarExamen(null);
+        Profesor.entregarExamen(null); 
 
         Universidad.mostrar();
     }

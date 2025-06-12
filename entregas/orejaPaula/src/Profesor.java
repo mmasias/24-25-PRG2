@@ -7,23 +7,23 @@ public class Profesor extends Persona {
         }
 
         Examen examen = new Examen();
-        examen.agregarPregunta("Vista pública de clases");
-        examen.agregarPregunta("Vista pública de objetos");
-        examen.agregarPregunta("Vista privada con herencia");
-
+        examen.agregarPregunta("¿Qué es la vista pública de clases?");
+        examen.agregarPregunta("¿Qué es la herencia?");
+        examen.agregarPregunta("Explica qué es HOOD");
         examen.mostrar();
     }
 
-    public static void entregarExamen(Asignatura asignaturaOtroProfesor) {
-        if (asignaturaOtroProfesor == null) {
-            System.out.println("Examen entregado al profesor vigilante.");
+    public static void entregarExamen(Asignatura asignaturaOtro) {
+        if (asignaturaOtro == null) {
+            System.out.println("Examen entregado por otro profesor (vigilante).");
         } else {
-            System.out.println("El otro profesor imparte asignatura. No puede vigilar el examen.");
+            System.out.println("El otro profesor imparte asignatura. No puede vigilar.");
         }
     }
 
     @Override
     public void mostrar() {
-        System.out.println("Profesor sin estado interno");
+        System.out.println("Profesor: sin atributos internos, usando herencia.");
     }
 }
+
