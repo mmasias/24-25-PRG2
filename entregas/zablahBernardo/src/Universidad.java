@@ -11,7 +11,6 @@ public class Universidad {
     public Universidad() {
         ProfesorAsignatura profesorAsignatura = null;
         ProfesorVigilante profesorVigilante = null;
-        Asignaturas asignaturas = new Asignaturas();
     }
 
     public void iniciarCurso() {
@@ -39,6 +38,7 @@ public class Universidad {
             } else if (opcion.equals("4")) {
                 if (profesorAsignatura != null && asignatura != null) {
                     profesorAsignatura.crearExamen(asignatura);
+                    System.out.println("Examen creado y asignatura asignada al profesor asignatura.");
                 } else {
                     System.out.println("Debe contratar profesor asignatura y crear asignatura antes.");
                 }
@@ -92,5 +92,5 @@ public class Universidad {
             System.out.println("No hay profesor vigilante contratado para iniciar el examen.");
         }
     }
-    
+
 }
