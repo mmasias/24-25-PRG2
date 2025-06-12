@@ -14,4 +14,15 @@ public class Profesor {
     }
 
 
-    
+    public void crearAsignatura(String nombreAsignatura) {
+        this.asignatura = new Asignatura(nombreAsignatura);
+        System.out.println(nombre + " ha creado la asignatura: " + nombreAsignatura);
+    }
+
+
+    public void AsociarAsignatura(Asignatura a) {
+        this.asignatura = a;
+        System.out.println(nombre + " ha sido asignado a la asignatura: " + a.getNombre());
+    }
+
+
