@@ -1,3 +1,7 @@
-# 👨‍💻 Programación II - RAMA DE ENTREGAS
+##  ADICCIÓN PARTE ESCRITA EXAMEN FINAL(FALLO)
 
-Usamos esta rama para las entregas, tal y como lo especificamos con más detalle en el artículo de [flujoGIT](/documentos/flujoGIT.md) y afinamos en el documento del reto / trabajo correspondiente.
+He añadido el método público:
+- `agregarPreguntas(String p1, String p2, String p3)` en la clase `Examen`
+
+**Motivo:**  
+El método permite que el profesor pueda introducir las tres preguntas en el examen.  
