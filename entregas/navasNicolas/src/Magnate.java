@@ -10,7 +10,6 @@ public class Magnate {
         Profesor profB = universidad.contratarProfesor("Luis Gómez");
         System.out.println();
 
-        System.out.println("\n=== Inicio del examen ===");
         universidad.asignarAsignatura(profA, materia);
         System.out.println();
 
