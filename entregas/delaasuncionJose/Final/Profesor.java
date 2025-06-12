@@ -59,8 +59,8 @@ public class Profesor {
 
     public void mostrar() {
         if (examenesAlmacenados>0) {
-            for (Examen examen : examenes) {
-                examen.mostrar();
+            for (int i = 0; i < examenesAlmacenados; i++) {
+                examenes[i].mostrar();
             }
         } else {
             System.out.println("Profesor: " + nombre + " / " + dni);
