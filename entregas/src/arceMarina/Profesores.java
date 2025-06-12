@@ -12,7 +12,7 @@ class Profesores {
     }
 
     public void crearExamen() {
-        if (programador && asignatura != null && asignatura.toLowerCase().contains("programacion")) {
+        if (programador && asignatura != null && contieneProgramacion(asignatura)) {
             this.examen = new Examen(asignatura);
         }
     }
@@ -42,9 +42,21 @@ class Profesores {
 
     private void asignarAsignatura(String asignatura) {
         this.asignatura = asignatura;
-        if (asignatura.toLowerCase().contains("programacion")) {
+        if (contieneProgramacion(asignatura)) {
             this.programador = true;
         }
+    }
+
+    private boolean contieneProgramacion(String texto) {
+        return removerTildes(texto.toLowerCase()).contains("programacion");
+    }
+
+    private String removerTildes(String texto) {
+        return texto.replace("á", "a")
+                    .replace("é", "e")
+                    .replace("í", "i")
+                    .replace("ó", "o")
+                    .replace("ú", "u");
     }
 
     private void imprimirInformacion() {

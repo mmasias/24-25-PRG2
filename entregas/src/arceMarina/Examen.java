@@ -8,7 +8,7 @@ class Examen {
     public Examen(String asignatura) {
         this.titulo = "Examen final";
         this.preguntas = generarPreguntas();
-        this.asignatura = asignatura.toLowerCase().contains("programacion") ? asignatura : null;
+        this.asignatura = asignatura;
     }
 
     private String[] generarPreguntas() {

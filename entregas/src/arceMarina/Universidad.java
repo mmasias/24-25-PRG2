@@ -70,6 +70,6 @@ public class Universidad {
     }
 
     public static void main(String[] args) {
-        new Universidad(); 
+        new Universidad();
     }
 }
