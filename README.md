@@ -51,12 +51,12 @@ Contiene:
 
 Métodos principales:
 
-Este método le había puesto otro nombre
-- asignarAsignatura(): Asigna una materia al profesor si no es vigilante.
-
 - crearExamen(): Crea un examen si el profesor tiene asignatura y no es vigilante.
 
 - vigilarExamen(): Permite asignar al profesor como vigilante si no tiene asignatura.
+
+Este método le había puesto otro nombre
+- asignarAsignatura(): Asigna una materia al profesor si no es vigilante.
 
 Este método lo había puesto en la clase incorrecta
 - entregarExamen(): Permite al profesor de la asignatura entregar el examen a otro profesor vigilante, actualizando los datos.
