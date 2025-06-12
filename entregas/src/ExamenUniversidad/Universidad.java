@@ -25,5 +25,4 @@ public class Universidad {
     public void contrataProfesores() {
         System.out.println(profesores[0] + " es el profesor contratado para crear el examen y " + profesores[1] + " lo corregirá.");
     }
-
 }
