@@ -1,3 +1,4 @@
+package pakVanessa;
 public class Universidad {
     Profesor profesor1; 
     Profesor profesor2; 

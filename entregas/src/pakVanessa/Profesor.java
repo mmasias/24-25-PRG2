@@ -1,3 +1,4 @@
+package pakVanessa;
 public class Profesor {
     private String nombre;
     private String asignatura;

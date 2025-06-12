@@ -1,3 +1,4 @@
+package pakVanessa;
 public class Examen {
     private String[] preguntas = new String[3];
     private int contador = 0;
