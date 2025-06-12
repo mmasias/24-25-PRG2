@@ -26,3 +26,16 @@ public class Profesor {
     }
 
 
+    public Examen CrearExamen() {
+        if (asignatura == null) {
+            noCrearAsignatura();
+            return null;
+        }
+        Examen examen = new Examen();
+        examen.agregarPregunta("Vista pública clases");
+        examen.agregarPregunta("Vista pública de objetos");
+        examen.agregarPregunta("Vista privada de clases");
+        System.out.println(nombre + " ha creado el examen, con 3 preguntas!");
+        return examen;
+    }
+
