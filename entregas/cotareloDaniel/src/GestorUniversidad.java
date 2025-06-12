@@ -21,8 +21,7 @@ public class GestorUniversidad {
     }
 
     public void crearPreguntasExamen() {
-        PreguntasExamen preguntasExamen;
-        preguntasExamen = new PreguntasExamen();
+        PreguntasExamen preguntasExamen = new PreguntasExamen();
         preguntasExamen.crearPreguntas();
     }
 
@@ -31,8 +30,11 @@ public class GestorUniversidad {
     }
 
     public void entregarExamenAProfesorVigilante() {
-        if (examen != null && profesorVigilante != null) {
+        if (profesorVigilante.getAsignatura() == null) {
             System.out.println("El profesor " + profesor.getNombre() + " entrega el examen a " + profesorVigilante.getNombre() + ".");
+            System.out.println();
+        } else {
+            System.out.println("El profesor vigilante no puede recibir el examen porque imparte una asignatura.");
             System.out.println();
         }
     }
@@ -45,7 +47,11 @@ public class GestorUniversidad {
         System.out.println(asignatura.toString());
         System.out.println();
         System.out.println("Examen creado:");
-        System.out.println(examen.toString());
+        if (examen != null) {
+            System.out.println(examen.toString());
+        } else {
+            System.out.println("No se ha podido crear el examen.");
+        }
         System.out.println();
         System.out.println("Profesor que vigila el examen:");
         System.out.println(profesorVigilante.toString());

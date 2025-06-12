@@ -24,16 +24,13 @@ public class Universidad {
     }
 
     public void ejecutarUniversidad() {
-        gestor.crearProfesor("Aurelio Márquez López", "12345678A");
-        gestor.crearProfesorVigilante("Marina Ruiz Delgado", "98765432B");
         gestor.crearAsignatura("Diseño de Software", 5);
-
+        gestor.crearProfesor("Aurelio Márquez López", "12345678A");
         gestor.asignarAsignaturaAProfesor();
-
         gestor.crearPreguntasExamen();
         gestor.crearExamen();
+        gestor.crearProfesorVigilante("Marina Ruiz Delgado", "98765432B");
         gestor.entregarExamenAProfesorVigilante();
-
         System.out.println(nombre);
         System.out.println();
         gestor.mostrarEscenario();

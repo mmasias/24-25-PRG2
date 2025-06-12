@@ -1,5 +1,3 @@
-package entregas.cotareloDaniel.src;
-
 public class Profesor {
     private String nombre;
     private String dni;
