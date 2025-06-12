@@ -1,7 +1,9 @@
+package arceMarina;
+
 class Examen {
     private String titulo;
     private String[] preguntas;
-    private String asignatura; // asignatura a la que pertenece este examen
+    private String asignatura;
 
     public Examen(String asignatura) {
         this.titulo = "Examen final";
@@ -10,7 +12,7 @@ class Examen {
     }
 
     private String[] generarPreguntas() {
-        return new String[]{
+        return new String[] {
             "Vista pública clases",
             "Vista pública de objetos",
             "Vista privada de clases"

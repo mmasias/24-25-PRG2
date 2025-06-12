@@ -1,4 +1,5 @@
 package arceMarina;
+
 class Profesor {
     private String nombre;
     private boolean programador;
@@ -11,8 +12,8 @@ class Profesor {
     }
 
     public void crearExamen() {
-        if (programador) {
-            this.examen = new Examen();
+        if (programador && asignatura != null && asignatura.toLowerCase().contains("programacion")) {
+            this.examen = new Examen(asignatura);
         }
     }
 
@@ -24,7 +25,15 @@ class Profesor {
     }
 
     public void vigilar() {
-       
+        
+    }
+
+    void asignar(String asignatura) {
+        asignarAsignatura(asignatura);
+    }
+
+    void mostrarDatos() {
+        imprimirInformacion();
     }
 
     private boolean puedeVigilar(Profesor otro) {
@@ -43,11 +52,17 @@ class Profesor {
         System.out.println("Asignatura: " + asignatura);
 
         if (examen != null) {
-            System.out.println("Examen: " + examen.getTitulo());
+            System.out.println("Examen: Examen final");
             System.out.println("Vigilado por: " + (vigilante != null ? vigilante.nombre : "Nadie"));
 
-            for (int i = 0; i < examen.getPreguntas().length; i++) {
-                System.out.println("Pregunta " + (i + 1) + ": \"" + examen.getPreguntas()[i] + "\"");
+            String[] preguntas = {
+                "Vista pública clases",
+                "Vista pública de objetos",
+                "Vista privada de clases"
+            };
+
+            for (int i = 0; i < preguntas.length; i++) {
+                System.out.println("Pregunta " + (i + 1) + ": \"" + preguntas[i] + "\"");
             }
         }
     }

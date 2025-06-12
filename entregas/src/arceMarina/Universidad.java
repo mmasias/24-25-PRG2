@@ -1,4 +1,5 @@
 package arceMarina;
+
 public class Universidad {
     private Profesor[] profesores;
     private String[] asignaturas;
@@ -27,9 +28,9 @@ public class Universidad {
         asignarAsignatura(profesor1, "programación 2 - PRG2 - 6 creditos");
 
         profesor1.crearExamen();
-        profesor1.entregarExamenA(profesor2);
+        profesor1.entregar(profesor2);
 
-        imprimirInformacion(profesor1, profesor2);
+        imprimirInformacion(profesor1);
     }
 
     public void contratar(Profesor profesor) {
@@ -46,8 +47,7 @@ public class Universidad {
 
     public void asignarAsignatura(Profesor profesor, String asignatura) {
         if (existeAsignatura(asignatura)) {
-            profesor.setAsignatura(asignatura);
-            profesor.setProgramador(esAsignaturaDeProgramacion(asignatura));
+            profesor.asignar(asignatura);
         }
     }
 
@@ -64,23 +64,8 @@ public class Universidad {
         return false;
     }
 
-    private boolean esAsignaturaDeProgramacion(String asignatura) {
-        return asignatura.toLowerCase().contains("programacion");
-    }
-
-    private void imprimirInformacion(Profesor profesor1, Profesor profesor2) {
+    private void imprimirInformacion(Profesor profesor) {
         System.out.println("Universidad: " + nombre);
-        System.out.println("Profesor: " + profesor1.getNombre());
-        System.out.println("Asignatura: " + profesor1.getAsignatura());
-
-        Examen examen = profesor1.getExamen();
-        if (examen != null) {
-            System.out.println("Examen: " + examen.getTitulo());
-            System.out.println("Vigilado por: " + profesor2.getNombre());
-
-            for (int i = 0; i < examen.getPreguntas().length; i++) {
-                System.out.println("Pregunta " + (i + 1) + ": \"" + examen.getPreguntas()[i] + "\"");
-            }
-        }
+        profesor.mostrarDatos();
     }
 }
