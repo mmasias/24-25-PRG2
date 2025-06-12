@@ -10,8 +10,18 @@ EXAMEN FINAL:
     }
 ```
 
-```text
 
-    public void setAsignatura(Asignatura asignatura) {
-        this.asignatura = asignatura;
+- En la Clase Asignatura se me olvidó el métodos público: 
+
+```text
+    public String getDescripcion() {
+        return "Asignatura: " + nombre + " - " + codigo + " - " + creditos + " créditos";
     }
+```
+```text
+   public Asignatura(String nombre, String codigo, int creditos) {
+        this.nombre = nombre;
+        this.codigo = codigo;
+        this.creditos = creditos;
+    }
+```

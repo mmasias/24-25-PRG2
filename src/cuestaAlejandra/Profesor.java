@@ -9,7 +9,7 @@ public class Profesor {
         this.dni = dni;
     }
 
-    public void setAsignatura(Asignatura asignatura) {
+    public void SetAsignatura(Asignatura asignatura) {
         this.asignatura = asignatura;
     }
 
