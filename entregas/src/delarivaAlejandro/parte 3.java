@@ -161,3 +161,33 @@ public class Examen {
     }
 }
 
+public class Escenario {
+    public static void main(String[] args) {
+        Universidad u = new Universidad("UAM");
+        Asignatura a = u.crearAsignatura("POO");
+        Profesor p1 = u.contratarProfesor("Juan");
+        p1.impartirAsignatura(a);
+        Examen ex = p1.crearExamen();
+        Profesor p2 = u.contratarProfesor("Ana");
+        p1.entregarExamenA(ex, p2);
+
+        System.out.println("Universidad: " + u.getNombre());
+        System.out.println("Asignaturas:");
+        for (Asignatura asig : u.getAsignaturas()) {
+            System.out.println("  - " + asig.getNombre() + ", Profesor: " + 
+                (asig.getProfesor() != null ? asig.getProfesor().getNombre() : "Ninguno"));
+            if (asig.getExamen() != null) {
+                System.out.println("    Examen preguntas: " + asig.getExamen().getPreguntas());
+                Profesor v = asig.getExamen().getVigilante();
+                System.out.println("    Vigilante: " + (v != null ? v.getNombre() : "Ninguno"));
+            }
+        }
+        System.out.println("Profesores:");
+        for (Profesor prof : u.getProfesores()) {
+            System.out.println("  - " + prof.getNombre() + 
+                ", Imparte: " + (prof.getAsignatura() != null ? prof.getAsignatura().getNombre() : "Ninguna") +
+                ", Exámenes vigilados: " + prof.getExamenesVigilados().stream()
+                    .map(e -> e.getAsignatura().getNombre()).toList());
+        }
+    }
+}
