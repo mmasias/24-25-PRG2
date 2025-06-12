@@ -1,13 +1,18 @@
 
 public class Asignatura {
 
-    public Asignatura(String string, String string2, int i) {
-        //TODO Auto-generated constructor stub
+    private String nombre;
+    private String acronimo;
+    private int creditos;
+
+    public Asignatura(String nombre, String acronimo, int creditos) {
+        this.nombre = nombre;
+        this.acronimo = acronimo;
+        this.creditos = creditos;
     }
 
     public void mostrarNombre() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'mostrarNombre'");
+        Utilidades.mensaje(nombre);
     }
 
 }
