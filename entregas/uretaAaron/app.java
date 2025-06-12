@@ -1,5 +1,5 @@
 package entregas.uretaAaron;
-public class App {
+public class app {
     public static void main(String[] args) {
         Universidad uni = new Universidad("Universidad Europea del Atlántico");
 
