@@ -19,7 +19,7 @@ public class Universidad {
                 "Dalsy Piedad de los Remedios Albornoz del Campo",
                 "66645665X");
 
-        this.asignatura = new Asignatura("Programación II", profesorAsignatura);
+        this.asignatura = new Asignatura("Programación II - PRG2 - 6 créditos", profesorAsignatura);
 
         imprimirDatos();
 
