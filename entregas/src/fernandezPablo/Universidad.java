@@ -16,5 +16,18 @@ public class Universidad {
         System.out.println(profesores[0].getNombre() + " ha sido asignado a la asignatura de Programación.");
     }
 
+    public void gestionarExamen() {
+        examen = profesores[0].crearExamen();
+        profesores[0].entregar(examen);
+        profesores[1].vigilar(examen);
+    }
+
+    public static void main(String[] args) {
+        Universidad uneatlantico = new Universidad();
+        uneatlantico.contratar();
+        uneatlantico.asignar();
+        uneatlantico.gestionarExamen();
+    }
+
 
 }
