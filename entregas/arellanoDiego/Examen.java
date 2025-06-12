@@ -1,0 +1,50 @@
+public class Examen {
+    private String titulo;
+    private Asignatura asignatura;
+    private Profesor vigilante;
+    private Pregunta[] preguntas;
+    private int contadorPreguntas;
+
+    public Examen(String titulo, Asignatura asignatura) {
+        this.titulo = titulo;
+        this.asignatura = asignatura;
+        this.vigilante = null;
+        this.preguntas = new Pregunta[3];
+        this.contadorPreguntas = 0;
+    }
+
+    public void agregarPregunta(String enunciado) {
+        if (contadorPreguntas < preguntas.length) {
+            this.preguntas[this.contadorPreguntas] = new Pregunta(enunciado);
+            this.contadorPreguntas++;
+        }
+    }
+
+    public void asignarVigilante(Profesor vigilante) {
+        this.vigilante = vigilante;
+    }
+
+    public String mostrar() {
+        String texto = "    Examen: " + this.titulo + " \n";
+        if (this.vigilante != null) {
+            texto += "    Vigilado por: " + this.vigilante.getNombre() + " / dni " + this.vigilante.getDni() + " \n";
+        }
+        for (int i = 0; i < this.contadorPreguntas; i++) {
+            texto += "      Pregunta " + (i + 1) + ": " + this.preguntas[i].mostrar() + " \n";
+        }
+        return texto;
+    }
+    
+
+    private class Pregunta {
+        private String enunciado;
+
+        public Pregunta(String enunciado) {
+            this.enunciado = enunciado;
+        }
+
+        public String mostrar() {
+            return this.enunciado;
+        }
+    }
+}
