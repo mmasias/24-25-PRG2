@@ -26,15 +26,11 @@ public class Universidad {
     }
 
     private void mostrarEscenario() {
-        Utilidades.mensaje("Universidad: ");
-        mostrarNombre();
+        mostarNombreUniversidad();
         Utilidades.saltarLinea();
 
         Utilidades.mensaje("Profesor: ");
-        profesores[0].mostrarNombre();
-        Utilidades.mensaje(" / ");
-        Utilidades.mensaje("DNI ");
-        profesores[0].mostrarDNI();
+        mostrarDatosProfesor(profesores[0]);
         Utilidades.saltarLinea();
 
         Utilidades.mensaje("Asignatura: ");
@@ -46,17 +42,26 @@ public class Universidad {
         Utilidades.saltarLinea();
 
         Utilidades.mensaje("Vigilado por: ");
-        profesores[1].mostrarNombre();
-        Utilidades.mensaje(" / ");
-        profesores[0].mostrarDNI();
+        mostrarDatosProfesor(profesores[1]);
         Utilidades.saltarLinea();
 
         profesores[1].getExamen().mostrarPreguntas();
     }
 
+    private void mostrarDatosProfesor(Profesor profesor) {
+        profesor.mostrarNombre();
+        Utilidades.mensaje(" / ");
+        Utilidades.mensaje("DNI ");
+        profesor.mostrarDNI();
+    }
+
+    private void mostarNombreUniversidad() {
+        Utilidades.mensaje("Universidad: ");
+        mostrarNombre();
+    }
+
     private void mostrarNombre() {
         Utilidades.mensaje(nombre);
     }
-
 
 }
