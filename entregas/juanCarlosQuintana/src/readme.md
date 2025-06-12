@@ -1,4 +1,4 @@
-[Ir a la carpeta juanCarlosQuintana](src/juanCarlosQuintana/)
+[Ir a la carpeta juanCarlosQuintana](juanCarlosQuintana/)
 
 
 
