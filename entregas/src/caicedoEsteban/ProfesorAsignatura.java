@@ -1,28 +1,34 @@
 
 public class ProfesorAsignatura {
 
+    private String nombreProfesor;
+    private Asignatura asignatura;
+    private Examen examen;
+
     public ProfesorAsignatura(String nombreProfesor) {
-        // TODO Auto-generated constructor stub
+        this.nombreProfesor = nombreProfesor;
     }
 
     public void impartirAsignatura(Asignatura asignatura) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'impartirAsignatura'");
+        this.asignatura = asignatura;
     }
 
     public void crearExamen() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'crearExamen'");
+        if (asignatura != null) {
+            examen = new Examen("Examen final", asignatura);
+            examen.agregarPregunta("Pregunta 1 :");
+            examen.agregarPregunta("Pregunta 2 :");
+            examen.agregarPregunta("Pregunta 3 :");
+        }
     }
 
     public Examen getExamen() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'getExamen'");
+        return examen;
     }
 
     public void enviarExamenA(ProfesorSupervisor profesorSupervisor) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'enviarExamenA'");
+        if (examen != null) {
+            profesorSupervisor.recibirExamen(examen);
+        }
     }
-
 }
