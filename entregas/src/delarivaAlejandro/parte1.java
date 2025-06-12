@@ -6,3 +6,12 @@ public class Universidad {
     public List<Asignatura> getAsignaturas();
     public String getNombre();
 }
+
+public class Asignatura {
+    public Asignatura(String nombre);
+    public void asignarProfesor(Profesor profesor);
+    public void asignarExamen(Examen examen);
+    public String getNombre();
+    public Profesor getProfesor();
+    public Examen getExamen();
+}
