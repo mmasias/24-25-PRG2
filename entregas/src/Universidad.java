@@ -1,46 +1,27 @@
-// Universidad.java
-import java.util.ArrayList;
-import java.util.List;
 
 public class Universidad {
-    String nombre;
-    List<Profesor> profes = new ArrayList<>();
+    public void crearUniversidad() {
+        SecretariaAcademica uni = new SecretariaAcademica("Tech University");
+        System.out.println("\n=== Universidad creada: " + uni.nombre + " ===\n");
 
-    public Universidad(String nombre) {
-        this.nombre = nombre;
-    }
+        String materia = uni.crearAsignatura("Matemáticas");
+        System.out.println();
 
-    public String crearAsignatura(String nombreMat) {
-        System.out.println("Asignatura creada: " + nombreMat);
-        return nombreMat;
-    }
+        Profesor profA = uni.contratarProfesor("Ana Pérez");
+        Profesor profB = uni.contratarProfesor("Luis Gómez");
+        System.out.println();
 
-    public Profesor contratarProfesor(String nombre) {
-        Profesor p = new Profesor(nombre);
-        profes.add(p);
-        System.out.println("Profesor contratado: " + nombre);
-        return p;
-    }
+        uni.asignarAsignatura(profA, materia);
+        System.out.println();
 
-    public void asignarAsignatura(Profesor p, String mat) {
-        p.asignatura = mat;
-        System.out.println("Asignatura " + mat +
-                           " asignada a " + p.nombre);
-    }
+        Examen ex = uni.comunicarExamen(profA);
+        System.out.println();
 
-    public Examen comunicarExamen(Profesor p) {
-        System.out.println(p.nombre + " recibe encargue de crear examen.");
-        return p.crearExamen();
-    }
+        uni.vigilarExamen(profB, ex);
+        System.out.println();
 
-    public void vigilarExamen(Profesor vigilante, Examen e) {
-        System.out.println(vigilante.nombre +
-                           " (sin materia) vigila el examen de " +
-                           e.materia);
-        vigilante.supervisarExamen(e);
-    }
-
-    public void evaluarResultados(Examen e) {
-        e.evaluar();
+        // 6) ProfA evalúa y muestra aciertos
+        uni.evaluarResultados(ex);
+        System.out.println("\n=== Fin del escenario ===");
     }
 }

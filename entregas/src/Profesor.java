@@ -1,9 +1,8 @@
-// Profesor.java
 import java.util.Arrays;
 
 public class Profesor {
     String nombre;
-    String asignatura;  // sin setter/getter
+    String asignatura; 
 
     public Profesor(String nombre) {
         this.nombre = nombre;
@@ -11,7 +10,6 @@ public class Profesor {
 
     public Examen crearExamen() {
         Examen e = new Examen(asignatura);
-        // 3 preguntas fijas con 3 opciones cada una
         e.addPregunta("¿Cuánto es 2+2?",
                       Arrays.asList("3","4","5"), 1);
         e.addPregunta("¿Derivada de x^2?",
