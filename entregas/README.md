@@ -30,12 +30,12 @@ Pregunta 3: "..."
 
 Todos están en `src/` en la rama [`Final`](https://github.com/GabrielMBP/24-25-PRG2/tree/Final/src):
 
-- [`EscenarioUniversidad.java`](EscenarioUniversidad.java) – Clase principal.
-- [`Universidad.java`](Universidad.java) – Crea clases y ejecuta el escenario.
-- [`Asignatura.java`](Asignatura.java) – Define asignatura y créditos.
-- [`Profesor.java`](Profesor.java) – Clase base de profesor.
-- [`ProfesorAsignatura.java`](ProfesorAsignatura.java) – Profesor que imparte y crea examen.
-- [`ProfesorVigila.java`](ProfesorVigila.java) – Profesor que vigila exámenes.
-- [`Examen.java`](Examen.java) – Contiene preguntas.
-- [`Alumno.java`](Alumno.java) – Interactúa en vigilancia.
+- [`EscenarioUniversidad.java`](src_GabrielBéjar/EscenarioUniversidad.java) – Clase principal.
+- [`Universidad.java`](src_GabrielBéjar/Universidad.java) – Crea clases y ejecuta el escenario.
+- [`Asignatura.java`](src_GabrielBéjar/Asignatura.java) – Define asignatura y créditos.
+- [`Profesor.java`](src_GabrielBéjar/Profesor.java) – Clase base de profesor.
+- [`ProfesorAsignatura.java`](src_GabrielBéjar/ProfesorAsignatura.java) – Profesor que imparte y crea examen.
+- [`ProfesorVigila.java`](src_GabrielBéjar/ProfesorVigila.java) – Profesor que vigila exámenes.
+- [`Examen.java`](src_GabrielBéjar/Examen.java) – Contiene preguntas.
+- [`Alumno.java`](src_GabrielBéjar/Alumno.java) – Interactúa en vigilancia.
 
