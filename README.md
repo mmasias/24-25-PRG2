@@ -1,3 +1,3 @@
 # 👨‍💻 Universidad
 
-### Ubicacio¡ón del trabajo hecho: [Final](entregas/src/)
+### Ubicación del trabajo hecho: [Final](entregas/src/)
