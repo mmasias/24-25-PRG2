@@ -13,7 +13,10 @@ public class Profesor {
     }
 
     public void darExamen(Profesor profesor) {
-        if (tieneExamen() && !profesor.imparte()) profesor.recibir(examen);
+        assert !tieneExamen() : "El profesor no tiene un examen para dar.";
+        assert profesor.imparte() : "El profesor imparte una asignatura, no puede recibir un examen.";
+
+        profesor.recibir(examen);
     }
 
     private void recibir(Examen examen) {
@@ -29,11 +32,14 @@ public class Profesor {
     }
 
     public void crearExamen() {
+        assert imparte() : "El profesor no imparte ninguna asignatura, no puede crear un examen.";
+
         final String[] PREGUNTAS = {
                 "Vista pública clases",
                 "Vista pública de objetos",
                 "Vista privada de clases"
         };
+
         examen = new Examen("Examen Final", PREGUNTAS, asignatura);
     }
 
