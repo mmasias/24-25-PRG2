@@ -14,7 +14,6 @@ public class SimuladorUniversidad {
         ProfesorSupervisor profesorSupervisor = rhh.contratarProfesorParaSupervision("Profesor supervisor");
         rhh.asignarSupervisionDeExamen(profesorImpartidor, profesorSupervisor);
 
-        // Mostrar escenario completo
         mostrarEscenario(universidad, profesorImpartidor, asignatura, profesorSupervisor);
     }
 
