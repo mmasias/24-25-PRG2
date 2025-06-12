@@ -31,4 +31,9 @@ public class ProfesorAsignatura {
             profesorSupervisor.recibirExamen(examen);
         }
     }
+
+    public String getNombreProfesor() {
+        return nombreProfesor;
+    }
+
 }
