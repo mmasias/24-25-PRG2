@@ -1,10 +1,10 @@
 public class Profesores {
-    private String nombre;
-    private String dni;
+    private String nombre_profesor;
+    private String dni_profesor;
 
-    private Profesores(String nombre, String dni) {
-        this.nombre = nombre;
-        this.dni = dni;
+    private Profesores(String nombre_profesor, String dni_profesor) {
+        this.nombre_profesor = nombre_profesor;
+        this.dni_profesor = dni_profesor;
     }
 
     public static Profesores crearProfesorParaExamen() {
@@ -19,11 +19,11 @@ public class Profesores {
         return Examen.crearExamenFinalDeProgramacion();
     }
 
-    public String getNombre() {
-        return nombre;
+    public String getNombre_profesor() {
+        return this.nombre_profesor;
     }
 
-    public String getDni() {
-        return dni;
+    public String getDni_profesor() {
+        return this.dni_profesor;
     }
 }

@@ -13,6 +13,6 @@ public class Examen {
     }
 
     public String getPreguntas() {
-        return preguntas;
+        return this.preguntas;
     }
 }

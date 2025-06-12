@@ -1,27 +1,27 @@
 public class Asignaturas {
-    private String nombre;
-    private String abreviacion;
-    private int creditos;
+    private String nombre_asignatura;
+    private String abreviacion_asignatura;
+    private String creditos_asignatura;
 
-    private Asignaturas(String nombre, String abreviacion, int creditos) {
-        this.nombre = nombre;
-        this.abreviacion = abreviacion;
-        this.creditos = creditos;
+    private Asignaturas(String nombre_asignatura, String abreviacion_asignatura, String creditos_asignatura) {
+        this.nombre_asignatura = nombre_asignatura;
+        this.abreviacion_asignatura = abreviacion_asignatura;
+        this.creditos_asignatura = creditos_asignatura;
     }
 
     public static Asignaturas crearAsignaturaDeProgramacion() {
-        return new Asignaturas("Programacion II", "PRG2", 6);
+        return new Asignaturas("Programacion II", "PRG2", "6");
     }
 
-    public String getNombre() {
-        return nombre;
+    public String getNombre_asignatura() {
+        return this.nombre_asignatura;
     }
 
-    public String getAbreviacion() {
-        return this.abreviacion;
+    public String getAbreviacion_asignatura() {
+        return this.abreviacion_asignatura;
     }
 
-    public int getCreditos() {
-        return creditos;
+    public String getCreditos_asignatura() {
+        return this.creditos_asignatura;
     }
 }
