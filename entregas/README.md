@@ -1,12 +1,9 @@
-# Carpeta de entregas
+# EXAMEN FINAL
 
-En esta carpeta, una carpeta con nombre ***apellidoNombre*** en la que coloquen las entregas de retos y/o sesiones.
+### [Parte 3: vista privada de clases y objetos](entregas/maderoCarla/src)
 
-Cada reto o sesion debe ir en su correspondiente carpeta nombrada como *reto00x* o bien *sesionMesDia*. Ejemplo:
+### Errores: 
 
-- /entregas/masiasManuel/reto001
-- /entregas/masiasManuel/sesion0204
-
-Los PR deben ser sólo de lo trabajado en dichas sesiones y se entregarán a la rama correspondiente.
-
-No se corregirá si no se cumplen esas pautas.
+- El DNI lo he puesto en la parte 1 y 2 como int y deberia ser string por tener una letra al final.
+- Falta de atributos como examenVigilado
+- Falta de metodos como puedeVigilar o vigilarExamen
