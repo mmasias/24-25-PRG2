@@ -31,8 +31,24 @@ public class Profesor {
 
     public void supervisarExamen(Examen e) {
         e.simularRespuestas();
-        System.out.println("Examen supervisado: respuestas registradas.");
+        System.out.println("Examen supervisado: respuestas registradas.\n");
+    
+        System.out.println("Preguntas del examen:");
+        List<Pregunta> preguntas = e.getPreguntas();
+        List<Integer> respuestas = e.getRespuestasAlumno();
+        
+        for (int i = 0; i < preguntas.size(); i++) {
+            Pregunta p = preguntas.get(i);
+            System.out.println((i + 1) + ". " + p.getEnunciado());
+            List<String> opciones = p.getOpciones();
+            for (int j = 0; j < opciones.size(); j++) {
+                System.out.println("   " + (char)('A' + j) + ") " + opciones.get(j));
+            }
+            System.out.println("=> Respuesta del alumno: " +
+                (char)('A' + respuestas.get(i)) + "\n");
+        }
     }
+    
 
     public void evaluarExamen(Examen e) {
         int correctas = e.contarAciertos();

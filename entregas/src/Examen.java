@@ -40,4 +40,13 @@ public class Examen {
         }
         return aciertos;
     }
+
+    public List<Pregunta> getPreguntas() {
+        return preguntas;
+    }
+    
+    public List<Integer> getRespuestasAlumno() {
+        return respuestasAlumno;
+    }
+    
 }

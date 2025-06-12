@@ -1,25 +1,25 @@
 public class Magnate {
     public void ejecutarEscenario() {
-        Universidad u = new Universidad("Tech University");
-        System.out.println("=== Universidad creada: " + u.getNombre() + " ===\n");
+        Universidad universidad = new Universidad("Tech University");
+        System.out.println("=== Universidad creada: " + universidad.getNombre() + " ===\n");
 
-        Asignatura mate = u.crearAsignatura("Matemáticas");
+        Asignatura mate = universidad.crearAsignatura("Matemáticas");
         System.out.println();
 
-        Profesor profA = u.contratarProfesor("Ana Pérez");
-        Profesor profB = u.contratarProfesor("Luis Gómez");
+        Profesor profA = universidad.contratarProfesor("Ana Pérez");
+        Profesor profB = universidad.contratarProfesor("Luis Gómez");
         System.out.println();
 
-        u.asignarAsignatura(profA, mate);
+        universidad.asignarAsignatura(profA, mate);
         System.out.println();
 
-        Examen examen = u.comunicarExamen(profA);
+        Examen examen = universidad.comunicarExamen(profA);
         System.out.println();
 
-        u.vigilarExamen(profB, examen);
+        universidad.vigilarExamen(profB, examen);
         System.out.println();
 
-        u.evaluarResultados(profA, examen);
+        universidad.evaluarResultados(profA, examen);
         System.out.println("\n=== Fin del escenario ===");
     }
 }

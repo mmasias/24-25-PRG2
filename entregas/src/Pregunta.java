@@ -16,4 +16,12 @@ public class Pregunta {
     public boolean isCorrecta(int respuestaIdx) {
         return respuestaIdx == indiceCorrecta;
     }
+
+    public String getEnunciado() {
+        return enunciado;
+    }
+
+    public List<String> getOpciones() {
+        return opciones;
+    }
 }
