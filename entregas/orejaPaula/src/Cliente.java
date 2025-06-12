@@ -6,7 +6,7 @@ public class Cliente {
         Profesor.crearExamen(asignatura);
 
         Universidad.ContratarOtroProfesor();
-        // Simulamos que el segundo profesor NO tiene asignatura
+        
         Profesor.entregarExamen(null);
 
         Universidad.mostrar();
