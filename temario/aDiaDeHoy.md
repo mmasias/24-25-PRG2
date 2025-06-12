@@ -56,3 +56,7 @@
   - Refinición de métodos privados.
 - [Primera versión "completa" de la calculadora](/src/calculadora/Calculadora.java)
 - Importancia del proceso de creación y la aplicación (con lo visto anteriormente) de abstracción, encapsulación y -de momento en menor medida- de modularización y jerarquización.
+
+## abril y mayo
+
+- Entender los conceptos de herencia, aplicados en los ejercicios de TicTacToe y Klondike
