@@ -1,12 +1,13 @@
-# Carpeta de entregas
+El programa se compone de **6 clases**:
 
-En esta carpeta, una carpeta con nombre ***apellidoNombre*** en la que coloquen las entregas de retos y/o sesiones.
+1. `ExamenFinal – Clase principal con `main`, funciona como constructor.
+2. `Universidad` – Contiene los métodos para crear la asignatura y el profesor.
+3. `Profesor` – Guarda los datos del profesor y permite asignar la asignatura.
+4. `Examen` – Contiene las tres preguntas del examen final.
+5. `ProfesorVigilante` – Representa al vigilante del examen.
+6. `Mostrar` – Se encarga de mostrar todo el escenario final en consola.
 
-Cada reto o sesion debe ir en su correspondiente carpeta nombrada como *reto00x* o bien *sesionMesDia*. Ejemplo:
 
-- /entregas/masiasManuel/reto001
-- /entregas/masiasManuel/sesion0204
 
-Los PR deben ser sólo de lo trabajado en dichas sesiones y se entregarán a la rama correspondiente.
-
-No se corregirá si no se cumplen esas pautas.
+- Cambié el nombre de la clase `CrearExamen` a `Examen`, pues considero que según lo aprendido es un nombre más sólido para una clase. El nombre anterior lo usaría más para un método.
+- También quité el prefijo `Contratar` del nombre `ProfesorVigilante`, y dejé solo `ProfesorVigilante`, para simplificar y hacer más clara la responsabilidad de la clase.
