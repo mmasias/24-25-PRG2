@@ -1,4 +1,4 @@
-## [Ir a la carpeta juanCarlosQuintana](juanCarlosQuintana\src/)
+## [Ir a la carpeta juanCarlosQuintana](src/juanCarlosQuintana/)
 ---
 ## Que faltó y que sobró:
 #### Me sobró el método de calificar, ya que no estaba solicitado.
