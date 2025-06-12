@@ -1,4 +1,4 @@
-package entregas.src;
+package entregas.src.fernandezPablo;
 
 public class Universidad {
     private Profesor[] profesores = new Profesor[2];
@@ -15,4 +15,6 @@ public class Universidad {
         profesores[0].asignar("Programación");
         System.out.println(profesores[0].getNombre() + " ha sido asignado a la asignatura de Programación.");
     }
+
+
 }

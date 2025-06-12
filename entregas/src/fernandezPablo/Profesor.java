@@ -1,4 +1,4 @@
-package entregas.src;
+package entregas.src.fernandezPablo;
 
 public class Profesor {
     private String nombre;
