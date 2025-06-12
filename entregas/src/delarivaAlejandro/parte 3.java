@@ -130,3 +130,33 @@ public class Profesor {
         return examenesVigilados;
     }
 }
+
+import java.util.*;
+
+public class Examen {
+    private Asignatura asignatura;
+    private List<String> preguntas;
+    private Profesor vigilante;
+
+    public Examen(Asignatura asignatura, List<String> preguntas) {
+        this.asignatura = asignatura;
+        this.preguntas = preguntas;
+        this.vigilante = null;
+    }
+
+    public void asignarVigilante(Profesor vigilante) {
+        this.vigilante = vigilante;
+    }
+
+    public List<String> getPreguntas() {
+        return preguntas;
+    }
+
+    public Asignatura getAsignatura() {
+        return asignatura;
+    }
+
+    public Profesor getVigilante() {
+        return vigilante;
+    }
+}
