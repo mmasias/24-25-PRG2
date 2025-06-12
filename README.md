@@ -1,62 +1,71 @@
-# 👨‍💻 Programación II - RAMA DE ENTREGAS
+# Cambios que debí de haber hecho
 
-Usamos esta rama para las entregas, tal y como lo especificamos con más detalle en el artículo de [flujoGIT](/documentos/flujoGIT.md) y afinamos en el documento del reto / trabajo correspondiente.
+## Universidad
+- Constructor mal definido
+- solucion (   
+        this.nombreUniversidad = nombreUniversidad;
+        this.nombreAsignatura = nombreAsignatura;
 
-## Una fracción
+        this.profesorAsignadoAExamen = new Profesores[nombreAsignatura.length];)
 
-### Interfaz pública a implementar
+## Profesores
+- constructor mal definido
+- - solucion (    
+    profesores = new String[] {"Ibuprofeno del jesus Fernandez Gomez de la Piedra y Cansado", "Dalsy Piedad de los Remedios Albornoz del Campo "};
+        identificacionProfesor = new String[] {"244455555x", "66645665x"};
+)
 
-|||
-|-|-|
-|`public Fraccion(int numerador, int denominador)`|
-|`public Fraccion(int numerador)`|
-|`public Fraccion()`|Crea la fraccion con valor cero
-|`public Fraccion sumar(Fraccion fraccion)`|
-|`public Fraccion sumar(int entero)`|
-|`public Fraccion oponer()`|
-|`public Fraccion restar(Fraccion fraccion)`|
-|`public Fraccion restar(int entero)`|
-|`public Fraccion multiplicar(Fraccion fraccion)`|
-|`public Fraccion multiplicar(int entero)`|
-|`public Fraccion invertir()`|
-|`public Fraccion dividir(Fraccion fraccion)`|
-|`public Fraccion dividir(int entero)`|
-|`public Fraccion elevar(int exponente)`|
-|`public int numerador()`|
-|`public int denominador()`|
-|`public boolean esMenor(Fraccion fraccion)`|
-|`public boolean esMayor(Fraccion fraccion)`|
-|`public boolean esIgual(Fraccion fraccion)`|
-|`public double valueOf()`|Devuelve el valor del objeto como un número de tipo double
-|`public int compareTo(Fraccion fraccion)`|Devuelve 0 si ambas fracciones son iguales, 1 si la fraccion es mayor que la que se pasa como parámetro y -1 en caso contrario.
-|`public String toString()`|Devuelve el objeto en formato String
-|`public Fraccion clone()`|
+## Mostrar Escenarios 
 
-### Tester
+- En lo escrito no puse nada por los nervios 
+- solucion (
+    public class MostrarEscenario {
 
-> [ClienteFraccion.java](/entregas/ClienteFraccion.java)
+    public static void imprimirEscenario(Universidad universidad, String[] vigilantes) {
+        System.out.println("Universidad:");
 
-#### Salida esperada del tester:
+        for (int i = 0; i < universidad.nombreAsignatura.length; i++) {
+            Profesores profesor = universidad.profesorAsignadoAExamen[i];
+            if (profesor == null) {
+                continue; 
+            }
 
-```console
-Constructor & .toString(): 2/3
-Numerador:   [2]
-Denominador: [3]
-Sumar: 4/3
-11/3
-Oponer: -2/3
-Restar: 0
--1/3
-Multiplicar: 4/9
-4/3
-Invertir: 3/2
-Dividir: 1
-2/9
-Elevar: 8/27
-Es mayor: false
-Es menor: false
-Es igual: true
-Es igual: 0
-valueOf(): 0.6666666666666666
-clone(): 2/3
-```
+            String nombreProfesor = profesor.getNombre();
+            String dniProfesor = obtenerDNI(nombreProfesor);
+
+            System.out.println(" Profesor: " + nombreProfesor + " / DNI: " + dniProfesor);
+            System.out.println("  Asignatura: " + universidad.nombreAsignatura[i]);
+
+            Examen examen = profesor.crearExamen();
+
+            System.out.println("   Examen:");
+            System.out.println("    Vigilado por:");
+
+            for (String vigilante : vigilantes) {
+                System.out.println("     " + vigilante);
+            }
+
+            
+            String[] preguntas = examen.getPreguntas();
+            if (preguntas != null) {
+                for (int p = 0; p < preguntas.length; p++) {
+                    System.out.println("     Pregunta " + (p + 1) + ": " + preguntas[p]);
+                }
+            }
+        }
+    }
+
+    private static String obtenerDNI(String nombreProfesor) {
+        for (int i = 0; i < Profesores.profesores.length; i++) {
+            if (Profesores.profesores[i].equals(nombreProfesor)) {
+                return Profesores.identificacionProfesor[i];
+            }
+        }
+        return "DNI no encontrado";
+    }
+}
+
+)
+
+## Examen 
+- Mal definido el constructor
