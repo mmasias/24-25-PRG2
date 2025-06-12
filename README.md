@@ -1,3 +1,5 @@
-# 👨‍💻 Programación II - RAMA DE ENTREGAS
+# 👨‍💻 Programación II - RAMA FINAL
 
-Usamos esta rama para las entregas, tal y como lo especificamos con más detalle en el artículo de [flujoGIT](/documentos/flujoGIT.md) y afinamos en el documento del reto / trabajo correspondiente.
+#### Todos los archivos y clases del examen final se encuentran en la carpeta *src*.
+
+> Nota: Ejecutar con *javac Universidad.java* y *java Universidad*.
