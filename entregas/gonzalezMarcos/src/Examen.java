@@ -3,12 +3,14 @@ package gonzalezMarcos.src;
 public class Examen {
     private Asignatura asignatura;
     private String[] preguntas;
-    private int numPreguntas; 
+    private int numPreguntas;
     private Profesor vigilante;
+    private String titulo;
 
-    public Examen(Asignatura asignatura) {
+    public Examen(Asignatura asignatura, String titulo) {
         this.asignatura = asignatura;
-        this.preguntas = new String[10]; 
+        this.titulo = titulo;
+        this.preguntas = new String[10];
         this.numPreguntas = 0;
     }
 
@@ -39,8 +41,10 @@ public class Examen {
     }
 
     public String getTitulo() {
-        return "Examen de " + asignatura.getNombre() + " (" + asignatura.getCodigo() + ") - Créditos: " + asignatura.getCreditos();
+        return titulo;
+    }
+
+    public Asignatura getAsignatura() {
+        return asignatura;
     }
 }
-
-

@@ -14,8 +14,8 @@ public class Profesor {
         this.asignatura = asignatura;
     }
 
-    public Examen crearExamen() {
-        Examen examen = new Examen(this.asignatura);
+    public Examen crearExamen(String titulo) {
+        Examen examen = new Examen(this.asignatura, titulo);
         examen.agregarPregunta("¿Qué es la programación orientada a objetos?");
         examen.agregarPregunta("Explique el concepto de herencia.");
         examen.agregarPregunta("¿Qué es el polimorfismo en Java?");
