@@ -11,5 +11,7 @@ public class App {
 
       Profesor profesorVigia = universidad.contratarProfesor("Dalsy Piedad de los REmedios Albornoz del Campo","6646665");
       profesor.entregarExamen(profesorVigia);
+
+      universidad.mostrarEsenario();
     }
 }
