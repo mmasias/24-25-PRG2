@@ -27,7 +27,7 @@ public class Examen {
     public String mostrar() {
         String texto = "\t\t\tExamen: " + this.titulo + "\n";
         if (this.vigilante != null) {
-            texto += "\t\t\t\tVigilado por: " + this.vigilante.nombre + " / dni " + this.vigilante.dni + "\n";
+            texto += "\t\t\t\tVigilado por: " + this.vigilante.getNombre() + " / dni " + this.vigilante.getDni() + "\n";
         }
         for (int i = 0; i < this.contadorPreguntas; i++) {
             texto += "\t\t\t\tPregunta " + (i + 1) + ": " + this.preguntas[i].mostrar() + "\n";
@@ -35,13 +35,15 @@ public class Examen {
         return texto;
     }
 
-    private static class Pregunta {
+    private class Pregunta {
+        private String enunciado;
 
         public Pregunta(String enunciado) {
+            this.enunciado = enunciado;
         }
 
-        private String mostrar() {
-            throw new UnsupportedOperationException("Not supported yet.");
+        public String mostrar() {
+            return this.enunciado;
         }
     }
 }

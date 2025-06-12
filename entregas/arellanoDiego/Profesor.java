@@ -1,5 +1,5 @@
 public class Profesor {
-    String nombre;
+    private String nombre;
     private String dni;
     private Asignatura asignatura;
     private Examen examen;
@@ -38,5 +38,13 @@ public class Profesor {
             }
         }
         return texto;
+    }
+
+    public String getNombre() {
+        return this.nombre;
+    }
+
+    public String getDni() {
+        return this.dni;
     }
 }
