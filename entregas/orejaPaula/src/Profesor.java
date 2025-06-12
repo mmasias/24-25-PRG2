@@ -1,46 +1,46 @@
-
-public class Profesor {
-    private String nombre;
-    private String dni;
+public class Profesor extends Persona {
     private Asignatura asignatura;
     private Examen examen;
 
     public Profesor(String nombre, String dni) {
-        this.nombre = nombre;
-        this.dni = dni;
-    }
-
-    public static void crearExamen() {
-        Profesor profesor = Universidad.getProfesor();
-        if (profesor.asignatura != null) {
-            profesor.examen = new Examen("Examen Final");
-            profesor.examen.agregarPregunta("Vista pública de clases");
-            profesor.examen.agregarPregunta("Vista pública de objetos");
-            profesor.examen.agregarPregunta("Vista privada de clases");
-        } else {
-            System.out.println("El profesor no tiene asignatura. No puede crear examen.");
-        }
-    }
-
-    public static void entregarExamen(Profesor otroProfesor) {
-        Profesor profesor = Universidad.getProfesor();
-        if (profesor.examen != null && otroProfesor.asignatura == null) {
-            System.out.println("El profesor " + profesor.nombre + " entrega el examen al profesor " + otroProfesor.nombre);
-        } else {
-            System.out.println("No se puede entregar el examen.");
-        }
+        super(nombre, dni);
     }
 
     public void asignarAsignatura(Asignatura asignatura) {
         this.asignatura = asignatura;
     }
 
+    public boolean imparteAsignatura() {
+        return asignatura != null;
+    }
+
+    public void crearExamen() {
+        if (imparteAsignatura()) {
+            this.examen = new Examen("Examen Final");
+            examen.agregarPregunta("Vista pública de clases");
+            examen.agregarPregunta("Vista pública de objetos");
+            examen.agregarPregunta("Vista privada con herencia");
+        } else {
+            System.out.println(nombre + " no imparte asignatura. No puede crear examen.");
+        }
+    }
+
+    public void entregarExamen(Profesor otro) {
+        if (this.examen != null && !otro.imparteAsignatura()) {
+            System.out.println(nombre + " entrega el examen a " + otro.nombre);
+        } else {
+            System.out.println("No se puede entregar el examen.");
+        }
+    }
+
+    @Override
     public void mostrar() {
         System.out.println("Profesor: " + nombre + " / DNI: " + dni);
         if (asignatura != null) {
             System.out.println("Imparte: " + asignatura.getNombre());
         } else {
-            System.out.println("No imparte asignatura.");
+            System.out.println("No imparte ninguna asignatura.");
         }
     }
 }
+
