@@ -12,6 +12,13 @@ public class Profesor {
         this.dni = dni;
     }
 
+    public Profesor() {
+        this(
+            Utilidades.leerCadena("Nombre del profesor: "),
+            Utilidades.leerCadena("DNI del profesor: ")
+        );
+    }
+
     public void darExamen(Profesor profesor) {
         assert !tieneExamen() : "El profesor no tiene un examen para dar.";
         assert profesor.imparte() : "El profesor imparte una asignatura, no puede recibir un examen.";
