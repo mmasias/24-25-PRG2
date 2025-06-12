@@ -42,11 +42,7 @@ public class Profesor {
     }
 
     public void mostrarNombre() {
-        mensaje(nombre);
-    }
-
-    private void mensaje(String string) {
-        System.out.print(string);
+        Utilidades.mensaje(nombre);
     }
 
     public Examen getExamen() {
@@ -54,7 +50,7 @@ public class Profesor {
     }
 
     public void mostrarDNI() {
-        mensaje(dni);
+        Utilidades.mensaje(dni);
     }
 
 }

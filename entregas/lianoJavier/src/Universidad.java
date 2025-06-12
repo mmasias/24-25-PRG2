@@ -26,44 +26,37 @@ public class Universidad {
     }
 
     private void mostrarEscenario() {
-        mensaje("Universidad: ");
+        Utilidades.mensaje("Universidad: ");
         mostrarNombre();
-        saltarLinea();
+        Utilidades.saltarLinea();
 
-        mensaje("Profesor: ");
+        Utilidades.mensaje("Profesor: ");
         profesores[0].mostrarNombre();
-        mensaje(" / ");
-        mensaje("DNI ");
+        Utilidades.mensaje(" / ");
+        Utilidades.mensaje("DNI ");
         profesores[0].mostrarDNI();
-        saltarLinea();
+        Utilidades.saltarLinea();
 
-        mensaje("Asignatura: ");
+        Utilidades.mensaje("Asignatura: ");
         asignaturas[0].mostrarNombre();
-        saltarLinea();
+        Utilidades.saltarLinea();
 
-        mensaje("Examen: ");
+        Utilidades.mensaje("Examen: ");
         profesores[1].getExamen().mostrarNombre();
-        saltarLinea();
+        Utilidades.saltarLinea();
 
-        mensaje("Vigilado por: ");
+        Utilidades.mensaje("Vigilado por: ");
         profesores[1].mostrarNombre();
-        mensaje(" / ");
+        Utilidades.mensaje(" / ");
         profesores[0].mostrarDNI();
-        saltarLinea();
+        Utilidades.saltarLinea();
 
         profesores[1].getExamen().mostrarPreguntas();
     }
 
-    private void saltarLinea() {
-        System.out.println();
-    }
-
     private void mostrarNombre() {
-        mensaje(nombre);
+        Utilidades.mensaje(nombre);
     }
 
-    private void mensaje(String string) {
-        System.out.print(string);
-    }
 
 }

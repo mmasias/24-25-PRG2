@@ -11,21 +11,13 @@ public class Examen {
 
     public void mostrarPreguntas() {
         for (String pregunta : preguntas) {
-            mensaje(pregunta);
-            saltarLinea();
+            Utilidades.mensaje(pregunta);
+            Utilidades.saltarLinea();
         }
     }
 
-    private void mensaje(String pregunta) {
-        System.out.print(pregunta);
-    }
-
-    private void saltarLinea() {
-        System.out.println();
-    }
-
     public void mostrarNombre() {
-        mensaje(nombre);
+        Utilidades.mensaje(nombre);
     }
 
 }
