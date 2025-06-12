@@ -1,4 +1,4 @@
-package gonzalezMarcos.src;
+package src.gonzalezMarcos;
 
 public class Profesor {
     private String nombre;
