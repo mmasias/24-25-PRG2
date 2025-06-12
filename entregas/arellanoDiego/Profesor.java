@@ -1,17 +1,42 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
+public class Profesor {
+    private String nombre;
+    private String dni;
+    private Asignatura asignatura;
+    private Examen examen;
 
-
-class Profesor {
-
-    Examen crearExamen(String examen_Final) {
-        throw new UnsupportedOperationException("Not supported yet.");
+    public Profesor(String nombre, String dni) {
+        this.nombre = nombre;
+        this.dni = dni;
+        this.asignatura = null;
+        this.examen = null;
     }
 
-    void entregarExamen(Profesor dalsy, Examen examenFinal) {
-        throw new UnsupportedOperationException("Not supported yet.");
+    public void impartir(Asignatura asignatura) {
+        this.asignatura = asignatura;
     }
 
+    public Examen crearExamen(String titulo) {
+        if (this.asignatura != null) {
+            this.examen = new Examen(titulo, this.asignatura);
+            return this.examen;
+        }
+        return null;
+    }
+
+    public void entregarExamen(Profesor vigilante, Examen examen) {
+        if (vigilante.asignatura == null) {
+            examen.asignarVigilante(vigilante);
+        }
+    }
+
+    public String mostrar() {
+        String texto = "\tProfesor: " + this.nombre + " / dni " + this.dni + "\n";
+        if (this.asignatura != null) {
+            texto += "\t\t" + this.asignatura.mostrar();
+            if (this.examen != null) {
+                texto += this.examen.mostrar();
+            }
+        }
+        return texto;
+    }
 }
