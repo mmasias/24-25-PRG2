@@ -8,10 +8,10 @@ public class Profesor {
 
     Examen examen1 = new Examen("final", "Pregunta 1: vista publica || pregunta 2: vista privada");
 
-    
+    public String asignarExamen(Profesor profesor2) {
 
-    public void asignarExamen(Examen examen1) {
-
+        String profesorVigilante = profesor2.getNombre();
+        return profesorVigilante;
     }
 
     public Profesor(String nombre, int dni, String asignatura) {
