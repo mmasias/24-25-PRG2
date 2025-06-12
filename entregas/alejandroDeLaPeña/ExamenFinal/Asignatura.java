@@ -14,8 +14,8 @@ public class Asignatura {
         this.profesorImparte.setAsignaturaImpartida(this);
     }
 
-    public boolean imparteProfesor(Profesor p) {
-        return this.profesorImparte.getDni().equals(p.getDni());
+    public boolean imparteProfesor(Profesor profesor) {
+        return this.profesorImparte.getDni().equals(profesor.getDni());
     }
 
     public Profesor getProfesorImparte() {
