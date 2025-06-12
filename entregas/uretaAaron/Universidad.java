@@ -19,7 +19,7 @@ public class Universidad {
         if (profesor != null) {
             profesor.asignarAsignatura(asignatura);
         }
-    }
+    }   
 
     public void imprimirInformacion() {
         System.out.println("UNIVERSIDAD: " + nombre);
