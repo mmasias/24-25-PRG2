@@ -1,7 +1,5 @@
 # EXAMEN FINAL
 
-### [Parte 3: vista privada de clases y objetos](entregas/maderoCarla/src)
-
 ### Errores Parte 1 y Parte 2: 
 
 - El DNI lo he puesto como int y deberia ser string por tener una letra al final.
@@ -24,3 +22,5 @@
             this.profesor1 = p1;
             this.profesor2 = p2;
         }
+        
+### [Parte 3: vista privada de clases y objetos](entregas/maderoCarla/src)
