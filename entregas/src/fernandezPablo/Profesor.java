@@ -31,4 +31,18 @@ public class Profesor {
             return null;
         }
     }
+    
+    public void entregar(Examen examen) {
+        if (examen != null) {
+            System.out.println(nombre + " ha entregado el examen.");
+        }
+    }
+
+    public void vigilar(Examen examen) {
+        if (!programacion && examen != null) {
+            System.out.println(nombre + " está vigilando el examen.");
+        } else {
+            System.out.println(nombre + " no puede vigilar el examen que ha creado.");
+        }
+    }
 }
