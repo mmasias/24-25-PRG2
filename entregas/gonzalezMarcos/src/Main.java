@@ -1,3 +1,5 @@
+package gonzalezMarcos.src;
+
 public class Main {
     public static void main(String[] args) {
         Universidad uneat = new Universidad("Universidad Europea del Atlántico");
@@ -8,6 +10,11 @@ public class Main {
         Profesor prof2 = new Profesor("Ana Gómez", "666456665X");
         examen.asignarVigilante(prof2);
         prof1.entregarExamenA(examen, prof2);
+        int i = 1;
+        for (String pregunta : examen.getPreguntas()) {
+            System.out.println("Pregunta " + i + ": " + pregunta);
+            i++;
+        }
 
     }
 }
