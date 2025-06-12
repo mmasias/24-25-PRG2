@@ -4,6 +4,12 @@ class Profesor {
     private Asignatura asignatura;
     private boolean imparte;
 
+    public Profesor(String nombre, String dNI){
+        this.nombre = nombre;
+        this.dNI = dNI;
+        imparte = asignatura != null ? true : false;
+    }
+
     public Profesor(String nombre, String dNI, Asignatura asignatura){
         this.nombre = nombre;
         this.dNI = dNI;
