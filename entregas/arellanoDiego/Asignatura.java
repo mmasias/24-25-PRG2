@@ -1,9 +1,15 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
+public class Asignatura {
+    private String nombre;
+    private String codigo;
+    private int creditos;
 
+    public Asignatura(String nombre, String codigo, int creditos) {
+        this.nombre = nombre;
+        this.codigo = codigo;
+        this.creditos = creditos;
+    }
 
-class Asignatura {
-
+    public String mostrar() {
+        return "Asignatura: " + this.nombre + " " + this.codigo + " " + this.creditos + " CREDITOS\n";
+    }
 }

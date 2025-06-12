@@ -1,5 +1,5 @@
 public class Profesor {
-    private String nombre;
+    String nombre;
     private String dni;
     private Asignatura asignatura;
     private Examen examen;
