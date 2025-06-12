@@ -1,0 +1,4 @@
+package LomoJaime;
+
+class Examen {
+}
