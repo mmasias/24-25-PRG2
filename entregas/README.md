@@ -1,12 +1,9 @@
-# Carpeta de entregas
+## Cambios necesarios
 
-En esta carpeta, una carpeta con nombre ***apellidoNombre*** en la que coloquen las entregas de retos y/o sesiones.
+En la clase **Examen.java** se ha añadido:
 
-Cada reto o sesion debe ir en su correspondiente carpeta nombrada como *reto00x* o bien *sesionMesDia*. Ejemplo:
+ `mostrarResumen(String nombreUniversidad, Profesor profesor)`
 
-- /entregas/masiasManuel/reto001
-- /entregas/masiasManuel/sesion0204
+Este método imprime toda la información final del examen en el formato exacto requerido por el enunciado.
 
-Los PR deben ser sólo de lo trabajado en dichas sesiones y se entregarán a la rama correspondiente.
-
-No se corregirá si no se cumplen esas pautas.
+Se han añadido getters en casi todas las clases para acceder a atributos privados
