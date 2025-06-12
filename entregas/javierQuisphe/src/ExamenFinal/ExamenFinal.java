@@ -4,18 +4,23 @@ import java.util.List;
 public class ExamenFinal {
 
     public static void main(String[] args) {
-        Universidad uni = new Universidad("Universidad: Universidad Europea del Atlantico");
+        Universidad uni = new Universidad("Universidad Europea del Atlantico");
 
         Profesor prof1 = uni.crearProfesor("Julián Alvarez");
         Profesor prof2 = uni.crearProfesor("Emiliano Martinez");
 
-        Asignatura mate = uni.crearAsignatura("Programación 2 - PRG2 - 6 Creditos");
+        Asignatura mate = uni.crearAsignatura("Programación 2 - PRG2 - 6 Créditos");
 
         prof1.asignarAsignatura(mate);
 
         Examen examen = prof1.crearExamen(prof2);
 
         if (examen != null) {
+            // Agregar 3 preguntas al examen
+            examen.agregarPregunta(new Pregunta("¿Qué es la programación orientada a objetos?"));
+            examen.agregarPregunta(new Pregunta("Explica la diferencia entre una clase y un objeto."));
+            examen.agregarPregunta(new Pregunta("¿Qué son los modificadores de acceso en Java?"));
+
             System.out.println("\n--- Detalles del Examen ---");
             examen.mostrarInfo();
         }
@@ -30,10 +35,23 @@ class Asignatura {
     }
 }
 
+class Pregunta {
+    String texto;
+
+    public Pregunta(String texto) {
+        this.texto = texto;
+    }
+
+    public String getTexto() {
+        return texto;
+    }
+}
+
 class Examen {
     Asignatura asignatura;
     Profesor creador;
     Profesor vigilante;
+    List<Pregunta> preguntas = new ArrayList<>();
 
     public Examen(Asignatura asignatura, Profesor creador, Profesor vigilante) {
         this.asignatura = asignatura;
@@ -41,10 +59,18 @@ class Examen {
         this.vigilante = vigilante;
     }
 
+    public void agregarPregunta(Pregunta pregunta) {
+        preguntas.add(pregunta);
+    }
+
     public void mostrarInfo() {
         System.out.println("Profesor: " + creador.getNombre());
         System.out.println("Asignatura: " + asignatura.nombre);
-        System.out.println("Vigilado por : " + vigilante.getNombre());
+        System.out.println("Vigilado por: " + vigilante.getNombre());
+        System.out.println("Preguntas del examen:");
+        for (int i = 0; i < preguntas.size(); i++) {
+            System.out.println((i + 1) + ". " + preguntas.get(i).getTexto());
+        }
     }
 }
 
