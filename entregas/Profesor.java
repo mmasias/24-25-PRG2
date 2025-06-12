@@ -39,3 +39,38 @@ public class Profesor {
         return examen;
     }
 
+
+    public void EntregarExamen(Examen examen, Profesor receptor) {
+        if (receptor.puedeVigilar()) {
+            System.out.println(nombre + " entrega el examen a " + receptor.nombre);
+            receptor.VigilarExamen();
+        } else {
+            receptor.noVigilarExamen();
+        }
+    }
+
+
+    public void VigilarExamen() {
+        if (asignatura == null) {
+            vigilando = true;
+            System.out.println(nombre + " está vigilando el examen.");
+        } else {
+            noVigilarExamen();
+        }
+    }
+
+
+    public void noVigilarExamen() {
+        System.out.println(nombre + " no puede vigilar el examen porque imparte una asignatura.");
+    }
+
+
+    public void noCrearAsignatura() {
+        System.out.println(nombre + " no puede crear examen porque no tiene asignatura.");
+    }
+
+
+    public boolean puedeVigilar() {
+        return asignatura == null;
+    }
+}
