@@ -32,7 +32,7 @@ public class Profesor {
 
         System.out.println("Universidad: Universidad europea del Atlantico");
         System.out.println("Profesor: " + this.nombre + " / DNI " + this.dni);
-        System.out.println(asignatura.getDescripcion());
+        System.out.println(asignatura.obtenerDescripcion());
         System.out.println("  Examen: Examen Final");
         System.out.println("    Vigilado por: " + otroProfesor.nombre + " / DNI " + otroProfesor.dni);
         for (int i = 0; i < examen.length; i++) {
