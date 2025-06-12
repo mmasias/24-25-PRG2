@@ -1,3 +1,4 @@
+package alvaradoCarlos;
 public class Asignatura {
 
     private String nombre;
