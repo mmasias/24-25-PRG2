@@ -1,4 +1,4 @@
-
+import java.util.Scanner;
 
 public class Universidad {
     private String nombre;
@@ -56,7 +56,7 @@ public class Universidad {
 
     private void crearExamen() {
         examen = new Examen(asignatura);
-        examen.diseñarExamen(scanner);
+        examen.disennarExamen(scanner);
     }
 
     private void mostrar() {
