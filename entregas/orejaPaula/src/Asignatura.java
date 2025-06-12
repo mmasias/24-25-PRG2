@@ -1,18 +1,16 @@
 public class Asignatura {
-    private String nombre;
-    private int creditos;
-
-    public Asignatura(String nombre, int creditos) {
-        this.nombre = nombre;
-        this.creditos = creditos;
-    }
-
-    public String getNombre() {
-        return nombre;
+    public static Asignatura asignarAsignatura() {
+        System.out.println("Asignatura asignada.");
+        return new Asignatura();
     }
 
     public void mostrar() {
-        System.out.println("Asignatura: " + nombre + " / Créditos: " + creditos);
+        System.out.println("Asignatura: Programación 2 / Créditos: 6");
+    }
+
+    public String getNombre() {
+        return "Programación 2";
     }
 }
+
 
