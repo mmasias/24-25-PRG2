@@ -1,79 +1,37 @@
-# 👨‍💻 Programación II - RAMA DE ENTREGAS
+# 👨‍💻 Programación II · Proyecto Entrega
 
-Usamos esta rama para las entregas, tal y como lo especificamos con más detalle en el artículo de [flujoGIT](/documentos/flujoGIT.md)
+Repositorio de entrega para el proyecto de la asignatura **Programación II** del [Grado en Ingeniería Informática](https://www.uneatlantico.es/escuela-politecnica-superior/estudios-grado-oficial-en-ingenieria-informatica) en la [Universidad Europea del Atlántico](https://www.uneatlantico.es).
 
-<div align=center>
 
-```mermaid
-%%{init: {
-  'theme': 'base',
-  'gitGraph': {
-    'showBranches': true,
-    'showCommitLabel': true,
-    'mainBranchName': 'main',
-    'mainBranchOrder': 0
-  },
-  'themeVariables': {
-    'git0': '#E64A19',     # main: naranja oscuro
-    'git1': '#388E3C',     # entregas: verde oscuro
-    'git2': '#1976D2',     # entrega1: azul
-    'git3': '#7B1FA2',     # entrega2: morado
-    'git4': '#82B1FF',     # alumno1: azul claro
-    'git5': '#B39DDB',     # alumno2: morado claro
-    'commitLabelColor': '#000000',
-    'commitLabelBackground': '#FFFFFF',
-    'tagLabelColor': '#000000',
-    'tagLabelBackground': '#FFE0B2',
-    'tagLabelBorder': '#FB8C00'
-  }
-}}%%
-gitGraph
-    commit id: "REPO ASIGNATURA: inicio curso"
-    branch entregas order: 1
-    checkout entregas
-    commit id: "config inicial entregas" type: REVERSE
-    
-    %% Forks iniciales de los alumnos
-    branch "FORK ALUMNO1" order: 4
-    branch "FORK ALUMNO2" order: 5
-    
-    %% Creación Entrega1 y trabajo
-    checkout entregas
-    branch entrega1 order: 2
-    commit id: "creación rama entrega1" type: REVERSE
-    
-    checkout "FORK ALUMNO1"
-    branch "FORK ALUMNO1: tarea1" order: 6
-    commit id: "trabajo1 alumno1"
-    checkout entrega1
-    merge "FORK ALUMNO1: tarea1" tag: "PR1 alumno1"
-    
-    checkout "FORK ALUMNO2"
-    branch "FORK ALUMNO2: tarea1" order: 7
-    commit id: "trabajo1 alumno2"
-    checkout entrega1
-    merge "FORK ALUMNO2: tarea1" tag: "PR1 alumno2"
-    
-    %% Avanza el curso, nueva entrega
-    checkout main
-    commit id: "avance del curso" type: HIGHLIGHT
-    
-    %% Creación Entrega2 y trabajo
-    checkout entregas
-    branch entrega2 order: 3
-    commit id: "creación rama entrega2" type: REVERSE
-    
-    checkout "FORK ALUMNO1"
-    branch "FORK ALUMNO1: tarea2" order: 8
-    commit id: "trabajo2 alumno1"
-    checkout entrega2
-    merge "FORK ALUMNO1: tarea2" tag: "PR2 alumno1"
-    
-    checkout "FORK ALUMNO2"
-    branch "FORK ALUMNO2: tarea2" order: 9
-    commit id: "trabajo2 alumno2"
-    checkout entrega2
-    merge "FORK ALUMNO2: tarea2" tag: "PR2 alumno2"
-```
+### 📁 [Examen](entregas/src)
 
-</div>
+Contiene las siguientes clases:
+
+- **`Asignatura.java`**  
+  Define el objeto `Asignatura` con su nombre. Es la materia asignada al profesor. En el examen con los nervios se me olvido explicarla, pero si que esta la creacion de esta en el apartado de universidad
+
+- **`Examen.java`**  
+  Clase que contiene un conjunto de preguntas y la asignatura correspondiente. 
+
+- **`Profesor.java`**  
+  Define al profesor: su nombre, DNI, asignatura que imparte, y el examen que puede crear o vigilar. Controla la entrega del examen a otro profesor para su vigilancia. Aqui mi problema fue que se me olvido poner el metodo de ue a la hora de hacer el examen sea teniendo en cuanta la asignatura que se le ha asignado 
+
+- **`Universidad.java`**  
+  Simula la institución. Encargada de dirigir el proceso de creación y vigilancia de un examen con los objetos anteriores.
+
+- **`Main.java`**  
+  Punto de entrada de la aplicación. Crea una universidad y ejecuta el proceso completo (asignación, creación y vigilancia del examen). No puse la existencia de ella pensado que era un dato que se sabia de normal, fallo mio cuando siempre nos dices que tenemos que explicarlo como si no supieras nada de nada.
+
+
+## 📋 Ejemplo de salida por consola
+
+```text
+Universidad: Universidad Nacional de Ingeniería
+Profesor: Laura Martínez (12345678A)
+Asignatura: Programación Orientada a Objetos
+Examen final
+Vigilado por: Carlos Pérez (87654321B)
+Pregunta 1: ¿Qué es la encapsulación en POO?
+Pregunta 2: ¿Diferencia entre herencia y composición?
+Pregunta 3: Explica el principio de responsabilidad única.
+
