@@ -10,6 +10,7 @@ public class Asignatura {
     }
 
     public String mostrar() {
-        return "Asignatura: " + this.nombre + " " + this.codigo + " " + this.creditos + " CREDITOS\n";
+        return "Asignatura: " + this.nombre + " " + this.codigo + " " + this.creditos + " CREDITOS \n";
     }
+    
 }

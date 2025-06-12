@@ -25,15 +25,16 @@ public class Examen {
     }
 
     public String mostrar() {
-        String texto = "\t\t\tExamen: " + this.titulo + "\n";
+        String texto = "    Examen: " + this.titulo + " \n";
         if (this.vigilante != null) {
-            texto += "\t\t\t\tVigilado por: " + this.vigilante.getNombre() + " / dni " + this.vigilante.getDni() + "\n";
+            texto += "    Vigilado por: " + this.vigilante.getNombre() + " / dni " + this.vigilante.getDni() + " \n";
         }
         for (int i = 0; i < this.contadorPreguntas; i++) {
-            texto += "\t\t\t\tPregunta " + (i + 1) + ": " + this.preguntas[i].mostrar() + "\n";
+            texto += "      Pregunta " + (i + 1) + ": " + this.preguntas[i].mostrar() + " \n";
         }
         return texto;
     }
+    
 
     private class Pregunta {
         private String enunciado;

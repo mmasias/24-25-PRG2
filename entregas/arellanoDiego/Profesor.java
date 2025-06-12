@@ -30,15 +30,16 @@ public class Profesor {
     }
 
     public String mostrar() {
-        String texto = "\tProfesor: " + this.nombre + " / dni " + this.dni + "\n";
+        String texto = " Profesor: " + this.nombre + " / dni " + this.dni + " \n";
         if (this.asignatura != null) {
-            texto += "\t\t" + this.asignatura.mostrar();
+            texto += "  " + this.asignatura.mostrar();
             if (this.examen != null) {
                 texto += this.examen.mostrar();
             }
         }
         return texto;
     }
+    
 
     public String getNombre() {
         return this.nombre;
