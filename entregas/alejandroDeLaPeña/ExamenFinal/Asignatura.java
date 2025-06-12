@@ -16,5 +16,13 @@ public class Asignatura {
         System.out.println("Créditos: " + credito);
         System.out.println("Impartida por: " + profesorImparte.getNombreCompleto());
     }
+
+    public boolean imparteProfesor(Profesor profesor) {
+        return this.profesorImparte.getDni().equals(profesor.getDni());
+    }
+
+    public Profesor getProfesorImparte() {
+        return profesorImparte;
+    }
 }
 
