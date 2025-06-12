@@ -1,25 +1,45 @@
+import java.util.ArrayList;
+import java.util.List;
+
 public class Universidad {
-    public void crearUniversidad() {
-        SecretariaAcademica cicloAcademico = new SecretariaAcademica("Tech University");
-        System.out.println("\n=== Universidad creada: " + cicloAcademico.nombre + " ===\n");
+    String nombre;
+    List<Profesor> profes = new ArrayList<>();
 
-        String materia = cicloAcademico.crearAsignatura("Matemáticas");
-        System.out.println();
+    public Universidad(String nombre) {
+        this.nombre = nombre;
+    }
 
-        Profesor profA = cicloAcademico.contratarProfesor("Ana Pérez");
-        Profesor profB = cicloAcademico.contratarProfesor("Luis Gómez");
-        System.out.println();
+    public String crearAsignatura(String nombreMat) {
+        System.out.println("Asignatura creada: " + nombreMat);
+        return nombreMat;
+    }
 
-        cicloAcademico.asignarAsignatura(profA, materia);
-        System.out.println();
+    public Profesor contratarProfesor(String nombre) {
+        Profesor profesor = new Profesor(nombre);
+        profes.add(profesor);
+        System.out.println("Profesor contratado: " + nombre);
+        return profesor;
+    }
 
-        Examen ex = cicloAcademico.comunicarExamen(profA);
-        System.out.println();
+    public void asignarAsignatura(Profesor profesor, String mat) {
+        profesor.asignatura = mat;
+        System.out.println("Asignatura " + mat +
+                           " asignada a " + profesor.nombre);
+    }
 
-        cicloAcademico.vigilarExamen(profB, ex);
-        System.out.println();
-        
-        cicloAcademico.evaluarResultados(ex);
-        System.out.println("\n=== Fin del escenario ===");
+    public Examen comunicarExamen(Profesor profesor) {
+        System.out.println(profesor.nombre + " recibe encargue de crear examen.");
+        return profesor.crearExamen();
+    }
+
+    public void vigilarExamen(Profesor vigilante, Examen examen) {
+        System.out.println(vigilante.nombre +
+                           " (sin materia) vigila el examen de " +
+                           examen.materia);
+        vigilante.supervisarExamen(examen);
+    }
+
+    public void evaluarResultados(Examen examen) {
+        examen.evaluar();
     }
 }
