@@ -1,10 +1,10 @@
-public class Profesor {
+public class Profesores {
     private String nombre;
     private String dni;
     private Asignatura asignatura;
     private Examen examenVigilado;
 
-    public Profesor(String nombre, String dni) {
+    public Profesores(String nombre, String dni) {
         this.nombre = nombre;
         this.dni = dni;
     }
@@ -21,9 +21,9 @@ public class Profesor {
         return asignatura == null;
     }
 
-    public Examen crearExamen(String titulo) {
+    public Examen crearExamen(String nombreExamen) {
         if (asignatura != null) {
-            Examen examen = new Examen(titulo, asignatura);
+            Examen examen = new Examen(nombreExamen, asignatura);
             examen.setPreguntas("Vista publica clases", "Vista publica objetos", "Vista privada clases");
             asignatura.setExamen(examen);
             return examen;
@@ -44,5 +44,13 @@ public class Profesor {
 
     public String getNombreCompleto() {
         return nombre + " / DNI " + dni;
+    }
+
+    public Asignatura getAsignatura() {
+        return asignatura;
+    }
+
+    public Examen getExamenVigilado() {
+        return examenVigilado;
     }
 }

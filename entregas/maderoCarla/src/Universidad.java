@@ -1,13 +1,13 @@
 public class Universidad {
     private String nombre;
-    private Profesor profesor1;
-    private Profesor profesor2;
+    private Profesores profesor1;
+    private Profesores profesor2;
 
     public Universidad(String nombre) {
         this.nombre = nombre;
     }
 
-    public void asignarProfesores(Profesor p1, Profesor p2) {
+    public void asignarProfesores(Profesores p1, Profesores p2) {
         this.profesor1 = p1;
         this.profesor2 = p2;
     }
@@ -16,11 +16,11 @@ public class Universidad {
         return nombre;
     }
 
-    public Profesor getProfesor1() {
+    public Profesores getProfesor1() {
         return profesor1;
     }
 
-    public Profesor getProfesor2() {
+    public Profesores getProfesor2() {
         return profesor2;
     }
 }
