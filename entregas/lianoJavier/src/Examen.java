@@ -11,7 +11,7 @@ public class Examen {
 
     public void mostrarPreguntas() {
         for (String pregunta : preguntas) {
-            Utilidades.mensaje(pregunta);
+            Utilidades.mensaje('"' + pregunta + '"');
             Utilidades.saltarLinea();
         }
     }
