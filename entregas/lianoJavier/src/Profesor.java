@@ -1,33 +1,56 @@
 
 public class Profesor {
 
-    public Profesor(String string, String string2) {
-        //TODO Auto-generated constructor stub
+    private String nombre;
+    private String dni;
+
+    private Examen examen;
+    private Asignatura asignatura;
+
+    public Profesor(String nombre, String dni) {
+        this.nombre = nombre;
+        this.dni = dni;
     }
 
     public void darExamen(Profesor profesor) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'darExamen'");
+        if (tieneExamen() && !profesor.imparte()) profesor.recibir(examen);
+    }
+
+    private void recibir(Examen examen) {
+        this.examen = examen;
+    }
+
+    private boolean imparte() {
+        return asignatura != null ? true : false;
+    }
+
+    private boolean tieneExamen() {
+        return examen != null ? true : false;
     }
 
     public void crearExamen() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'crearExamen'");
+        final String[] PREGUNTAS = {
+                "Vista pública clases",
+                "Vista pública de objetos",
+                "Vista privada de clases"
+        };
+        examen = new Examen(PREGUNTAS);
     }
 
     public void asignar(Asignatura asignatura) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'asignar'");
+        this.asignatura = asignatura;
     }
 
     public void mostrarNombre() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'mostrarNombre'");
+        mensaje(nombre);
+    }
+
+    private void mensaje(String string) {
+        System.out.print(string);
     }
 
     public Examen getExamen() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'getExamen'");
+        return examen;
     }
 
 }
