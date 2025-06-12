@@ -5,6 +5,7 @@ public class Profesor {
     private String apellido1;
     private String apellido2;
     private String dni;
+    private Asignatura asignaturaImpartida;
 
     public Profesor(String nombre, String apellido1, String apellido2, String dni) {
         this.nombre = nombre;
@@ -21,14 +22,29 @@ public class Profesor {
         return dni;
     }
 
-   
+    public void setAsignaturaImpartida(Asignatura asignatura) {
+        this.asignaturaImpartida = asignatura;
+    }
+
+    public Asignatura getAsignaturaImpartida() {
+        return asignaturaImpartida;
+    }
+
     public boolean entregarExamenA(Profesor vigilante, Asignatura[] asignaturas) {
         for (Asignatura a : asignaturas) {
             if (a != null && a.imparteProfesor(vigilante)) {
-               
-                return false;
+                return false; // el vigilante imparte alguna asignatura
             }
         }
         return true;
+    }
+
+    public void mostrarProfesor() {
+        System.out.print("Profesor: " + getNombreCompleto() + ", DNI: " + dni);
+        if (asignaturaImpartida != null) {
+            System.out.println(" | Imparte: " + asignaturaImpartida.getNombreAsignatura());
+        } else {
+            System.out.println(" | No imparte ninguna asignatura.");
+        }
     }
 }
