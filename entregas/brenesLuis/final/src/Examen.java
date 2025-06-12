@@ -17,10 +17,9 @@ public class Examen {
     }
 
     public void disennarExamen(Scanner scanner) {
-        System.out.println("Disennando el examen para " + asignatura.getNombre());
-        System.out.print("¿Cuántas preguntas desea ingresar?: ");
-        int cantidad = Integer.parseInt(scanner.nextLine());
-
+        System.out.println("Diseñando el examen para " + asignatura.getNombre());
+        int cantidad = 3; // Fijamos la cantidad de preguntas a 3
+    
         for (int i = 1; i <= cantidad; i++) {
             System.out.print("Pregunta " + i + ": ");
             preguntas.add(scanner.nextLine());
