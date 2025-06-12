@@ -41,10 +41,14 @@ public class Universidad {
     }
 
     public void coordinarExamen() {
-        if (profesorAsignatura.getDni().equals(profesorVigilante.getDni())) {
-            System.out.println("El profesor que vigila no puede ser el mismo que el que imparte la asignatura.");
+        if (profesorTieneAsignatura(profesorVigilante)) {
+            System.out.println("El profesor vigilante no puede estar asociado a ninguna asignatura.");
             return;
         }
+    }
+
+    public boolean profesorTieneAsignatura(Profesor profesor) {
+        return asignatura.getProfesor().getDni().equals(profesor.getDni());
     }
 
     public String getNombre() {
