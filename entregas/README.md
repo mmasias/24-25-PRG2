@@ -30,12 +30,12 @@ Pregunta 3: "..."
 
 Todos están en `src/` en la rama [`Final`](https://github.com/GabrielMBP/24-25-PRG2/tree/Final/src):
 
-- [`EscenarioUniversidad.java`](/EscenarioUniversidad.java) – Clase principal.
-- [`Universidad.java`](/Universidad.java) – Crea clases y ejecuta el escenario.
-- [`Asignatura.java`](/Asignatura.java) – Define asignatura y créditos.
-- [`Profesor.java`](/Profesor.java) – Clase base de profesor.
-- [`ProfesorAsignatura.java`](/ProfesorAsignatura.java) – Profesor que imparte y crea examen.
-- [`ProfesorVigila.java`](/ProfesorVigila.java) – Profesor que vigila exámenes.
-- [`Examen.java`](/Examen.java) – Contiene preguntas.
-- [`Alumno.java`](/Alumno.java) – Interactúa en vigilancia.
+- [`EscenarioUniversidad.java`](EscenarioUniversidad.java) – Clase principal.
+- [`Universidad.java`](Universidad.java) – Crea clases y ejecuta el escenario.
+- [`Asignatura.java`](Asignatura.java) – Define asignatura y créditos.
+- [`Profesor.java`](Profesor.java) – Clase base de profesor.
+- [`ProfesorAsignatura.java`](ProfesorAsignatura.java) – Profesor que imparte y crea examen.
+- [`ProfesorVigila.java`](ProfesorVigila.java) – Profesor que vigila exámenes.
+- [`Examen.java`](Examen.java) – Contiene preguntas.
+- [`Alumno.java`](Alumno.java) – Interactúa en vigilancia.
 
