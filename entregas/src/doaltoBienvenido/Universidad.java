@@ -16,23 +16,24 @@ public class Universidad {
     public void iniciarExamenes() {
         crearAsignatura("Programacion 2");
 
-        contratarProfesor("Manuel Masias");
+        profesorAsignado = contratarProfesor("Manuel Masias");
         asignarAsignatura(profesorAsignado, asignatura.getNombre());
 
         profesorAsignado.crearExamen(asignatura, "Examen Final");
 
-        contratarVigilante("Jorge Crespo");
+        profesorVigilante = contratarProfesor("Jorge Crespo");
+
         profesorAsignado.entregarExamen(profesorVigilante, asignatura);
 
         mostrarEscenario();
     }
 
-    public void crearAsignatura(String nombreAsignatura) {
-        asignatura.crearAsignatura(nombreAsignatura);
+    public Profesor contratarProfesor(String nombreProfesor) {
+        return new Profesor(nombreProfesor);
     }
 
-    public void contratarProfesor(String nombreProfesor) {
-        this.profesorAsignado = new Profesor(nombreProfesor);
+    public void crearAsignatura(String nombreAsignatura) {
+        asignatura.crearAsignatura(nombreAsignatura);
     }
 
     public void asignarAsignatura(Profesor profesor, String nombreAsignatura) {
@@ -41,7 +42,15 @@ public class Universidad {
         }
     }
 
-    public void contratarVigilante(String nombreVigilante) {
-        this.profesorVigilante = new Profesor(nombreVigilante);
+    private void mostrarEscenario() {
+        mensaje.mensajeLn("Universidad: " + nombreUniversidad);
+        mensaje.mensajeLn("Profesor: " + profesorAsignado.getNombre());
+        mensaje.mensajeLn("Asignatura: " + asignatura.getNombre());
+        mensaje.mensajeLn("Examen: " + asignatura.getExamenTitulo());
+        mensaje.mensajeLn("Vigilado por: " + profesorVigilante.getNombre());
+        mensaje.mensajeLn("Preguntas:");
+        for (String pregunta : asignatura.getPreguntas()) {
+            mensaje.mensajeLn("- " + pregunta);
+        }
     }
 }
