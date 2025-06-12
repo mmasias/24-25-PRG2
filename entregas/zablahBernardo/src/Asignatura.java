@@ -1,13 +1,26 @@
-
 public class Asignatura {
+    private String nombre;
+    private String examen;
 
-    public Asignatura(String nombreAsignatura) {
-        //TODO Auto-generated constructor stub
+    public Asignatura(String nombre) {
+        this.nombre = nombre;
+        this.examen = null;
     }
 
     public String getNombre() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'getNombre'");
+        return nombre;
     }
 
+    public void crearExamen() {
+        this.examen = "Examen final de " + nombre;
+        System.out.println("Se ha creado el examen de la asignatura: " + nombre);
+    }
+
+    public String entregarExamen() {
+        return examen;
+    }
+
+    public String entregarDatosAsignatura() {
+        return "Asignatura: " + nombre;
+    }
 }

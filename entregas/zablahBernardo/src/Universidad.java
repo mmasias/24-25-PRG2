@@ -6,6 +6,7 @@ public class Universidad {
     private ProfesorAsignatura profesorAsignatura;
     private ProfesorVigilante profesorVigilante;
     private Asignatura asignatura;
+    private String nombreUniversidad = "Universidad Europea del Atlantico";
     private boolean cursoTerminado = false;
 
     public Universidad() {
@@ -70,12 +71,12 @@ public class Universidad {
     }
 
     private void contratarProfesorVigilante(Scanner scanner) {
-        System.out.print("Nombre del profesor asignatura: ");
+        System.out.print("Nombre del profesor vigilante: ");
         String nombre = scanner.nextLine();
-        System.out.print("DNI del profesor asignatura: ");
+        System.out.print("DNI del profesor vigilante: ");
         String dni = scanner.nextLine();
         profesorVigilante = new ProfesorVigilante(nombre, dni);
-        System.out.println("Profesor asignatura contratado: " + profesorVigilante.entregarDatosProfesor());
+        System.out.println("Profesor vigilante contratado: " + profesorVigilante.entregarDatosProfesor());
     }
 
     private void crearAsignatura(Scanner scanner) {
@@ -86,10 +87,25 @@ public class Universidad {
     }
 
     private void iniciarExamen(ProfesorVigilante profesorVigilante) {
-        if (profesorVigilante != null) {
-            profesorVigilante.vigilarExamen();
+        if (profesorVigilante != null && profesorAsignatura != null && asignatura != null) {
+            String examen = asignatura.entregarExamen();
+            if (examen == null) {
+                System.out.println("No se ha creado el examen.");
+                return;
+            }
+    
+            System.out.println("\n=== Examen Iniciado ===");
+            System.out.println("Universidad: " + nombreUniversidad);
+            System.out.println("Profesor: " + profesorAsignatura.getNombre() + " / " + profesorAsignatura.dni);
+            System.out.println("Asignatura: " + asignatura.getNombre());
+            System.out.println("Examen: " + examen);
+            System.out.println("Profesor: " + profesorVigilante.getNombre() + " / " + profesorVigilante.dni);
+    
+            System.out.println("Pregunta 1: Vista publica de las clases");
+            System.out.println("Pregunta 2: Vista publica de objetos");
+            System.out.println("Pregunta 3: vista privada de clases");
         } else {
-            System.out.println("No hay profesor vigilante contratado para iniciar el examen.");
+            System.out.println("Faltan datos para iniciar el examen (profesor, asignatura o vigilante).");
         }
     }
 
