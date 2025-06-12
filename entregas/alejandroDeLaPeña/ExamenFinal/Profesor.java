@@ -20,4 +20,15 @@ public class Profesor {
     public String getDni() {
         return dni;
     }
+
+   
+    public boolean entregarExamenA(Profesor vigilante, Asignatura[] asignaturas) {
+        for (Asignatura a : asignaturas) {
+            if (a != null && a.imparteProfesor(vigilante)) {
+               
+                return false;
+            }
+        }
+        return true;
+    }
 }
