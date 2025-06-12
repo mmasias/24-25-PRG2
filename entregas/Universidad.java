@@ -19,4 +19,15 @@ public class Universidad {
 
         ibuprofeno.crearAsignatura("Programación 2 - PRG - 6 créditos");
 
+        Asignatura poo = new Asignatura("Programación 2 - PRG - 6 créditos");
+        ibuprofeno.AsociarAsignatura(poo);
+
+        Examen examen = ibuprofeno.CrearExamen();
+
+        if (examen != null) {
+            poo.AsociarExamen(examen);
+            ibuprofeno.EntregarExamen(examen, dalsy);
+        }
+    }
+}
     
