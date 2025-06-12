@@ -8,6 +8,14 @@ Si el diseño hubiese sido más flexible, podrían haberse usado otras clases co
 
 - `Examen`: para manejar título, asignatura y preguntas.
 - `Pregunta`: para encapsular el contenido de cada pregunta.
-- `Vigilancia` (opcional): para representar la relación entre el examen y el profesor externo que lo vigila.
+- `Vigilancia` : para representar la relación entre el examen y el profesor externo que lo vigila.
 
-Por haber limitado el diseño a lo mínimo, terminé mezclando responsabilidades dentro de una sola clase y resolviendo a la fuerza lo que con más tiempo y más clases habría quedado más claro, limpio y mantenible. En resumen, el examen me ayudó a entender lo importante que es planificar bien las clases antes de empezar a escribir, incluso cuando se hace en papel.
+También pude haber creado constructores adicionales, por ejemplo:
+
+- Un constructor para `Profesor` que ya reciba la asignatura directamente.
+- Un constructor para `Examen` con las tres preguntas ya cargadas.
+- Un constructor para `Pregunta` con el texto como parámetro.
+
+Esto me habría permitido construir objetos de manera más limpia y directa desde el `main` o desde `Universidad`.
+
+Tengo que practicar más, ya sea con diagramas UML para tener un pensamiento más abierto y entender mejor la vista pública y los objetos.
