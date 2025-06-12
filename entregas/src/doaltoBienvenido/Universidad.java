@@ -26,4 +26,22 @@ public class Universidad {
 
         mostrarEscenario();
     }
+
+    public void crearAsignatura(String nombreAsignatura) {
+        asignatura.crearAsignatura(nombreAsignatura);
+    }
+
+    public void contratarProfesor(String nombreProfesor) {
+        this.profesorAsignado = new Profesor(nombreProfesor);
+    }
+
+    public void asignarAsignatura(Profesor profesor, String nombreAsignatura) {
+        if (asignatura.getNombre().equals(nombreAsignatura)) {
+            profesor.setAsignatura(asignatura);
+        }
+    }
+
+    public void contratarVigilante(String nombreVigilante) {
+        this.profesorVigilante = new Profesor(nombreVigilante);
+    }
 }
