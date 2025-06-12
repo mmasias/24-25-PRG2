@@ -5,13 +5,11 @@ class Profesor {
     Asignatura asignatura;
     Examen examenCreado;
 
-
     public Profesor(String nombreUnversidad, String apellido, String dni) {
         this.nombreUnversidad = nombreUnversidad;
         this.apellido = apellido;
         this.Dni = dni;
     }
-
 
     Examen crearExamen() {
         if (asignatura == null) {
@@ -21,7 +19,6 @@ class Profesor {
         examenCreado = new Examen("Examen Final");
         return examenCreado;
     }
-
 
     void darExamen(Profesor vigilante) {
         if (vigilante.asignatura == null && examenCreado != null) {
