@@ -1,4 +1,6 @@
 import java.util.Scanner;
+import java.util.List;     
+import java.util.ArrayList; 
 
 class Asignatura {
     String nombre;
@@ -19,12 +21,12 @@ class Examen {
         this.vigilante = vigilante;
     }
 
-    public void infoExamen() {
+    public void mostrarInfo() {
         System.out.println("Profesor: " + creador.getNombre());
         System.out.println("Asignatura: " + asignatura.nombre);
         System.out.println("Vigilado por : " + vigilante.getNombre());
     }
-}      
+}
 
 class Profesor {
     private String nombre;
@@ -47,26 +49,26 @@ class Profesor {
         System.out.println(nombre + " imparte la asignatura de: " + asignatura.nombre);
     }
 
-    public Examen crearExamen(profesor vigilante) {
+    public Examen crearExamen(Profesor vigilante) {
         if (!this.tieneAsignatura()) {
             System.out.println(nombre + " no puede crear examen, no tiene asignatura asignada");
             return null;
         }
 
         if (vigilante.tieneAsignatura()) {
-        System.out.println(vigilante.getNombre() + " no puede vigilar el examen, ya tiene asignatura asignada");
-        return null;
+            System.out.println(vigilante.getNombre() + " no puede vigilar el examen, ya tiene asignatura asignada");
+            return null;
         }
 
         Examen examen = new Examen(this.asignatura, this, vigilante);
         System.out.println(nombre + " ha creado un examen de " + asignatura.nombre + " y lo entregó a " + vigilante.getNombre() + " para vigilar");
         return examen;
-   }
+    }
 }
 
 class Universidad {
     private String nombre;
-    private List<profesor> profesores = new ArrayList<>();
+    private List<Profesor> profesores = new ArrayList<>();
     private List<Asignatura> asignaturas = new ArrayList<>();
 
     public Universidad(String nombre) {
@@ -74,7 +76,7 @@ class Universidad {
     }
 
     public Profesor crearProfesor(String nombre) {
-        profesor p = new Profesor(nombre);
+        Profesor p = new Profesor(nombre);
         profesores.add(p);
         System.out.println("Profesor creado: " + nombre);
         return p;
