@@ -40,15 +40,18 @@ public class Profesor {
     public void vigilar(Examen examen) {
         boolean imparte=false;
 
-        for (Asignatura asignaturaComparacion : asignaturas) {
-            if (asignaturaComparacion==examen.getAsignatura()) {
-                imparte=true;
+        if (asignaturas != null) {
+            for (Asignatura asignaturaComparacion : asignaturas) {
+                if (asignaturaComparacion==examen.getAsignatura()) {
+                    imparte=true;
+                }  
             }
         }
         
         if (!imparte) {
             examenes[examenesAlmacenados]=examen;
             examen.vigilado(nombre + " / " + dni);
+            examenesAlmacenados++;
         } else {
             System.out.println("ERROR: Examen impartido y vigilado por el mismo profesor, examen destruido");
         }

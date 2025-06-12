@@ -10,8 +10,10 @@ public class Examen {
     public Examen(Asignatura asignatura) {
         Scanner scanner = new Scanner(System.in);
         this.asignatura = asignatura;
+        System.out.print("Tipo: ");
         tipo = scanner.nextLine();
         for (int i = 0; i < preguntas.length; i++) {
+            System.out.print("Pregunta "+i+1+": ");
             preguntas[i] = scanner.nextLine();
         }
         scanner.close();
