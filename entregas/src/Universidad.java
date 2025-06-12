@@ -10,4 +10,9 @@ public class Universidad {
         profesores[1] = new Profesor("Profesor 2", false); 
         System.out.println("Se han contratado 2 profesores.");
     }
+
+    public void asignar() {
+        profesores[0].asignar("Programación");
+        System.out.println(profesores[0].getNombre() + " ha sido asignado a la asignatura de Programación.");
+    }
 }
