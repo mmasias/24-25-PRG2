@@ -35,6 +35,10 @@ public class Universidad {
 
         Utilidades.mensaje("Asignatura: ");
         asignaturas[0].mostrarNombre();
+        Utilidades.mensaje(" - ");
+        asignaturas[0].mostarAcronimo();
+        Utilidades.mensaje(" - ");
+        asignaturas[0].mostarCreditos();
         Utilidades.saltarLinea();
 
         Utilidades.mensaje("Examen: ");

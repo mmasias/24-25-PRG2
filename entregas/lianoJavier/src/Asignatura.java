@@ -15,4 +15,12 @@ public class Asignatura {
         Utilidades.mensaje(nombre);
     }
 
+    public void mostarAcronimo() {
+        Utilidades.mensaje(acronimo);
+    }
+
+    public void mostarCreditos() {
+        Utilidades.mensaje(creditos + " créditos");
+    }
+
 }
