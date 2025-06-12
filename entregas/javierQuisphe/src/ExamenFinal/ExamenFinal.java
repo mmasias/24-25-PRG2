@@ -1,6 +1,26 @@
-import java.util.Scanner;
-import java.util.List;     
-import java.util.ArrayList; 
+import java.util.ArrayList;
+import java.util.List;
+
+public class ExamenFinal {
+
+    public static void main(String[] args) {
+        Universidad uni = new Universidad("Universidad: Universidad Europea del Atlantico");
+
+        Profesor prof1 = uni.crearProfesor("Julián Alvarez");
+        Profesor prof2 = uni.crearProfesor("Emiliano Martinez");
+
+        Asignatura mate = uni.crearAsignatura("Programación 2 - PRG2 - 6 Creditos");
+
+        prof1.asignarAsignatura(mate);
+
+        Examen examen = prof1.crearExamen(prof2);
+
+        if (examen != null) {
+            System.out.println("\n--- Detalles del Examen ---");
+            examen.mostrarInfo();
+        }
+    }
+}
 
 class Asignatura {
     String nombre;
