@@ -24,13 +24,14 @@ public class Asignatura {
         System.out.print("Abreviatura de la asignatura: ");
         String abreviaturaAsignatura = scanner.nextLine();
 
-        int cantidadCreditos;
-        while (true) {
+        int cantidadCreditos = 0;
+        boolean entradaValida = false;
+        while (!entradaValida) {
             System.out.print("Número de créditos: ");
             String entrada = scanner.nextLine();
             try {
                 cantidadCreditos = Integer.parseInt(entrada);
-                break;
+                entradaValida = true;
             } catch (NumberFormatException e) {
                 System.out.println("Por favor, escriba un número válido para los créditos.");
             }

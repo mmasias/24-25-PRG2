@@ -45,14 +45,16 @@ public class Universidad {
         System.out.println("=========================================");
         System.out.println("Universidad: " + nombre);
         System.out.println("Profesor: " + profesorImparte.getNombre() + " | DNI: " + profesorImparte.getDni());
-        System.out.println(" Asignatura: " + asignatura.getNombre() + " - " + asignatura.getAbreviatura() + " - " + asignatura.getCreditos() + " créditos ");
+        System.out.println(" Asignatura: " + asignatura.getNombre() + " - " + asignatura.getAbreviatura() + " - "
+                + asignatura.getCreditos() + " créditos ");
         System.out.println("  Examen: " + examen.getTipo().toLowerCase());
-        System.out.println("   Vigilado por: " + profesorVigilante.getNombre() + " | DNI: " + profesorVigilante.getDni());
-    
+        System.out
+                .println("   Vigilado por: " + profesorVigilante.getNombre() + " | DNI: " + profesorVigilante.getDni());
+
         String[] preguntas = examen.getPreguntas();
         for (int numeroPregunta = 0; numeroPregunta < preguntas.length; numeroPregunta++) {
             System.out.println("   Pregunta " + (numeroPregunta + 1) + ": " + preguntas[numeroPregunta]);
         }
     }
-    
+
 }

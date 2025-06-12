@@ -6,5 +6,3 @@ public class SistemaUniversidad {
         universidad.mostrarTodo();
     }
 }
-
-

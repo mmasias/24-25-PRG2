@@ -16,13 +16,15 @@ public class Examen {
     public static Examen crearExamen(Asignatura asignatura, Profesor profesorVigilante, int cantidadPreguntas) {
         Scanner scanner = new Scanner(System.in);
 
-        String tipoExamen;
-        while (true) {
+        String tipoExamen = "";
+        boolean tipoValido = false;
+
+        while (!tipoValido) {
             System.out.print("Tipo de examen (final o parcial): ");
             tipoExamen = scanner.nextLine().trim().toLowerCase();
 
             if (tipoExamen.equals("final") || tipoExamen.equals("parcial")) {
-                break;
+                tipoValido = true;
             } else {
                 System.out.println("Por favor, escriba solo 'final' o 'parcial'.");
             }
