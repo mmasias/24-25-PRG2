@@ -1,4 +1,3 @@
-// Universidad.java
 public class Universidad {
     private String nombre;
     private RecursosHumanos recursos;
