@@ -21,8 +21,8 @@ class Examen {
 
     public void infoExamen() {
         System.out.println("Profesor: " + creador.getNombre());
-        System.out.println("Asignatura: " + asignatura.nombre)
-        System.out.println("Vigilado por : " + vigilante.getNombre())
+        System.out.println("Asignatura: " + asignatura.nombre);
+        System.out.println("Vigilado por : " + vigilante.getNombre());
     }
 }      
 
