@@ -16,8 +16,5 @@ Y además he tenido que añadir en la clase Universidad.java unos métodos para 
 - `Universidad` se encarga de crear profesores y asignaturas, y los guarda en arrays simples.
 - `ProfesorImparte` crea exámenes, añade una pregunta y los entrega a un `ProfesorVigila`.
 - `ProfesorVigila` recibe el examen y lo muestra por pantalla (vigilarlo).
-- Los exámenes se pueden registrar en la asignatura correspondiente y tener hasta 10 preguntas.
+- Los exámenes se pueden registrar en la asignatura correspondiente y tener hasta 3 preguntas.
 
-Todo está hecho con arrays fijos, sin usar listas ni clases que no hayamos visto (como en Klondike).
-
-He dejado todo lo más parecido posible a la vista pública del examen, solo cambiando lo justo para que funcionara bien.
