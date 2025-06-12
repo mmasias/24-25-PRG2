@@ -1,3 +1,56 @@
 public class Profesores {
-    
+    private String nombre;
+    private String dni;
+    private Asignatura asignatura;
+    private Examenes examenVigilado;
+
+    public Profesores(String nombre, String dni) {
+        this.nombre = nombre;
+        this.dni = dni;
+    }
+
+    public void asignarPuesto(Asignatura asignatura) {
+        if (examenVigilado == null) {
+            this.asignatura = asignatura;
+        } else {
+            System.out.println(nombre + " no puede impartir asignaturas y vigilar exámenes a la vez.");
+        }
+    }
+
+    public boolean puedeVigilar() {
+        return asignatura == null;
+    }
+
+    public Examenes crearExamen(String nombreExamen) {
+        if (asignatura != null) {
+            Examenes examen = new Examenes(nombreExamen, asignatura);
+            examen.setPreguntas("Vista publica clases", "Vista publica objetos", "Vista privada clases");
+            asignatura.setExamen(examen);
+            return examen;
+        } else {
+            System.out.println(nombre + " no imparte ninguna asignatura y no puede crear examen.");
+            return null;
+        }
+    }
+
+    public void vigilarExamen(Examenes examen) {
+        if (puedeVigilar()) {
+            this.examenVigilado = examen;
+            examen.setVigilante(this);
+        } else {
+            System.out.println(nombre + " no puede vigilar exámenes porque imparte una asignatura.");
+        }
+    }
+
+    public String getNombreCompleto() {
+        return nombre + " / DNI " + dni;
+    }
+
+    public Asignatura getAsignatura() {
+        return asignatura;
+    }
+
+    public Examenes getExamenVigilado() {
+        return examenVigilado;
+    }
 }
