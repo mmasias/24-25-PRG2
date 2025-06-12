@@ -4,6 +4,7 @@ public class Examen {
     private Asignatura asignatura;
     private String[] preguntas;
     private int numPreguntas;
+    private Profesor creador;
     private Profesor vigilante;
     private String titulo;
 
@@ -46,5 +47,13 @@ public class Examen {
 
     public Asignatura getAsignatura() {
         return asignatura;
+    }
+
+    public void setCreador(Profesor creador) {
+        this.creador = creador;
+    }
+
+    public Profesor getCreador(Profesor creador) {
+        return this.creador = creador;
     }
 }
