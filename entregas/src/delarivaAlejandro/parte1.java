@@ -26,3 +26,11 @@ public class Profesor {
     public Asignatura getAsignatura();
     public List<Examen> getExamenesVigilados();
 }
+
+public class Examen {
+    public Examen(Asignatura asignatura, List<String> preguntas);
+    public void asignarVigilante(Profesor vigilante);
+    public List<String> getPreguntas();
+    public Asignatura getAsignatura();
+    public Profesor getVigilante();
+}
