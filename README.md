@@ -1,3 +1,3 @@
-# 👨‍💻 Programación II - RAMA DE ENTREGAS
+## Errores en solución propuesta
 
-Usamos esta rama para las entregas, tal y como lo especificamos con más detalle en el artículo de [flujoGIT](/documentos/flujoGIT.md) y afinamos en el documento del reto / trabajo correspondiente.
+- En el diagrama puml, propuse a estudiantes como una clase que herada de examen, pero en el ejemplo dado no se contempla a los estudiantes como parte del universo, por ende yo tampoco los consideré.
