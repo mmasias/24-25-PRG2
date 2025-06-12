@@ -16,7 +16,7 @@ class Examen {
         preguntas[2] = "Explica el principio de responsabilidad única.";
     }
 
-    // Solo accesible dentro del paquete LomoJaime
+   
     void mostrar() {
         for (int i = 0; i < preguntas.length; i++) {
             System.out.println("Pregunta " + (i + 1) + ": " + preguntas[i]);

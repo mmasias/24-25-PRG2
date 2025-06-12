@@ -40,7 +40,7 @@ public class Profesor {
 
     public void mostrarExamenVigilado() {
         if (examenVigilado != null) {
-            examenVigilado.mostrar(); // Método visible solo dentro del paquete
+            examenVigilado.mostrar(); 
         } else {
             System.out.println("No hay examen asignado para vigilancia.");
         }
