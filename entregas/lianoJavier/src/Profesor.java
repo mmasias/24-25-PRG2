@@ -34,7 +34,7 @@ public class Profesor {
                 "Vista pública de objetos",
                 "Vista privada de clases"
         };
-        examen = new Examen(PREGUNTAS);
+        examen = new Examen("Examen Final", PREGUNTAS);
     }
 
     public void asignar(Asignatura asignatura) {

@@ -1,18 +1,31 @@
 
 public class Examen {
 
-    public Examen(String[] pREGUNTAS) {
-        //TODO Auto-generated constructor stub
+    private String[] preguntas;
+    private String nombre;
+
+    public Examen(String nombre, String[] preguntas) {
+        this.preguntas = preguntas;
+        this.nombre = nombre;
     }
 
     public void mostrarPreguntas() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'mostrarPreguntas'");
+        for (String pregunta : preguntas) {
+            mensaje(pregunta);
+            saltarLinea();
+        }
+    }
+
+    private void mensaje(String pregunta) {
+        System.out.print(pregunta);
+    }
+
+    private void saltarLinea() {
+        System.out.println();
     }
 
     public void mostrarNombre() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'mostrarNombre'");
+        mensaje(nombre);
     }
 
 }
