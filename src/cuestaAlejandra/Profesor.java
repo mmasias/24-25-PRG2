@@ -19,8 +19,8 @@ public class Profesor {
             return;
         }
         examen = new String[3];
-        examen[0] = "Vista pública clases";
-        examen[1] = " Vista pública de objetos";
+        examen[0] = "Vista publica clases";
+        examen[1] = " Vista publica de objetos";
         examen[2] = "Vista privada de clases";
     }
 
