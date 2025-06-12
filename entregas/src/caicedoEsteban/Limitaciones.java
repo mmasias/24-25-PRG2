@@ -1,9 +1,8 @@
 
 public class Limitaciones {
 
-    public boolean verificar(ProfesorSupervisor profSup) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'verificar'");
+    public boolean verificar(ProfesorSupervisor profesorSupervisor) {
+        return !profesorSupervisor.estaImpartiendo();
     }
 
 }

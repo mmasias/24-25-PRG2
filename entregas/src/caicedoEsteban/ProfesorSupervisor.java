@@ -10,4 +10,9 @@ public class ProfesorSupervisor {
         throw new UnsupportedOperationException("Unimplemented method 'recibirExamen'");
     }
 
+    public boolean estaImpartiendo() {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'estaImpartiendo'");
+    }
+
 }
