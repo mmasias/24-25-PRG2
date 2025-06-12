@@ -63,3 +63,27 @@ class Profesor {
         return examen;
    }
 }
+
+class Universidad {
+    private String nombre;
+    private List<profesor> profesores = new ArrayList<>();
+    private List<Asignatura> asignaturas = new ArrayList<>();
+
+    public Universidad(String nombre) {
+        this.nombre = nombre;
+    }
+
+    public Profesor crearProfesor(String nombre) {
+        profesor p = new Profesor(nombre);
+        profesores.add(p);
+        System.out.println("Profesor creado: " + nombre);
+        return p;
+    }
+
+    public Asignatura crearAsignatura(String nombre) {
+        Asignatura a = new Asignatura(nombre);
+        asignaturas.add(a);
+        System.out.println("Asignatura creada: " + nombre);
+        return a;
+    }
+}
