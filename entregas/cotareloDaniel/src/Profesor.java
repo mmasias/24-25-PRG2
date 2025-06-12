@@ -1,7 +1,9 @@
+package entregas.cotareloDaniel.src;
+
 public class Profesor {
     private String nombre;
     private String dni;
-    private Asignatura asignatura;
+    protected Asignatura asignatura;
 
     public Profesor(String nombre, String dni) {
         this.nombre = nombre;
@@ -14,13 +16,15 @@ public class Profesor {
 
     public Examen crearExamen() {
         if (asignatura == null) {
+            System.out.println("Este profesor no puede crear un examen porque no imparte ninguna asignatura.");
             return null;
         }
 
         PreguntasExamen preguntas = new PreguntasExamen();
         preguntas.crearPreguntas();
 
-        return new Examen("Examen Parcial", preguntas);
+        Examen examen = new Examen("Examen de " + asignatura.getNombre(), preguntas);
+        return examen;
     }
 
     public String getNombre() {
