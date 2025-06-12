@@ -1,11 +1,11 @@
 package doaltoBienvenido;
 
 public class Universidad {
-    private Asignatura asignatura;
-    private Profesor profesorAsignado;
-    private Profesor profesorVigilante;
-    private Mensaje mensaje;
-    private String nombreUniversidad;
+    Asignatura asignatura;
+    Profesor profesorAsignado;
+    Profesor profesorVigilante;
+    Mensaje mensaje;
+    String nombreUniversidad;
 
     public Universidad(String nombreUniversidad) {
         this.nombreUniversidad = nombreUniversidad;
@@ -17,7 +17,7 @@ public class Universidad {
         crearAsignatura("Programacion 2");
 
         profesorAsignado = contratarProfesor("Manuel Masias");
-        asignarAsignatura(profesorAsignado, asignatura.getNombre());
+        asignarAsignatura(profesorAsignado, asignatura.nombre);
 
         profesorAsignado.crearExamen(asignatura, "Examen Final");
 
@@ -37,19 +37,19 @@ public class Universidad {
     }
 
     public void asignarAsignatura(Profesor profesor, String nombreAsignatura) {
-        if (asignatura.getNombre().equals(nombreAsignatura)) {
-            profesor.setAsignatura(asignatura);
+        if (asignatura.nombre.equals(nombreAsignatura)) {
+            profesor.asignatura = asignatura;
         }
     }
 
     private void mostrarEscenario() {
         mensaje.mensajeLn("Universidad: " + nombreUniversidad);
-        mensaje.mensajeLn("Profesor: " + profesorAsignado.getNombre());
-        mensaje.mensajeLn("Asignatura: " + asignatura.getNombre());
-        mensaje.mensajeLn("Examen: " + asignatura.getExamenTitulo());
-        mensaje.mensajeLn("Vigilado por: " + profesorVigilante.getNombre());
+        mensaje.mensajeLn("Profesor: " + profesorAsignado.nombre);
+        mensaje.mensajeLn("Asignatura: " + asignatura.nombre);
+        mensaje.mensajeLn("Examen: " + asignatura.examenTitulo);
+        mensaje.mensajeLn("Vigilado por: " + profesorVigilante.nombre);
         mensaje.mensajeLn("Preguntas:");
-        for (String pregunta : asignatura.getPreguntas()) {
+        for (String pregunta : asignatura.preguntas) {
             mensaje.mensajeLn("- " + pregunta);
         }
     }
