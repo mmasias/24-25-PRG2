@@ -1,13 +1,13 @@
 package arceMarina;
 
-class Profesor {
+class Profesores {
     private String nombre;
     private boolean programador;
     private String asignatura;
     private Examen examen;
-    private Profesor vigilante;
+    private Profesores vigilante;
 
-    public Profesor(String nombre) {
+    public Profesores(String nombre) {
         this.nombre = nombre;
     }
 
@@ -17,7 +17,7 @@ class Profesor {
         }
     }
 
-    public void entregar(Profesor otro) {
+    public void entregar(Profesores otro) {
         if (this.examen != null && puedeVigilar(otro)) {
             otro.vigilar();
             this.vigilante = otro;
@@ -25,7 +25,7 @@ class Profesor {
     }
 
     public void vigilar() {
-        
+        System.out.println(nombre + " está preparado para vigilar.");
     }
 
     void asignar(String asignatura) {
@@ -36,7 +36,7 @@ class Profesor {
         imprimirInformacion();
     }
 
-    private boolean puedeVigilar(Profesor otro) {
+    private boolean puedeVigilar(Profesores otro) {
         return !otro.programador && (otro.asignatura == null || otro.asignatura.isEmpty());
     }
 
@@ -53,16 +53,22 @@ class Profesor {
 
         if (examen != null) {
             System.out.println("Examen: Examen final");
-            System.out.println("Vigilado por: " + (vigilante != null ? vigilante.nombre : "Nadie"));
 
+            if (vigilante != null) {
+                System.out.println(vigilante.nombre + " está vigilando el examen de " + nombre);
+            } else {
+                System.out.println("Nadie está vigilando este examen.");
+            }
+
+            System.out.println("Preguntas del examen:");
             String[] preguntas = {
                 "Vista pública clases",
                 "Vista pública de objetos",
                 "Vista privada de clases"
             };
 
-            for (int i = 0; i < preguntas.length; i++) {
-                System.out.println("Pregunta " + (i + 1) + ": \"" + preguntas[i] + "\"");
+            for (String pregunta : preguntas) {
+                System.out.println("- " + pregunta);
             }
         }
     }

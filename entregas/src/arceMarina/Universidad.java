@@ -1,14 +1,14 @@
 package arceMarina;
 
 public class Universidad {
-    private Profesor[] profesores;
+    private Profesores[] profesores;
     private String[] asignaturas;
     private int numProfesores;
     private int numAsignaturas;
     private final String nombre;
 
     public Universidad() {
-        this.profesores = new Profesor[10];
+        this.profesores = new Profesores[10];
         this.asignaturas = new String[10];
         this.numProfesores = 0;
         this.numAsignaturas = 0;
@@ -18,8 +18,8 @@ public class Universidad {
     }
 
     private void inicializar() {
-        Profesor profesor1 = new Profesor("Profesor X");
-        Profesor profesor2 = new Profesor("Profesor Y");
+        Profesores profesor1 = new Profesores("Profesor X");
+        Profesores profesor2 = new Profesores("Profesor Y");
 
         contratar(profesor1);
         contratar(profesor2);
@@ -33,7 +33,7 @@ public class Universidad {
         imprimirInformacion(profesor1);
     }
 
-    public void contratar(Profesor profesor) {
+    public void contratar(Profesores profesor) {
         if (hayEspacio(profesores, numProfesores)) {
             profesores[numProfesores++] = profesor;
         }
@@ -45,7 +45,7 @@ public class Universidad {
         }
     }
 
-    public void asignarAsignatura(Profesor profesor, String asignatura) {
+    public void asignarAsignatura(Profesores profesor, String asignatura) {
         if (existeAsignatura(asignatura)) {
             profesor.asignar(asignatura);
         }
@@ -64,8 +64,12 @@ public class Universidad {
         return false;
     }
 
-    private void imprimirInformacion(Profesor profesor) {
+    private void imprimirInformacion(Profesores profesor) {
         System.out.println("Universidad: " + nombre);
         profesor.mostrarDatos();
+    }
+
+    public static void main(String[] args) {
+        new Universidad(); 
     }
 }
