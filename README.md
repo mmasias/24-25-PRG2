@@ -1,3 +1,5 @@
-# 👨‍💻 Programación II - RAMA DE ENTREGAS
+# 👨‍💻 Programación II - RAMA DE FINAL
 
-Usamos esta rama para las entregas, tal y como lo especificamos con más detalle en el artículo de [flujoGIT](/documentos/flujoGIT.md) y afinamos en el documento del reto / trabajo correspondiente.
+# Diferencia entre Parte I y II
+- Se agrega a la vista publica de universidad el metodo verPensum
+- Olvide agregar el parametro IdProfesores, en el metodo asignarProfesorAsignatura de la vista publica de la clase asignaturas.
