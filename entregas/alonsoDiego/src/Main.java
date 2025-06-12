@@ -16,6 +16,5 @@ public class Main {
 
         System.out.println(UNEATLANTICO.mostrar());
         System.out.println(prog2.mostrar());
-        System.out.println("Profesor: " + manuel.getNombre() + " / DNI " + manuel.getDni());
     }
 }
