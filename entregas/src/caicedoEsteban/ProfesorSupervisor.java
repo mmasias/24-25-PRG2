@@ -1,18 +1,26 @@
-
 public class ProfesorSupervisor {
 
+    private String nombreProfesor;
+    private boolean impartiendo = false;
+    private Examen examenRecibido;
+
     public ProfesorSupervisor(String nombreProfesor) {
-        // TODO Auto-generated constructor stub
+        this.nombreProfesor = nombreProfesor;
     }
 
     public void recibirExamen(Examen examen) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'recibirExamen'");
+        this.examenRecibido = examen;
     }
 
     public boolean estaImpartiendo() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'estaImpartiendo'");
+        return impartiendo;
     }
 
+    public Examen getExamen() {
+        return examenRecibido;
+    }
+
+    public String getNombreProfesor() {
+        return nombreProfesor;
+    }
 }
