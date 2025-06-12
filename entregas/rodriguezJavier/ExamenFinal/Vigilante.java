@@ -1,5 +1,5 @@
 public class Vigilante extends Profesores {
-    private Examen examen;
+    Examen examen;
 
     public Vigilante(String nombre, String dni) {
         super(nombre, dni);
@@ -7,9 +7,5 @@ public class Vigilante extends Profesores {
 
     public void recibirExamen(Examen examen) {
         this.examen = examen;
-    }
-
-    public Examen getExamen() {
-        return examen;
     }
 }
