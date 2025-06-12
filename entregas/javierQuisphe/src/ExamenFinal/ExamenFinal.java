@@ -16,7 +16,6 @@ public class ExamenFinal {
         Examen examen = prof1.crearExamen(prof2);
 
         if (examen != null) {
-            // Agregar 3 preguntas al examen
             examen.agregarPregunta(new Pregunta("¿Qué es la programación orientada a objetos?"));
             examen.agregarPregunta(new Pregunta("Explica la diferencia entre una clase y un objeto."));
             examen.agregarPregunta(new Pregunta("¿Qué son los modificadores de acceso en Java?"));
