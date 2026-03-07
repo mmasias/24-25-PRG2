@@ -3,7 +3,7 @@ package entregas.Restaurante;
 public class Mesas {
 
     private int numeroMesa;
-    private int capacidadeMesa;
+    private int capacidadMesa;
     private boolean ocupada;
     private String lugarMesa;
 
@@ -15,12 +15,12 @@ public class Mesas {
         this.numeroMesa = numeroMesa;
     }
 
-    public int getCapacidadeMesa() {
-        return capacidadeMesa;
+    public int getCapacidaMesa() {
+        return capacidadMesa;
     }
 
-    public void setCapacidadeMesa(int capacidadeMesa) {
-        this.capacidadeMesa = capacidadeMesa;
+    public void setCapacidaMesa(int capacidadMesa) {
+        this.capacidadMesa = capacidadMesa;
     }
 
     public boolean isOcupada() {
