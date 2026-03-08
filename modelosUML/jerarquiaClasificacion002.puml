@@ -1,0 +1,40 @@
+package A{
+    object ": A" as x0
+    object ": A" as x1
+    Package B {
+        object ": B" as x2
+        object ": B" as x3
+        object ": B" as x4
+        object ": B" as x5
+
+    }
+    Package C {
+        object " : C" as x6
+        object " : C" as x7
+        object " : C" as x8
+        Package D {
+            object ": D" as x18
+            object ": D" as x19
+
+            object ": D" as x14
+        }
+        Package E {
+            object ": E" as x15
+            object ": E" as x16
+            object ": E" as x17
+
+        }
+        Package F {
+            object ": F" as x11
+            object ": F" as x12
+            object ": F" as x13
+            Package G {
+                object  ": G" as x9
+                object  ": G" as x10
+
+            }
+        }
+    }
+}
+
+
