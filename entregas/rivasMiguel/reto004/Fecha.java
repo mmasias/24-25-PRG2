@@ -38,7 +38,7 @@ public class Fecha {
         return !antesQue(fecha) && !equals(fecha);
     }
 
-    public int compareTo(Fecha fecha) {
+    public int compararTiempo(Fecha fecha) {
         if (antesQue(fecha)) {
             return -1;
         } else if (equals(fecha)) {

@@ -41,7 +41,7 @@ public class Tiempo {
         return !antesQue(tiempo) && !equals(tiempo);
     }
 
-    public int compareTo(Tiempo tiempo) {
+    public int compararTiempo(Tiempo tiempo) {
         if (antesQue(tiempo)) {
             return -1;
         } else if (equals(tiempo)) {

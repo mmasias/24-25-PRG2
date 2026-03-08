@@ -46,8 +46,8 @@ public class ClienteFraccion {
          * System.out.print("Es igual: ");
          * System.out.println(fraccion.esIgual(new Fraccion(2, 3)));
          * 
-         * System.out.print(".compareTo(): ");
-         * System.out.println(fraccion.compareTo(new Fraccion(2, 3)));
+         * System.out.print(".compararTiempo(): ");
+         * System.out.println(fraccion.compararTiempo(new Fraccion(2, 3)));
          * 
          * System.out.print("valueOf(): ");
          * System.out.println(fraccion.valueOf());

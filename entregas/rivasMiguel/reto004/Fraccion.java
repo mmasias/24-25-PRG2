@@ -126,7 +126,7 @@ public class Fraccion {
         return (double) this.numerador / this.denominador;
     }
 
-    public int compareTo(Fraccion fraccion) {
+    public int compararTiempo(Fraccion fraccion) {
         double valor1 = this.valueOf();
         double valor2 = fraccion.valueOf();
         
