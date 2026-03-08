@@ -1,7 +1,7 @@
 package entregas.linaresJaime;
 import java.util.Scanner;
 
-public class reto001 {
+public class Reto001 {
     private static final String[] NOTAS = {"Do", "Do#", "Re", "Re#", "Mi", "Fa", "Fa#", "Sol", "Sol#", "La", "La#", "Si"};
     private static final int[] PATRON_ESCALA_MAYOR = {2, 2, 1, 2, 2, 2, 1};
 
