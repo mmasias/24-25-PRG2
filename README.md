@@ -28,7 +28,7 @@ Usamos esta rama para las entregas, tal y como lo especificamos con más detalle
 |`public boolean esMayor(Fraccion fraccion)`|
 |`public boolean esIgual(Fraccion fraccion)`|
 |`public double valueOf()`|Devuelve el valor del objeto como un número de tipo double
-|`public int compareTo(Fraccion fraccion)`|Devuelve 0 si ambas fracciones son iguales, 1 si la fraccion es mayor que la que se pasa como parámetro y -1 en caso contrario.
+|`public int compararTiempo(Fraccion fraccion)`|Devuelve 0 si ambas fracciones son iguales, 1 si la fraccion es mayor que la que se pasa como parámetro y -1 en caso contrario.
 |`public String toString()`|Devuelve el objeto en formato String
 |`public Fraccion clone()`|
 
